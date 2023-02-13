@@ -26,6 +26,10 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env*.local
+
+# Firebase SDK
+service-account-key.json
 
 # vercel
 .vercel
