@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .nav_container {
   display:flex;
   gap:60px;
@@ -169,3 +175,4 @@
   font-size: 13.5px;
   cursor: pointer;
 }
+
