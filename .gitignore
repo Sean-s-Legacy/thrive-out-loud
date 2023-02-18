@@ -26,14 +26,11 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env*.local
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-
-#editor
-/.idea
-.idea
-components/sections/Homepage/*
+next-env.d.ts
