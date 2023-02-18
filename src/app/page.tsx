@@ -1,91 +1,79 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+'use client';
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image'
+import { Montserrat } from '@next/font/google'
+import styles from './page.module.css'
+import Navbar from './components/Navbar'
+import SignupBtn from './components/SignupBtn'
+import { Button, Space } from 'antd'
+import MentorCard from './components/MentorCard';
+import FindAMentorBtn from './components/FindAMentorBtn';
+import Testimonials from './components/TestimonialCard';
+import ImageSlider from './components/ImageSlider';
+
+
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+   <>
+    <Navbar />
+    <div>
+      <section className="landing">
+        <div className='landing_title'>
+         <h1>
+         Sean’s Legacy  <br/> Mentorship Program
+         </h1>
+         <h2>Wherever you are on your journey, 
+          <br />
+          a mentor can help you take the next step. 
+         </h2>
+         <Space wrap>
+          <SignupBtn />
+          <Button className='common_btn'>Learn more</Button>
+        </Space>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        
+      </section>
+      <section className="transition">
+        <h2>
+        At Sean’s Legacy, we’re dedicated to providing support for LGBTQIA+ youth in their
+        academic and extracurricular endeavors. Whether you’re thinking about going to college, 
+        looking for your first job, or just need some support and guidance, our online community of LGBTQIA+ mentors is here to help. 
+        </h2>
+      </section>
+      <section className="checkout_mentors">
+        <div className="checkout_mentors_title">
+          <h2>Check out some of our mentors</h2>
+          <p>Our mentors are all verified through background checks by Sean's Legacy.
+             Our mentors are LGBTQIA+ or LGBTQIA+ friendly, and they all come from 
+             different walks of life and identities to ensure a safe and inclusive connection.</p>
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className="mentor_card_section">
+         <div>Mentor Card</div>
+         <div>Mentor Card</div>
+         <div>Mentor Card</div>
+         <div>Mentor Card</div>
+         <div>Mentor Card</div>
+         <div>Mentor Card</div>
+        
+        </div>
+        <div className='find_mentor_btn_section'>
+          <Button type="text" className='common_btn primary_btn find_mentor_btn' >
+            Find a mentor
+          </Button>
+        </div>
+       
+        
+      </section>
+      <section className="testimonials">
+        <h2>Testimonials</h2>
+        <ImageSlider />
+      </section>
+      <section className="personalized"></section>
+    </div>
+   </>
   )
 }
