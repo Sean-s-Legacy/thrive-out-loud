@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button, Space, Input } from "antd";
-import "antd/dist/reset.css";
+// import "antd/dist/reset.css";
 import SignupBtn from "./SignupBtn";
 import FindAMentorBtn from "./FindAMentorBtn";
 import LoginBtn from "./LoginBtn";

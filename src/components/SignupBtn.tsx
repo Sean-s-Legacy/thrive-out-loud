@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Space, Input } from "antd";
-import "antd/dist/reset.css";
+// import "antd/dist/reset.css";
 
 export default function SignupBtn() {
   return (
