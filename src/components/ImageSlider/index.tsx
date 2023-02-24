@@ -1,8 +1,12 @@
 import { Card } from "antd";
-import React, { useState } from "react";
-import TestimonialCard from "./TestimonialCard";
+import React, { useState, useRef, useEffect } from "react";
+import TestimonialCard from "../TestimonialCard";
+import styles from "./ImageSlider.module.css"
+
 
 export default function ImageSlider() {
+  const imgRef = useRef<HTMLDivElement>();
+  
   const slides = [
     {
       comment: "“My mentor helped me land my first job!”",
@@ -21,38 +25,47 @@ export default function ImageSlider() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   let counter = 0;
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    // const newIndex = currentIndex - 1;
-    setCurrentIndex(newIndex);
-    counter--;
-    // let imageSlider = document.querySelector<HTMLElement>(".image_slider");
-    // let cardWidth = imageSlider.children[0].clientWidth;
-    // imageSlider.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-    // console.log("counter is " + imageSlider);
-  };
+   interface ISlidesProps  {
+    comment?: string;
+    img?: string
+  }
+  // let imageSlider = document.querySelector<HTMLElement>(".image_slider");
+  // let cardWidth = imageSlider.children[0].clientWidth;
+  
+  const updateIndex = (newIndex:any) => {
+    if(newIndex < 0) {
+      newIndex = 0;
 
-  const goToNext = () => {
-    // const isLastSlide = currentIndex === slides.length - 1;
-    // const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    // setCurrentIndex(newIndex);
-  };
+    }else if(newIndex >= slides.length){
+      newIndex = slides.length - 1
+    }
+
+    setCurrentIndex(newIndex)
+  }
+  
+ 
   return (
     <>
-      <div className="image_slider_container">
-        <div className="image_slider_left_arrow" onClick={goToPrevious}>
+      <div className={styles.image_slider_container} >
+        <div className={styles.image_slider_left_arrow} onClick={()=> updateIndex(currentIndex - 1)}>
           ❰
         </div>
-        <div className="image_slider_right_arrow" onClick={goToNext}>
+        <div className={styles.image_slider_right_arrow} onClick={()=> updateIndex(currentIndex + 1)}>
           ❱
         </div>
 
-        <div className="slider_show_case">
-          <div className="image_slider">
-            <Card style={{ width: 370, height: 434 }}>
+        <div className={styles.slider_show_case}>
+          <div className={styles.image_slider}  ref={imgRef} style={{transform: `translateX(-${currentIndex * 494}px)`}}>
+            {/* { slides.map((slide:ISlidesProps) => (
+              <Card style={{ width: 370, height: 434, border:'1px solid black' }}
+                comment={slide.comment}
+                img={slide.img}
+              />
+            ))}  */}
+            <Card style={{ width: 370, height: 434, border:'1px solid black' }}>
+            
               <p>{slides[0].comment}</p>
-              <img
+              <img 
                 src={slides[0].img}
                 style={{
                   width: "115px",
@@ -89,9 +102,15 @@ export default function ImageSlider() {
                 alt=""
               />
             </Card>
-            {/* <TestimonialCard comment={slides[0].comment}/>
-          <TestimonialCard/>
-          <TestimonialCard/> */}
+           
+          </div>
+        </div>
+        <div>
+          <div className="img-dot">
+            <div className="dot-circle"></div>
+            <div className="dot-circle"></div>
+            <div className="dot-circle"></div>
+            <div className="dot-circle"></div>
           </div>
         </div>
       </div>
