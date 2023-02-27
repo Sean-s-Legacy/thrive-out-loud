@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from 'antd/lib/checkbox/Checkbox';
 import { Divider, Cascader, Input, Form } from 'antd';
-import styles from '@/styles/profileFormSection.module.css'
+import styles from './profileForm.module.css'
 
 export default function ProfileFormSection() {
     const { TextArea } = Input;
