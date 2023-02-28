@@ -8,6 +8,7 @@ import MentorCard from "../components/MentorCard";
 import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
+import FooterNotAuth from "@/components/FooterNotAuth";
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -72,6 +73,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
+        <FooterNotAuth/>
       </div>
     </>
   );

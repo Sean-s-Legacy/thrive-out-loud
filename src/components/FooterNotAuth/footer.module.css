@@ -1,0 +1,31 @@
+.container {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 0 px 48px;
+    gap: 52px;
+  
+    width: 1600px;
+    height: 400px;
+  
+    background-color: #62379e;
+  }
+
+.heading {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-align: center;
+    color: white;
+}
+
+.buttons {
+    text-align: center;
+}
+.divider {
+    background: #8d57d9;
+}

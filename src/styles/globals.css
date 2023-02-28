@@ -156,6 +156,22 @@
   font-size: 13.5px;
   cursor: pointer;
 }
+/* footer */
+.container {
+   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 px 48px;
+  gap: 52px;
+
+  width: 1600px;
+  height: 400px;
+
+  background-color: #62379e;
+
+}
+
 
 .image_slider_right_arrow {
   position: absolute;
@@ -165,3 +181,4 @@
   font-size: 13.5px;
   cursor: pointer;
 }
+
