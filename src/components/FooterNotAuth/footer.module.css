@@ -7,7 +7,7 @@
     gap: 52px;
   
     width: 1600px;
-    height: 400px;
+    height: 751px;
   
     background-color: #62379e;
   }
@@ -28,4 +28,54 @@
 }
 .divider {
     background: #8d57d9;
+}
+.iconcontainer {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 24px;
+}
+.mail{
+    
+    position:absolute;
+    left: 8.33%;
+    right: 8.33%;
+    top: 16.67%;
+    bottom: 16.67%;
+
+    color: #8d57d9;
+
+    border: 2px solid #8d57d9
+}
+
+.emailtext {
+
+    width:384px;
+    height: 30px;
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    
+    color: #e7d7fe;
+
+}
+
+.text {
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    
+    color: white;
+}
+.container2 {
+    display: grid;
+    grid-template-columns: 220px 240px; 
+        grid-template-rows: 100px;
+        grid-column-gap: 100px;
 }
