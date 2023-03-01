@@ -1,5 +1,4 @@
 .container {
-   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +6,7 @@
     gap: 52px;
   
     width: 1600px;
-    height: 751px;
+    height: 600px;
   
     background-color: #62379e;
   }
@@ -35,8 +34,7 @@
     background: white;
     border-radius: 24px;
 }
-.mail{
-    
+.mail{ 
     position:absolute;
     left: 8.33%;
     right: 8.33%;
@@ -49,7 +47,6 @@
 }
 
 .emailtext {
-
     width:384px;
     height: 30px;
 
@@ -64,18 +61,29 @@
 }
 
 .text {
-
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     
-    color: white;
+    color: #E7D7FE;
+
 }
 .container2 {
     display: grid;
-    grid-template-columns: 220px 240px; 
-        grid-template-rows: 100px;
-        grid-column-gap: 100px;
+    grid-template-columns: 220px 240px 240px; 
+    grid-template-rows: 100px;
+    grid-column-gap: 100px;
 }
+
+.bottom {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between; 
+   width: 250px;
+}
+
+
+
+

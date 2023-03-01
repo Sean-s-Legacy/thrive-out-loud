@@ -21,26 +21,41 @@ export default function FooterNotAuth() {
                </div>
                <Divider className={styles.divider}/>
 
-                <div className={styles.container2}>
-               <div className="col-12 col-md-3">
-               <Image alt="treelogo" width={20} height={16} src="/images/Icon.png"/>
+               <div className={styles.container2}>
+
+               <div>
+               <Image alt="email icon" width={20} height={16} src="/images/Icon.png"/>
                <h4 className={styles.emailtext}>Email</h4>
                <h4 className={styles.text}>Our friendly team is here to help.</h4>
                <h4 className={styles.text}>seanslegacyplaceholder@gmail.com</h4>
                </div>
              
-               <div className="col-12 col-md-3">
-               <Image alt="treelogo" width={20} height={16} src="/images/Iconarrow.png"/>
+               <div>
+               <Image alt="arrow icon" width={20} height={16} src="/images/Iconarrow.png"/>
                <h4 className={styles.emailtext}>Website</h4>
                <h4 className={styles.text}>Come checkout our other programs!</h4>
                <h4 className={styles.text}>seanslegacy.org</h4>
-              </div>
-              </div>
+               </div>
 
+               <div>
+               <Image alt="instagram" width={29.17} height={29.17} src="/images/Vectorinstagram.png"/>
+               <Image alt="linkedin" width={29.17} height={29.17} src="/images/Vectorlinkedin.png"/>
+               <Image alt="facebook" width={29.17} height={29.17} src="/images/Vectorfacebook.png"/>
+               <Image alt="twitter" width={29.17} height={29.17} src="/images/Vectortwitter.png"/>
+               <h4 className={styles.emailtext}>Social Media</h4>
+               <h4 className={styles.text}>Stay up to date on what we’r doing.</h4>
+               </div>
+              </div>
+              <Divider className={styles.divider}/>
+              <div className={styles.bottom}>
+                <h4 className={styles.text}>About us</h4>
+                <h4 className={styles.text}>Find a mentor</h4>
+                <h4 className={styles.text}>Help</h4>
+                </div>
             </div>
           </div>
         </div>
-        
+   
      
   )
 }
