@@ -6,6 +6,7 @@ import * as bodyParser from "body-parser";
 import { routesConfig } from "./routes";
 // const serviceAccount = require("../serviceAccountKey.json");
 
+// @ts-ignore
 const app: express.Application = express();
 
 
