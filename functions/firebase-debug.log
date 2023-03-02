@@ -219,3 +219,113 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2023-03-02T15:40:39.772Z] shutdown requested via /__/quitquitquit
 
 [info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[debug] [2023-03-02T16:02:31.693Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/package.json changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:31.696Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/package-lock.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/package-lock.json changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:32.700Z] Validating nodejs source
+[debug] [2023-03-02T16:02:33.255Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "helmet": "^4.6.0",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T16:02:33.255Z] Building nodejs source
+[debug] [2023-03-02T16:02:33.256Z] Failed to find version of module node: reached end of search path /Users/devfrankrnz/Projects/seans-legacy/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-03-02T16:02:33.257Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T16:02:33.257Z] Found firebase-functions binary at '/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T16:02:33.372Z] Serving at port 8286
+
+[debug] [2023-03-02T16:02:33.638Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T16:02:33.641Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[debug] [2023-03-02T16:02:39.363Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/firestore.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/firestore.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.363Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/firestore.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/firestore.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.363Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/structs.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/structs.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.363Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/structs.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/structs.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/response.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/response.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/response.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/response.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/constants.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/constants.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/constants.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/utils/constants.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/dbService.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/dbService.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/dbService.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/dbService.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/service.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/service.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/service.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/service.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/controller.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/controller.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/controller.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/controller.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/routes.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/routes.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/routes.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/routes.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.364Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/routes.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/routes.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/routes.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/routes.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/app.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/app.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/app.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/app.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/error.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/error.js.map changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:39.365Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/error.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/lib/user/error.js changed, reloading triggers"}}
+[debug] [2023-03-02T16:02:40.367Z] Validating nodejs source
+[debug] [2023-03-02T16:02:40.832Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "helmet": "^4.6.0",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T16:02:40.832Z] Building nodejs source
+[debug] [2023-03-02T16:02:40.832Z] Failed to find version of module node: reached end of search path /Users/devfrankrnz/Projects/seans-legacy/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-03-02T16:02:40.833Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T16:02:40.834Z] Found firebase-functions binary at '/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T16:02:40.911Z] Serving at port 8829
+
+[debug] [2023-03-02T16:02:40.997Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T16:02:40.999Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
