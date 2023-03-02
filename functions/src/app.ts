@@ -1,5 +1,5 @@
 import * as express from "express";
-import * as helmet from "helmet";
+const helmet = require("helmet");
 // import * as cors from "cors";
 import * as bodyParser from "body-parser";
 // const admin = require("firebase-admin");
