@@ -1,9 +1,18 @@
 import * as functions from "firebase-functions";
+const admin = require("firebase-admin");
 
-// // Start writing functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+import application from "./app";
+import { init } from "./utils/firestore";
+
+// Initialise App
+admin.initializeApp();
+const db: FirebaseFirestore.Firestore = admin.firestore();
+init(db);
+
+// const runtimeOpts: any = {
+//   timeoutSeconds: 540,
+//   memory: "4GB",
+// };
+
+// HTTP Requests (Trigger)
+export const app = functions.https.onRequest(application)
