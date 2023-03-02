@@ -1,0 +1,221 @@
+[debug] [2023-03-02T15:37:31.495Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T15:37:31.496Z] Command:       /opt/homebrew/Cellar/node@18/18.14.2/bin/node /opt/homebrew/bin/firebase emulators:start --only functions
+[debug] [2023-03-02T15:37:31.497Z] CLI Version:   11.24.0
+[debug] [2023-03-02T15:37:31.497Z] Platform:      darwin
+[debug] [2023-03-02T15:37:31.497Z] Node Version:  v18.14.2
+[debug] [2023-03-02T15:37:31.498Z] Time:          Thu Mar 02 2023 16:37:31 GMT+0100 (West Africa Standard Time)
+[debug] [2023-03-02T15:37:31.498Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T15:37:31.542Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T15:37:31.543Z] > authorizing via signed-in user (frankarinze086@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-03-02T15:37:31.769Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-02T15:37:31.770Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-03-02T15:37:31.773Z] [hub] writing locator at /var/folders/2x/r7tdxmh535l4z8hwf40my_hc0000gn/T/hub-seans-legacy.json
+[debug] [2023-03-02T15:37:31.920Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-02T15:37:31.921Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-02T15:37:31.921Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-03-02T15:37:31.922Z] defaultcredentials: writing to file /Users/devfrankrnz/.config/firebase/frankarinze086_gmail_com_application_default_credentials.json
+[debug] [2023-03-02T15:37:31.927Z] Setting GAC to /Users/devfrankrnz/.config/firebase/frankarinze086_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/devfrankrnz/.config/firebase/frankarinze086_gmail_com_application_default_credentials.json"}}
+[debug] [2023-03-02T15:37:31.928Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/seans-legacy/adminSdkConfig [none]
+[debug] [2023-03-02T15:37:32.495Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/seans-legacy/adminSdkConfig 200
+[debug] [2023-03-02T15:37:32.496Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/seans-legacy/adminSdkConfig {"projectId":"seans-legacy","storageBucket":"seans-legacy.appspot.com"}
+[debug] [2023-03-02T15:37:32.539Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-02T15:37:32.539Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-03-02T15:37:32.539Z] Starting Emulator UI with command {"binary":"node","args":["/Users/devfrankrnz/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/devfrankrnz/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-03-02T15:37:32.625Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-03-02T15:37:32.626Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/devfrankrnz/Projects/seans-legacy/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/devfrankrnz/Projects/seans-legacy/functions\" for Cloud Functions..."}}
+[debug] [2023-03-02T15:37:32.813Z] Validating nodejs source
+[debug] [2023-03-02T15:37:33.279Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "helmet": "^4.1.1",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T15:37:33.280Z] Building nodejs source
+[debug] [2023-03-02T15:37:33.281Z] Failed to find version of module node: reached end of search path /Users/devfrankrnz/Projects/seans-legacy/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-03-02T15:37:33.283Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T15:37:33.288Z] Found firebase-functions binary at '/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T15:37:33.377Z] Serving at port 8041
+
+[debug] [2023-03-02T15:37:33.605Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T15:37:33.609Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[info] ✔  functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/seans-legacy/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/seans-legacy/us-central1/app)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-03-02T15:37:37.934Z] [work-queue] {"queuedWork":["/seans-legacy/us-central1/app/users/createMentee-2023-03-02T15:37:37.933Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-03-02T15:37:37.935Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/seans-legacy/us-central1/app/users/createMentee-2023-03-02T15:37:37.933Z"],"workRunningCount":1}
+[debug] [2023-03-02T15:37:37.935Z] Accepted request POST /seans-legacy/us-central1/app/users/createMentee --> us-central1-app
+[debug] [2023-03-02T15:37:37.940Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-03-02T15:37:37.942Z] [functions] Got req.url=/seans-legacy/us-central1/app/users/createMentee, mapping to path=/users/createMentee {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/seans-legacy/us-central1/app/users/createMentee, mapping to path=/users/createMentee"}}
+[debug] [2023-03-02T15:37:37.952Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2023-03-02T15:37:37.952Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2023-03-02T15:37:38.513Z] [runtime-status] [83525] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.513Z] [runtime-status] [83525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.513Z] [runtime-status] [83525] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-03-02T15:37:38.514Z] [runtime-status] [83525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.583Z] [runtime-status] [83525] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-03-02T15:37:38.583Z] [runtime-status] [83525] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-03-02T15:37:38.583Z] [runtime-status] [83525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.584Z] [runtime-status] [83525] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.584Z] [runtime-status] [83525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-03-02T15:37:38.585Z] [runtime-status] [83525] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.5.0","resolution":"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.5.0\",\"resolution\":\"/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-03-02T15:37:38.627Z] [runtime-status] [83525] initializeApp(DEFAULT) {"storageBucket":"seans-legacy.appspot.com","projectId":"seans-legacy"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] initializeApp(DEFAULT) {\"storageBucket\":\"seans-legacy.appspot.com\",\"projectId\":\"seans-legacy\"}"}}
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Firestore emulator is not running, so calls to Firestore will affect production."}}
+[debug] [2023-03-02T15:37:38.630Z] [runtime-status] [83525] Functions runtime initialized. {"cwd":"/Users/devfrankrnz/Projects/seans-legacy/functions","node_version":"18.14.2"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Functions runtime initialized. {\"cwd\":\"/Users/devfrankrnz/Projects/seans-legacy/functions\",\"node_version\":\"18.14.2\"}"}}
+[debug] [2023-03-02T15:37:38.630Z] [runtime-status] [83525] Listening to port: /var/folders/2x/r7tdxmh535l4z8hwf40my_hc0000gn/T/fire_emu_7949cc665c9f2f64.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [83525] Listening to port: /var/folders/2x/r7tdxmh535l4z8hwf40my_hc0000gn/T/fire_emu_7949cc665c9f2f64.sock"}}
+[debug] [2023-03-02T15:37:38.667Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: IDLE"}}
+[debug] [2023-03-02T15:37:38.667Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[info] i  functions: Beginning execution of "us-central1-app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"us-central1-app\""}}
+[debug] [2023-03-02T15:37:38.667Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: BUSY"}}
+[info] >  * Route : USERS {"user":"* Route : USERS","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m * Route : USERS"}}
+[info] >  /users/createMentee {"user":"/users/createMentee","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m /users/createMentee"}}
+[info] >  +++++++++++++++++++ create Mentee +++++++++++++++++++ {"user":"+++++++++++++++++++ create Mentee +++++++++++++++++++","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m +++++++++++++++++++ create Mentee +++++++++++++++++++"}}
+[info] >  +++++++++++++++++++ create Mentee +++++++++++++++++++ {"user":"+++++++++++++++++++ create Mentee +++++++++++++++++++","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m +++++++++++++++++++ create Mentee +++++++++++++++++++"}}
+[warn] ⚠  functions: The Firebase Authentication emulator is not running, so calls to Firebase Authentication will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Firebase Authentication emulator is not running, so calls to Firebase Authentication will affect production."}}
+[warn] ⚠  Google API requested!
+   - URL: "https://oauth2.googleapis.com/token"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Google API requested!\n   - URL: \"https://oauth2.googleapis.com/token\"\n   - Be careful, this may be a production service."}}
+[info] >  +++++++++++++++++++ after create +++++++++++++++++++ {"user":"+++++++++++++++++++ after create +++++++++++++++++++","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m +++++++++++++++++++ after create +++++++++++++++++++"}}
+[info] >  WriteResult { {"user":"WriteResult {","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m WriteResult {"}}
+[info] >    _writeTime: Timestamp { _seconds: 1677771462, _nanoseconds: 680223000 } {"user":"  _writeTime: Timestamp { _seconds: 1677771462, _nanoseconds: 680223000 }","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m   _writeTime: Timestamp { _seconds: 1677771462, _nanoseconds: 680223000 }"}}
+[info] >  } {"user":"}","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"\u001b[90m> \u001b[39m }"}}
+[info] i  functions: Finished "us-central1-app" in 3731.232417ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"us-central1-app\" in 3731.232417ms"}}
+[debug] [2023-03-02T15:37:42.405Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: IDLE"}}
+[debug] [2023-03-02T15:37:42.405Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-03-02T15:40:23.852Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/src/user/dbService.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/src/user/dbService.ts changed, reloading triggers"}}
+[debug] [2023-03-02T15:40:24.874Z] Validating nodejs source
+[debug] [2023-03-02T15:40:25.454Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "helmet": "^4.1.1",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T15:40:25.454Z] Building nodejs source
+[debug] [2023-03-02T15:40:25.454Z] Failed to find version of module node: reached end of search path /Users/devfrankrnz/Projects/seans-legacy/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-03-02T15:40:25.456Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T15:40:25.457Z] Found firebase-functions binary at '/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T15:40:25.574Z] Serving at port 8250
+
+[debug] [2023-03-02T15:40:25.724Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T15:40:25.727Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[debug] [2023-03-02T15:40:25.730Z] [worker-pool] Shutting down IDLE worker (us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-app)"}}
+[debug] [2023-03-02T15:40:25.730Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: FINISHING"}}
+[debug] [2023-03-02T15:40:25.738Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: exited"}}
+[debug] [2023-03-02T15:40:25.738Z] [worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-9b3574b2-5445-4b60-8ff8-53b70a332f02]: FINISHED"}}
+[debug] [2023-03-02T15:40:37.936Z] File /Users/devfrankrnz/Projects/seans-legacy/functions/src/user/dbService.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/devfrankrnz/Projects/seans-legacy/functions/src/user/dbService.ts changed, reloading triggers"}}
+[debug] [2023-03-02T15:40:38.939Z] Validating nodejs source
+[debug] [2023-03-02T15:40:39.537Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "helmet": "^4.1.1",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T15:40:39.537Z] Building nodejs source
+[debug] [2023-03-02T15:40:39.537Z] Failed to find version of module node: reached end of search path /Users/devfrankrnz/Projects/seans-legacy/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-03-02T15:40:39.538Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T15:40:39.538Z] Found firebase-functions binary at '/Users/devfrankrnz/Projects/seans-legacy/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T15:40:39.635Z] Serving at port 8559
+
+[debug] [2023-03-02T15:40:39.770Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T15:40:39.772Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
