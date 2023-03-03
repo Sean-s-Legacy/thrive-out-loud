@@ -5,7 +5,7 @@ import { Space, Input } from "antd";
 import SignupBtn from "../SignupBtn/index";
 import FindAMentorBtn from "../FindAMentorBtn/index";
 import LoginBtn from "../LoginBtn/index";
-import styles from './Navbar.module.css'
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const { Search } = Input;

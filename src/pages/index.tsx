@@ -14,7 +14,7 @@ import ImageSlider from "../components/ImageSlider/index";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <section className="landing">
           <div className="landing_title">
