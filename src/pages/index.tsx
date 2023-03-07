@@ -9,8 +9,6 @@ import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 
-// const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
     <>
