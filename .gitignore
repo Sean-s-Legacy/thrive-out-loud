@@ -28,9 +28,21 @@ yarn-error.log*
 # local env files
 .env*.local
 
+
+# React Production build folder
+build
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
 # Firebase SDK/Config
 service-account-key.json
 firebaseConfig.js
+functions/lib
+
 
 # vercel
 .vercel
@@ -38,3 +50,8 @@ firebaseConfig.js
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+functions/node_modules/
+functions/lib
+
+# IDE files
+.vscode/
