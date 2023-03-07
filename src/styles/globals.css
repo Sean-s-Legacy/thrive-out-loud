@@ -1,4 +1,4 @@
-@import "antd/dist/antd.css";
+/* @import "antd/dist/antd.css"; */
 /* @import "antd/dist/reset.css"; */
 
 * {
@@ -7,6 +7,129 @@
   margin: 0;
 }
 
+/* -------- Typography */
+
+/* Body Text */
+p {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 133%;
+}
+
+/* Font-weights */
+.mediumWeight {
+  font-weight: 500;
+}
+.semibold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+
+/* Font-sizes */
+.textLarge {
+  font-size: 20px;
+}
+
+/* Font Styles */
+.underline {
+  text-decoration: underline;
+}
+.italic {
+  font-style: italic;
+}
+.footnote {
+  font-size: 14px;
+  line-height: 143%;
+}
+
+/* Text Colors */
+.textInverse {
+  color: var(--white);
+}
+.textPrimary8 {
+  color: var(--primary8);
+}
+
+/* -------- Buttons */
+
+/* -- Primary */
+button.ant-btn.ant-btn-primary {
+  border: 1px solid var(--primary6);
+}
+button.ant-btn.ant-btn-primary:not([disabled]):hover,
+button.ant-btn.ant-btn-primary:not([disabled]):focus {
+  background-color: var(--primary6);
+  border: 1px solid var(--primary6);
+}
+button.ant-btn.ant-btn-primary:not([disabled]):active {
+  background-color: var(--primary7);
+  border: 1px solid var(--primary7);
+}
+button.ant-btn.ant-btn-primary.ant-btn-background-ghost:not([disabled]):hover,
+button.ant-btn.ant-btn-primary.ant-btn-background-ghost:not([disabled]):focus {
+  background-color: transparent;
+  color: var(--primary6);
+  border: 1px solid var(--primary6);
+}
+button.ant-btn.ant-btn-primary.ant-btn-background-ghost:not([disabled]):active {
+  background-color: transparent;
+}
+
+/* -- Default */
+button.ant-btn.ant-btn-default:not([disabled]):hover,
+button.ant-btn.ant-btn-default:not([disabled]):focus {
+  border: 1px solid var(--primary5);
+  color: var(--primary5);
+}
+button.ant-btn.ant-btn-default:not([disabled]):active {
+  border: 1px solid var(--primary7);
+  color: var(--primary7);
+}
+
+/* -- Dashed */
+button.ant-btn.ant-btn-dashed:not([disabled]):hover,
+button.ant-btn.ant-btn-dashed:not([disabled]):focus {
+  border: 1px solid var(--primary5);
+  color: var(--primary5);
+}
+button.ant-btn.ant-btn-dashed:not([disabled]):active {
+  border: 1px solid var(--primary7);
+  color: var(--primary7);
+}
+
+/* -- Link */
+button.ant-btn.ant-btn-link:not([disabled]):hover,
+button.ant-btn.ant-btn-link:not([disabled]):focus {
+  color: var(--primary6);
+}
+button.ant-btn.ant-btn-link:not([disabled]):active {
+  color: var(--primary7);
+}
+
+/* -- Text */
+button.ant-btn.ant-btn-text:not([disabled]):hover,
+button.ant-btn.ant-btn-text:not([disabled]):focus {
+  background-color: var(--neutral2);
+}
+button.ant-btn.ant-btn-text:not([disabled]):active {
+  background-color: var(--neutral3);
+}
+
+/* Styles to be moved in locally scoped files */
 .nav_container {
   display: flex;
   gap: 60px;
@@ -143,7 +266,7 @@
 .image_slider {
   display: flex;
   justify-content: space-between;
-  gap: 5%;
+  /* gap: 20px; */
 
   transition: all 0.5s 0.2s ease;
 }
@@ -156,6 +279,22 @@
   font-size: 13.5px;
   cursor: pointer;
 }
+/* footer */
+.container {
+   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 px 48px;
+  gap: 52px;
+
+  width: 1600px;
+  height: 400px;
+
+  background-color: #62379e;
+
+}
+
 
 .image_slider_right_arrow {
   position: absolute;
