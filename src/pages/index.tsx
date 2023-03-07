@@ -11,8 +11,6 @@ import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
 
 
-// const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
     <>
