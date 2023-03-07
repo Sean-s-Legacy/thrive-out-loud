@@ -55,3 +55,6 @@ functions/lib
 
 # IDE files
 .vscode/
+
+
+package-lock.json
