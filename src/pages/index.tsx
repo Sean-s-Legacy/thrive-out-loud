@@ -9,7 +9,7 @@ import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
-import SignUpModal from "@/components/SignUpModal.tsx";
+import SignUpModal from "@/components/SignUpModal";
 
 
 // const inter = Inter({ subsets: ['latin'] })
