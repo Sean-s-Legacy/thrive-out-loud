@@ -1,4 +1,6 @@
-import firebase from "../path/to/firebaseConfig.js";
+// import firebase from "../path/to/firebaseConfig.js";
+import firebase from 'firebase/app'
+
 
 const authenticateUser = async (email, password) => {
   try {
