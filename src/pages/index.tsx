@@ -1,18 +1,20 @@
 import Image from "next/image";
 import { Montserrat } from "@next/font/google";
 import styles from "./page.module.css";
-import Navbar from "../components/Navbar";
-import SignupBtn from "../components/SignupBtn";
+import Navbar from "../components/Navbar/index";
+import SignupBtn from "../components/SignupBtn/index";
 import { Button, Space } from "antd";
 import MentorCard from "../components/MentorCard";
 import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
+import FooterNotAuth from "@/components/FooterNotAuth";
+
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <section className="landing">
           <div className="landing_title">
@@ -70,6 +72,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
+        <FooterNotAuth/>
       </div>
     </>
   );

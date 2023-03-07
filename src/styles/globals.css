@@ -1,3 +1,6 @@
+/* @import "antd/dist/antd.css"; */
+/* @import "antd/dist/reset.css"; */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -263,7 +266,7 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
 .image_slider {
   display: flex;
   justify-content: space-between;
-  gap: 5%;
+  /* gap: 20px; */
 
   transition: all 0.5s 0.2s ease;
 }
@@ -276,6 +279,22 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   font-size: 13.5px;
   cursor: pointer;
 }
+/* footer */
+.container {
+   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 px 48px;
+  gap: 52px;
+
+  width: 1600px;
+  height: 400px;
+
+  background-color: #62379e;
+
+}
+
 
 .image_slider_right_arrow {
   position: absolute;
@@ -285,3 +304,4 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   font-size: 13.5px;
   cursor: pointer;
 }
+
