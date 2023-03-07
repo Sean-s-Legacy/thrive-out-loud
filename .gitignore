@@ -37,8 +37,4 @@ firebaseConfig.js
 
 # typescript
 *.tsbuildinfo
-
-#editor
-/.idea
-.idea
-components/sections/Homepage/*
+next-env.d.ts
