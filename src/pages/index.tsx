@@ -9,6 +9,7 @@ import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
+import SignUpModal from "@/components/SignUpModal";
 
 
 export default function Home() {
@@ -72,6 +73,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
+        <SignUpModal/>
         <FooterNotAuth/>
       </div>
     </>
