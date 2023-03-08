@@ -26,6 +26,7 @@ h6 {
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   line-height: 133%;
+  font-weight: 500;
 }
 
 /* Font-weights */
@@ -128,6 +129,60 @@ button.ant-btn.ant-btn-text:not([disabled]):focus {
 button.ant-btn.ant-btn-text:not([disabled]):active {
   background-color: var(--neutral3);
 }
+/* -------- Input */
+/* Focus */
+input.ant-input:focus,
+input.ant-input-focused {
+  border: 1px solid var(--primary5);
+  box-shadow: 0px 0px 0px 2px rgba(120, 24, 255, 0.2);
+}
+
+/* Large */
+input.ant-input.ant-input-lg {
+  font-size: 16px;
+}
+
+/* -------- Modals */
+/* Close Button Icon */
+
+/* -------- Space */
+/* Close Button Icon */
+
+.space1 {
+  gap: 16px;
+}
+.space2 {
+  gap: 20px;
+}
+
+/* Media Queries for responsive design */
+/* variables in variables.less take priority over globals.css 
+If resizing will be required, variables in variables.less will have to be set to :none
+
+ex. if h1 will need to resize from 38px to 30px on mobile, @heading-1-size in variables.less 
+will need to be cleared using :none and h1.ant-typography be set in globals.
+Alternatively, there may be a library that deals with resizing */
+/* span.ant-typography {
+  font-size: 16px;
+}
+span.ant-typography.textLarge {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  span.ant-typography {
+    font-size: 12px;
+  }
+  span.ant-typography.textLarge {
+    font-size: 18px;
+  }
+} */
+
+/* @media screen and (max-width: 600px) {
+  h2.ant-typography {
+    font-size: 14px;
+  }
+} */
 
 /* Styles to be moved in locally scoped files */
 .nav_container {
@@ -281,7 +336,6 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
 }
 /* footer */
 .container {
-   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,9 +346,7 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   height: 400px;
 
   background-color: #62379e;
-
 }
-
 
 .image_slider_right_arrow {
   position: absolute;
@@ -304,4 +356,3 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   font-size: 13.5px;
   cursor: pointer;
 }
-

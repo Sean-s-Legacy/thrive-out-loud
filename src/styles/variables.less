@@ -21,7 +21,7 @@
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 // -- Typography
-@typography-title-font-weight: 500;
+@typography-title-font-weight: none;
 @text-color-secondary: fade(@black, 55%);
 @font-size-sm: 14px;
 @font-size-base: 16px;
@@ -58,7 +58,7 @@
 @margin-xs: 8px; // small items
 @margin-xss: 4px; // more small
 
-//Buttons
+//Button Component
 @btn-font-weight: 600;
 @btn-shadow:0px 2px 0px rgba(0, 0, 0, 0.016);
 @btn-primary-shadow:0px 2px 0px rgba(0, 0, 0, 0.043);
@@ -79,3 +79,37 @@
 @btn-circle-size: 32px;
 @btn-circle-size-lg: 40px;
 @btn-circle-size-sm: 24px;
+
+// Input Component
+@input-height-base: 32px;
+@input-height-lg: @height-lg;
+@input-height-sm: @height-sm;
+@input-padding-horizontal: @control-padding-horizontal - 1px;
+@input-padding-horizontal-base: @input-padding-horizontal;
+@input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
+@input-padding-horizontal-lg: @input-padding-horizontal;
+@input-padding-vertical-base: @padding-xss;
+@input-padding-vertical-sm: 0px;
+@input-padding-vertical-lg: @padding-xs;
+@input-placeholder-color: @disabled-color;
+@input-color: @text-color;
+@input-icon-color: @input-color;
+@input-border-color: @border-color-base;
+@input-bg: @component-background;
+@input-number-hover-border-color: @input-hover-border-color;
+@input-number-handler-active-bg: #f4f4f4;
+@input-number-handler-hover-bg: @primary-5;
+@input-number-handler-bg: @component-background;
+@input-number-handler-border-color: @border-color-base;
+@input-addon-bg: @background-color-light;
+@input-hover-border-color: @primary-5;
+@input-disabled-bg: @disabled-bg;
+@input-outline-offset: 0 0;
+@input-icon-hover-color: fade(@black, 85%);
+@input-disabled-color: @disabled-color;
+
+// Modal
+// --
+@modal-body-padding: @padding-lg;
+@modal-header-close-size: 60px;
+@modal-close-color: @neutral9;
