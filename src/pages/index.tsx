@@ -12,8 +12,6 @@ import FooterNotAuth from "@/components/FooterNotAuth";
 import SignUpModal from "@/components/SignUpModal";
 
 
-// const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
     <>
