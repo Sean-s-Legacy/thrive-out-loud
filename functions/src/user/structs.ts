@@ -22,3 +22,7 @@ export interface MenteeSignUpPayLoad {
     //photoURL: string,
     disabled: boolean
   }
+
+export interface MenteeUpdatePayload {
+  
+}

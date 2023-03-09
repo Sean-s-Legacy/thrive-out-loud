@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 
-import { createMentee } from "./controller";
+import { createMentee, updateMentee } from "./controller";
 
 
 
@@ -20,5 +20,8 @@ router.use((req: Request, res: Response, next: Function) => {
 
 // create new mentee
 router.post('/createMentee', [createMentee]);
+
+// update mentee account
+router.post('/updateMentee', [updateMentee]);
 
 export default router;

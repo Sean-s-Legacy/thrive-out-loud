@@ -1,4 +1,4 @@
-import { FirebaseUserPayload } from "./structs";
+import { FirebaseUserPayload, MenteeSignUpPayLoad } from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService"
 // @ts-ignore
@@ -57,4 +57,17 @@ export const createMenteeAccount = async (payload: any) => {
     //   });
     //   res.json(userResponse); 
     // })
+}
+
+export const updateMenteeAccount = async (payload: MenteeSignUpPayLoad) => {
+    console.log(
+        "+++++++++++++++++++ Update Mentee +++++++++++++++++++"
+    );
+
+    try {
+        if (!!payload) {
+            const {user_email, user_pswd, user_name_first, user_name_last} = payload;
+
+        }
+    }
 }

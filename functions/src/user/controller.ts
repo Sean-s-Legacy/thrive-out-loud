@@ -1,4 +1,4 @@
-import {MenteeSignUpPayLoad } from "./structs";
+import {MenteeSignUpPayLoad, MenteeUpdatePayload } from "./structs";
 // import * as admin from "firebase-admin";
 import { Request, Response } from "express";
 import { AppError, AppSuccess } from "../utils/response";
@@ -78,4 +78,26 @@ export const createMentee = async (req: Request, res: Response) => {
         
     }
   
+}
+
+export const updateMentee = async (req: Request, res: Response) => {
+    console.log(
+        "+++++++++++++++++++ update Mentee +++++++++++++++++++"
+    );
+
+    try {
+      const payload: MenteeUpdatePayload = req.body;
+      const result = await service.updateMenteeAccount(payload)
+
+      const success_response: AppSuccess = {
+        status: constants.SUCCESS_MSG,
+        code: constants.CREATE_SUCCESS_CODE,
+        data: result,
+      };
+
+      return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
+    }
+    catch (error) {
+      return handleError(res, error);
+    }
 }
