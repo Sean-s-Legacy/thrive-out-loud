@@ -19,6 +19,7 @@ export default function FooterNotAuth() {
                <Button>Login</Button>
                <Button>Sign up</Button>
                </div>
+               
                <Divider className={styles.divider}/>
 
                <div className={styles.container2}>
