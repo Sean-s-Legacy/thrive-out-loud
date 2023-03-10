@@ -1,0 +1,31 @@
+.container1 {
+    display: grid;
+    grid-template-columns: 220px 200px ; 
+    grid-template-rows: px;
+    grid-column-gap: 184px;
+}
+
+.image {
+    float: right;
+}
+
+.headingWelcome {
+    color: #1a1028;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.createaccount {
+
+    color: #706685;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+

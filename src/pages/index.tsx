@@ -7,6 +7,7 @@ import MentorCard from "../components/MentorCard";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
+import SignUpModal from "@/components/SignUpModal";
 
 export default function Home() {
   return (
@@ -68,7 +69,8 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <FooterNotAuth />
+        <SignUpModal/>
+        <FooterNotAuth/>
       </div>
     </>
   );
