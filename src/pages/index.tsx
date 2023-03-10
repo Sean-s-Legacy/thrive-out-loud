@@ -9,6 +9,8 @@ import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
+import React from "react";
+import LoginBtn from "@/components/LoginBtn";
 
 
 export default function Home() {
@@ -16,6 +18,7 @@ export default function Home() {
     <>
       {/* <Navbar /> */}
       <div>
+        <LoginBtn/>
         <section className="landing">
           <div className="landing_title">
             <h1>
