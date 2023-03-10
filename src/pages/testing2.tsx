@@ -9,7 +9,7 @@ import {
 } from "antd";
 import { Clock } from "phosphor-react";
 
-function testing2(props) {
+function Testing2(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { Title, Text } = Typography;
@@ -59,4 +59,4 @@ function testing2(props) {
   );
 }
 
-export default testing2;
+export default Testing2;
