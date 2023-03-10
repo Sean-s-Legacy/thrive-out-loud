@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Button, Modal, Typography, Input } from "antd";
+import {
+  Button,
+  Modal,
+  Typography,
+  Input,
+  InputNumber,
+  TimePicker,
+} from "antd";
+import { Clock } from "phosphor-react";
 
 function testing2(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,13 +27,17 @@ function testing2(props) {
   };
   return (
     <>
-      <Input size="large" placeholder="large size" />
-      <br />
-      <br />
-      <Input placeholder="default size" />
-      <br />
-      <br />
-      <Input size="small" placeholder="small size" />
+      <Input size="large" placeholder="First Name" />
+      <Input size="large" placeholder="Pronouns" />
+      <Input size="large" placeholder="Timezone" />
+      <TimePicker.RangePicker />
+      <InputNumber size="small" controls={false} placeholder="Input Number" />
+      <Input
+        size="small"
+        placeholder="Input"
+        addonBefore={<Clock size={20} weight="light" />}
+        addonAfter={<Clock size={20} weight="light" />}
+      />
 
       <Button type="primary" onClick={showModal}>
         Open Modal
@@ -38,7 +50,7 @@ function testing2(props) {
         onCancel={handleCancel}
         footer={null}
       >
-        <Title type={2}>My Title</Title>
+        <Title level={2}>My Title</Title>
         <Text>My text</Text>
         <Text>My text</Text>
         <Text>My text</Text>

@@ -2,14 +2,11 @@ import Image from "next/image";
 import { Montserrat } from "@next/font/google";
 import styles from "./page.module.css";
 import Navbar from "../components/Navbar/index";
-import SignupBtn from "../components/SignupBtn/index";
 import { Button, Space } from "antd";
 import MentorCard from "../components/MentorCard";
-import FindAMentorBtn from "../components/FindAMentorBtn";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
-
 
 export default function Home() {
   return (
@@ -26,7 +23,6 @@ export default function Home() {
               <br />a mentor can help you take the next step.
             </h2>
             <Space wrap>
-              <SignupBtn />
               <Button className="common_btn">Learn more</Button>
             </Space>
           </div>
@@ -72,7 +68,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <FooterNotAuth/>
+        <FooterNotAuth />
       </div>
     </>
   );
