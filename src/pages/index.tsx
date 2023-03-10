@@ -11,6 +11,7 @@ import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
 import React from "react";
 import LoginBtn from "@/components/LoginBtn";
+import SignUpModal from "@/components/SignUpModal";
 
 
 export default function Home() {
@@ -75,6 +76,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
+        <SignUpModal/>
         <FooterNotAuth/>
       </div>
     </>
