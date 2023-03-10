@@ -14,6 +14,8 @@
 @primary-color-hover: @primary6;
 @primary-color-active: @primary7;
 
+@background-color-base: @neutral3;
+
 // -------- Body -----------
 // -- Fonts
 @font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -21,15 +23,15 @@
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 // -- Typography
-@typography-title-font-weight: 500;
+@typography-title-font-weight: none;
 @text-color-secondary: fade(@black, 55%);
 @font-size-sm: 14px;
 @font-size-base: 16px;
-@font-size-lg: @font-size-base + 4px;
-@heading-1-size: 38px;
-@heading-2-size: 30px;
-@heading-3-size: 24px;
-@line-height-base: 140%;
+@font-size-lg: @font-size-base;
+@heading-1-size: none;
+@heading-2-size: none;
+@heading-3-size: none;
+@line-height-base: 150%;
 @border-radius-base: 12px;
 
 // -- Disabled states
@@ -58,7 +60,11 @@
 @margin-xs: 8px; // small items
 @margin-xss: 4px; // more small
 
-//Buttons
+//Button Component
+// removes animation when clicking buttons
+[ant-click-animating-without-extra-node="true"]::after {
+  display: none;
+}
 @btn-font-weight: 600;
 @btn-shadow:0px 2px 0px rgba(0, 0, 0, 0.016);
 @btn-primary-shadow:0px 2px 0px rgba(0, 0, 0, 0.043);
@@ -79,3 +85,24 @@
 @btn-circle-size: 32px;
 @btn-circle-size-lg: 40px;
 @btn-circle-size-sm: 24px;
+
+// Input Component
+@input-padding-vertical-base: @padding-xss;
+@input-padding-vertical-sm: 0px;
+@input-padding-vertical-lg: @padding-xs;
+
+@input-placeholder-color: @disabled-color;
+@input-icon-color: @disabled-color;
+
+@input-addon-bg: @component-background;
+@input-hover-border-color: @primary5;
+@input-disabled-bg: @disabled-bg;
+@input-outline-offset: 0 0;
+@input-icon-hover-color: fade(@black, 85%);
+@input-disabled-color: @disabled-color;
+
+// Modal
+// --
+@modal-body-padding: @padding-lg;
+@modal-header-close-size: 60px;
+@modal-close-color: @neutral9;
