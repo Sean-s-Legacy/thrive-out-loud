@@ -27,7 +27,7 @@ export default function Home() {
               <br />a mentor can help you take the next step.
             </h2>
             <Space wrap>
-              <SignupBtn />
+              <SignUpModal />
               <Button className="common_btn">Learn more</Button>
             </Space>
           </div>
@@ -73,7 +73,6 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <SignUpModal/>
         <FooterNotAuth/>
       </div>
     </>
