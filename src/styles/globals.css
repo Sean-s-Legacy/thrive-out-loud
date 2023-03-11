@@ -75,13 +75,40 @@ h3.ant-typography {
   font-size: 14px;
   line-height: 143%;
 }
+.textAlignCenter {
+  text-align: center;
+}
 
 /* Text Colors */
+.ant-typography.textInverse,
 .textInverse {
   color: var(--white);
 }
+.ant-typography.textPrimary8,
 .textPrimary8 {
   color: var(--primary8);
+}
+.ant-typography.textPrimary3,
+.textPrimary3 {
+  color: var(--primary3);
+}
+.ant-typography.textPrimary2,
+.textPrimary2,
+.textPrimary2 a,
+.textPrimary2 p,
+.textPrimary2 span {
+  color: var(--primary2);
+}
+
+/* Links */
+a {
+  color: var(--primary7);
+}
+a:hover {
+  color: var(--primary6);
+}
+a:active {
+  color: var (--primary7);
 }
 
 /* Responsive Heading and Text font-sizes */
@@ -286,11 +313,82 @@ prop inside the phosphor-react component */
 
 /* -------- Space */
 
-.space1 {
+.vertical {
+  flex-direction: column;
+}
+.space-1 {
+  display: flex;
+  gap: 4px;
+}
+.space-2 {
+  display: flex;
+  gap: 8px;
+}
+.space-3 {
+  display: flex;
+  gap: 12px;
+}
+.space-4 {
+  display: flex;
   gap: 16px;
 }
-.space2 {
+.space-5 {
+  display: flex;
   gap: 20px;
+}
+.space-6 {
+  display: flex;
+  gap: 24px;
+}
+.space-7 {
+  display: flex;
+  gap: 32px;
+}
+.space-8 {
+  display: flex;
+  gap: 40px;
+}
+.space-9 {
+  display: flex;
+  gap: 48px;
+}
+.space-10 {
+  display: flex;
+  gap: 64px;
+}
+.space-11 {
+  display: flex;
+  gap: 80px;
+}
+.space-12 {
+  display: flex;
+  gap: 96px;
+}
+.space-13 {
+  display: flex;
+  gap: 128px;
+}
+.space-14 {
+  display: flex;
+  gap: 160px;
+}
+.space-15 {
+  display: flex;
+  gap: 192px;
+}
+.space-16 {
+  display: flex;
+  gap: 224px;
+}
+.space-17 {
+  display: flex;
+  gap: 256px;
+}
+
+/* --------- Divider */
+.ant-divider.ant-divider-horizontal {
+  background-color: var(--primary6);
+  margin: 0;
 }
 
 /* Media Queries for responsive design */

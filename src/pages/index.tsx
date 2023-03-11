@@ -8,11 +8,11 @@ import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
 import SignUpModal from "@/components/SignUpModal";
+import FooterAuth from "@/components/FooterAuth";
 
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
       <div>
         <section className="landing">
           <div className="landing_title">
@@ -69,8 +69,7 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <SignUpModal/>
-        <FooterNotAuth/>
+        <SignUpModal />
       </div>
     </>
   );
