@@ -10,8 +10,8 @@ import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
 import React from "react";
-import LoginBtn from "@/components/LoginBtn";
 import SignUpModal from "@/components/SignUpModal";
+import LoginBtn from "@/components/LoginBtn";
 
 
 export default function Home() {
