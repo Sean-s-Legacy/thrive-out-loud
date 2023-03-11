@@ -206,22 +206,23 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
 }
 
 .checkout_mentors {
+  margin: 0 auto;
   padding: 50px;
+  width: 70%;
 }
 
 .checkout_mentors_title {
-  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
 
 .mentor_card_section {
   display: flex;
-  gap: 20px;
-  justify-content: space-around;
+  gap: 70px;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
-  padding: 70px 0 40px 0;
+
+  padding: 100px 0;
 }
 
 .mentor_card_section > div {
@@ -281,7 +282,6 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
 }
 /* footer */
 .container {
-   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,9 +292,7 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   height: 400px;
 
   background-color: #62379e;
-
 }
-
 
 .image_slider_right_arrow {
   position: absolute;
@@ -304,4 +302,3 @@ button.ant-btn.ant-btn-text:not([disabled]):active {
   font-size: 13.5px;
   cursor: pointer;
 }
-
