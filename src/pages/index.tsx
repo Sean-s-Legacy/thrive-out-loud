@@ -7,13 +7,17 @@ import MentorCard from "../components/MentorCard";
 import Testimonials from "../components/TestimonialCard";
 import ImageSlider from "../components/ImageSlider";
 import FooterNotAuth from "@/components/FooterNotAuth";
+import React from "react";
 import SignUpModal from "@/components/SignUpModal";
+import LoginBtn from "@/components/LoginBtn";
+
 import FooterAuth from "@/components/FooterAuth";
 
 export default function Home() {
   return (
     <>
       <div>
+        <LoginBtn/>
         <section className="landing">
           <div className="landing_title">
             <h1>
