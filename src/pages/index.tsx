@@ -1,13 +1,10 @@
 import Image from "next/image";
 import { Montserrat } from "@next/font/google";
 import styles from "./page.module.css";
-import Navbar from "../components/Navbar/index";
-import SignupBtn from "../components/SignupBtn/index";
 import { Divider, Typography, Button, Space } from "antd";
 
-import MentorCard from "../components/MentorCard/index";
-import FindAMentorBtn from "../components/FindAMentorBtn";
-import Testimonials from "../components/TestimonialCard";
+import Mentors from "../components/Mentors/index";
+
 import ImageSlider from "../components/ImageSlider/index";
 import FooterNotAuth from "@/components/FooterNotAuth";
 import SignUpModal from "@/components/SignUpModal";
@@ -64,12 +61,7 @@ export default function Home() {
             </Text>
           </div>
           <div className="mentor_card_section">
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
+            <Mentors />
           </div>
           <div className="find_mentor_btn_section">
             <Button type="primary" size="large">
