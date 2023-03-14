@@ -1,11 +1,14 @@
 .nav_container {
   display: flex;
-  gap: 60px;
+  /* gap: 60px; */
   justify-content: space-around;
   align-items: center;
   padding: 16px 32px 16px 32px;
 }
 
+.search_input {
+  max-width: 510px;
+}
 .search_input:focus {
   background-color: #e9e6f0;
 }

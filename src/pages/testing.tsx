@@ -9,7 +9,12 @@ function testing(props) {
   return (
     <Space direction="vertical">
       {/* Text elements */}
-      <Space direction="horizontal" align="start">
+      <Space
+        direction="horizontal"
+        align="start"
+        // className="space1"
+        size={20}
+      >
         <Space className={styles.spaceAlignBlock} direction="vertical">
           <Text className="textLarge">Text Large - Regular</Text>
           <Text>Text Body - Regular</Text>
@@ -32,7 +37,7 @@ function testing(props) {
       </Space>
 
       {/* Titles - H1, H2, H3 */}
-      <Space direction="horizontal" align="start">
+      <Space direction="horizontal" align="start" className="space1">
         <Space className={styles.spaceAlignBlock} direction="vertical">
           <Title>H1 - Medium</Title>
           <Title className="semibold">H1 - Semibold</Title>
