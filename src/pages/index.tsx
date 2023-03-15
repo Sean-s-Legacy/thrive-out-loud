@@ -30,6 +30,7 @@ export default function Home() {
               <Button type="primary" size="large">
                 Sign up
               </Button>
+              <SignUpModal />
               <Button size="large">Learn more</Button>
             </Space>
           </div>
@@ -71,7 +72,6 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <SignUpModal />
       </div>
     </>
   );
