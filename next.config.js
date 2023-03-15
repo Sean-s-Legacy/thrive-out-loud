@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
 };
-
 module.exports = nextConfig;
-
 const withAntdLess = require("next-plugin-antd-less");
 
 module.exports = withAntdLess({

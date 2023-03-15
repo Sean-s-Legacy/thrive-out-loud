@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { Montserrat } from "@next/font/google";
-import styles from "./page.module.css";
-import { Divider, Typography, Button, Space } from "antd";
+import { Typography, Button, Space } from "antd";
 
 import Mentors from "../components/Mentors/index";
 
 import ImageSlider from "../components/ImageSlider/index";
 import FooterNotAuth from "@/components/FooterNotAuth";
+import React from "react";
 import SignUpModal from "@/components/SignUpModal";
+import LoginBtn from "@/components/LoginBtn";
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Text } = Typography;
 
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
       <div>
         <Space></Space>
+        <LoginBtn />
         <section className="landing">
           <div className="landing_title">
             <Title className="bold textPrimary8">
@@ -75,7 +75,6 @@ export default function Home() {
         </section>
         <section className="personalized"></section>
         <SignUpModal />
-        <FooterNotAuth />
       </div>
     </>
   );
