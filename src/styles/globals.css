@@ -507,11 +507,12 @@ span.ant-typography.textLarge {
 }
 
 .mentor_card_section {
+  margin: 0 auto;
   display: flex;
   gap: 20px;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
+  width: 70%;
   padding: 70px 0 40px 0;
 }
 

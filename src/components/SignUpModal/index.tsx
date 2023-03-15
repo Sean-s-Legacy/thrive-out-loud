@@ -23,7 +23,7 @@ export default function SignUpModal() {
 
   return (
     <>
-   <Button type="primary" onClick={showModal}>
+      <Button type="primary" onClick={showModal}>
         Sign Up
       </Button>
 
@@ -76,8 +76,6 @@ export default function SignUpModal() {
        </div>
         </div>
       </Modal>
-   
     </>
-
-  )
+  );
 }
