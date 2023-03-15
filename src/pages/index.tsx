@@ -6,6 +6,7 @@ import Mentors from "../components/Mentors/index";
 import ImageSlider from "../components/ImageSlider/index";
 import React from "react";
 import SignUpModal from "@/components/SignUpModal";
+import LoginBtn from "@/components/LoginBtn";
 
 const { Title, Text } = Typography;
 
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <div>
         <Space></Space>
+        <LoginBtn />
         <section className="landing">
           <div className="landing_title">
             <Title className="bold textPrimary8">
