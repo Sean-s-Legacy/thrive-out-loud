@@ -9,4 +9,4 @@ export const auth = getAuth(app);
 export const GoogleProvider = new GoogleAuthProvider();
 GoogleProvider.addScope("profile");
 GoogleProvider.addScope("email");
-GoogleProvider.setCustomParameters({ prompt: "select_account" });
+GoogleProvider.setCustomParameters({ prompt: "select_account" ,ux_mode: "redirect"});
