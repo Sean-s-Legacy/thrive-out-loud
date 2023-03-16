@@ -59,7 +59,7 @@ export default function Navbar(props: any) {
           (
             <>
               <LoginModal/>
-              <TestLayout/>
+              {/* <TestLayout/> */}
               <SignUpModal />
             </>
 
