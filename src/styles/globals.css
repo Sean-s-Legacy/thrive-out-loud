@@ -316,6 +316,10 @@ prop inside the phosphor-react component */
 .vertical {
   flex-direction: column;
 }
+
+.align-center {
+  align-items: center;
+}
 .space-1 {
   display: flex;
   gap: 4px;
@@ -389,6 +393,13 @@ prop inside the phosphor-react component */
 .ant-divider.ant-divider-horizontal {
   background-color: var(--primary6);
   margin: 0;
+}
+
+/* --------- Tag */
+.ant-tag.tagPrimaryColor {
+  background-color: var(--primary1);
+  border: 1px solid var(--primary3);
+  color: var(--primary6);
 }
 
 /* Media Queries for responsive design */
@@ -465,85 +476,6 @@ span.ant-typography.textLarge {
   height: 2.5px;
 }
 
-.landing {
-  background-image: url("/images/landing_img.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 25% 5%;
-  height: 792px;
-}
-.landing_title {
-  width: 681px;
-  height: 514px;
-  background-image: url("/images/landing_title_bg.png");
-  padding: 80px 55px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.landing_title h1 {
-  font-size: 48px;
-  line-height: 60px;
-  font-weight: 700;
-  color: #62379e;
-}
-
-.transition {
-  height: 248px;
-  background-color: #7942c7;
-  padding: 60px 190px;
-  color: #ffffff;
-}
-
-.checkout_mentors {
-  padding: 50px;
-}
-
-.checkout_mentors_title {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.mentor_card_section {
-  margin: 0 auto;
-  display: flex;
-  gap: 20px;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 70%;
-  padding: 70px 0 40px 0;
-}
-
-.mentor_card_section > div {
-  width: 30%;
-  border: 1px solid black;
-  height: 200px;
-  text-align: center;
-}
-
-.find_mentor_btn_section {
-  display: flex;
-  justify-content: center;
-}
-
-.find_mentor_btn {
-  width: 368px;
-  height: 60px;
-  border-radius: 14px;
-  font-size: 18px;
-}
-
-.testimonials {
-  height: 910px;
-  background: #f3ebff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 70px 132px;
-}
-
 .image_slider_container {
   width: 100%;
   position: relative;
@@ -570,19 +502,6 @@ span.ant-typography.textLarge {
   transform: translate(0%, -50%);
   font-size: 13.5px;
   cursor: pointer;
-}
-/* footer */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 0 px 48px;
-  gap: 52px;
-
-  width: 1600px;
-  height: 400px;
-
-  background-color: #62379e;
 }
 
 .image_slider_right_arrow {

@@ -1,5 +1,6 @@
 import React from "react";
 import MentorCard from "../MentorCard/index";
+import styles from "./mentors.module.css";
 
 export default function Mentors() {
   const mentors = [
@@ -69,19 +70,21 @@ export default function Mentors() {
   }
 
   return (
-    <>
-      {mentors.map((mentor: MentorProps, index) => (
-        <MentorCard
-          key={index}
-          name={mentor.name}
-          imgSrc={mentor.imgSrc}
-          pronouns={mentor.pronouns}
-          jobTitle={mentor.jobTitle}
-          fieldOfExpertise={mentor.fieldOfExpertise}
-          supportOffered={mentor.supportOffered}
-          tag={mentor.tag}
-        />
-      ))}
-    </>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        {mentors.map((mentor: MentorProps, index) => (
+          <MentorCard
+            key={index}
+            name={mentor.name}
+            imgSrc={mentor.imgSrc}
+            pronouns={mentor.pronouns}
+            jobTitle={mentor.jobTitle}
+            fieldOfExpertise={mentor.fieldOfExpertise}
+            supportOffered={mentor.supportOffered}
+            tag={mentor.tag}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
