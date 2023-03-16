@@ -97,6 +97,7 @@ export default function SignUpModal() {
             </Form>
           </div>
           <div>
+            
             <Image alt="modal" width={572} height={743.63} src="/images/module.png" />
           </div>
         </div>
