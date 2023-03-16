@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button, Space, Input } from "antd";
 
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import SignUpModal from "../SignUpModal";
+import { doSignOut } from "@/Firebase/auth";
+import LoginModal from "../auth/LoginModal";
 // import LoginBtn from "../LoginBtn";
 
-export default function Navbar() {
+
+
+export default function Navbar(props: any) {
+  const { user, page } = props;
   const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
+
+  const handleSignOut =  () => {
+     doSignOut()
+    console.log('clicked sign out');
+  }
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
+
 
   return (
     <nav className={styles.nav_container}>
@@ -31,10 +47,22 @@ export default function Navbar() {
       <Space>
         <Link href="#">Become a mentor</Link>
         <Link href="#">Find a mentor</Link>
-        {/* <LoginBtn /> */}
-        <Button type="primary" size="small">
-          Sign up
-        </Button>
+        {!!user  ? (
+          <Button
+            type="primary"
+            onClick={handleSignOut}>
+            Sign Out
+          </Button>
+        )
+         :
+          (
+            <>
+              <LoginModal/>
+              <SignUpModal />
+            </>
+
+          )
+        }
       </Space>
       <div className={styles.hamburger_menu}>
         <div className={styles.hamburger_bdr}></div>
