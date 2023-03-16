@@ -93,8 +93,8 @@ const LoginModal = () => {
                 Continue with Google
               </Button>
               <p className="mediumWeight semibold">
-                don't have an account?
-                <a > Sign Up</a>
+                {`don't have an account?`}
+                <a href='{{url}}'> Sign Up</a>
               </p>
             </Form>
           </div>
