@@ -1,0 +1,6 @@
+.section {
+  background-image: url("/images/section-wave.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 142px 36px 209px;
+}

@@ -1,9 +1,11 @@
 import React from "react";
+import Image from "next/image";
+import { Typography, Card, Tag } from "antd";
+import { Briefcase } from "phosphor-react";
 
-import { Divider, Typography, Button, Space, Card } from "antd";
 import styles from "./MentorCard.module.css";
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Text } = Typography;
 
 export default function MentorCard({
   name,
@@ -16,37 +18,48 @@ export default function MentorCard({
 }) {
   return (
     <Card
-      style={{
-        width: 348,
-        height: 520,
-        border: "none",
-        backgroundColor: "#f9f9f9",
-      }}
-      bordered={false} /*it seems it's not working */
+      className={styles.card}
+      bordered={false}
       hoverable
       cover={
-        <img
-          alt="example"
+        <Image
           src={imgSrc}
-          style={{ height: 340, objectFit: "cover" }}
+          alt={`Portrait of mentor ${name}`}
+          height={340}
+          width={348}
+          className={styles.cardImg}
         />
       }
     >
-      <div>
-        <h5>
-          {name} {pronouns}
-        </h5>
-        <h5>{jobTitle}</h5>
-        <br />
-        {fieldOfExpertise.map((el: string, i: number) => {
-          return <span key={i}>{el} </span>;
-        })}
-        <br />
-        <br />
-        {supportOffered.map((el: string, i: number) => {
-          return <span key={i}> {el}</span>;
-        })}
-        <br />
+      <div className="space-3 vertical">
+        <div className="space-1">
+          <Text className="textLarge semibold">{name}</Text>
+          <Text className="textLarge">{pronouns}</Text>
+        </div>
+        <div className="space-3 align-center">
+          <Briefcase size={26} className={styles.icon} />
+          <Text type="secondary">{jobTitle}</Text>
+        </div>
+        <div className="space-2 vertical">
+          <div className={styles.tagWrapper}>
+            {fieldOfExpertise.map((el: string, i: number) => {
+              return (
+                <Tag key={i} color="magenta">
+                  {el}
+                </Tag>
+              );
+            })}
+          </div>
+          <div className={styles.tagWrapper}>
+            {supportOffered.map((el: string, i: number) => {
+              return (
+                <Tag key={i} className="tagPrimaryColor">
+                  {el}
+                </Tag>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Card>
   );
