@@ -8,9 +8,7 @@ import FooterNotAuth from "@/components/FooterNotAuth";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Navbar />
       <Component {...pageProps} />
-      <FooterNotAuth />
     </>
   );
 }
