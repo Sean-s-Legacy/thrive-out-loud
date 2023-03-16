@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Typography, Button, Space } from "antd";
+import { Typography, Button, Space, Spin } from "antd";
 import Image from "next/image";
 
 import styles from "@/styles/index.module.css";
@@ -18,15 +18,15 @@ import { auth } from "@/Firebase/utils";
 
 import { useRouter } from "next/router";
 import Dashboard from "../components/dashboard";
+import { AppLayout } from "@/components/Layout/AppLayout";
 const { Title, Text } = Typography;
 
 export default function Home() {
   const [user, setUser] = useState<firebase.User | null>(null);
   const [pending, setPending] = useState(true);
 
-  const { asPath, pathname } = useRouter();
+  const router = useRouter()
   useEffect(() => {
-    console.log("check pathname :>> ", pathname, asPath);
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setPending(false);
       console.log("index", user);
@@ -42,13 +42,25 @@ export default function Home() {
     });
     return unsubscribe;
   }, []);
+
+  if (pending) {
+    return (
+      <div className="spinner-">
+        <Spin spinning={pending} />
+      </div>
+    );
+  }
+  if (user) {
+    router.push("/app");
+    return (
+      <div className="spinner-">
+        <Spin spinning={pending} />
+      </div>
+    )
+  }
   return (
     <>
-      <Navbar user={user} page={pathname} />
-      {/* landing page */}
-      {!!user && user ? (
-        <Dashboard />
-      ) : (
+      <AppLayout user={user} >
         <>
           <div>
             <section className={styles.heroSection}>
@@ -133,9 +145,7 @@ export default function Home() {
             </section>
           </div>
         </>
-      )}
-
-      <FooterNotAuth />
+      </AppLayout>
     </>
   );
 }

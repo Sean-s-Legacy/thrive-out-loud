@@ -7,12 +7,13 @@ import Link from "next/link";
 import SignUpModal from "../SignUpModal";
 import { doSignOut } from "@/Firebase/auth";
 import LoginModal from "../auth/LoginModal";
+import TestLayout from "../auth/test/TestLayout";
 // import LoginBtn from "../LoginBtn";
 
 
 
 export default function Navbar(props: any) {
-  const { user, page } = props;
+  const { user} = props;
   const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
 
@@ -58,6 +59,7 @@ export default function Navbar(props: any) {
           (
             <>
               <LoginModal/>
+              {/* <TestLayout/> */}
               <SignUpModal />
             </>
 

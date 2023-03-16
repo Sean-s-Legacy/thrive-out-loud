@@ -512,3 +512,14 @@ span.ant-typography.textLarge {
   font-size: 13.5px;
   cursor: pointer;
 }
+.spinner- {
+    padding: 30px 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
