@@ -94,7 +94,7 @@ const LoginModal = () => {
               </Button>
               <p className="mediumWeight semibold">
                 don't have an account?
-                <a href=""> Sign Up</a>
+                <a > Sign Up</a>
               </p>
             </Form>
           </div>
