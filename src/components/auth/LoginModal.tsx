@@ -1,55 +1,57 @@
+
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Modal, Form, Input, Divider } from 'antd';
-import styles from './signup.module.css';
+import styles from './login.module.css';
 import Checkbox from 'antd/lib/checkbox/Checkbox';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth, GoogleProvider } from '@/Firebase/utils';
-import { redirect } from 'next/navigation';
 
-export default function SignUpModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [passwordVisible, setPasswordVisible] = React.useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleGoogleSignIn = async () => {
-    try {
-      // Google Auth sign in with popup
-      const result = await signInWithPopup(auth, GoogleProvider);
-
-      if (result) {
-        const credential: any = GoogleAuthProvider.credentialFromResult(result);
-        if (credential) {
-          const accessToken: any = credential || credential.accessToken;
-          const idToken: any = credential || credential.idToken;
-          console.log(accessToken); // Google token
-          console.log(idToken); // Firebase auth token
-          // navigate user to home page here.
-          // redirect('/dashboard');
+const LoginModal = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [passwordVisible, setPasswordVisible] = React.useState(false);
+  
+    const showModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const handleOk = () => {
+      setIsModalOpen(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalOpen(false);
+    };
+  
+    const handleGoogleSignIn = async () => {
+      try {
+        // Google Auth sign in with popup
+        const result = await signInWithPopup(auth, GoogleProvider);
+  
+        if (result) {
+          const credential: any = GoogleAuthProvider.credentialFromResult(result);
+          if (credential) {
+            const accessToken: any = credential || credential.accessToken;
+            const idToken: any = credential || credential.idToken;
+            console.log(accessToken); // Google token
+            console.log(idToken); // Firebase auth token
+            // navigate user to home page here.
+            // redirect('/dashboard');
+          }
         }
+      } catch (err: any) {
+        console.error(err);
+      } finally {
       }
-    } catch (err: any) {
-      console.error(err);
-    } finally {
-    }
-  };
-
-  return (
-    <>
-      <Button size="small" type="primary" onClick={showModal}>
-        Sign Up
+    };
+    return (
+        <>
+      <Button size="small"  onClick={showModal}>
+        Login
       </Button>
 
       <Modal
@@ -60,8 +62,8 @@ export default function SignUpModal() {
         footer={null}
       >
 
-        <h1 className="semibold textLarge" style={{ color: '#1a1028' }}>Welcome!</h1>
-        <h3 className="mediumWeight" style={{ color: '#706685' }}>Please create an account</h3>
+        <h1 className="semibold textLarge" style={{ color: '#1a1028' }}>Welcome back!</h1>
+        <h3 className="mediumWeight" style={{ color: '#706685' }}>Login to your account</h3>
 
         <div className={styles.container1}>
           <div>
@@ -91,17 +93,21 @@ export default function SignUpModal() {
                 Continue with Google
               </Button>
               <p className="mediumWeight semibold">
-                Already have an account?
-                <a href='{{url}}'> Log in</a>
+                {`don't have an account?`}
+                <a href='{{url}}'> Sign Up</a>
               </p>
             </Form>
           </div>
           <div>
-            
             <Image alt="modal" width={572} height={743.63} src="/images/module.png" />
           </div>
         </div>
       </Modal>
     </>
-  );
+    )
 }
+export default LoginModal;
+
+
+
+

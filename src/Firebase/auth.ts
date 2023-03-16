@@ -1,4 +1,4 @@
-// import { auth } from "./utils";
+import { auth } from "./utils";
 import 'firebase/auth'
 
 
@@ -23,20 +23,20 @@ import 'firebase/auth'
 // }
 
 // Sign out
-// export const doSignOut = async () : Promise<void> => {
-//   return auth.signOut();
-// }
+export const doSignOut = async () : Promise<void> => {
+  return auth.signOut();
+}
 // Get UID
 // export const getUserId = (): string => {
 //   return auth.currentUser ? auth.currentUser.uid : ""
 // }
 
 // Check if user is logged in
-// export const getUser = (): any => {
-//   return auth.currentUser ? auth.currentUser: null
-// }
+export const getUser = (): any => {
+  return auth.currentUser ? auth.currentUser: null
+}
 
 // Get User Email
-// export const getUserEmail = (): string => {
-//   return (auth.currentUser && auth.currentUser.email) ? auth.currentUser.email : ""
-// }
+export const getUserEmail = (): string => {
+  return (auth.currentUser && auth.currentUser.email) ? auth.currentUser.email : ""
+}

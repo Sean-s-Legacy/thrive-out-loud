@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Button, Space } from "antd";
 import Image from "next/image";
 
@@ -9,13 +9,54 @@ import ImageSlider from "../components/ImageSlider/index";
 import WaveSection from "@/components/WaveSection";
 import SignUpModal from "@/components/SignUpModal";
 import LoginBtn from "@/components/LoginBtn";
+import Navbar from "@/components/Navbar";
+import FooterNotAuth from "@/components/FooterNotAuth";
 
+
+// firebase
+import firebase, { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/Firebase/utils";
+
+
+import { useRouter } from 'next/router';
+import Dashboard from "../components/dashboard";
 const { Title, Text } = Typography;
 
 export default function Home() {
+
+  const [user, setUser] = useState<firebase.User | null>(null);
+  const [pending, setPending] = useState(true);
+
+  const { asPath, pathname } = useRouter();
+  useEffect(() => {
+    console.log('check pathname :>> ', pathname, asPath);
+    const unsubscribe = onAuthStateChanged(auth, (user: any) => {
+      setPending(false);
+      console.log('index', user)
+      if (user) {
+        console.log("user is logged in !");
+        console.log("user : ", user);
+        console.log(user.uid);
+        setUser(user);
+      } else {
+        setUser(null);
+        console.log("user is signed out !");
+      }
+    });
+    return unsubscribe;
+  }, []);
   return (
     <>
-      <div>
+      <Navbar
+        user={user}
+        page={pathname}
+      />
+      {/* landing page */}
+      {!!user && user ? (
+        <Dashboard/>
+      ) : (
+      <>
+       <div>
         <section className={styles.heroSection}>
           <div className={styles.heroSectionHeading}>
             <Title className="bold textPrimary8">
@@ -34,9 +75,10 @@ export default function Home() {
                 <Button size="large">Learn more</Button>
               </Space>
             </div>
-          </div>
-        </section>
-        <section className={styles.transitionSection}>
+            </div>
+            
+          </section>
+          <section className={styles.transitionSection}>
           <div className={styles.transitionSectionContainer}>
             <Text className="mediumWeight textLarge textInverse">
               At Sean’s Legacy, we’re dedicated to providing support for
@@ -47,7 +89,7 @@ export default function Home() {
             </Text>
           </div>
         </section>
-        <section className={styles.mentorSection}>
+          <section className={styles.mentorSection}>
           <div className={styles.mentorSectionHeadingContainer}>
             <Title level={2} className="semibold textAlignCenter">
               Check out some of our mentors
@@ -64,13 +106,13 @@ export default function Home() {
             Find a mentor
           </Button>
         </section>
-        <WaveSection>
+          <WaveSection>
           <Title className="textAlignCenter" level={2}>
             Testimonials
           </Title>
           <ImageSlider />
         </WaveSection>
-        <section className={styles.instructionsSection}>
+          <section className={styles.instructionsSection}>
           <div className={styles.instructionsSectionWrapper}>
             <Image
               src={"/images/landing-privacy.jpg"}
@@ -93,7 +135,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
+        </div>
+      </>
+      )}
+
+      <FooterNotAuth />
     </>
   );
 }
