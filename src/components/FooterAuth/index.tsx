@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footerNotAuth.module.css";
+import styles from "./footerAuth.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,11 +11,10 @@ import {
   TwitterLogo,
   FacebookLogo,
 } from "phosphor-react";
-
-import { Button, Divider, Typography, Col, Row } from "antd";
+import { Divider, Typography, Col, Row } from "antd";
 const { Title, Text } = Typography;
 
-export default function FooterNotAuth() {
+export default function FooterAuth() {
   return (
     <div className={styles.footerWrapper}>
       <div className={styles.footerContainer}>
@@ -32,10 +31,6 @@ export default function FooterNotAuth() {
           Wherever you are are in your journey, a mentor can help you take the
           next step.
         </Title>
-        <div className="space-4">
-          <Button>Sign up</Button>
-          <Button type="primary">Login</Button>
-        </div>
         <Divider />
         <Row align="middle" className={styles.contentRow}>
           <Col span={8}>

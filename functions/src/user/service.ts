@@ -42,19 +42,22 @@ export const createMenteeAccount = async (payload: any) => {
     } catch (error) {
         throw error;
     }
-    //   app.post('/signup', async (req:any, res:any) => {
-    //     const user = {
-    //         email: req.body.email,
-    //         password: req.body.password
-    //     }
-
-    //   const userResponse = await admin.auth().createUser({
-    //       email: user.email,
-    //       password: user.password,
-    //       emailVerified:false,
-    //       disabled: false,
-
-    //   });
-    //   res.json(userResponse); 
-    // })
+   
 }
+
+// export const findUserById = async() => {
+
+//     try {
+//         const usersRef: FirebaseFirestore.DocumentReference = db
+//         .collection(USER_FIELDS.USER_EMAIL)
+//         .doc(String("VQy24xYz9qiUD0F9H9tY").trim());
+
+//         const userDoc: FirebaseFirestore.DocumentData = await usersRef.get()
+      
+//         console.log('==============find email =========================:>> ')
+//         console.log(userDoc)
+        
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }

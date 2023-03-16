@@ -1,34 +1,68 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import React from "react";
-import { Space, Input } from "antd";
-// import "antd/dist/reset.css";
-import SignupBtn from "../SignupBtn/index";
-import FindAMentorBtn from "../FindAMentorBtn/index";
-import LoginBtn from "../LoginBtn/index";
-import styles from "./Navbar.module.css";
+import { Button, Space, Input } from "antd";
 
-export default function Navbar() {
+import styles from "./Navbar.module.css";
+import Link from "next/link";
+import SignUpModal from "../SignUpModal";
+import { doSignOut } from "@/Firebase/auth";
+import LoginModal from "../auth/LoginModal";
+// import LoginBtn from "../LoginBtn";
+
+
+
+export default function Navbar(props: any) {
+  const { user, page } = props;
   const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
 
+  const handleSignOut =  () => {
+     doSignOut()
+    console.log('clicked sign out');
+  }
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
+
+
   return (
     <nav className={styles.nav_container}>
-      <Image alt="" width={205} height={54.08} src="/images/SL-logo.png" />
+      <Image
+        alt="Seans Legacy logo"
+        width={205}
+        height={54.08}
+        src="/images/SL-logo.png"
+      />
 
       {/* <div> */}
       {/* <Search /> */}
 
       <Search
-        // className={styles.search_input}
+        className={styles.search_input}
         placeholder="Search"
         onSearch={onSearch}
-        // size="large"
-        style={{ width: 591 }}
+        size="large"
       />
-      <Space wrap>
-        <FindAMentorBtn />
-        <LoginBtn />
-        <SignupBtn />
+      <Space>
+        <Link href="#">Become a mentor</Link>
+        <Link href="#">Find a mentor</Link>
+        {!!user  ? (
+          <Button
+            type="primary"
+            onClick={handleSignOut}>
+            Sign Out
+          </Button>
+        )
+         :
+          (
+            <>
+              <LoginModal/>
+              <SignUpModal />
+            </>
+
+          )
+        }
       </Space>
       <div className={styles.hamburger_menu}>
         <div className={styles.hamburger_bdr}></div>

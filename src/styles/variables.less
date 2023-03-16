@@ -4,8 +4,6 @@
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less"; // Import Ant Design styles
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap");
-
 @import "./colors.less";
 
 // -------- Colors -----------
@@ -14,22 +12,24 @@
 @primary-color-hover: @primary6;
 @primary-color-active: @primary7;
 
+@background-color-base: @neutral3;
+
 // -------- Body -----------
 // -- Fonts
-@font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// @font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+//   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+//   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 // -- Typography
-@typography-title-font-weight: 500;
+@typography-title-font-weight: none;
 @text-color-secondary: fade(@black, 55%);
 @font-size-sm: 14px;
 @font-size-base: 16px;
-@font-size-lg: @font-size-base + 4px;
-@heading-1-size: 38px;
-@heading-2-size: 30px;
-@heading-3-size: 24px;
-@line-height-base: 140%;
+@font-size-lg: @font-size-base;
+@heading-1-size: none;
+@heading-2-size: none;
+@heading-3-size: none;
+@line-height-base: 150%;
 @border-radius-base: 12px;
 
 // -- Disabled states
@@ -37,11 +37,6 @@
 @disabled-bg: @background-color-base;
 @disabled-active-bg: tint(@black, 90%);
 @disabled-color-dark: fade(#fff, 35%);
-
-// -- Link
-@link-color: @primary-color;
-@link-hover-color: @primary6;
-@link-active-color: @primary7;
 
 // -- Padding/Margins
 // vertical paddings
@@ -58,7 +53,11 @@
 @margin-xs: 8px; // small items
 @margin-xss: 4px; // more small
 
-//Buttons
+//Button Component
+// removes animation when clicking buttons
+[ant-click-animating-without-extra-node="true"]::after {
+  display: none;
+}
 @btn-font-weight: 600;
 @btn-shadow:0px 2px 0px rgba(0, 0, 0, 0.016);
 @btn-primary-shadow:0px 2px 0px rgba(0, 0, 0, 0.043);
@@ -79,3 +78,49 @@
 @btn-circle-size: 32px;
 @btn-circle-size-lg: 40px;
 @btn-circle-size-sm: 24px;
+
+// Input Component
+@input-padding-vertical-base: @padding-xss;
+@input-padding-vertical-sm: 0px;
+@input-padding-vertical-lg: @padding-xs;
+
+@input-placeholder-color: @disabled-color;
+@input-icon-color: @disabled-color;
+
+@input-addon-bg: @component-background;
+@input-hover-border-color: @primary5;
+@input-disabled-bg: @disabled-bg;
+@input-outline-offset: 0 0;
+@input-icon-hover-color: fade(@black, 85%);
+@input-disabled-color: @disabled-color;
+
+// Modal
+// --
+@modal-body-padding: @padding-lg;
+@modal-header-close-size: 60px;
+@modal-close-color: @neutral9;
+
+// Card
+// ---
+@card-head-padding: 16px;
+@card-head-padding-sm: (@card-head-padding / 2);
+@card-inner-head-padding: 12px;
+@card-padding-base: 16px;
+@card-padding-base-sm: (@card-padding-base / 2);
+@card-actions-background: @component-background;
+@card-actions-li-margin: 12px 0;
+@card-skeleton-bg: #cfd8dc;
+@card-background: @component-background;
+@card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16),
+  0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+@card-radius: @border-radius-base;
+@card-head-tabs-margin-bottom: -17px;
+@card-head-extra-color: @text-color;
+
+// Tag
+// ----
+@tag-border-radius: @border-radius-base;
+@tag-default-bg: @background-color-light;
+@tag-default-color: @text-color;
+@tag-font-size: @font-size-sm;
+@tag-line-height: 20px;

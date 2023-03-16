@@ -1,0 +1,19 @@
+.card {
+  width: 348px;
+  height: 520px;
+}
+.icon {
+  color: var(--neutral7);
+}
+
+.tagWrapper {
+  display: flex;
+}
+
+/* how to apply media queries on MentorCard img */
+/* @media screen and (max-width: 430px) {
+  .cardImg {
+    width: 250px;
+    height: 255px;
+  }
+} */

@@ -28,4 +28,12 @@
   --primary2: #ebd5f7;
   --primary1: #f6edfc;
   --primary0: #fcfafc;
+
+  /* Text Colors */
+  --character-primary: rgba(0, 0, 0, 0.85);
+  --character-primary-inverse: #fff;
+  --character-secondary: rgba(0, 0, 0, 0.55);
+  --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
+
+  --border-radius-base: 12px;
 }
