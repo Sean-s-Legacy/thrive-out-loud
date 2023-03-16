@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <LoginBtn/>
+        {/* <LoginBtn/> */}
         <section className="landing">
           <div className="landing_title">
             <h1>
@@ -73,7 +73,6 @@ export default function Home() {
           <ImageSlider />
         </section>
         <section className="personalized"></section>
-        <SignUpModal />
       </div>
     </>
   );

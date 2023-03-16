@@ -4,6 +4,7 @@ import { Button, Space, Input } from "antd";
 
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import SignUpModal from "../SignUpModal";
 
 export default function Navbar() {
   const { Search } = Input;
@@ -31,9 +32,8 @@ export default function Navbar() {
         <Link href="#">Become a mentor</Link>
         <Link href="#">Find a mentor</Link>
         <Button size="small">Login</Button>
-        <Button type="primary" size="small">
-          Sign up
-        </Button>
+        <SignUpModal />
+
       </Space>
       <div className={styles.hamburger_menu}>
         <div className={styles.hamburger_bdr}></div>

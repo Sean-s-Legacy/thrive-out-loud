@@ -1,4 +1,4 @@
-// import { auth } from "./utils";
+import { auth } from "./utils";
 import 'firebase/auth'
 
 
@@ -37,6 +37,6 @@ import 'firebase/auth'
 // }
 
 // Get User Email
-// export const getUserEmail = (): string => {
-//   return (auth.currentUser && auth.currentUser.email) ? auth.currentUser.email : ""
-// }
+export const getUserEmail = (): string => {
+  return (auth.currentUser && auth.currentUser.email) ? auth.currentUser.email : ""
+}
