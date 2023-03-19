@@ -1,11 +1,12 @@
 import React from "react";
 import MentorCard from "../MentorCard/index";
+import styles from "./mentors.module.css";
 
 export default function Mentors() {
   const mentors = [
     {
       name: "Olivia Rhye",
-      imgSrc: "/images/mentor1.png",
+      imgSrc: "/images/mentor-1.png",
       pronouns: "(she/hers)",
       jobTitle: "Math Teacher at LA Unified School Disctrict",
       fieldOfExpertise: ["math", "education"],
@@ -13,7 +14,7 @@ export default function Mentors() {
     },
     {
       name: "Drew Cano",
-      imgSrc: "/images/mentor2.png",
+      imgSrc: "/images/mentor-2.png",
       pronouns: "(he/him)",
       jobTitle: "Customer Success Manager at MetaFactor",
       fieldOfExpertise: ["coaching", "management"],
@@ -22,7 +23,7 @@ export default function Mentors() {
     },
     {
       name: "Henry Potter",
-      imgSrc: "/images/mentor3.png",
+      imgSrc: "/images/mentor-3.png",
       pronouns: "(he/they)",
       jobTitle: "Data Science Lead at Elementor",
       fieldOfExpertise: ["stat analysis", "machine learning", "data..."],
@@ -31,7 +32,7 @@ export default function Mentors() {
     },
     {
       name: "Natali Craig",
-      imgSrc: "/images/mentor4.png",
+      imgSrc: "/images/mentor-4.png",
       pronouns: "(she/hers)",
       jobTitle: "Manufacturing Chemist at Biotechnology",
       fieldOfExpertise: ["chemistry", "analytics", "math"],
@@ -40,7 +41,7 @@ export default function Mentors() {
     },
     {
       name: "Nala Goins",
-      imgSrc: "/images/mentor5.png",
+      imgSrc: "/images/mentor-5.png",
       pronouns: "(she/they)",
       jobTitle: "Videographer & Photographer at Self-employed",
       fieldOfExpertise: ["video editing", "social media mgmt", "math"],
@@ -49,7 +50,7 @@ export default function Mentors() {
     },
     {
       name: "Edward Fuanze",
-      imgSrc: "/images/mentor6.png",
+      imgSrc: "/images/mentor-6.png",
       pronouns: "(he/him)",
       jobTitle: "Product Compliance Director at Nike",
       fieldOfExpertise: ["Organic chemistry", "Tech", "Science"],
@@ -69,19 +70,21 @@ export default function Mentors() {
   }
 
   return (
-    <>
-      {mentors.map((mentor: MentorProps, index) => (
-        <MentorCard
-          key={index}
-          name={mentor.name}
-          imgSrc={mentor.imgSrc}
-          pronouns={mentor.pronouns}
-          jobTitle={mentor.jobTitle}
-          fieldOfExpertise={mentor.fieldOfExpertise}
-          supportOffered={mentor.supportOffered}
-          tag={mentor.tag}
-        />
-      ))}
-    </>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        {mentors.map((mentor: MentorProps, index) => (
+          <MentorCard
+            key={index}
+            name={mentor.name}
+            imgSrc={mentor.imgSrc}
+            pronouns={mentor.pronouns}
+            jobTitle={mentor.jobTitle}
+            fieldOfExpertise={mentor.fieldOfExpertise}
+            supportOffered={mentor.supportOffered}
+            tag={mentor.tag}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

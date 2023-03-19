@@ -1,0 +1,52 @@
+.heroSection {
+  background-image: url("/images/landing_img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 25% 5%;
+  height: calc(100vh - 260px);
+}
+.heroSectionHeading {
+  width: 681px;
+  height: 514px;
+  background-image: url("/images/landing_title_bg.png");
+  padding: 80px 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.transitionSection {
+  background-color: var(--primary8);
+  padding: 48px;
+}
+.transitionSectionContainer {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+.mentorSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  padding: 70px 0;
+}
+
+.mentorSectionHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 794px;
+}
+
+.instructionsSection {
+  padding: 126px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructionsSectionWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  max-width: 1160px;
+}

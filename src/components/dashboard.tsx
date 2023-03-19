@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { getUser } from "@/Firebase/auth";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Mentors from "./Mentors";
 
 export default function Dashboard() {
   const { asPath, pathname } = useRouter();
@@ -17,6 +18,8 @@ export default function Dashboard() {
   return (
     <div>
       Welcome <b>{user?.displayName}</b>
+      <div></div>
+      <Mentors />
     </div>
   );
 }
