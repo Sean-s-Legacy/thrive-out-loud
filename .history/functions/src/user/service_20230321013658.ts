@@ -58,9 +58,14 @@ export const createMenteeAccount = async (payload: any) => {
     //   res.json(userResponse); 
     // })
 }
-export const createuserEndpointsAccount = async (payload: any) => {
+
+export function createuserEndpointsAccount(payload: userEndpointsSignUpPayLoad) {
+  throw new Error("Function not implemented.");
+}
+
+export const createuserEndpoiAccount = async (payload: any) => {
     console.log(
-        "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
+        "+++++++++++++++++++ create Mentee +++++++++++++++++++"
     );
 
     try {
@@ -82,7 +87,7 @@ export const createuserEndpointsAccount = async (payload: any) => {
             // console.log(userResponse)
 
             // Insert data to firestore collection
-           const result =  await dbService.createuserEndointsAccount(payload)
+           const result =  await dbService.createMenteeAccount(payload)
             console.log(
                 "+++++++++++++++++++ after create +++++++++++++++++++"
             );
@@ -97,4 +102,4 @@ export const createuserEndpointsAccount = async (payload: any) => {
 
     } catch (error) {
         throw error;
-    }}
+    }

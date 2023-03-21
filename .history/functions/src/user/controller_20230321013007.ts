@@ -123,7 +123,7 @@ export const userEndpoints = async (req: Request, res: Response) => {
 
       // @ts-ignore
       const payload: userEndpointsSignUpPayLoad = req.body;
-      const result = await service.createuserEndpointsAccount(payload)
+      const result = await service.createMenAccount(payload)
 
       // console.log(userResponse)
 

@@ -114,31 +114,3 @@ export const listUsers = async(_req: Request, res: Response) => {
   console.log(response);
 });
 
-export const userEndpoints = async (req: Request, res: Response) => {
-  console.log(
-      "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
-  );
-
-  try {
-
-      // @ts-ignore
-      const payload: userEndpointsSignUpPayLoad = req.body;
-      const result = await service.createuserEndpointsAccount(payload)
-
-      // console.log(userResponse)
-
-      // Insert data to firestore collection
-      // await dbService.createMenteeAccount(payload, firebaseUserData)
-
-      const success_response: AppSuccess = {
-          status: constants.SUCCESS_MSG,
-          code: constants.CREATE_SUCCESS_CODE,
-          data: result,
-      };
-
-      return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
-
-  }
-  catch(error){
-    console.log()
-  }}

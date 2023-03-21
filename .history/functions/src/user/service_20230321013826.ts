@@ -60,7 +60,7 @@ export const createMenteeAccount = async (payload: any) => {
 }
 export const createuserEndpointsAccount = async (payload: any) => {
     console.log(
-        "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
+        "+++++++++++++++++++ create Mentee +++++++++++++++++++"
     );
 
     try {
@@ -97,4 +97,4 @@ export const createuserEndpointsAccount = async (payload: any) => {
 
     } catch (error) {
         throw error;
-    }}
+    }

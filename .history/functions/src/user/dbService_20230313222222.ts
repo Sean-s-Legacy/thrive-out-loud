@@ -29,7 +29,3 @@ export const createMenteeAccount = async (
         console.log(error)
     }
 }
-
-export function createuserEndointsAccount(payload: any) {
-    throw new Error("Function not implemented.");
-}

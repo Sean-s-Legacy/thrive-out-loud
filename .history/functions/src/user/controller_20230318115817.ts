@@ -114,31 +114,49 @@ export const listUsers = async(_req: Request, res: Response) => {
   console.log(response);
 });
 
-export const userEndpoints = async (req: Request, res: Response) => {
-  console.log(
-      "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
-  );
+export const myFunction = functions.https.onCall((data, context) => {
+  
+  return { message: 'Hello from Firebase!' };
+});
+//
+//   exports.getUserEndpoints = Functions.https.onCall(async (data: any, context: { auth: { uid: any; }; }) => {
+//     const { uid } = context.auth;
+//     const endpoints: { endpoint: any; methods: any; 'https://seans-legacy.firebaseio.com': string; }[] = [];
+//     functions.https
 
-  try {
+//     const myFunction = 'https://seans-legacy.firebaseio.com'.functions().httpsCallable('myFunction');
 
-      // @ts-ignore
-      const payload: userEndpointsSignUpPayLoad = req.body;
-      const result = await service.createuserEndpointsAccount(payload)
+// myFunction({ someData: 'Hello' }).then((result: { data: { message: any; }; }) => {
+//   console.log(result.data.message);
+// }).catch((error: any) => {
+//   console.error(error);
+// });
 
-      // console.log(userResponse)
+//     callableContext()
+//       .rawRequest.original ;'https://seans-legacy.firebaseio.com' 
+//       .app._router.stack.forEach((layer: { route: any; }) => {
+//         if (layer.route) {
+//           const route = layer.route;
+//           route.stack.forEach((stackItem: { handle: any; method: string; }) => {
+//             const viewFunc = stackItem.handle;
+//             if (
+//               viewFunc && viewFunc.permission_required &&
+//               viewFunc.permission_required(uid)
+//             ) {
+//               const endpoint = {
+//                 endpoint: route.path,
+//                 methods: stackItem.method.toUpperCase(),
+//                 'https://seans-legacy.firebaseio.com': `${route.path}`,
+//               };
+//               endpoints.push(endpoint);
+//             }
+//           });
+//         }
+//       });
+//     return { endpoints };
+//   });
+  
+// function callableContext() {
+//   throw new Error("Function not implemented.");
+// }
 
-      // Insert data to firestore collection
-      // await dbService.createMenteeAccount(payload, firebaseUserData)
-
-      const success_response: AppSuccess = {
-          status: constants.SUCCESS_MSG,
-          code: constants.CREATE_SUCCESS_CODE,
-          data: result,
-      };
-
-      return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
-
-  }
-  catch(error){
-    console.log()
-  }}

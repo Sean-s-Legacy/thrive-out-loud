@@ -122,8 +122,8 @@ export const userEndpoints = async (req: Request, res: Response) => {
   try {
 
       // @ts-ignore
-      const payload: userEndpointsSignUpPayLoad = req.body;
-      const result = await service.createuserEndpointsAccount(payload)
+      const payload: MentSignUpPayLoad = req.body;
+      const result = await service.createMenteeAccount(payload)
 
       // console.log(userResponse)
 

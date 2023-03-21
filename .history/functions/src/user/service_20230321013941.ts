@@ -60,7 +60,7 @@ export const createMenteeAccount = async (payload: any) => {
 }
 export const createuserEndpointsAccount = async (payload: any) => {
     console.log(
-        "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
+        "+++++++++++++++++++ create user +++++++++++++++++++"
     );
 
     try {

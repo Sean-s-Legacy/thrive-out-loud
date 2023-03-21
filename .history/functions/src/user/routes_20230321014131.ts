@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { createMentee, userEndpoints } from "./controller";
+import { createMentee } from "./controller";
 import { listUsers } from './controller';
 
 
@@ -27,4 +27,4 @@ export default router;
 
 
 //create user Endpoints
-router.get('users', userEndpoints)
+router.get('users')
