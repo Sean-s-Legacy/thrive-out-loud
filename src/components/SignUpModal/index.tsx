@@ -70,7 +70,6 @@ export default function SignUpModal() {
         onCancel={handleCancel}
         footer={null}
         bodyStyle={{ padding: 0 }}
-        // wrapClassName={{ overflow: "hidden" }}
       >
         <Row>
           <Col span={12} className={styles.textContent}>
