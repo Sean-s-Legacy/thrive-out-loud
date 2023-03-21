@@ -1,6 +1,6 @@
 import React from "react";
 import MentorCard from "../MentorCard/index";
-import styles from "./mentors.module.css";
+import styles from "./Mentors.module.css";
 
 export default function Mentors() {
   const mentors = [
