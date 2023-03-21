@@ -1,4 +1,4 @@
-import FooterNotAuth from "@/components/FooterNotAuth";
+import Footer from "@/components/Footer";
 import { AppLayout } from "@/components/Layout/AppLayout";
 import Navbar from "@/components/Navbar";
 import { getUser } from "@/Firebase/auth";
@@ -10,10 +10,10 @@ import React, { useEffect, useState } from "react";
 import Mentors from "../../components/Mentors";
 
 export default function Dashboardx() {
-  const [user, setUser] = useState({} as any)
+  const [user, setUser] = useState({} as any);
   const [pending, setPending] = useState(true);
 
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setPending(false);

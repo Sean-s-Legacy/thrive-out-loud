@@ -10,14 +10,14 @@ import WaveSection from "@/components/WaveSection";
 import SignUpModal from "@/components/SignUpModal";
 import LoginBtn from "@/components/LoginBtn";
 import Navbar from "@/components/Navbar";
-import FooterNotAuth from "@/components/FooterNotAuth";
+import Footer from "@/components/Footer";
 
 // firebase
 import firebase, { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/Firebase/utils";
 
 import { useRouter } from "next/router";
-import Dashboard from "../components/dashboard";
+import Dashboard from "./dashboard";
 import { AppLayout } from "@/components/Layout/AppLayout";
 const { Title, Text } = Typography;
 
@@ -25,7 +25,7 @@ export default function Home() {
   const [user, setUser] = useState<firebase.User | null>(null);
   const [pending, setPending] = useState(true);
 
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setPending(false);
@@ -56,11 +56,11 @@ export default function Home() {
       <div className="spinner-">
         <Spin spinning={pending} />
       </div>
-    )
+    );
   }
   return (
     <>
-      <AppLayout user={user} >
+      <AppLayout user={user}>
         <>
           <div>
             <section className={styles.heroSection}>
