@@ -11,7 +11,7 @@ import {
   Row,
   Col,
 } from "antd";
-import styles from "./Signup.module.css";
+import styles from "./signup.module.css";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, GoogleProvider } from "@/Firebase/utils";
