@@ -18,7 +18,7 @@ import { auth } from "@/Firebase/utils";
 
 import { useRouter } from "next/router";
 import Dashboard from "./dashboard";
-import { AppLayout } from "@/components/Layout/AppLayout";
+import { AppLayout } from "@/components/Layouts/AppLayout";
 const { Title, Text } = Typography;
 
 export default function Home() {

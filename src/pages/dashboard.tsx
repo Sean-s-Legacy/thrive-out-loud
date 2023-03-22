@@ -17,7 +17,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      Welcome <b>{user?.displayName}</b>
+      Welcome <b>{user?.displayName} this is the dashbaord</b>
       <div></div>
       <Mentors />
     </div>

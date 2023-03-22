@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import { AppLayout } from "@/components/Layout/AppLayout";
+import { AppLayout } from "@/components/Layouts/AppLayout";
 import Navbar from "@/components/Navbar";
 import { getUser } from "@/Firebase/auth";
 import { auth } from "@/Firebase/utils";
