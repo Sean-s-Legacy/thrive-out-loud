@@ -19,7 +19,7 @@ export const createMenteeAccount = async (
             },
 
             [USER_FIELDS.PASSWORD]: user_pswd || "",
-            [USER_FIELDS.MENTEE_PRONOUNS]: mentee_pronouns || " ",
+            [USER_FIELDS.MENTEE_PRONOUNS]: mentee_pronouns || "",
             [USER_FIELDS.USER_EMAIL]: user_email || "",
         }
 
