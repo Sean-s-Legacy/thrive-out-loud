@@ -14,6 +14,7 @@ const handleGoogleSignIn = async () => {
         console.log(accessToken); // Google token
         console.log(idToken); // Firebase auth token
         // navigate user to home page here.
+        // redirect('/dashboard');
       }
     }
   } catch (err: any) {
