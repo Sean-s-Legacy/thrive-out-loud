@@ -4,6 +4,7 @@ export interface MenteeSignUpPayLoad {
     [USER_FIELDS.USER_EMAIL]: string
     [USER_FIELDS.FIRST_NAME]: string
     [USER_FIELDS.LAST_NAME]: string;
+    [USER_FIELDS.MENTEE_PRONOUNS]: string;
     [USER_FIELDS.PASSWORD]:string;
     
   }

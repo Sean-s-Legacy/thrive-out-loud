@@ -29,12 +29,13 @@ export default function Dashboardx() {
       }
     });
     return unsubscribe;
-  }, []);
+  }, [user]);
+
 
   if (pending) {
     return (
       <div className="spinner-">
-        <Spin spinning={pending} />
+        <Spin spinning={pending} delay={700} />
       </div>
     );
   }
@@ -42,7 +43,7 @@ export default function Dashboardx() {
     router.push("/");
     return (
       <div className="spinner-">
-        <Spin spinning={pending} />
+        <Spin spinning={pending} delay={700} />
       </div>
     );
   }

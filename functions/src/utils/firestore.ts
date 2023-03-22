@@ -16,6 +16,7 @@ export const enum USER_FIELDS {
     USER_NAME = "user_name",
     FIRST_NAME = "user_name_first",
     LAST_NAME = "user_name_last",
+    MENTEE_PRONOUNS = "mentee_pronouns",
     PASSWORD = "user_pswd",
     USER_PHONE = "user_phone",
     COUNTRY_CODE = "country_code",

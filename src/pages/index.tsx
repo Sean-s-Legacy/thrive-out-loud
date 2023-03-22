@@ -46,15 +46,15 @@ export default function Home() {
   if (pending) {
     return (
       <div className="spinner-">
-        <Spin spinning={pending} />
+        <Spin spinning={pending} delay={700} />
       </div>
     );
   }
   if (user) {
-    router.push("/app");
+    router.push("/dashboard");
     return (
       <div className="spinner-">
-        <Spin spinning={pending} />
+        <Spin spinning={pending} delay={700} />
       </div>
     )
   }

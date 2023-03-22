@@ -6,7 +6,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Modal, Form, Input, Divider } from 'antd';
 import styles from './login.module.css';
 import Checkbox from 'antd/lib/checkbox/Checkbox';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, sendEmailVerification, signInWithPopup } from 'firebase/auth';
 import { auth, GoogleProvider } from '@/Firebase/utils';
 
 
@@ -39,6 +39,7 @@ const LoginModal = () => {
             const idToken: any = credential || credential.idToken;
             console.log(accessToken); // Google token
             console.log(idToken); // Firebase auth token
+            await sendEmailVerification(auth.currentUser)
             // navigate user to home page here.
             // redirect('/dashboard');
           }
