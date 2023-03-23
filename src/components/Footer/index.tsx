@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footerNotAuth.module.css";
+import styles from "./Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ import {
 import { Button, Divider, Typography, Col, Row } from "antd";
 const { Title, Text } = Typography;
 
-export default function FooterNotAuth() {
+export default function Footer({ user }) {
   return (
     <div className={styles.footerWrapper}>
       <div className={styles.footerContainer}>
@@ -32,10 +32,12 @@ export default function FooterNotAuth() {
           Wherever you are are in your journey, a mentor can help you take the
           next step.
         </Title>
-        <div className="space-4">
-          <Button>Sign up</Button>
-          <Button type="primary">Login</Button>
-        </div>
+        {!user ? (
+          <div className="space-4">
+            <Button>Sign up</Button>
+            <Button type="primary">Login</Button>
+          </div>
+        ) : null}
         <Divider />
         <Row align="middle" className={styles.contentRow}>
           <Col span={8}>
