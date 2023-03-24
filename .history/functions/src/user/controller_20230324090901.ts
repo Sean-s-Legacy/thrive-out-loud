@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 import { AppError, AppSuccess } from "../utils/response";
 import * as constants from "../utils/constants";
 import * as service from "./service"
-//import * as functions from 'firebase-functions';
+import * as functions from 'firebase-functions';
 //import message from "antd/lib/message";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
@@ -125,7 +125,7 @@ export const userEndpoints = async (req: Request, res: Response) => {
       const payload: userEndpointsSignUpPayLoad = req.body;
       const result = await service.createuserEndpointsAccount(payload)
 
-      console.log(Response)
+      // console.log(userResponse)
 
       // Insert data to firestore collection
       // await dbService.createMenteeAccount(payload, firebaseUserData)

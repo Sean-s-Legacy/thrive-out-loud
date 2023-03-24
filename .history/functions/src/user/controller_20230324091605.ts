@@ -114,7 +114,7 @@ export const listUsers = async(_req: Request, res: Response) => {
   console.log(response);
 });
 
-export const userEndpoints = async (req: Request, res: Response) => {
+export const userEndpoints = async (=req: Request, res: Response) => {
   console.log(
       "+++++++++++++++++++ create userEndpoints +++++++++++++++++++"
   );

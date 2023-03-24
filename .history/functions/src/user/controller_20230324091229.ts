@@ -125,7 +125,7 @@ export const userEndpoints = async (req: Request, res: Response) => {
       const payload: userEndpointsSignUpPayLoad = req.body;
       const result = await service.createuserEndpointsAccount(payload)
 
-      console.log(Response)
+      console.log(useResponse)
 
       // Insert data to firestore collection
       // await dbService.createMenteeAccount(payload, firebaseUserData)
