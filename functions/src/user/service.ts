@@ -10,13 +10,24 @@ export const createMenteeAccount = async (payload: any) => {
     try {
         if (!!payload) {
 
-            const { user_email, user_pswd, user_name_first, user_name_last } = payload;
+            const { user_email, 
+                user_pswd, 
+                user_name_first, 
+                user_name_last,
+                mentee_pronouns,
+                mentee_social_link,
+                mentee_focus_area,
+
+            } = payload;
 
 
             const firebaseUserData: FirebaseUserPayload = {
                 displayName: user_name_first + " " + user_name_last,
                 email: user_email,
                 password: user_pswd,
+                mentee_pronouns:mentee_pronouns,
+                mentee_social_link:mentee_social_link,
+                mentee_focus_area:mentee_focus_area,
                 emailVerified: false,
                 disabled: false,
             }

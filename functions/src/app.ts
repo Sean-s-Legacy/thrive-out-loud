@@ -67,6 +67,7 @@ const app: express.Application = express();
 //  })
  
 
+// simple route
 
  routesConfig(app);
 
