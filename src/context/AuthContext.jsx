@@ -14,16 +14,7 @@ import {
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-export interface AuthContextModel {
-  currentUser: User | null;
-  signIn: (email: string, password: string) => Promise<UserCredential>;
-  signUp: (email: string, password: string) => Promise<UserCredential>;
-  sendPasswordResetEmail?: (email: string) => Promise<void>;
-}
-
-const AuthContext = React.createContext<AuthContextModel>(
-  {} as AuthContextModel
-);
+const AuthContext = React.createContext();
 
 export function useAuth() {
   return useContext(AuthContext);
