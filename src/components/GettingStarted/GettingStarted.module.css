@@ -1,0 +1,44 @@
+.section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 8px;
+   gap: 120px;
+}
+
+.container {
+   display: flex;
+   align-items: center;
+   padding: 80px 8px;
+   margin: 0 5rem;
+}
+
+.frame {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 0px;
+   gap: 16px;
+
+   width: 325px;
+   height: 172px;
+}
+.title {
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 30px;
+   line-height: 40px;
+   color: #69388f;
+}
+
+.round {
+   position: absolute;
+   width: 10px;
+   height: 32px;
+   left: calc(50% - 10px / 2 + 0.83px);
+   top: calc(50% - 32px / 2 + 1px);
+   color: #8d57d9;
+}
