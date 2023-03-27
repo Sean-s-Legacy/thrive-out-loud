@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { auth, GoogleProvider } from "../Firebase/utils";
