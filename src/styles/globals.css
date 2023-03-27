@@ -35,20 +35,20 @@ h6 {
   margin: 0;
 }
 /* Heading */
-h1.ant-typography {
+h1.ant-typography,
+div.ant-typography-h1 {
   font-size: 38px;
   line-height: 121.5% !important;
-  margin-bottom: 0;
 }
-h2.ant-typography {
+h2.ant-typography,
+div.ant-typography-h2 {
   font-size: 30px;
   line-height: 133% !important;
-  margin-bottom: 0px;
 }
-h3.ant-typography {
+h3.ant-typography,
+div.ant-typography-h3 {
   font-size: 24px;
   line-height: 133% !important;
-  margin: 0;
 }
 
 /* Font-weights */
@@ -217,6 +217,14 @@ button.ant-btn.ant-btn-lg {
   font-size: 20px;
 }
 
+/* Button - GoogleSignin */
+button.ant-btn.googlebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* -------- Input */
 /* Hover  */
 input.ant-input:hover,
@@ -312,8 +320,23 @@ prop inside the phosphor-react component */
   border: none;
 }
 
+/* Password Input */
+.ant-input-affix-wrapper.ant-input-password > input:hover,
+.ant-input-affix-wrapper.ant-input-password > input:focus {
+  border: none;
+}
+.ant-input-affix-wrapper.ant-input-password > input {
+  border-radius: 0px;
+}
+
 /* -------- Modals */
 /* Close Button Icon */
+.ant-modal-content {
+  overflow: hidden;
+}
+button.ant-modal-close {
+  margin: 20px 25px;
+}
 
 /* -------- Space */
 
@@ -394,9 +417,13 @@ prop inside the phosphor-react component */
 }
 
 /* --------- Divider */
-.ant-divider.ant-divider-horizontal {
-  background-color: var(--primary6);
-  margin: 0;
+.ant-divider.ant-divider-horizontal.ant-divider-with-text {
+  color: var(--character-disabled-placeholder);
+  margin: 0px;
+}
+.ant-divider.ant-divider-horizontal.ant-divider-with-text
+  > span.ant-divider-inner-text {
+  color: var(--character-secondary);
 }
 
 /* --------- Tag */
