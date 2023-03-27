@@ -1,23 +1,14 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import { getUser } from "@/Firebase/auth";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
 import Mentors from "../components/Mentors";
 
-export default function Dashboard() {
-  const { asPath, pathname } = useRouter();
-  const [user, setUser] = useState({} as any);
+import { useAuth } from "../context/AuthContext";
 
-  useEffect(() => {
-    const result = getUser();
-    console.log(result);
-    setUser(result);
-  }, []);
+export default function Dashboard() {
+  const { currentUser } = useAuth();
+  console.log("dashboard currentUser:", currentUser);
 
   return (
     <div>
-      Welcome <b>{user?.displayName} this is the dashbaord</b>
+      Welcome <b>{currentUser?.displayName} this is the dashbaord</b>
       <div></div>
       <Mentors />
     </div>
