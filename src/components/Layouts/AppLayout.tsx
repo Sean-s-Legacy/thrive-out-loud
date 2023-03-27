@@ -2,13 +2,16 @@ import React from "react";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 
-export const AppLayout = (props: any) => {
-  const { children, user } = props;
+import { useAuth } from "../../context/AuthContext";
+
+export const AppLayout = ({ children }) => {
+  const { currentUser } = useAuth();
+
   return (
     <>
-      <Navbar user={user} />
+      <Navbar user={currentUser} />
       {children}
-      <Footer user={user} />
+      <Footer user={currentUser} />
     </>
   );
 };
