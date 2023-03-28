@@ -78,12 +78,14 @@ export default function Home() {
           Find a mentor
         </Button>
       </section>
-      <WaveSection>
+      {/* <WaveSection bgColor="primary2"
+      negColorTop="primary0"
+      negColorBottom="primary0">
         <Title className="textAlignCenter" level={2}>
           Testimonials
         </Title>
         <ImageSlider />
-      </WaveSection>
+      </WaveSection> */}
       <section className={styles.instructionsSection}>
         <div className={styles.instructionsSectionWrapper}>
           <Image

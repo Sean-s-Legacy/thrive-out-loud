@@ -60,7 +60,6 @@ function index(props) {
   ];
   return (
     <>
-      Meow
       {team.map((member, index) => {
         <TeamMember
           key={index}
