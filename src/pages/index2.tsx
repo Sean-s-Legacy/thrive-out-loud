@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Row, Col, Button } from "antd";
+import { Typography, Button } from "antd";
 import Image from "next/image";
 import styles from "@/styles/index2.module.css";
 
@@ -28,7 +28,6 @@ export default function newhomepage() {
               </div>
     
               <div className={styles.container1}>
-             
               
                 <div className={styles.imagediv}>
                 <Image
@@ -39,9 +38,6 @@ export default function newhomepage() {
                />
               </div>
               
-            
-
-           
               <div className={styles.imagediv}>
               <Image
                 alt="focused on you promotional text "
@@ -51,8 +47,6 @@ export default function newhomepage() {
                />
               </div>
              
-
-           
               <div className={styles.imagediv} >
               <Image
                 alt="designed for privacy promotional text "
@@ -62,8 +56,6 @@ export default function newhomepage() {
                />
               </div>
              
-
-           
               </div>
               <div className={styles.btncontainer}>
                 <Button  size='large' type='primary'>Learn more </Button>
