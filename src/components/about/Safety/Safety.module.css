@@ -1,0 +1,24 @@
+.sectionContainer {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin: 0 auto;
+}
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.infoContainer {
+  display: flex;
+  gap: 64px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+}

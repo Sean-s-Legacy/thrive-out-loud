@@ -52,6 +52,9 @@ div.ant-typography-h3 {
 }
 
 /* Font-weights */
+.regularWeight {
+  font-weight: 400;
+}
 .mediumWeight {
   font-weight: 500;
 }
@@ -88,9 +91,17 @@ div.ant-typography-h3 {
 .textInverse {
   color: var(--white);
 }
+.ant-typography.textPrimary9,
+.textPrimary9 {
+  color: var(--primary9);
+}
 .ant-typography.textPrimary8,
 .textPrimary8 {
   color: var(--primary8);
+}
+.ant-typography.textPrimary7,
+.textPrimary7 {
+  color: var(--primary7);
 }
 .ant-typography.textPrimary3,
 .textPrimary3 {
@@ -102,6 +113,10 @@ div.ant-typography-h3 {
 .textPrimary2 p,
 .textPrimary2 span {
   color: var(--primary2);
+}
+.ant-typography.textPrimary1,
+.textPrimary1 {
+  color: var(--primary1);
 }
 
 /* Links */
@@ -149,7 +164,11 @@ a:active {
 button.ant-btn.ant-btn-primary {
   border: 1px solid var(--primary6);
 }
-button.ant-btn.ant-btn-primary:not([disabled]):hover,
+button.ant-btn.ant-btn-primary:disabled {
+  border-color: var(--neutral5);
+}
+button.ant-btn.ant-btn-primary:has(:disabled)
+  button.ant-btn.ant-btn-primary:not([disabled]):hover,
 button.ant-btn.ant-btn-primary:not([disabled]):focus {
   background-color: var(--primary6);
   border: 1px solid var(--primary6);

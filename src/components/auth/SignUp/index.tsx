@@ -26,6 +26,7 @@ export default function SignUpModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [checked, setChecked] = useState(null);
   const [error, setError] = useState(null);
 
   const showModal = () => {
@@ -119,14 +120,19 @@ export default function SignUpModal() {
                     </Form.Item>
                   </div>
                   <div>
-                    <Checkbox>
+                    <Checkbox onChange={(e) => setChecked(e.target.checked)}>
                       <span className="mediumWeight footnote">
                         I am 18 years or older
                       </span>
                     </Checkbox>
                   </div>
 
-                  <Button type="primary" onClick={handleSubmit} block>
+                  <Button
+                    type="primary"
+                    onClick={handleSubmit}
+                    block
+                    disabled={!password || !email || !checked}
+                  >
                     Sign Up
                   </Button>
                 </Form>
