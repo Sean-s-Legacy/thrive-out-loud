@@ -2,13 +2,11 @@ import React from "react";
 // import Mentors from "@/components/Mentors";
 import MentorCard from "@/components/MentorCard";
 import Mentors from "@/components/Mentors";
-// import ProfileFormSection from "@/components/ProfileFormSection";
 
 export default function MenteeProfileCreation() {
   return (
     <>
-      {/* <Mentors /> */}
-      {/* <ProfileFormSection /> */}
+      <Mentors />
       {/* <MentorCard
         name="Drew Cano"
         imgSrc="/images/mentor2.png"

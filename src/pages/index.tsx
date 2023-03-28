@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Typography, Button, Space, Spin } from "antd";
+import { Typography, Button, Space } from "antd";
 import Image from "next/image";
 
 import styles from "@/styles/index.module.css";
@@ -10,23 +10,23 @@ import WaveSection from "@/components/WaveSection";
 import SignUpModal from "@/components/SignUpModal";
 import LoginBtn from "@/components/LoginBtn";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import FooterNotAuth from "@/components/FooterNotAuth";
 
 // firebase
 import firebase, { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/Firebase/utils";
 
 import { useRouter } from "next/router";
-import Dashboard from "./dashboard";
-import { AppLayout } from "@/components/Layout/AppLayout";
+import Dashboard from "../components/dashboard";
 const { Title, Text } = Typography;
 
 export default function Home() {
   const [user, setUser] = useState<firebase.User | null>(null);
   const [pending, setPending] = useState(true);
 
-  const router = useRouter();
+  const { asPath, pathname } = useRouter();
   useEffect(() => {
+    console.log("check pathname :>> ", pathname, asPath);
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setPending(false);
       console.log("index", user);
@@ -42,25 +42,13 @@ export default function Home() {
     });
     return unsubscribe;
   }, []);
-
-  if (pending) {
-    return (
-      <div className="spinner-">
-        <Spin spinning={pending} />
-      </div>
-    );
-  }
-  if (user) {
-    router.push("/app");
-    return (
-      <div className="spinner-">
-        <Spin spinning={pending} />
-      </div>
-    );
-  }
   return (
     <>
-      <AppLayout user={user}>
+      <Navbar user={user} page={pathname} />
+      {/* landing page */}
+      {!!user && user ? (
+        <Dashboard />
+      ) : (
         <>
           <div>
             <section className={styles.heroSection}>
@@ -145,7 +133,9 @@ export default function Home() {
             </section>
           </div>
         </>
-      </AppLayout>
+      )}
+
+      <FooterNotAuth />
     </>
   );
 }

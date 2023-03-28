@@ -1,23 +1,12 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
-import {
-  Button,
-  Modal,
-  Form,
-  Input,
-  Divider,
-  Typography,
-  Row,
-  Col,
-} from "antd";
-import styles from "./signup.module.css";
-import Checkbox from "antd/lib/checkbox/Checkbox";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth, GoogleProvider } from "@/Firebase/utils";
-import { redirect } from "next/navigation";
-
-const { Title, Text, Link } = Typography;
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Button, Modal, Form, Input, Divider } from 'antd';
+import styles from './signup.module.css';
+import Checkbox from 'antd/lib/checkbox/Checkbox';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth, GoogleProvider } from '@/Firebase/utils';
+import { redirect } from 'next/navigation';
 
 export default function SignUpModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,7 +48,7 @@ export default function SignUpModal() {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button size="small" type="primary" onClick={showModal}>
         Sign Up
       </Button>
 
@@ -69,76 +58,49 @@ export default function SignUpModal() {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
-        bodyStyle={{ padding: 0 }}
       >
-        <Row>
-          <Col span={12} className={styles.textContent}>
-            <div className={styles.modalContent}>
-              <div className={styles.titleContainer}>
-                <Title level={2} className="semibold">
-                  Welcome!
-                </Title>
-                <Text className="mediumWeight textLarge" type="secondary">
-                  Please create an account
-                </Text>
-              </div>
 
-              <div>
-                <Form className={styles.form}>
-                  <Form.Item>
-                    <h4>Email</h4>
-                    <Input className={styles.input} placeholder="Enter Email" />
-                  </Form.Item>
-                  <Form.Item>
-                    <h4>Password</h4>
-                    <Input.Password
-                      className={styles.input}
-                      placeholder="Enter Password"
-                      iconRender={(visible) =>
-                        visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-                      }
-                    />
-                  </Form.Item>
-                  <div>
-                    <Checkbox className="footnote">
-                      I certify that I am 18 years or older
-                    </Checkbox>
-                    <Checkbox className="footnote">
-                      I have read & accepted Sean’s Legacy’s
-                      <Link>privacy policy</Link>
-                    </Checkbox>
-                  </div>
+        <h1 className="semibold textLarge" style={{ color: '#1a1028' }}>Welcome!</h1>
+        <h3 className="mediumWeight" style={{ color: '#706685' }}>Please create an account</h3>
 
-                  <Button type="primary" size="large">
-                    Sign Up
-                  </Button>
+        <div className={styles.container1}>
+          <div>
+            <Form className={styles.form}>
+              <Form.Item >
+                <h4>Email</h4>
+                <Input
+                  className={styles.input}
+                  placeholder='Enter Email'
+                />
+              </Form.Item>
+              <Form.Item >
+                <h4>Password</h4>
+                <Input.Password
+                  className={styles.input}
+                  placeholder='Enter Password'
+                  iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                />
+              </Form.Item>
+              <Checkbox className='footnote'> I certify that I am 18 years or older</Checkbox>
 
-                  <Divider className={styles.divider}>or</Divider>
+              <Button type='primary' size="large" className={styles.signupbtn}>Sign Up</Button>
 
-                  <Button
-                    onClick={handleGoogleSignIn}
-                    size="large"
-                    className={styles.googlebtn}
-                  >
-                    Continue with Google
-                  </Button>
-                  <p className="mediumWeight semibold">
-                    Already have an account?
-                    <a href="{{url}}"> Log in</a>
-                  </p>
-                </Form>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <Image
-              alt="modal"
-              width={572}
-              height={743.63}
-              src="/images/module.png"
-            />
-          </Col>
-        </Row>
+              <Divider style={{ borderColor: '#8145b5' }}>or</Divider>
+
+              <Button onClick={handleGoogleSignIn} size="large" className={styles.googlebtn} >
+                Continue with Google
+              </Button>
+              <p className="mediumWeight semibold">
+                Already have an account?
+                <a href='{{url}}'> Log in</a>
+              </p>
+            </Form>
+          </div>
+          <div>
+            
+            <Image alt="modal" width={572} height={743.63} src="/images/module.png" />
+          </div>
+        </div>
       </Modal>
     </>
   );
