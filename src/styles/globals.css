@@ -103,6 +103,10 @@ h3.ant-typography {
 .textPrimary2 span {
   color: var(--primary2);
 }
+.ant-typography.textPrimary7,
+.textPrimary7 {
+  color: var(--primary7);
+}
 
 /* Links */
 a {
