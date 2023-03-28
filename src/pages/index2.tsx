@@ -23,14 +23,14 @@ export default function newhomepage() {
             </section>
 
             <section>
-              <div className={styles.space}>
+              <div className={styles.text1}>
                 <Title level={2} className='bold textAlignCenter textPrimary7'>Why sign up as a mentee?</Title>
               </div>
     
               <div className={styles.container1}>
-              <Row align='middle'>
-              <Col span ={8}>
-                <div>
+             
+              
+                <div className={styles.imagediv}>
                 <Image
                 alt="100% free promotional text "
                 width={368}
@@ -39,10 +39,10 @@ export default function newhomepage() {
                />
               </div>
               
-              </Col>
+            
 
-               <Col span={8}>
-              <div className='space-12'>
+           
+              <div className={styles.imagediv}>
               <Image
                 alt="focused on you promotional text "
                 width={368}
@@ -50,10 +50,10 @@ export default function newhomepage() {
                 src="/images/Frame 51337crown.png"
                />
               </div>
-              </Col>
+             
 
-              <Col span={8}>
-              <div >
+           
+              <div className={styles.imagediv} >
               <Image
                 alt="designed for privacy promotional text "
                 width={368}
@@ -61,12 +61,12 @@ export default function newhomepage() {
                 src="/images/Frame 51338lock.png"
                />
               </div>
-              </Col>
+             
 
-              </Row>
+           
               </div>
-              <div className={styles.learnbtn}>
-                <Button className={styles.learnbtn} size='large' type='primary'>Learn more </Button>
+              <div className={styles.btncontainer}>
+                <Button  size='large' type='primary'>Learn more </Button>
               </div>
              </section>
               </div>

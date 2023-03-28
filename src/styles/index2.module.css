@@ -50,14 +50,25 @@
     gap: 72px;
     max-width: 1160px;
   }
-  .container1 {
-    padding: 96px 136px;
-  }
- 
 
- .learnbtn {
-  text-align: center;
+  .text1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .container1 {
+    display: flex;
+    justify-content: center;
+    gap: 96px;
+    margin-top: 20px;
+  }
+
+ .btncontainer {
+  display: flex;
+  justify-content: center;
+  padding: 16px 28px;
+  gap: 10px;
+  margin-top: 20px;
+  
  }
-.space {
-  margin-top: 50px;
-}
