@@ -32,19 +32,23 @@ h6 {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   line-height: 133%;
+  margin: 0;
 }
 /* Heading */
 h1.ant-typography {
   font-size: 38px;
   line-height: 121.5% !important;
+  margin-bottom: 0;
 }
 h2.ant-typography {
   font-size: 30px;
   line-height: 133% !important;
+  margin-bottom: 0px;
 }
 h3.ant-typography {
   font-size: 24px;
   line-height: 133% !important;
+  margin: 0;
 }
 
 /* Font-weights */
@@ -98,6 +102,10 @@ h3.ant-typography {
 .textPrimary2 p,
 .textPrimary2 span {
   color: var(--primary2);
+}
+.ant-typography.textPrimary7,
+.textPrimary7 {
+  color: var(--primary7);
 }
 
 /* Links */
@@ -432,49 +440,6 @@ span.ant-typography.textLarge {
 } */
 
 /* Styles to be moved in locally scoped files */
-.nav_container {
-  display: flex;
-  gap: 60px;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px 32px 16px 32px;
-}
-
-.search_input:focus {
-  background-color: #e9e6f0;
-}
-.primary_btn {
-  background-color: #8d57d9;
-  color: #fff;
-  box-shadow: 0px 1px 2px 0px #101828;
-}
-
-.common_btn {
-  border-radius: 12px;
-  padding: 12px 20px 12px 20px;
-  height: 48px;
-}
-
-.auth_btn {
-  width: 99px;
-}
-
-.hamburger_menu {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  height: 16.5px;
-  width: 24.75px;
-}
-.hamburger_bdr {
-  background-color: #706685;
-  height: 2.5px;
-}
-
-.hamburger_bdr_2 {
-  width: 22px;
-  height: 2.5px;
-}
 
 .image_slider_container {
   width: 100%;
@@ -511,4 +476,15 @@ span.ant-typography.textLarge {
   transform: translate(0%, -50%);
   font-size: 13.5px;
   cursor: pointer;
+}
+.spinner- {
+  padding: 30px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
