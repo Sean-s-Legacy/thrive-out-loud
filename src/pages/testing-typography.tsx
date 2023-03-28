@@ -1,20 +1,18 @@
+// Page used to showcase how to use antd typography and buttons and styling classes
+// Navigate to localhost:3000/testing-typography to view
+
 import React from "react";
 import styles from "@/styles/testing.module.scss";
 
-import { Divider, Typography, Button, Space } from "antd";
+import { Typography, Button, Space } from "antd";
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Text, Link } = Typography;
 
 function testing(props) {
   return (
     <Space direction="vertical">
       {/* Text elements */}
-      <Space
-        direction="horizontal"
-        align="start"
-        // className="space1"
-        size={20}
-      >
+      <Space direction="horizontal" align="start" size={20}>
         <Space className={styles.spaceAlignBlock} direction="vertical">
           <Text className="textLarge">Text Large - Regular</Text>
           <Text>Text Body - Regular</Text>

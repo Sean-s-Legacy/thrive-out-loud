@@ -1,3 +1,6 @@
+// Page used to showcase how to use antd inputs and modals and styling classes
+// Navigate to localhost:3000/testing-inputs to view
+
 import React, { useState } from "react";
 import {
   Button,
