@@ -8,6 +8,7 @@ import { useAuth } from "../context/AuthContext";
 import styles from "@/styles/index.module.css";
 
 import Mentors from "../components/Mentors/index";
+import GettingStarted from "@/components/GettingStarted";
 import ImageSlider from "../components/ImageSlider/index";
 import WaveSection from "@/components/WaveSection";
 
@@ -78,6 +79,7 @@ export default function Home() {
           Find a mentor
         </Button>
       </section>
+      <GettingStarted />
       {/* <WaveSection bgColor="primary2"
       negColorTop="primary0"
       negColorBottom="primary0">
