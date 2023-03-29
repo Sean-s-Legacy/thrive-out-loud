@@ -88,7 +88,7 @@ export default function Navbar({ user }) {
       ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
-            <Link href="#">About us</Link>
+            <Link href="/about">About us</Link>
             <Link href="#">Resources</Link>
             <Link href="#">Become a mentor</Link>
           </div>

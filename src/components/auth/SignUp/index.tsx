@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  Button,
-  Modal,
-  Form,
-  Input,
-  Divider,
-  Typography,
-  Row,
-  Col,
-} from "antd";
+import { Button, Modal, Form, Divider, Typography, Row, Col } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { X } from "phosphor-react";
 import Checkbox from "antd/lib/checkbox/Checkbox";

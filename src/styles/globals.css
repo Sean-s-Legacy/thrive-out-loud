@@ -436,9 +436,14 @@ button.ant-modal-close {
 }
 
 /* --------- Divider */
-.ant-divider.ant-divider-horizontal.ant-divider-with-text {
+.ant-divider.ant-divider-horizontal.ant-divider-with-text,
+.ant-divider.ant-divider-horizontal {
   color: var(--character-disabled-placeholder);
   margin: 0px;
+}
+/* footer divider */
+.ant-divider.ant-divider-horizontal.footerDivider {
+  background-color: var(--primary6);
 }
 .ant-divider.ant-divider-horizontal.ant-divider-with-text
   > span.ant-divider-inner-text {

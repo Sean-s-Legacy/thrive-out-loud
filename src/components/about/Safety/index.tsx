@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "antd";
+import { Typography, Divider } from "antd";
 import styles from "./Safety.module.css";
 import WaveSection from "@/components/WaveSection";
 import Image from "next/image";
@@ -16,6 +16,7 @@ function index() {
         <Title level={2} className="bold textPrimary9 textAlignCenter">
           Platform safety plan
         </Title>
+        <Divider />
         <div className={styles.contentContainer}>
           <div className={styles.infoContainer}>
             <Image

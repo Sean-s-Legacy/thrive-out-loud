@@ -33,16 +33,16 @@ export default function Footer({ user }) {
           next step.
         </Title>
         {!user ? (
-          <div className="space-4">
+          <div className={styles.btnContainer}>
             <Button>Sign up</Button>
             <Button type="primary">Login</Button>
           </div>
         ) : null}
-        <Divider />
+        <Divider className="footerDivider" />
         <Row align="middle" className={styles.contentRow}>
           <Col span={8}>
-            <div className="vertical space-2">
-              <div className="vertical space-5">
+            <div className={styles.contactWrapper}>
+              <div className={styles.contactHeading}>
                 <div className={styles.iconWrapper}>
                   <Envelope size={24} weight="light" className={styles.icon} />
                 </div>
@@ -57,8 +57,8 @@ export default function Footer({ user }) {
             </div>
           </Col>
           <Col span={8}>
-            <div className="vertical space-2">
-              <div className="vertical space-5">
+            <div className={styles.contactWrapper}>
+              <div className={styles.contactHeading}>
                 <div className={styles.iconWrapper}>
                   <Cursor size={24} weight="light" className={styles.icon} />
                 </div>
@@ -71,9 +71,9 @@ export default function Footer({ user }) {
             </div>
           </Col>
           <Col span={8}>
-            <div className="vertical space-2">
-              <div className="vertical space-6">
-                <div className=" space-6">
+            <div className={styles.contactWrapper}>
+              <div className={styles.socialsLinksWrapper}>
+                <div className={styles.socialsLinks}>
                   <InstagramLogo
                     size={32}
                     className={styles.socialIcon}
@@ -106,8 +106,8 @@ export default function Footer({ user }) {
           </Col>
         </Row>
 
-        <Divider />
-        <div className={`semibold textPrimary2 space-7 ${styles.linkWrapper}`}>
+        <Divider className="footerDivider" />
+        <div className={`semibold textPrimary2 ${styles.linkWrapper}`}>
           <Link href="#" className={styles.link}>
             Become a mentor
           </Link>

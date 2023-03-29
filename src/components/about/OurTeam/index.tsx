@@ -1,7 +1,12 @@
 import React from "react";
+
+import { Row, Col, Typography } from "antd";
+
+import styles from "./OurTeam.module.css";
 import TeamMember from "@/components/about/TeamMember";
 
 function index(props) {
+  const { Title } = Typography;
   const team = [
     {
       imgSrc: null,
@@ -59,16 +64,26 @@ function index(props) {
     },
   ];
   return (
-    <>
-      {team.map((member, index) => {
-        <TeamMember
-          key={index}
-          name={member.name}
-          pronouns={member.pronouns}
-          role={member.role}
-        />;
-      })}
-    </>
+    <section className={styles.section}>
+      <div className={styles.sectionContainer}>
+        <Title level={2} className="bold textPrimary7 textAlignCenter">
+          Meet the team
+        </Title>
+        <Row gutter={[24, 48]}>
+          {team.map((member, index) => {
+            return (
+              <Col span={8} key={index}>
+                <TeamMember
+                  name={member.name}
+                  pronouns={member.pronouns}
+                  role={member.role}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
+    </section>
   );
 }
 

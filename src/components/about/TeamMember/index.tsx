@@ -12,7 +12,7 @@ function index({ imgSrc = null, name, pronouns, role }) {
         <Title level={3} className="semibold textAlignCenter">
           {name}
         </Title>
-        <Text className="textLarge textAlignCenter">{pronouns}</Text>
+        <Text className="textLarge textAlignCenter">({pronouns})</Text>
       </div>
       <Text className="textLarge textAlignCenter">{role}</Text>
     </div>
