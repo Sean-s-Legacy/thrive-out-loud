@@ -1,19 +1,26 @@
+/* Hero Section */
 .heroSection {
-  background-image: url("/images/landing_img.jpg");
-  background-size: cover;
+  background-image: url("/images/index/leaf-background-hero.png");
   background-repeat: no-repeat;
-  background-position: 25% 5%;
-  height: calc(100vh - 260px);
+  padding: 106px;
+  background-color: var(--primary1);
+  position: relative;
+}
+.heroImg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
 }
 .heroSectionHeading {
-  width: 681px;
-  height: 514px;
-  background-image: url("/images/landing_title_bg.png");
   padding: 80px 55px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 1000;
 }
+
+/* Transition Section */
 .transitionSection {
   background-color: var(--primary8);
   padding: 48px;
@@ -22,6 +29,8 @@
   max-width: 1060px;
   margin: 0 auto;
 }
+
+/* Mentor Section */
 .mentorSection {
   display: flex;
   flex-direction: column;
@@ -29,7 +38,6 @@
   gap: 72px;
   padding: 70px 0;
 }
-
 .mentorSectionHeadingContainer {
   display: flex;
   flex-direction: column;
@@ -37,16 +45,32 @@
   max-width: 794px;
 }
 
+/* Instructions Section */
 .instructionsSection {
   padding: 126px 36px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .instructionsSectionWrapper {
   display: flex;
   justify-content: center;
   gap: 72px;
   max-width: 1160px;
+}
+
+/* Promotional Section */
+.promotionalSection {
+  padding: 96px 24px;
+}
+.promotionalSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
 }

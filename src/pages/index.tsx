@@ -64,6 +64,14 @@ export default function Home() {
         <>
           <div>
             <section className={styles.heroSection}>
+              <Image
+                alt="Woman sitting on a couch in front of her laptop, smiling"
+                src={"/images/index/hero.png"}
+                className={styles.heroImg}
+                width={850}
+                height={778}
+                // fill
+              />
               <div className={styles.heroSectionHeading}>
                 <Title className="bold textPrimary8">
                   Sean’s Legacy <br /> Mentorship Program
@@ -95,7 +103,48 @@ export default function Home() {
                 </Text>
               </div>
             </section>
-            <section className={styles.mentorSection}>
+
+            <section className={styles.promotionalSection}>
+              <div className={styles.promotionalSectionWrapper}>
+                <div>
+                  <Title
+                    level={2}
+                    className="bold textAlignCenter textPrimary7"
+                  >
+                    Why sign up as a mentee?
+                  </Title>
+                </div>
+
+                <div className={styles.imgWrapper}>
+                  <Image
+                    alt="100% free - No subscription is needed and completely ad-free."
+                    width={368}
+                    height={320}
+                    src="/images/index/promotional-1.png"
+                  />
+
+                  <Image
+                    alt="Focused on you - Find a trusted mentor who fits your interests and career goals.  "
+                    width={368}
+                    height={320}
+                    src="/images/index/promotional-2.png"
+                  />
+
+                  <Image
+                    alt="Designed for privacy - You have full control over what data you provide. "
+                    width={368}
+                    height={320}
+                    src="/images/index/promotional-3.png"
+                  />
+                </div>
+                <div className={styles.btncontainer}>
+                  <Button size="large" type="primary">
+                    Learn more{" "}
+                  </Button>
+                </div>
+              </div>
+            </section>
+            {/* <section className={styles.mentorSection}>
               <div className={styles.mentorSectionHeadingContainer}>
                 <Title level={2} className="semibold textAlignCenter">
                   Check out some of our mentors
@@ -111,14 +160,14 @@ export default function Home() {
               <Button type="primary" size="large">
                 Find a mentor
               </Button>
-            </section>
-            <WaveSection>
+            </section> */}
+            {/* <WaveSection>
               <Title className="textAlignCenter" level={2}>
                 Testimonials
               </Title>
               <ImageSlider />
-            </WaveSection>
-            <section className={styles.instructionsSection}>
+            </WaveSection> */}
+            {/* <section className={styles.instructionsSection}>
               <div className={styles.instructionsSectionWrapper}>
                 <Image
                   src={"/images/landing-privacy.jpg"}
@@ -142,7 +191,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-            </section>
+            </section> */}
           </div>
         </>
       </AppLayout>
