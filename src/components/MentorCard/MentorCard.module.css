@@ -2,6 +2,26 @@
   width: 348px;
   height: 520px;
 }
+.textContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cardNamePronouns {
+  display: flex;
+  gap: 4px;
+}
+.cardJobTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tagsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .icon {
   color: var(--neutral7);
 }
