@@ -30,8 +30,21 @@
   align-items: center;
   gap: 32px;
 }
-.ant-avatar.avatar {
+
+.links a {
+  color: var(--neutral8);
+  border-bottom: 2px solid transparent;
+  /* padding: 25px 0; */
+}
+
+.links a:hover,
+.links a:focus {
+  color: var(--primary6);
+  border-bottom: 2px solid var(--primary6);
+}
+.avatar {
   background-color: var(--primary1);
+  /* background: var(--primary1); */
 }
 .user_profile {
   display: flex;

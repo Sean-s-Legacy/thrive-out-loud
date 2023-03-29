@@ -31,16 +31,16 @@ export default function MentorCard({
         />
       }
     >
-      <div className="space-3 vertical">
-        <div className="space-1">
+      <div className={styles.textContentWrapper}>
+        <div className={styles.cardNamePronouns}>
           <Text className="textLarge semibold">{name}</Text>
           <Text className="textLarge">{pronouns}</Text>
         </div>
-        <div className="space-3 align-center">
+        <div className={styles.cardJobTitle}>
           <Briefcase size={26} className={styles.icon} />
           <Text type="secondary">{jobTitle}</Text>
         </div>
-        <div className="space-2 vertical">
+        <div className={styles.tagsWrapper}>
           <div className={styles.tagWrapper}>
             {fieldOfExpertise.map((el: string, i: number) => {
               return (

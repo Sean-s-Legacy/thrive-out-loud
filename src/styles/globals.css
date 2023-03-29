@@ -35,23 +35,26 @@ h6 {
   margin: 0;
 }
 /* Heading */
-h1.ant-typography {
+h1.ant-typography,
+div.ant-typography-h1 {
   font-size: 38px;
   line-height: 121.5% !important;
-  margin-bottom: 0;
 }
-h2.ant-typography {
+h2.ant-typography,
+div.ant-typography-h2 {
   font-size: 30px;
   line-height: 133% !important;
-  margin-bottom: 0px;
 }
-h3.ant-typography {
+h3.ant-typography,
+div.ant-typography-h3 {
   font-size: 24px;
   line-height: 133% !important;
-  margin: 0;
 }
 
 /* Font-weights */
+.regularWeight {
+  font-weight: 400;
+}
 .mediumWeight {
   font-weight: 500;
 }
@@ -88,9 +91,17 @@ h3.ant-typography {
 .textInverse {
   color: var(--white);
 }
+.ant-typography.textPrimary9,
+.textPrimary9 {
+  color: var(--primary9);
+}
 .ant-typography.textPrimary8,
 .textPrimary8 {
   color: var(--primary8);
+}
+.ant-typography.textPrimary7,
+.textPrimary7 {
+  color: var(--primary7);
 }
 .ant-typography.textPrimary3,
 .textPrimary3 {
@@ -102,6 +113,10 @@ h3.ant-typography {
 .textPrimary2 p,
 .textPrimary2 span {
   color: var(--primary2);
+}
+.ant-typography.textPrimary1,
+.textPrimary1 {
+  color: var(--primary1);
 }
 
 /* Links */
@@ -149,7 +164,11 @@ a:active {
 button.ant-btn.ant-btn-primary {
   border: 1px solid var(--primary6);
 }
-button.ant-btn.ant-btn-primary:not([disabled]):hover,
+button.ant-btn.ant-btn-primary:disabled {
+  border-color: var(--neutral5);
+}
+button.ant-btn.ant-btn-primary:has(:disabled)
+  button.ant-btn.ant-btn-primary:not([disabled]):hover,
 button.ant-btn.ant-btn-primary:not([disabled]):focus {
   background-color: var(--primary6);
   border: 1px solid var(--primary6);
@@ -215,6 +234,14 @@ button.ant-btn {
 button.ant-btn.ant-btn-lg {
   line-height: 140%;
   font-size: 20px;
+}
+
+/* Button - GoogleSignin */
+button.ant-btn.googlebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* -------- Input */
@@ -312,8 +339,23 @@ prop inside the phosphor-react component */
   border: none;
 }
 
+/* Password Input */
+.ant-input-affix-wrapper.ant-input-password > input:hover,
+.ant-input-affix-wrapper.ant-input-password > input:focus {
+  border: none;
+}
+.ant-input-affix-wrapper.ant-input-password > input {
+  border-radius: 0px;
+}
+
 /* -------- Modals */
 /* Close Button Icon */
+.ant-modal-content {
+  overflow: hidden;
+}
+button.ant-modal-close {
+  margin: 20px 25px;
+}
 
 /* -------- Space */
 
@@ -394,9 +436,18 @@ prop inside the phosphor-react component */
 }
 
 /* --------- Divider */
+.ant-divider.ant-divider-horizontal.ant-divider-with-text,
 .ant-divider.ant-divider-horizontal {
+  color: var(--character-disabled-placeholder);
+  margin: 0px;
+}
+/* footer divider */
+.ant-divider.ant-divider-horizontal.footerDivider {
   background-color: var(--primary6);
-  margin: 0;
+}
+.ant-divider.ant-divider-horizontal.ant-divider-with-text
+  > span.ant-divider-inner-text {
+  color: var(--character-secondary);
 }
 
 /* --------- Tag */

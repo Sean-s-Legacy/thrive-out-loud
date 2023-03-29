@@ -1,32 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Avatar, Button, Space, Input, Dropdown } from "antd";
+
+import styles from "./Navbar.module.css";
+import { useAuth } from "@/context/AuthContext";
+
+import { Avatar, Button, Input, Dropdown } from "antd";
 import type { MenuProps } from "antd";
 import { CaretDown, User } from "phosphor-react";
 
-import { doSignOut } from "@/Firebase/auth";
-import styles from "./Navbar.module.css";
-import SignUpModal from "../SignUpModal";
-import LoginModal from "../auth/LoginModal";
-import TestLayout from "../auth/test/TestLayout";
+import SignUpModal from "../auth/SignUp";
+import LoginModal from "../auth/Login";
 // import LoginBtn from "../LoginBtn";
 
 export default function Navbar({ user }) {
   const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [passwordVisible, setPasswordVisible] = React.useState(false);
-
-  const handleSignOut = () => {
-    doSignOut();
-    console.log("clicked sign out");
-  };
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  const { logout } = useAuth();
+  console.log(user);
 
   const items: MenuProps["items"] = [
     {
@@ -48,13 +39,14 @@ export default function Navbar({ user }) {
 
   return (
     <nav className={styles.nav_container}>
-      <Image
-        alt="Seans Legacy logo"
-        width={175}
-        height={46}
-        src="/images/SL-logo.png"
-        className={styles.logo}
-      />
+      <Link href="/" className={styles.logo}>
+        <Image
+          alt="Seans Legacy logo"
+          width={175}
+          height={46}
+          src="/images/SL-logo.png"
+        />
+      </Link>
       {!!user ? (
         <div className={styles.auth_container}>
           <Search
@@ -74,7 +66,7 @@ export default function Navbar({ user }) {
               dropdownRender={(menu) => (
                 <div>
                   {React.cloneElement(menu as React.ReactElement, {})}
-                  <Button type="primary" onClick={handleSignOut}>
+                  <Button type="primary" onClick={logout}>
                     Sign out
                   </Button>
                 </div>
@@ -96,7 +88,7 @@ export default function Navbar({ user }) {
       ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
-            <Link href="#">About us</Link>
+            <Link href="/about">About us</Link>
             <Link href="#">Resources</Link>
             <Link href="#">Become a mentor</Link>
           </div>

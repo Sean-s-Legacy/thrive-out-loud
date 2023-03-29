@@ -16,6 +16,32 @@
 .heading {
   max-width: 800px;
 }
+.btnContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.socialsLinksWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.socialsLinks {
+  display: flex;
+  gap: 24px;
+}
 
 .iconWrapper {
   display: flex;
@@ -49,4 +75,5 @@
   width: 100%;
   max-width: 1100px;
   display: flex;
+  gap: 32px;
 }
