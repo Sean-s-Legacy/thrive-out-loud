@@ -14,12 +14,18 @@
 }
 
 .header {
-   margin: 2rem auto 0;
+   margin: 20px auto 0;
 }
 
 .container {
    display: flex;
+   flex-direction: row;
+   justify-content: center;
    align-items: center;
+   padding: 16px 8px;
+   gap: 80px;
+   width: 1152px;
+   height: 216px;
 }
 
 .direction {
@@ -30,7 +36,7 @@
    padding: 0;
    width: 325px;
    height: 172px;
-   margin: 0 2em;
+   margin: 0 30px;
 }
 
 .circle {
@@ -40,6 +46,6 @@
    border: 2px solid #8d57d9;
    border-radius: 50px;
    text-align: center;
-   padding-top: 0.75em;
-   margin-bottom: 1em;
+   padding-top: 12px;
+   margin-bottom: 12px;
 }
