@@ -1,0 +1,144 @@
+.ourMentors {
+  background-image: url("/images/Vector.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: calc(100vh - 260px); */
+  padding: 200px 0 100px 0;
+}
+
+.ourMentorsNote1 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: -5%;
+  left: 45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow1 {
+  position: absolute;
+  top: 100%;
+  left: -30%;
+}
+.ourMentorsNote2 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 18%;
+  left: -45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow2 {
+  position: absolute;
+  right: -36%;
+  top: 50%;
+}
+.ourMentorsContents {
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.ourMentorsNote3 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 47%;
+  left: -45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow3 {
+  position: absolute;
+  right: -20%;
+  top: 50%;
+}
+
+.vector5 {
+  position: absolute;
+  right: -32%;
+  top: -25%;
+  width: 12%;
+}
+
+.ourMentorsNote4 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 85%;
+  left: -45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow4 {
+  position: absolute;
+  right: -40%;
+  top: 50%;
+}
+
+.ourMentorsNote5 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 18%;
+  right: -45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow5 {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 45%;
+}
+.ourMentorsNote6 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 38%;
+  right: -45%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow6 {
+  position: absolute;
+  right: 99%;
+  top: 50%;
+  width: 50%;
+}
+.ourMentorsNote7 {
+  background-color: var(--primary7);
+  width: 225px;
+  padding: 19px 29px;
+  border-radius: 12px;
+  top: 70%;
+  right: -5%;
+  position: absolute;
+  z-index: 2;
+}
+
+.arrow6 {
+  position: absolute;
+  right: 99%;
+  top: 50%;
+}
+
+.vector6 {
+  position: absolute;
+  right: 149%;
+  top: -50%;
+  width: 12%;
+}

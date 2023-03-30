@@ -19,6 +19,7 @@ import { auth } from "@/Firebase/utils";
 import { useRouter } from "next/router";
 import Dashboard from "./dashboard";
 import { AppLayout } from "@/components/Layout/AppLayout";
+import OurMentors from "@/components/OurMentors";
 const { Title, Text } = Typography;
 
 export default function Home() {
@@ -112,13 +113,15 @@ export default function Home() {
                 Find a mentor
               </Button>
             </section>
+
+            <OurMentors />
             <WaveSection>
               <Title className="textAlignCenter" level={2}>
                 Testimonials
               </Title>
               <ImageSlider />
             </WaveSection>
-            <section className={styles.instructionsSection}>
+            {/* <section className={styles.instructionsSection}>
               <div className={styles.instructionsSectionWrapper}>
                 <Image
                   src={"/images/landing-privacy.jpg"}
@@ -142,7 +145,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-            </section>
+            </section> */}
           </div>
         </>
       </AppLayout>
