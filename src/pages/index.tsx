@@ -8,8 +8,6 @@ import { useAuth } from "../context/AuthContext";
 import styles from "@/styles/index.module.css";
 
 import Mentors from "../components/Mentors/index";
-import ImageSlider from "../components/ImageSlider/index";
-import WaveSection from "@/components/WaveSection";
 
 const { Title, Text } = Typography;
 

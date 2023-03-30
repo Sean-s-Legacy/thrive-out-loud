@@ -1,5 +1,6 @@
 .nav_container {
   display: flex;
+  align-items: center;
   padding: 17px 32px;
   max-width: 1440px;
   margin: 0 auto;
@@ -66,4 +67,9 @@
 .btn_container {
   display: flex;
   gap: 16px;
+}
+
+/* Onboarding Navbar */
+.onboardingLogo {
+  margin: 0 auto;
 }

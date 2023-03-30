@@ -9,7 +9,7 @@ function index(props) {
       <div className={styles.textContainer}>
         <Title className="semibold">
           Sean’s Legacy is a public health non-profit redefining{" "}
-          <span className="textPrimary7">primary prevention of suicide</span>{" "}
+          <span className="textPrimary7">primary prevention of suicide</span>
           through education and mentorship.{" "}
         </Title>
       </div>
