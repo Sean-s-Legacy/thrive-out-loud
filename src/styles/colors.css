@@ -29,6 +29,9 @@
   --primary1: #f6edfc;
   --primary0: #fcfafc;
 
+  /* Extra Colors */
+  --volcano1: #FFF2E8
+
   /* Text Colors */
   --character-primary: rgba(0, 0, 0, 0.85);
   --character-primary-inverse: #fff;
