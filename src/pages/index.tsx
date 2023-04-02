@@ -7,7 +7,9 @@ import { useAuth } from "../context/AuthContext";
 
 import styles from "@/styles/index.module.css";
 
-import GettingStarted from "@/components/GettingStarted";
+import GettingStarted from "@/components/pages-index/GettingStarted";
+import OurMentors from "@/components/pages-index/OurMentors";
+import Testimonials from "@/components/pages-index/Testimonials";
 
 const { Title, Text } = Typography;
 
@@ -109,6 +111,8 @@ export default function Home() {
       </section>
 
       <GettingStarted />
+      <OurMentors />
+      <Testimonials />
     </div>
   );
 }

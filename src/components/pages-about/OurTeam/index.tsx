@@ -3,7 +3,7 @@ import React from "react";
 import { Row, Col, Typography } from "antd";
 
 import styles from "./OurTeam.module.css";
-import TeamMember from "@/components/about/TeamMember";
+import TeamMember from "@/components/pages-about/TeamMember";
 
 function index(props) {
   const { Title } = Typography;
