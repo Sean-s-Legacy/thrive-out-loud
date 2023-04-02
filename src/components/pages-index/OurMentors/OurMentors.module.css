@@ -1,0 +1,12 @@
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 794px;
+}
