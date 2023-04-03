@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+}
+.container {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1108px;
+}

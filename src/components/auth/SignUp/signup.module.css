@@ -1,0 +1,41 @@
+.textContentWrapper {
+  padding: 62px 20px;
+  margin: auto;
+}
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 326px;
+  margin: 0 auto;
+}
+
+.titleContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.terms {
+  margin-top: 8px;
+  text-align: center;
+}

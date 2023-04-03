@@ -32,22 +32,29 @@ h6 {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   line-height: 133%;
+  margin: 0;
 }
 /* Heading */
-h1.ant-typography {
+h1.ant-typography,
+div.ant-typography-h1 {
   font-size: 38px;
   line-height: 121.5% !important;
 }
-h2.ant-typography {
+h2.ant-typography,
+div.ant-typography-h2 {
   font-size: 30px;
   line-height: 133% !important;
 }
-h3.ant-typography {
+h3.ant-typography,
+div.ant-typography-h3 {
   font-size: 24px;
   line-height: 133% !important;
 }
 
 /* Font-weights */
+.regularWeight {
+  font-weight: 400;
+}
 .mediumWeight {
   font-weight: 500;
 }
@@ -84,9 +91,17 @@ h3.ant-typography {
 .textInverse {
   color: var(--white);
 }
+.ant-typography.textPrimary9,
+.textPrimary9 {
+  color: var(--primary9);
+}
 .ant-typography.textPrimary8,
 .textPrimary8 {
   color: var(--primary8);
+}
+.ant-typography.textPrimary7,
+.textPrimary7 {
+  color: var(--primary7);
 }
 .ant-typography.textPrimary3,
 .textPrimary3 {
@@ -98,6 +113,10 @@ h3.ant-typography {
 .textPrimary2 p,
 .textPrimary2 span {
   color: var(--primary2);
+}
+.ant-typography.textPrimary1,
+.textPrimary1 {
+  color: var(--primary1);
 }
 
 /* Links */
@@ -145,7 +164,11 @@ a:active {
 button.ant-btn.ant-btn-primary {
   border: 1px solid var(--primary6);
 }
-button.ant-btn.ant-btn-primary:not([disabled]):hover,
+button.ant-btn.ant-btn-primary:disabled {
+  border-color: var(--neutral5);
+}
+button.ant-btn.ant-btn-primary:has(:disabled)
+  button.ant-btn.ant-btn-primary:not([disabled]):hover,
 button.ant-btn.ant-btn-primary:not([disabled]):focus {
   background-color: var(--primary6);
   border: 1px solid var(--primary6);
@@ -211,6 +234,14 @@ button.ant-btn {
 button.ant-btn.ant-btn-lg {
   line-height: 140%;
   font-size: 20px;
+}
+
+/* Button - GoogleSignin */
+button.ant-btn.googlebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* -------- Input */
@@ -308,13 +339,32 @@ prop inside the phosphor-react component */
   border: none;
 }
 
+/* Password Input */
+.ant-input-affix-wrapper.ant-input-password > input:hover,
+.ant-input-affix-wrapper.ant-input-password > input:focus {
+  border: none;
+}
+.ant-input-affix-wrapper.ant-input-password > input {
+  border-radius: 0px;
+}
+
 /* -------- Modals */
 /* Close Button Icon */
+.ant-modal-content {
+  overflow: hidden;
+}
+button.ant-modal-close {
+  margin: 20px 25px;
+}
 
 /* -------- Space */
 
 .vertical {
   flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
 }
 .space-1 {
   display: flex;
@@ -386,9 +436,25 @@ prop inside the phosphor-react component */
 }
 
 /* --------- Divider */
+.ant-divider.ant-divider-horizontal.ant-divider-with-text,
 .ant-divider.ant-divider-horizontal {
+  color: var(--character-disabled-placeholder);
+  margin: 0px;
+}
+/* footer divider */
+.ant-divider.ant-divider-horizontal.footerDivider {
   background-color: var(--primary6);
-  margin: 0;
+}
+.ant-divider.ant-divider-horizontal.ant-divider-with-text
+  > span.ant-divider-inner-text {
+  color: var(--character-secondary);
+}
+
+/* --------- Tag */
+.ant-tag.tagPrimaryColor {
+  background-color: var(--primary1);
+  border: 1px solid var(--primary3);
+  color: var(--primary6);
 }
 
 /* Media Queries for responsive design */
@@ -421,127 +487,6 @@ span.ant-typography.textLarge {
 } */
 
 /* Styles to be moved in locally scoped files */
-.nav_container {
-  display: flex;
-  gap: 60px;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px 32px 16px 32px;
-}
-
-.search_input:focus {
-  background-color: #e9e6f0;
-}
-.primary_btn {
-  background-color: #8d57d9;
-  color: #fff;
-  box-shadow: 0px 1px 2px 0px #101828;
-}
-
-.common_btn {
-  border-radius: 12px;
-  padding: 12px 20px 12px 20px;
-  height: 48px;
-}
-
-.auth_btn {
-  width: 99px;
-}
-
-.hamburger_menu {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  height: 16.5px;
-  width: 24.75px;
-}
-.hamburger_bdr {
-  background-color: #706685;
-  height: 2.5px;
-}
-
-.hamburger_bdr_2 {
-  width: 22px;
-  height: 2.5px;
-}
-
-.landing {
-  background-image: url("/images/landing_img.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 25% 5%;
-  height: 792px;
-}
-.landing_title {
-  width: 681px;
-  height: 514px;
-  background-image: url("/images/landing_title_bg.png");
-  padding: 80px 55px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.landing_title h1 {
-  font-size: 48px;
-  line-height: 60px;
-  font-weight: 700;
-  color: #62379e;
-}
-
-.transition {
-  height: 248px;
-  background-color: #7942c7;
-  padding: 60px 190px;
-  color: #ffffff;
-}
-
-.checkout_mentors {
-  padding: 50px;
-}
-
-.checkout_mentors_title {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.mentor_card_section {
-  display: flex;
-  gap: 20px;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 70px 0 40px 0;
-}
-
-.mentor_card_section > div {
-  width: 30%;
-  border: 1px solid black;
-  height: 200px;
-  text-align: center;
-}
-
-.find_mentor_btn_section {
-  display: flex;
-  justify-content: center;
-}
-
-.find_mentor_btn {
-  width: 368px;
-  height: 60px;
-  border-radius: 14px;
-  font-size: 18px;
-}
-
-.testimonials {
-  height: 910px;
-  background: #f3ebff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 70px 132px;
-}
 
 .image_slider_container {
   width: 100%;
@@ -570,19 +515,6 @@ span.ant-typography.textLarge {
   font-size: 13.5px;
   cursor: pointer;
 }
-/* footer */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 0 px 48px;
-  gap: 52px;
-
-  width: 1600px;
-  height: 400px;
-
-  background-color: #62379e;
-}
 
 .image_slider_right_arrow {
   position: absolute;
@@ -591,4 +523,15 @@ span.ant-typography.textLarge {
   transform: translate(0%, -50%);
   font-size: 13.5px;
   cursor: pointer;
+}
+.spinner- {
+  padding: 30px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
