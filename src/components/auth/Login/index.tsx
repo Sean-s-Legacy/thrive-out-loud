@@ -112,8 +112,13 @@ export default function SignUpModal() {
                     </Link>
                   </div>
 
-                  <Button type="primary" onClick={handleSubmit} block>
-                    Sign Up
+                  <Button
+                    type="primary"
+                    onClick={handleSubmit}
+                    block
+                    disabled={!password || !email}
+                  >
+                    Log in
                   </Button>
                 </Form>
               </div>

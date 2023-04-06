@@ -55,7 +55,7 @@ export default function SignUpModal() {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Sign Up
+        Sign up
       </Button>
 
       <Modal
