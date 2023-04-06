@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
         // The signed-in user info.
         const user = result.user;
         setCurrentUser(user);
-        console.log(user);
+        // console.log(user);
         // IdP data available using getAdditionalUserInfo(result)
         // ...
         router.push("/dashboard");
@@ -53,16 +53,47 @@ export function AuthProvider({ children }) {
       });
   }
   function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        setCurrentUser(user);
+        router.push("/dashboard");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
   }
   function signIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        setCurrentUser(user);
+        router.push("/dashboard");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   }
   function resetPassword(email) {
     return sendPasswordResetEmail(auth, email);
   }
   function logout() {
-    return signOut(auth);
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        setCurrentUser(null);
+        router.push("/");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   }
 
   useEffect(() => {
