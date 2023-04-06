@@ -1,23 +1,30 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import { getUser } from "@/Firebase/auth";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
 import Mentors from "../components/Mentors";
 
+import { useAuth } from "../context/AuthContext";
+
 export default function Dashboard() {
-  const { asPath, pathname } = useRouter();
-  const [user, setUser] = useState({} as any);
+  const { currentUser } = useAuth();
+  const router = useRouter();
+
+  console.log("dashboard currentUser:", currentUser);
 
   useEffect(() => {
-    const result = getUser();
-    console.log(result);
-    setUser(result);
-  }, []);
+    if (currentUser == null) {
+      router.push("/");
+    }
+  }, [currentUser, router]);
+
+  if (!currentUser) {
+    // user is signed out or still being checked.
+    // don't render anything
+    return null;
+  }
 
   return (
     <div>
-      Welcome <b>{user?.displayName}</b>
+      Welcome, <b>{`${currentUser?.displayName}!`}</b> this is the dashboard
       <div></div>
       <Mentors />
     </div>
