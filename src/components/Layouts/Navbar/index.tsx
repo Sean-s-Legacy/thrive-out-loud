@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import styles from "./Navbar.module.css";
 import { useAuth } from "@/context/AuthContext";
@@ -9,11 +10,12 @@ import { Avatar, Button, Input, Dropdown } from "antd";
 import type { MenuProps } from "antd";
 import { CaretDown, User } from "phosphor-react";
 
-import SignUpModal from "../auth/SignUp";
-import LoginModal from "../auth/Login";
+import SignUpModal from "../../auth/SignUp";
+import LoginModal from "../../auth/Login";
 // import LoginBtn from "../LoginBtn";
 
 export default function Navbar({ user }) {
+  const router = useRouter();
   const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
   const { logout } = useAuth();
@@ -57,8 +59,18 @@ export default function Navbar({ user }) {
           />
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
-              <Link href="#">Dashboard</Link>
-              <Link href="#">Find a mentor</Link>
+              <Link
+                href="#"
+                className={router.pathname == "/dashboard" ? "active" : ""}
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="#"
+                className={router.pathname == "/explore" ? "active" : ""}
+              >
+                Find a mentor
+              </Link>
             </div>
             <Dropdown
               menu={{ items }}
@@ -88,9 +100,24 @@ export default function Navbar({ user }) {
       ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
-            <Link href="/about">About us</Link>
-            <Link href="#">Resources</Link>
-            <Link href="#">Become a mentor</Link>
+            <Link
+              href="/about"
+              className={router.pathname == "/about" ? styles.active : ""}
+            >
+              About us
+            </Link>
+            <Link
+              href="#"
+              className={router.pathname == "/resources" ? "active" : ""}
+            >
+              Resources
+            </Link>
+            <Link
+              href="#"
+              className={router.pathname == "/become-a-mentor" ? "active" : ""}
+            >
+              Become a mentor
+            </Link>
           </div>
           <div className={styles.btn_container}>
             <SignUpModal />

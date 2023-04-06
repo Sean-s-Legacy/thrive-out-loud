@@ -38,7 +38,8 @@
 }
 
 .links a:hover,
-.links a:focus {
+.links a:focus,
+.links a.active {
   color: var(--primary6);
   border-bottom: 2px solid var(--primary6);
 }
