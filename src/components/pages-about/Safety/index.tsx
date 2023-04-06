@@ -16,7 +16,6 @@ function index() {
         <Title level={2} className="bold textPrimary9 textAlignCenter">
           Platform safety plan
         </Title>
-        <Divider />
         <div className={styles.contentContainer}>
           <div className={styles.infoContainer}>
             <Image
