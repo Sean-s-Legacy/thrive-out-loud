@@ -153,7 +153,7 @@ export default function SignUpModal() {
               alt="modal"
               width={572}
               height={743.63}
-              src="/images/module.png"
+              src="/images/auth-modal.jpg"
             />
           </Col>
         </Row>

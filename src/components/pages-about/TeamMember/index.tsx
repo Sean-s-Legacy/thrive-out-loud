@@ -7,7 +7,7 @@ function index({ imgSrc = null, name, pronouns, role }) {
 
   return (
     <div className={styles.container}>
-      <Avatar size={216} />
+      <Avatar size={216} src={imgSrc} />
       <div className={styles.nameContainer}>
         <Title level={3} className="semibold textAlignCenter">
           {name}

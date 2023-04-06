@@ -27,7 +27,7 @@ export default function OurMentors() {
         </div>
         {/* Image will need approprite alt tag to convey info on "speech bubbles" */}
         <Image
-          src={"/images/index/OurMentors.png"}
+          src={"/images/index/mentor-profile.png"}
           alt="#"
           width={1115}
           height={819}
