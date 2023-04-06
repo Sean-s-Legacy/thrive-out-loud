@@ -19,15 +19,6 @@ export default function Home() {
 
   console.log("currentUser Index:", currentUser);
 
-  if (currentUser) {
-    router.push("/dashboard");
-    return (
-      <div className="spinner-">
-        <Spin spinning={loading} />
-      </div>
-    );
-  }
-
   return (
     <div>
       <section className={styles.heroSection}>
@@ -54,8 +45,8 @@ export default function Home() {
             alt="Woman sitting on a couch in front of her laptop, smiling"
             src={"/images/index/hero.png"}
             className={styles.heroImg}
-            width={1011}
-            height={708}
+            width={858}
+            height={715}
             // fill
           />
         </div>
