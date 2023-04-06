@@ -10,6 +10,8 @@ export default function Dashboard() {
 
   console.log("dashboard currentUser:", currentUser);
 
+  //A better solution for protected paths is needed
+
   useEffect(() => {
     if (currentUser == null) {
       router.push("/");
@@ -23,10 +25,13 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
-      Welcome, <b>{`${currentUser?.displayName}!`}</b> this is the dashboard
-      <div></div>
-      <Mentors />
+    // remove inline styles below
+    <div style={{ padding: "48px 96px", height: "100vh" }}>
+      Welcome,{" "}
+      <b>{`${
+        currentUser.displayName ? currentUser.displayName : currentUser.email
+      }!`}</b>{" "}
+      this is the dashboard
     </div>
   );
 }
