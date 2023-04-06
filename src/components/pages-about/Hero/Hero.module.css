@@ -1,0 +1,11 @@
+.section {
+  background-image: url("/images/about/leaf-background.png");
+  background-color: var(--primary1);
+  padding: 103px;
+}
+
+.textContainer {
+  max-width: 876px;
+  margin: 0 auto;
+  text-align: center;
+}

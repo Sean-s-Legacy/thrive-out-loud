@@ -91,6 +91,10 @@ div.ant-typography-h3 {
 .textInverse {
   color: var(--white);
 }
+.ant-typography.textPrimary10,
+.textPrimary10 {
+  color: var(--primary10);
+}
 .ant-typography.textPrimary9,
 .textPrimary9 {
   color: var(--primary9);

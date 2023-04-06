@@ -1,62 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Typography, Button, Space, Spin } from "antd";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import { useAuth } from "../context/AuthContext";
 
 import styles from "@/styles/index.module.css";
 
-import Mentors from "../components/Mentors/index";
-import GettingStarted from "@/components/GettingStarted";
-import ImageSlider from "../components/ImageSlider/index";
-import WaveSection from "@/components/WaveSection";
+import GettingStarted from "@/components/pages-index/GettingStarted";
+import OurMentors from "@/components/pages-index/OurMentors";
+import Testimonials from "@/components/pages-index/Testimonials";
 
 const { Title, Text } = Typography;
 
 export default function Home() {
   const { currentUser, loading } = useAuth();
-  const router = useRouter();
 
   console.log("currentUser Index:", currentUser);
-
-  if (currentUser) {
-    router.push("/dashboard");
-    return (
-      <div className="spinner-">
-        <Spin spinning={loading} />
-      </div>
-    );
-  }
 
   return (
     <div>
       <section className={styles.heroSection}>
-        <Image
-          alt="Woman sitting on a couch in front of her laptop, smiling"
-          src={"/images/index/hero.png"}
-          className={styles.heroImg}
-          width={850}
-          height={778}
-          // fill
-        />
-        <div className={styles.heroSectionHeading}>
-          <Title className="bold textPrimary8">
-            Sean’s Legacy <br /> Mentorship Program
-          </Title>
-          <div className="space-5 vertical">
-            <Text className="mediumWeight textLarge">
-              Wherever you are on your journey,
-              <br />a mentor can help you take the next step.
-            </Text>
+        <div className={styles.heroSectionContent}>
+          <div className={styles.heroSectionHeading}>
+            <Title className="bold textPrimary8">
+              Sean’s Legacy <br /> Mentorship Program
+            </Title>
+            <div className={styles.heroSectionHeadingContent}>
+              <Text className="mediumWeight textLarge">
+                A free, online mentorship program that matches LGBTQIA+ young
+                adults with mentors in the queer community.
+              </Text>
 
-            <Space wrap>
-              <Button type="primary" size="large">
-                Sign up
-              </Button>
-              <Button size="large">Learn more</Button>
-            </Space>
+              <Space wrap>
+                <Button type="primary" size="large">
+                  Sign up
+                </Button>
+                <Button size="large">Learn more</Button>
+              </Space>
+            </div>
           </div>
+          <Image
+            alt="Woman sitting on a couch in front of her laptop, smiling"
+            src={"/images/index/hero.png"}
+            className={styles.heroImg}
+            width={858}
+            height={715}
+            // fill
+          />
         </div>
       </section>
       <section className={styles.transitionSection}>
@@ -110,13 +100,8 @@ export default function Home() {
       </section>
 
       <GettingStarted />
-
-      {/* <WaveSection>
-              <Title className="textAlignCenter" level={2}>
-                Testimonials
-              </Title>
-              <ImageSlider />
-            </WaveSection> */}
+      <OurMentors />
+      <Testimonials />
     </div>
   );
 }

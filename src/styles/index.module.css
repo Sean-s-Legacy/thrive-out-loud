@@ -1,33 +1,44 @@
 /* Hero Section */
 .heroSection {
+  background-color: var(--primary1);
+  /* display: flex;
+  justify-content: space-between; */
+}
+.heroSectionContent {
   background-image: url("/images/index/leaf-background-hero.png");
   background-repeat: no-repeat;
-  padding: 106px;
-  background-color: var(--primary1);
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1650px;
+  margin: auto;
 }
 .heroImg {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
+  width: 858px;
+  height: 705px;
+  object-fit: fill;
 }
 .heroSectionHeading {
-  padding: 80px 55px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  z-index: 1000;
+  gap: 16px;
+  max-width: 486px;
+  margin: 132px 0 0 149px;
+}
+.heroSectionHeadingContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 /* Transition Section */
 .transitionSection {
   background-color: var(--primary8);
-  padding: 48px;
+  padding: 64px;
 }
 .transitionSectionContainer {
   max-width: 1060px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Mentor Section */
@@ -61,6 +72,7 @@
 
 /* Promotional Section */
 .promotionalSection {
+  background-color: var(--primary0);
   padding: 96px 24px;
 }
 .promotionalSectionWrapper {

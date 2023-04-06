@@ -1,9 +1,10 @@
 import React from "react";
-import Hero from "@/components/about/Hero";
-import OurStory from "@/components/about/OurStory";
-import Goals from "@/components/about/Goals";
-import Safety from "@/components/about/Safety";
-import OurTeam from "@/components/about/OurTeam";
+import Hero from "@/components/pages-about/Hero";
+import OurStory from "@/components/pages-about/OurStory";
+import Goals from "@/components/pages-about/Goals";
+import Safety from "@/components/pages-about/Safety";
+import OurTeam from "@/components/pages-about/OurTeam";
+import ContactUs from "@/components/pages-about/ContactUs";
 
 function about(props) {
   return (
@@ -13,6 +14,7 @@ function about(props) {
       <Goals />
       <Safety />
       <OurTeam />
+      <ContactUs />
     </>
   );
 }

@@ -7,15 +7,20 @@ import { Input, Typography } from "antd";
 function InputWrapper({
   label,
   onChange,
+  optional = false,
   password = false,
   placeholder,
+  rows = null,
   size,
+  textarea = false,
   value,
 }) {
   const { Text } = Typography;
+  const { TextArea } = Input;
   return (
     <div>
       <Text>{label}</Text>
+      {optional ? <Text> (optional)</Text> : null}
       {password ? (
         <Input.Password
           iconRender={(visible) =>
@@ -23,6 +28,15 @@ function InputWrapper({
           }
           onChange={onChange}
           placeholder={placeholder}
+          size={size}
+          value={value}
+        />
+      ) : textarea ? (
+        <TextArea
+          autoSize
+          onChange={onChange}
+          placeholder={placeholder}
+          rows={rows}
           size={size}
           value={value}
         />
