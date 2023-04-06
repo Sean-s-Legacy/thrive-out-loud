@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, Button, Space, Spin } from "antd";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import { useAuth } from "../context/AuthContext";
 
@@ -15,7 +14,6 @@ const { Title, Text } = Typography;
 
 export default function Home() {
   const { currentUser, loading } = useAuth();
-  const router = useRouter();
 
   console.log("currentUser Index:", currentUser);
 

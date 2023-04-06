@@ -16,11 +16,11 @@ export default function Dashboard() {
     }
   }, [currentUser, router]);
 
-  // if (!currentUser) {
-  //   // user is signed out or still being checked.
-  //   // don't render anything
-  //   return null;
-  // }
+  if (!currentUser) {
+    // user is signed out or still being checked.
+    // don't render anything
+    return null;
+  }
 
   return (
     <div>
