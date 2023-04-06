@@ -33,11 +33,12 @@
 /* Transition Section */
 .transitionSection {
   background-color: var(--primary8);
-  padding: 48px;
+  padding: 64px;
 }
 .transitionSectionContainer {
   max-width: 1060px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Mentor Section */
