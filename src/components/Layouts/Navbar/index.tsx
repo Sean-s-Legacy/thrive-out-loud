@@ -13,6 +13,7 @@ import { CaretDown, User } from "phosphor-react";
 import SignUpModal from "../../auth/SignUp";
 import LoginModal from "../../auth/Login";
 // import LoginBtn from "../LoginBtn";
+import { MenuOutlined } from "@ant-design/icons";
 
 export default function Navbar({ user }) {
   const router = useRouter();
@@ -36,6 +37,21 @@ export default function Navbar({ user }) {
     {
       label: "3rd menu item",
       key: "3",
+    },
+  ];
+
+  const navDropDown: MenuProps["items"] = [
+    {
+      label: <a href="/about">About us</a>,
+      key: "0",
+    },
+    {
+      label: <a href="#">Resources</a>,
+      key: "1",
+    },
+    {
+      label: <a href="#">Become a mentor</a>,
+      key: "2",
     },
   ];
 
@@ -123,6 +139,16 @@ export default function Navbar({ user }) {
             <SignUpModal />
             <LoginModal />
           </div>
+          <Dropdown
+            placement="bottomRight"
+            className={styles.nav_dropdown}
+            menu={{ items: navDropDown }}
+            trigger={["click"]}
+          >
+            <a onClick={(e) => e.preventDefault()}>
+              <MenuOutlined style={{ fontSize: "30px", color: "black" }} />
+            </a>
+          </Dropdown>
         </div>
       )}
     </nav>
