@@ -40,7 +40,7 @@ export default function Navbar({ user }) {
     },
   ];
 
-  const navItemDropDown: MenuProps["items"] = [
+  const navDropDown: MenuProps["items"] = [
     {
       label: <a href="/about">About us</a>,
       key: "0",
@@ -141,8 +141,8 @@ export default function Navbar({ user }) {
           </div>
           <Dropdown
             placement="bottomRight"
-            className={styles.navDropDown}
-            menu={{ items: navItemDropDown }}
+            className={styles.nav_dropdown}
+            menu={{ items: navDropDown }}
             trigger={["click"]}
           >
             <a onClick={(e) => e.preventDefault()}>

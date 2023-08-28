@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 
-.navDropDown {
+.nav_dropdown {
   display: flex;
   height: 100%;
   align-items: center;
@@ -45,7 +45,7 @@
     border-bottom: 2px solid var(--primary6);
   }
 
-  .navDropDown {
+  .nav_dropdown {
     display: none;
   }
 }
