@@ -13,6 +13,7 @@ import { CaretDown, User } from "phosphor-react";
 import SignUpModal from "../../auth/SignUp";
 import LoginModal from "../../auth/Login";
 // import LoginBtn from "../LoginBtn";
+import { MenuOutlined } from "@ant-design/icons";
 
 export default function Navbar({ user }) {
   const router = useRouter();
@@ -23,11 +24,11 @@ export default function Navbar({ user }) {
 
   const items: MenuProps["items"] = [
     {
-      label: <a href="https://www.antgroup.com">1st menu item</a>,
+      label: <Link href="#">1st menu item</Link>,
       key: "0",
     },
     {
-      label: <a href="https://www.aliyun.com">2nd menu item</a>,
+      label: <Link href="#">2nd menu item</Link>,
       key: "1",
     },
     {
@@ -36,6 +37,21 @@ export default function Navbar({ user }) {
     {
       label: "3rd menu item",
       key: "3",
+    },
+  ];
+
+  const navDropDown: MenuProps["items"] = [
+    {
+      label: <Link href="/about">About us</Link>,
+      key: "0",
+    },
+    {
+      label: <Link href="#">Resources</Link>,
+      key: "1",
+    },
+    {
+      label: <Link href="#">Become a mentor</Link>,
+      key: "2",
     },
   ];
 
@@ -123,6 +139,16 @@ export default function Navbar({ user }) {
             <SignUpModal />
             <LoginModal />
           </div>
+          <Dropdown
+            placement="bottomRight"
+            className={styles.nav_dropdown}
+            menu={{ items: navDropDown }}
+            trigger={["click"]}
+          >
+            <a onClick={(e) => e.preventDefault()}>
+              <MenuOutlined style={{ fontSize: "30px", color: "black" }} />
+            </a>
+          </Dropdown>
         </div>
       )}
     </nav>
