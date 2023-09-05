@@ -24,11 +24,11 @@ export default function Navbar({ user }) {
 
   const items: MenuProps["items"] = [
     {
-      label: <a href="https://www.antgroup.com">1st menu item</a>,
+      label: <Link href="#">1st menu item</Link>,
       key: "0",
     },
     {
-      label: <a href="https://www.aliyun.com">2nd menu item</a>,
+      label: <Link href="#">2nd menu item</Link>,
       key: "1",
     },
     {
@@ -42,15 +42,15 @@ export default function Navbar({ user }) {
 
   const navDropDown: MenuProps["items"] = [
     {
-      label: <a href="/about">About us</a>,
+      label: <Link href="/about">About us</Link>,
       key: "0",
     },
     {
-      label: <a href="#">Resources</a>,
+      label: <Link href="#">Resources</Link>,
       key: "1",
     },
     {
-      label: <a href="#">Become a mentor</a>,
+      label: <Link href="#">Become a mentor</Link>,
       key: "2",
     },
   ];
