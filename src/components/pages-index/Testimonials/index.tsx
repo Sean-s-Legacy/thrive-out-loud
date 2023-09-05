@@ -14,14 +14,14 @@ const testimonials = [
       "'I'm so grateful for the mentorship I received from Jane. She went above and beyond to help me land my dream job. With her guidance, I was able to polish my resume and cover letter, and prepare for the interview process. She even introduced me...'",
   },
   {
-    imgSrc: "testimonial-1.png",
+    imgSrc: "testimonial-2.png",
     name: "Bailey",
     role: "Product Designer",
     testimonialText:
       "'I'm so grateful for the mentorship I received from Jane. She went above and beyond to help me land my dream job. With her guidance, I was able to polish my resume and cover letter, and prepare for the interview process. She even introduced me...'",
   },
   {
-    imgSrc: "testimonial-1.png",
+    imgSrc: "testimonial-3.png",
     name: "Jessie",
     role: "College Student",
     testimonialText:

@@ -52,7 +52,7 @@ export default function Footer({ user }) {
                 Our friendly team is here to help.
               </Text>
               <Text className="semibold textInverse">
-                seanslegacyplaceholder@gmail.com
+                support@seanslegacy.com
               </Text>
             </div>
           </Col>
@@ -109,16 +109,13 @@ export default function Footer({ user }) {
         <Divider className="footerDivider" />
         <div className={`semibold textPrimary2 ${styles.linkWrapper}`}>
           <Link href="#" className={styles.link}>
-            Become a mentor
-          </Link>
-          <Link href="#" className={styles.link}>
-            Find a mentor
-          </Link>
-          <Link href="#" className={styles.link}>
             About us
           </Link>
           <Link href="#" className={styles.link}>
-            Help
+            Resources
+          </Link>
+          <Link href="#" className={styles.link}>
+            Become a mentor
           </Link>
         </div>
       </div>
