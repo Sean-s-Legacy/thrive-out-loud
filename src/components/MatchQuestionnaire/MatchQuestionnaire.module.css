@@ -1,0 +1,17 @@
+.match_questionnaire_container {
+    margin: auto;
+    position: relative;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .match_questionnaire_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    padding-left: 40px;
+    gap: 10px;
+  }
