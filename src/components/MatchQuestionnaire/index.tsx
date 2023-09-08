@@ -32,7 +32,7 @@ export default function MatchQuestionnaire() {
               </span>
             </Button>
           </div>
-          <Image src={user_match} alt="match_questionnaire_image" />
+          <Image src={user_match} alt="match_questionnaire_image" style={{transform: 'scale(1.12)'}}/>
         </div>
       </Card>
     </>
