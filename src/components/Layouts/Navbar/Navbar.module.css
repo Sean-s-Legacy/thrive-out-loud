@@ -1,8 +1,9 @@
 .nav_container {
   display: flex;
-  padding: 17px 32px;
+  justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 17px 32px;
 }
 .logo {
   margin-right: auto;
@@ -130,11 +131,10 @@
     display: none;
   }
 
-  .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -155,6 +155,7 @@
 .auth_links_wrapper {
   display: flex;
   gap: 60px;
+  white-space: nowrap;
 }
 
 .avatar {
@@ -179,6 +180,6 @@
   align-items: center;
   gap: 40px;
   height: 50px;
-  width: 100%;
   justify-content: end;
+  white-space: nowrap;
 }
