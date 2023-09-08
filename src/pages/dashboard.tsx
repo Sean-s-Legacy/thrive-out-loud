@@ -16,28 +16,29 @@ export default function Dashboard() {
   // console.log("dashboard currentUser:", currentUser);
 
   //A better solution for protected paths is needed
-  useEffect(() => {
-    if (currentUser == null) {
-      router.push("/dashboard");
-    }
-  }, [currentUser, router]);
+  // useEffect(() => {
+  //   if (currentUser == null) {
+  //     router.push("/dashboard");
+  //   }
+  // }, [currentUser, router]);
 
-  if (!currentUser) {
+  // if (!currentUser) {
   // user is signed out or still being checked.
   // dont render anything
-    return null;
-  }
+  //   return null;
+  // }
   // *** COMMENTED OUT FOR TESTING ***
 
   return (
     // remove inline styles below
     <div style={{ padding: "48px 96px", backgroundColor: "var(--primary0)" }}>
       <Title level={2} className="semibold">
-        Welcome,{" "}
+        Welcome, User!
+        {/* Welcome,{" "}
        <b>{`${ 
          currentUser.displayName ? currentUser.displayName : currentUser.email
       }!`}</b>{" "}
-      this is the dashboard
+      this is the dashboard */}
       </Title>
       <CompleteProfile />
       <MatchQuestionnaire />
