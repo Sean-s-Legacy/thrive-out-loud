@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Mentors from "../components/Mentors";
 import CompleteProfile from "@/components/CompleteProfile";
 import MatchQuestionnaire from "@/components/MatchQuestionnaire";
-import RecMentorsSlider from '../components/RecommendedMentors/RecMentorSlider/index'
+import RecommendedMentorsSlider from '../components/RecommendedMentors/RecMentorSlider/index'
 import { Typography } from "antd";
 
 import { useAuth } from "../context/AuthContext";
@@ -43,7 +43,7 @@ export default function Dashboard() {
       </Title>
       <CompleteProfile />
       <MatchQuestionnaire />
-      <RecMentorsSlider />
+      <RecommendedMentorsSlider />
     </div>
   );
 }

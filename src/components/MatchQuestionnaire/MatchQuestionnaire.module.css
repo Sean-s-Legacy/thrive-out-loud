@@ -1,17 +1,34 @@
 .match_questionnaire_container {
-    margin: auto;
-    position: relative;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  margin: auto;
+  position: relative;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  .match_questionnaire_left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
-    padding-left: 40px;
-    gap: 10px;
-  }
+.match_questionnaire_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  padding-left: 40px;
+  gap: 10px;
+}
+
+.btn_custom_style {
+  width: 255px;
+  margin-top: 20px;
+}
+
+.icon_custom_style {
+  font-size: 28px;
+  color: #FFFFFF;
+  vertical-align: bottom;
+  padding-top: 2px;
+}
+
+.span_style {
+  padding-bottom: 3px;
+  line-height: 29px;
+}

@@ -57,14 +57,17 @@ export default function Navbar({ user }) {
 
   return (
     <nav className={styles.nav_container}>
-      <Link href="/" className={styles.logo}>
-        <Image
-          alt="Seans Legacy logo"
-          width={175}
-          height={46}
-          src="/images/SL-logo.png"
-        />
-      </Link>
+      <div className={!user && styles.logoContainer}>
+        <Link href="/">
+          <Image
+            alt="Seans Legacy logo"
+            width={175}
+            height={46}
+            src="/images/SL-logo.png"
+            className={styles.logo}
+          />
+        </Link>
+      </div>
       {!!user ? (
         <div className={styles.auth_container}>
           <Search

@@ -7,7 +7,7 @@ import styles from "./RecMentorCard.module.css";
 
 const { Text } = Typography;
 
-export default function RecMentorCard({
+export default function RecommendedMentorCard({
   name,
   imgSrc,
   pronouns,

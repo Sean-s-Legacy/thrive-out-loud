@@ -20,19 +20,16 @@ export default function MatchQuestionnaire() {
               <br></br>that suit your individual preferences and professional
               needs.
             </Text>
-            <Button
-              type="primary"
-              style={{ width: "255px", marginTop: "20px" }}
-            >
-              <RightCircleFilled
-                style={{ fontSize: "28px", color: "#FFFFFF" }}
-              />{" "}
-              <span style={{ verticalAlign: "top", lineHeight: "29px" }}>
-                Take Questionnaire
-              </span>
+            <Button type="primary" className={styles.btn_custom_style}>
+              <RightCircleFilled className={styles.icon_custom_style} />{" "}
+              <span className={styles.span_style}>Take Questionnaire</span>
             </Button>
           </div>
-          <Image src={user_match} alt="match_questionnaire_image" style={{transform: 'scale(1.12)'}}/>
+          <Image
+            src={user_match}
+            alt="match_questionnaire_image"
+            style={{ transform: "scale(1.12)" }}
+          />
         </div>
       </Card>
     </>

@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React, { useState, useRef, useEffect } from "react";
-import RecMentorCard from "../RecMentorCard";
+import RecommendedMentorCard from "../RecMentorCard";
 import styles from "./RecMentorSlider.module.css";
 import {
   InfoCircleOutlined,
@@ -8,7 +8,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 
-export default function ImageSlider() {
+export default function RecommendedMentorSlider() {
   const { Title } = Typography;
   const imgRef = useRef<HTMLDivElement>();
 
@@ -121,19 +121,17 @@ export default function ImageSlider() {
               ref={imgRef}
               style={{ transform: `translateX(-${currentIndex * 494}px)` }}
             >
-              {mentors
-                .slice(currentIndex, currentIndex + 3)
-                .map((slide: ISlidesProps, index) => (
-                  <RecMentorCard
-                    key={index}
-                    name={slide.name}
-                    imgSrc={slide.imgSrc}
-                    pronouns={slide.pronouns}
-                    jobTitle={slide.jobTitle}
-                    tag={slide.tag}
-                    supportOffered={slide.supportOffered}
-                  />
-                ))}
+              {[...mentors].splice(0, 3).map((slide: ISlidesProps, index) => (
+                <RecommendedMentorCard
+                  key={index}
+                  name={slide.name}
+                  imgSrc={slide.imgSrc}
+                  pronouns={slide.pronouns}
+                  jobTitle={slide.jobTitle}
+                  tag={slide.tag}
+                  supportOffered={slide.supportOffered}
+                />
+              ))}
             </div>
           </div>
           <div>

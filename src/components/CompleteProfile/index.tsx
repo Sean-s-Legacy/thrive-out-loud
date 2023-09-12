@@ -40,20 +40,20 @@ export default function CompleteProfile() {
 
           <div className={styles.complete_profile_right}>
             <Link href="/dashboard">
-              <ReadOutlined style={{ fontSize: '28px'}}/>{" "}
-              <Text className="mediumWeight" type="secondary" style={{ marginLeft: '10px', verticalAlign: 'top', lineHeight: '24px'}}>
+              <ReadOutlined className={styles.icon_size} />{" "}
+              <Text type="secondary" className={styles.text_styles}>
                 My story
               </Text>
             </Link>
             <Link href="/dashboard">
-              <IdcardOutlined style={{ fontSize: '28px'}}/>{" "}
-              <Text className="mediumWeight" type="secondary" style={{ marginLeft: '10px', verticalAlign: 'top', lineHeight: '24px'}}>
+              <IdcardOutlined className={styles.icon_size} />{" "}
+              <Text type="secondary" className={styles.text_styles}>
                 My experience
               </Text>
             </Link>
             <Link href="/dashboard">
-              <StarOutlined style={{ fontSize: '28px'}}/>{" "}
-              <Text className="mediumWeight" type="secondary" style={{ marginLeft: '10px', verticalAlign: 'top', lineHeight: '24px'}}>
+              <StarOutlined className={styles.icon_size} />{" "}
+              <Text type="secondary" className={styles.text_styles}>
                 My interests
               </Text>
             </Link>
