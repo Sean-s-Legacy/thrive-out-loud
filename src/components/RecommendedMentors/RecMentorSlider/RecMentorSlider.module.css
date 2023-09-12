@@ -30,12 +30,3 @@
   font-size: 20px;
   cursor: pointer;
 }
-
-.slide {
-  opacity: 0;
-}
-
-.slide.active {
-  opacity: 1;
-}
-  
