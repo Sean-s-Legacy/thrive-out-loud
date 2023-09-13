@@ -88,7 +88,6 @@ export default function RecommendedMentorSlider() {
     } else if (newIndex >= mentors.length) {
       newIndex = mentors.length - 1;
     }
-
     setCurrentIndex(newIndex);
   };
 
@@ -121,17 +120,19 @@ export default function RecommendedMentorSlider() {
               ref={imgRef}
               style={{ transform: `translateX(-${currentIndex * 494}px)` }}
             >
-              {[...mentors].splice(0, 3).map((slide: ISlidesProps, index) => (
-                <RecommendedMentorCard
-                  key={index}
-                  name={slide.name}
-                  imgSrc={slide.imgSrc}
-                  pronouns={slide.pronouns}
-                  jobTitle={slide.jobTitle}
-                  tag={slide.tag}
-                  supportOffered={slide.supportOffered}
-                />
-              ))}
+              {[...mentors]
+                .splice(currentIndex, currentIndex + 3)
+                .map((slide: ISlidesProps, index) => (
+                  <RecommendedMentorCard
+                    key={index}
+                    name={slide.name}
+                    imgSrc={slide.imgSrc}
+                    pronouns={slide.pronouns}
+                    jobTitle={slide.jobTitle}
+                    tag={slide.tag}
+                    supportOffered={slide.supportOffered}
+                  />
+                ))}
             </div>
           </div>
           <div>
