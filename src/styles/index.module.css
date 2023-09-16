@@ -1,0 +1,88 @@
+/* Hero Section */
+.heroSection {
+  background-color: var(--primary1);
+  /* display: flex;
+  justify-content: space-between; */
+}
+.heroSectionContent {
+  background-image: url("/images/index/leaf-background-hero.png");
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1650px;
+  margin: auto;
+}
+.heroImg {
+  width: 858px;
+  height: 705px;
+  object-fit: fill;
+}
+.heroSectionHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 486px;
+  margin: 132px 0 0 149px;
+}
+.heroSectionHeadingContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Transition Section */
+.transitionSection {
+  background-color: var(--primary8);
+  padding: 64px;
+}
+.transitionSectionContainer {
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mentor Section */
+.mentorSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  padding: 70px 0;
+}
+.mentorSectionHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 794px;
+}
+
+/* Instructions Section */
+.instructionsSection {
+  padding: 126px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.instructionsSectionWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  max-width: 1160px;
+}
+
+/* Promotional Section */
+.promotionalSection {
+  background-color: var(--primary0);
+  padding: 96px 24px;
+}
+.promotionalSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
