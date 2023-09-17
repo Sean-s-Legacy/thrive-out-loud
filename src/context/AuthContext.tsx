@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -57,9 +58,17 @@ export function AuthProvider({ children }) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setCurrentUser(user);
-        router.push("/dashboard");
-        // ...
+        sendEmailVerification(user);
+        if (!user.emailVerified) {
+          // If email is not verified, navigate to the email verification page
+          router.push({
+            pathname: "/email-verification",
+          });
+        } else {
+          // Email is already verified, proceed to the dashboard
+          setCurrentUser(user);
+          router.push("/dashboard");
+        }
       })
       .catch((error) => {
         const errorCode = error.code;
