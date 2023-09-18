@@ -15,4 +15,4 @@ init(db);
 // };
 
 // HTTP Requests (Trigger)
-export const app = functions.https.onRequest(application)
+export const app = functions.https.onRequest(application);

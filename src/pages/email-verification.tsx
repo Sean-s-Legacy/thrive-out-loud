@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
 import Image from "next/image";
 
-import { sendEmailVerification } from "firebase/auth";
+import sendVerificationEmail from "@/utils/sendVerificationEmail";
 
 import { useAuth } from "../context/AuthContext";
 
 export default function EmailVerification() {
-  const router = useRouter();
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    if (currentUser && currentUser.emailVerified) {
-      router.push("/email-verification-verified");
-    }
-  }, [currentUser, router]);
+    sendVerificationEmail(currentUser.email);
+  }, []);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -31,7 +27,7 @@ export default function EmailVerification() {
       >
         <Image
           alt="Plane"
-          src={"/images/email-verification/plane-illustration.png"}
+          src={"/images/email-verification/plane.png"}
           width={0}
           height={0}
           sizes="100vw"
@@ -72,7 +68,7 @@ export default function EmailVerification() {
                 color: "#8145B5",
                 cursor: "pointer",
               }}
-              onClick={() => sendEmailVerification(currentUser)}
+              onClick={() => sendVerificationEmail(currentUser.email)}
             >
               Resend email
             </p>

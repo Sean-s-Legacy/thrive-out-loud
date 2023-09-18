@@ -56,11 +56,8 @@ export function AuthProvider({ children }) {
   function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
-        sendEmailVerification(user);
         if (!user.emailVerified) {
-          // If email is not verified, navigate to the email verification page
           router.push({
             pathname: "/email-verification",
           });
