@@ -48,7 +48,7 @@ function index() {
               </Text>
             </div>
             <Image
-              src={"/images/about/safety-placeholder.png"}
+              src={"/images/about/lock.png"}
               height={260}
               width={260}
               alt="placeholder"
@@ -56,7 +56,7 @@ function index() {
           </div>
           <div className={styles.infoContainer}>
             <Image
-              src={"/images/about/safety-placeholder.png"}
+              src={"/images/about/code.png"}
               height={260}
               width={260}
               alt="placeholder"
@@ -82,7 +82,7 @@ function index() {
               </Text>
             </div>
             <Image
-              src={"/images/about/safety-placeholder.png"}
+              src={"/images/about/laptop.png"}
               height={260}
               width={260}
               alt="placeholder"
