@@ -1,0 +1,43 @@
+.main_container {
+    display: flex;
+    flex-direction: row;
+    padding: 48px 96px;
+    height: 100vh;
+    margin-bottom: 40px;
+}
+
+.sort_filter_container {
+    margin: 0 30px;;
+}
+
+.title_styles {
+    margin-bottom: 30px;
+}
+
+.search_btn {
+    width: 256px;
+    background-color: #D2A7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.container {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1108px;
+  }
+
+  /* .pagination_style {
+    outline: none;
+  }
+   */
+
+   .pagination_items {
+    box-shadow: none !important;
+    outline: none!important;
+   }
