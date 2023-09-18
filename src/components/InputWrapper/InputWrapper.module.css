@@ -1,0 +1,5 @@
+input.ant-input::placeholder,
+input.ant-input::-webkit-input-placeholder,
+input.ant-input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}

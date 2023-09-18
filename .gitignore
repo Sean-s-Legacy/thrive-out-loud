@@ -26,14 +26,34 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env*.local
+
+
+# React Production build folder
+build
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Firebase SDK/Config
+service-account-key.json
+firebaseConfig.js
+functions/lib
+
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
+functions/node_modules/
+functions/lib
 
-#editor
-/.idea
-.idea
-components/sections/Homepage/*
+# IDE files
+.vscode/
+
+

@@ -1,0 +1,37 @@
+.image_slider_container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .slider_show_case {
+    /* width: fit-content; */
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .image_slider {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+  
+    transition: all 0.5s 0.2s ease;
+  }
+  
+  .image_slider_left_arrow {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    font-size: 13.5px;
+    cursor: pointer;
+  }
+  
+  .image_slider_right_arrow {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    font-size: 13.5px;
+    cursor: pointer;
+  }
+  

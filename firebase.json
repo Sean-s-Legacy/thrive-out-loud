@@ -1,0 +1,51 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers" : [
+          {
+            "key": "Content-Security-Policy",
+            "value": "base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+          },
+          { "key" : "X-Frame-Options", "value" : "SAMEORIGIN" },
+          { "key" : "X-Content-Type-Options", "value" : "nosniff" },
+          { "key" : "X-XSS-Protection", "value" : "1; mode=block" },
+          { "key" : "Referrer-Policy", "value" : "strict-origin-when-cross-origin" },
+          { "key" : "Permissions-Policy", "value" : "" }
+        ]
+      }
+    ]
+  }
+}
