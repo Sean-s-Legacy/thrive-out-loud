@@ -9,6 +9,7 @@ import styles from "@/styles/index.module.css";
 import GettingStarted from "@/components/pages-index/GettingStarted";
 import OurMentors from "@/components/pages-index/OurMentors";
 import Testimonials from "@/components/pages-index/Testimonials";
+import SecurityCode from "@/components/TwoFactorAuth/SecurityCode";
 
 const { Title, Text } = Typography;
 
@@ -102,6 +103,7 @@ export default function Home() {
       <GettingStarted />
       <OurMentors />
       <Testimonials />
+      <SecurityCode />
     </div>
   );
 }
