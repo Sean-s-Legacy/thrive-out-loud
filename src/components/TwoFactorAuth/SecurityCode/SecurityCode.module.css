@@ -16,6 +16,6 @@
     margin: 10px 0;
 }
 
-.ant-input-number-input {
+.ant-input-number-input[placeholder] {
     text-align: center;
 }
