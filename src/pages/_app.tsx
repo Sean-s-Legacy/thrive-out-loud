@@ -1,3 +1,4 @@
+// Tutorial to implement multiple layouts: https://www.codeconcisely.com/posts/nextjs-multiple-layouts/
 import "@/styles/globals.css";
 import "@/styles/colors.css";
 import type { AppProps } from "next/app";

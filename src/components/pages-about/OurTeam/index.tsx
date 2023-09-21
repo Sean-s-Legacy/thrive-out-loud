@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import { Row, Col, Typography } from "antd";
 
 import styles from "./OurTeam.module.css";
@@ -9,55 +10,55 @@ function index(props) {
   const { Title } = Typography;
   const team = [
     {
-      imgSrc: null,
+      imgSrc: "/images/about/hope.png",
       name: "Hope Dehnert",
       pronouns: "she/her",
       role: "Co-Founder and Managing Director, MPH",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/alli.png",
       name: "Alli Shipkowski",
       pronouns: "she/her",
       role: "Co-Founder and Director of Operations",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/steph.png",
       name: "Steph Lambruschini",
       pronouns: "she/her",
       role: "Product Designer",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/tysheena.png",
       name: "Tysheena Jackson",
       pronouns: "she/her",
       role: "Director of Social Media and Comms",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/dylan.png",
       name: "Dylan Williams",
       pronouns: "he/him",
       role: "Copywriter",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/tyrone.png",
       name: "Tyrone Best",
       pronouns: "he/him",
       role: "Drug Addiction & Substance Abuse Liason",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/ethan.png",
       name: "Ethan Lloyd",
       pronouns: "he/him",
       role: "Inclusion in Sports & Athletics Liason",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/jenna.png",
       name: "Jenna Wilkinson",
       pronouns: "she/her",
       role: "Graphic Designer",
     },
     {
-      imgSrc: null,
+      imgSrc: "/images/about/anthony.png",
       name: "Anthony Santoro",
       pronouns: "he/him",
       role: "Training & Research Associate",
@@ -74,6 +75,7 @@ function index(props) {
             return (
               <Col span={8} key={index}>
                 <TeamMember
+                  imgSrc ={member.imgSrc}
                   name={member.name}
                   pronouns={member.pronouns}
                   role={member.role}
