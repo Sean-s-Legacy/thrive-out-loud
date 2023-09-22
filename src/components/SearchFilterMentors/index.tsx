@@ -1,32 +1,20 @@
 import React from "react";
-import type { MenuProps } from "antd";
-import { Menu, Button, Typography, Pagination } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Typography,
+  Pagination,
+  Collapse,
+  Input,
+  Checkbox,
+  Switch,
+} from "antd";
+import { UpOutlined, MenuOutlined, SettingOutlined } from "@ant-design/icons";
 import styles from "./SearchFilterMentors.module.css";
 import MentorCard from "../MentorCard";
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  children?: MenuItem[],
-  type?: "group"
-): MenuItem {
-  return {
-    key,
-    children,
-    label,
-    type,
-  } as MenuItem;
-}
-
 const SearchFilterMentors: React.FC = () => {
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
-  };
-
-  const { Title, Text, Link } = Typography;
+  const { Panel } = Collapse;
+  const { Title, Text } = Typography;
 
   interface MentorProps {
     name?: string;
@@ -92,16 +80,52 @@ const SearchFilterMentors: React.FC = () => {
       supportOffered: ["career after hs", "Early career", "resume..."],
       tag: "Available now",
     },
+    {
+      name: "Natali Craig",
+      imgSrc: "/images/mentor-4.png",
+      pronouns: "(she/hers)",
+      jobTitle: "Manufacturing Chemist at Biotechnology",
+      fieldOfExpertise: ["chemistry", "analytics", "math"],
+      supportOffered: ["career after hs", "grad school", "interns..."],
+      tag: "Available now",
+    },
+    {
+      name: "Nala Goins",
+      imgSrc: "/images/mentor-5.png",
+      pronouns: "(she/they)",
+      jobTitle: "Videographer & Photographer at Self-employed",
+      fieldOfExpertise: ["video editing", "social media mgmt", "math"],
+      supportOffered: ["career transition", "portfolio critique"],
+      tag: "Available now",
+    },
+    {
+      name: "Edward Fuanze",
+      imgSrc: "/images/mentor-6.png",
+      pronouns: "(he/him)",
+      jobTitle: "Product Compliance Director at Nike",
+      fieldOfExpertise: ["Organic chemistry", "Tech", "Science"],
+      supportOffered: ["career after hs", "Early career", "resume..."],
+      tag: "Available now",
+    },
   ];
 
-  const items: MenuProps["items"] = [
-    getItem("Sort By", "sub1", [
-      { type: "divider" },
-      getItem("Careers", "sub3", []),
-      getItem("Focus Areas", "8"),
-    ]),
-    getItem("More Filters", "sub2", [getItem("Available this week", "5")]),
+  const focusAreas = [
+    "Navigating Academics",
+    "Navigating the workfoce",
+    "Navigating identity",
+    "Personal growth",
+    "Job search",
+    "Early career",
+    "Changing career",
   ];
+
+  const onChange = (key: string | string[]) => {
+    console.log(key);
+  };
+
+  const onSwitch = (checked: boolean) => {
+    console.log(`switch to ${checked}`);
+  };
 
   return (
     <div className={styles.main_container}>
@@ -110,14 +134,104 @@ const SearchFilterMentors: React.FC = () => {
           Sort & Filter
           <MenuOutlined />
         </Button>
-        <Menu
-          onClick={onClick}
-          style={{ width: 256 }}
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode="inline"
-          items={items}
-        />
+        <Collapse
+          ghost
+          collapsible="icon"
+          expandIconPosition="right"
+          expandIcon={({ isActive }) => (
+            <UpOutlined
+              rotate={isActive ? 180 : 0}
+              style={{ fontSize: "20px", fontWeight: "800" }}
+            />
+          )}
+          className={styles.panel_border}
+        >
+          <Panel
+            header="Sort By"
+            key="1"
+            style={{
+              fontWeight: "bold",
+            }}
+          ></Panel>
+        </Collapse>
+        <Collapse
+          defaultActiveKey="2"
+          ghost
+          expandIconPosition="right"
+          expandIcon={({ isActive }) => (
+            <UpOutlined
+              rotate={isActive ? 180 : 0}
+              style={{ fontSize: "20px", fontWeight: "800" }}
+            />
+          )}
+          className={styles.panel_border}
+        >
+          <Panel header="Careers" key="2">
+            <Input
+              placeholder="Ex: Journalism"
+              addonAfter={<SettingOutlined />}
+            />
+          </Panel>
+        </Collapse>
+        <Collapse
+          defaultActiveKey="1"
+          ghost
+          expandIconPosition="right"
+          expandIcon={({ isActive }) => (
+            <UpOutlined
+              rotate={isActive ? 180 : 0}
+              style={{ fontSize: "20px", fontWeight: "800" }}
+            />
+          )}
+        >
+          <Panel header="Focus Areas" key="1">
+            <div className={styles.checkbox_styles}>
+              {focusAreas.map((focus, i) => {
+                return (
+                  <Checkbox key={i} style={{ margin: "0px" }}>
+                    {focus}
+                  </Checkbox>
+                );
+              })}
+            </div>
+          </Panel>
+        </Collapse>
+        <Collapse
+          defaultActiveKey="2"
+          ghost
+          expandIconPosition="right"
+          expandIcon={({ isActive }) => (
+            <UpOutlined
+              rotate={isActive ? 180 : 0}
+              style={{ fontSize: "20px", fontWeight: "800" }}
+            />
+          )}
+          style={{
+            width: "256px",
+          }}
+        >
+          <Panel
+            header="More Filters"
+            key="2"
+            style={{
+              width: "256px",
+              borderTop: "1px solid black",
+              borderRadius: "0",
+              fontWeight: "800",
+            }}
+          >
+            <div className={styles.switch_container}>
+              <Text
+                style={{
+                  fontWeight: "100",
+                }}
+              >
+                Available this week
+              </Text>
+              <Switch onChange={onSwitch} />
+            </div>
+          </Panel>
+        </Collapse>
       </div>
       <div className="mentor-list-container">
         <Title level={2} className={styles.title_styles}>
