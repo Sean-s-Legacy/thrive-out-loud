@@ -11,6 +11,7 @@ import { COLLECTION } from "../utils/firestore";
 import * as https from 'https';
 
 
+
 // use the functions variable here
 
 
@@ -142,3 +143,26 @@ export const userEndpoints = async (req: Request, res: Response) => {
   catch(error){
     console.log()
   }}
+
+
+  export const generateTwoFactor = async (req: Request, res: Response) => {
+    console.log(
+        "+++++++++++++++++++ generate two factor +++++++++++++++++++"
+    );
+  
+    try {
+  
+        // @ts-ignore
+        const payload: any = req.body;
+        
+  
+        console.log("payload::::::::::",payload)
+  
+      
+ 
+  
+    }
+    catch(error){
+      console.log()
+    }}
+  
