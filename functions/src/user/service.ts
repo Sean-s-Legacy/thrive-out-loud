@@ -9,7 +9,7 @@ export const createMenteeAccount = async (payload: any) => {
     if (!!payload) {
       const { user_email, user_pswd, user_name_first, user_name_last } =
         payload;
-      console.log("payload:::::::", user_email)
+        
       const firebaseUserData: FirebaseUserPayload = {
         displayName: user_name_first + " " + user_name_last,
         email: user_email,
@@ -112,8 +112,9 @@ export const sendVerificationCode = async (payload: any) => {
 
   try {
     if (!!payload) {
-    //  const {phoneNumber} = payload
-     console.log("phone number::::::", payload)
+     const {phoneNumber} = payload
+     console.log("Payload:::::::", payload)
+     console.log("phone number::::::", phoneNumber)
     
     } else {
       return "no pay load";
