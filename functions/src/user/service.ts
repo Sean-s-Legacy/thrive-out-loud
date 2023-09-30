@@ -1,4 +1,4 @@
-import { FirebaseUserPayload } from "./structs";
+import { FirebaseUserPayload} from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService";
 // @ts-ignore
@@ -9,7 +9,7 @@ export const createMenteeAccount = async (payload: any) => {
     if (!!payload) {
       const { user_email, user_pswd, user_name_first, user_name_last } =
         payload;
-
+      console.log("payload:::::::", user_email)
       const firebaseUserData: FirebaseUserPayload = {
         displayName: user_name_first + " " + user_name_last,
         email: user_email,
@@ -103,3 +103,43 @@ export const createuserEndpointsAccount = async (payload: any) => {
     throw error;
   }
 };
+
+
+
+
+export const sendVerificationCode = async (payload: any) => {
+  console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
+
+  try {
+    if (!!payload) {
+    //  const {phoneNumber} = payload
+     console.log("phone number::::::", payload)
+    
+    } else {
+      return "no pay load";
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+
+ // export const generateTwoFactor = (phoneNumber: USER_FIELDS.USER_PHONE )=>{
+  //   const auth = getAuth()
+  //   const user = auth.currentUser
+  //   const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container-id', { size: "invisible"}, auth);
+  //   if (user){ multiFactor(user).getSession()
+  //       .then(function (multiFactorSession) {
+  //           // Specify the phone number and pass the MFA session.
+  //           const phoneInfoOptions = {
+  //               phoneNumber: phoneNumber,
+  //               session: multiFactorSession
+  //           };
+    
+  //           const phoneAuthProvider = new PhoneAuthProvider(auth);
+    
+  //           // Send SMS verification code.
+  //           return phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier);
+  //       })
+  // }}
