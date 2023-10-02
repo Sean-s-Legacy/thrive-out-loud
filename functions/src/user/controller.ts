@@ -8,7 +8,7 @@ import * as service from "./service"
 //import message from "antd/lib/message";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
-import * as https from 'https';
+// import * as https from 'https';
 
 
 
@@ -90,7 +90,7 @@ export const createMentee = async (req: Request, res: Response) => {
     //list all user controller endpoints
 export const listUsers = async(_req: Request, res: Response) => {
   try {
-    const snapshot = await admin.firestore().collection(COLLECTION.USERS).get();
+    await admin.firestore().collection(COLLECTION.USERS).get();
     //const users = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   //         res.status(200).json(users);
   // };
@@ -100,7 +100,7 @@ export const listUsers = async(_req: Request, res: Response) => {
   //     console.error(error);
   //     res.status(500).json({ success: false, error,message });
   //   }
-  console.log(snapshot)
+  // console.log(snapshot)
   }
     //         
   
@@ -111,9 +111,7 @@ export const listUsers = async(_req: Request, res: Response) => {
     }
   }
   
-  https.get('https://seans-legacy.firebaseio.com', (response) => {
-  console.log(response);
-});
+
 
 export const userEndpoints = async (req: Request, res: Response) => {
   console.log(
@@ -153,13 +151,17 @@ export const userEndpoints = async (req: Request, res: Response) => {
     try {
   
       // @ts-ignore
-      const payload: generateTwoFactorPayLoad = req.body;
+      const payload: any = req.body;
       console.log("Payload::::::",payload) 
-      // await service.sendVerificationCode(payload)   
+      const result = await service.sendVerificationCode(payload)   
 
-  
-      
- 
+      const success_response: AppSuccess = {
+        status: constants.SUCCESS_MSG,
+        code: constants.CREATE_SUCCESS_CODE,
+        data: result,
+    };
+
+    return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   
     }
     catch(error){

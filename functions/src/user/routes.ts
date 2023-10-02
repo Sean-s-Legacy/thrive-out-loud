@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { createMentee, generateTwoFactor } from "./controller";
-import { listUsers } from './controller';
+// import { listUsers } from './controller';
 
 
 
@@ -22,7 +22,7 @@ router.use((req: Request, res: Response, next: Function) => {
 router.post('/createMentee', [createMentee]);
 
 //to list users
-router.get('/users', listUsers);
+// router.get('/users', listUsers);
 
 router.post('/generateTwoFactor', generateTwoFactor)
 export default router;
