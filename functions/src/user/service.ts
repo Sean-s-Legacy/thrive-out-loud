@@ -1,6 +1,7 @@
 import { FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService";
+import { getAuth } from "firebase-admin/auth";
 // @ts-ignore
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
@@ -113,8 +114,10 @@ export const sendVerificationCode = async (payload: any) => {
   try {
 
     const { phone_number } = payload
-    //  console.log("Payload:::::::", payload.phoneNumber)
-
+    const auth: any = getAuth()
+    console.log("AUTH!!!!!!!!!", auth)
+    const user = auth.currentUser
+    console.log("USER::::::::::::::::::",user)
     if (!!phone_number) {
       console.log("phone number::::::", phone_number)
 
@@ -129,21 +132,20 @@ export const sendVerificationCode = async (payload: any) => {
 
 
 
- // export const generateTwoFactor = (phoneNumber: USER_FIELDS.USER_PHONE )=>{
-  //   const auth = getAuth()
-  //   const user = auth.currentUser
-  //   const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container-id', { size: "invisible"}, auth);
-  //   if (user){ multiFactor(user).getSession()
-  //       .then(function (multiFactorSession) {
-  //           // Specify the phone number and pass the MFA session.
-  //           const phoneInfoOptions = {
-  //               phoneNumber: phoneNumber,
-  //               session: multiFactorSession
-  //           };
+//  export const generateTwoFactor = (phoneNumber: USER_FIELDS.USER_PHONE )=>{
+    
+//     const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container-id', { size: "invisible"}, auth);
+//     if (user){ multiFactor(user).getSession()
+//         .then(function (multiFactorSession) {
+//             // Specify the phone number and pass the MFA session.
+//             const phoneInfoOptions = {
+//                 phoneNumber: phoneNumber,
+//                 session: multiFactorSession
+//             };
 
-  //           const phoneAuthProvider = new PhoneAuthProvider(auth);
+//             const phoneAuthProvider = new PhoneAuthProvider(auth);
 
-  //           // Send SMS verification code.
-  //           return phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier);
-  //       })
-  // }}
+//             // Send SMS verification code.
+//             return phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier);
+//         })
+//   }}
