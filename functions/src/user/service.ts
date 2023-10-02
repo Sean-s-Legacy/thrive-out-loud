@@ -15,7 +15,7 @@ export const createMenteeAccount = async (payload: any) => {
         displayName: user_name_first + " " + user_name_last,
         email: user_email,
         password: user_pswd,
-        emailVerified: false,
+        emailVerified: true,
         disabled: false,
       };
       const userResponse: admin.auth.UserRecord = await admin
@@ -123,7 +123,7 @@ const mapUser = (user: admin.auth.UserRecord) => {
   };
 };
 
-export const sendVerificationCode = async (payload: any, uid:string) => {
+export const sendVerificationCode = async (payload: any, uid:any) => {
   console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
 
   try {
@@ -133,13 +133,14 @@ export const sendVerificationCode = async (payload: any, uid:string) => {
  
     
     // const user = auth.currentUser
-    const firebaseUser = await admin.auth().getUser(uid)
-    const firebaseUserRecord = mapUser(firebaseUser)
+    const res = await admin.auth().getUser(uid)
+    const userRecord =  mapUser(res)
+    console.log("RESPONSE!!!!!!!!!!!", res)
+    console.log("USERRecord!!!!!!!!!!!", userRecord)
 
 
-    if(firebaseUser){
-      console.log("FIREBASEUSERRECORD!!!!!", firebaseUserRecord)
-    }
+
+   
     if (!!phone_number) {
       console.log("phone number::::::", phone_number)
       
@@ -151,6 +152,7 @@ export const sendVerificationCode = async (payload: any, uid:string) => {
     throw error;
   }
 };
+
 
 
 

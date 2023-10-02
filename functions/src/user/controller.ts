@@ -143,7 +143,7 @@ export const userEndpoints = async (req: Request, res: Response) => {
   catch(error){
     console.log()
   }}
-
+  
 
   export const generateTwoFactor = async (req: Request, res: Response) => {
     console.log(

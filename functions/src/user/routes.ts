@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { createMentee, generateTwoFactor } from "./controller";
+import { createMentee, generateTwoFactor} from "./controller";
 import { isAuthenticated } from "../middlewares/authenticated";
 // import { listUsers } from './controller';
 
