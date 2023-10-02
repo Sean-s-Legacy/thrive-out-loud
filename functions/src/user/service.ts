@@ -1,7 +1,7 @@
 import { FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService";
-import { getAuth } from "firebase-admin/auth";
+
 // @ts-ignore
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
@@ -106,21 +106,43 @@ export const createuserEndpointsAccount = async (payload: any) => {
 };
 
 
+const mapUser = (user: admin.auth.UserRecord) => {
+
+  // To-do:  check claims
+  // const customClaims = (user.customClaims || { role_type: "" }) as { role_type?: string };
+  // const role = customClaims.role_type ? customClaims.role_type : "";
 
 
-export const sendVerificationCode = async (payload: any) => {
+  return {
+      uid: user.uid,
+      email: user.email || "",
+      displayName: user.displayName || "",
+      // role,
+      lastSignInTime: user.metadata.lastSignInTime,
+      creationTime: user.metadata.creationTime,
+  };
+};
+
+export const sendVerificationCode = async (payload: any, uid:string) => {
   console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
 
   try {
 
     const { phone_number } = payload
-    const auth: any = getAuth()
-    console.log("AUTH!!!!!!!!!", auth)
-    const user = auth.currentUser
-    console.log("USER::::::::::::::::::",user)
+    // const auth: any = getAuth()
+ 
+    
+    // const user = auth.currentUser
+    const firebaseUser = await admin.auth().getUser(uid)
+    const firebaseUserRecord = mapUser(firebaseUser)
+
+
+    if(firebaseUser){
+      console.log("FIREBASEUSERRECORD!!!!!", firebaseUserRecord)
+    }
     if (!!phone_number) {
       console.log("phone number::::::", phone_number)
-
+      
     } else {
       return "no pay load";
     }

@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { createMentee, generateTwoFactor } from "./controller";
+import { isAuthenticated } from "../middlewares/authenticated";
 // import { listUsers } from './controller';
 
 
@@ -24,7 +25,7 @@ router.post('/createMentee', [createMentee]);
 //to list users
 // router.get('/users', listUsers);
 
-router.post('/generateTwoFactor', [generateTwoFactor])
+router.post('/generateTwoFactor', [isAuthenticated, generateTwoFactor])
 export default router;
 
 

@@ -8,6 +8,8 @@ import * as service from "./service"
 //import message from "antd/lib/message";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
+import { userError } from "./error";
+import CustomError from "../utils/customError";
 // import * as https from 'https';
 
 
@@ -149,11 +151,18 @@ export const userEndpoints = async (req: Request, res: Response) => {
     );
   
     try {
-  
-      // @ts-ignore
+      //check user id
+      const {uid} = res.locals
+      if (!uid){
+        throw new CustomError(userError.auth.loginerror)
+      }
+      console.log("UID:::::::::::::::", uid)
+      //get user info from firebase authentication
+      
+
       const payload: any = req.body;
-      console.log("Payload::::::",payload) 
-      const result = await service.sendVerificationCode(payload)   
+      
+      const result = await service.sendVerificationCode(payload, uid)   
 
       const success_response: AppSuccess = {
         status: constants.SUCCESS_MSG,
