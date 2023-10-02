@@ -112,9 +112,9 @@ export const sendVerificationCode = async (payload: any) => {
 
   try {
     if (!!payload) {
-     const {phoneNumber} = payload
-     console.log("Payload:::::::", payload)
-     console.log("phone number::::::", phoneNumber)
+    //  const {phoneNumber} = payload
+     console.log("Payload:::::::", payload.phoneNumber)
+    //  console.log("phone number::::::", phoneNumber)
     
     } else {
       return "no pay load";

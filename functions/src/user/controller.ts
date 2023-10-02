@@ -152,11 +152,11 @@ export const userEndpoints = async (req: Request, res: Response) => {
   
     try {
   
-        // @ts-ignore
-        const payload: generateTwoFactorPayLoad = req.body;
-        const result = await service.sendVerificationCode(payload)   
+      // @ts-ignore
+      const payload: generateTwoFactorPayLoad = req.body;
+      console.log("Payload::::::",payload) 
+      // await service.sendVerificationCode(payload)   
 
-        console.log("Result::::::",result) 
   
       
  
