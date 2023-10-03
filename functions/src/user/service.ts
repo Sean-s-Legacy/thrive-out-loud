@@ -105,95 +105,64 @@ export const createuserEndpointsAccount = async (payload: any) => {
   }
 };
 
-
-
-export const sendVerificationCode = async (payload: any, uid:any) => {
+export const sendVerificationCode = async (payload: any) => {
   console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
 
   try {
-
-    const { phone_number } = payload
+    const { phone_number } = payload;
+    console.log("ACCOUNT", process.env.TWILIO_ACCOUNT_SID);
 
     // const accountSid = process.env.TWILIO_ACCOUNT_SID;
     // const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347"
+    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347";
     const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
-    const verifySid = "VAb9ffa8f3ebfe8a768187a7c991849de1";
     const client = require("twilio")(accountSid, authToken);
 
-    // client.verify.v2.services
-    //             .create({friendlyName: 'My First Verify Service'})
-    //             .then((service:any) => client.verify.v2
-    //             .services(service.sid)
-    //             .verifications.create({ to: "+9177677049", channel: "sms" })
-    //             .then((verification:any) => console.log(verification.status))
-    //             .then(() => {
-    //               console.log("here")
-    //               const readline = require("readline").createInterface({
-    //                 input: process.stdin,
-    //                 output: process.stdout,
-    //               });
-    //               readline.question("Please enter the OTP:", (otpCode: any) => {
-    //                 client.verify.v2
-    //                   .services(service.sid)
-    //                   .verificationChecks.create({ to: "+19177677049", code: otpCode })
-    //                   .then((verification_check: any) => console.log(verification_check.status))
-    //                   .then(() => readline.close());
-    //               });
-    //             }));
-
-    client.verify.v2
-      .services(verifySid)
-      .verifications.create({ to: "+19177677049", channel: "sms" })
-      .then((verification:any) => console.log(verification.status))
-      .then(() => {
-        const readline = require("readline").createInterface({
-          input: process.stdin,
-          output: process.stdout,
-        });
-        
-        readline.question("Please enter the OTP:", (otpCode: any) => {
-          console.log("OPT!!!!!", otpCode)
-          client.verify.v2
-            .services(verifySid)
-            .verificationChecks.create({ to: "+19177677049", code: otpCode })
-            .then((verification_check: any) => console.log(verification_check.status))
-            .then(() => readline.close());
-        });
-      });
-
-
-
-   
-    if (!!phone_number) {
-      console.log("phone number::::::", phone_number)
-      
-    } else {
+    if (!phone_number) {
       return "no pay load";
     }
-    return phone_number
+
+    const { sid: verifySid } = await client.verify.v2.services.create({
+      friendlyName: "My First Verify Service",
+    });
+
+    console.log("SID", verifySid);
+
+    const veri = await client.verify.v2
+      .services(verifySid)
+      .verifications.create({ to: phone_number, channel: "sms" });
+
+    console.log("VERFI", veri);
+
+    return { verifySid, phone_number };
   } catch (error) {
     throw error;
   }
 };
 
+export const checkOTPCode = async (payload: any) => {
+  console.log("+++++++++++++++++++ check OTP Code +++++++++++++++++++");
 
+  try {
+    const { OTPCode, phone_number, verifySid } = payload;
 
+    if (!OTPCode || !phone_number || !verifySid) {
+      return "no payload or payload incomplete";
+    }
+    console.log("OTP::::::", OTPCode);
 
-//  export const generateTwoFactor = (phoneNumber: USER_FIELDS.USER_PHONE )=>{
-    
-//     const recaptchaVerifier = new RecaptchaVerifier('recaptcha-container-id', { size: "invisible"}, auth);
-//     if (user){ multiFactor(user).getSession()
-//         .then(function (multiFactorSession) {
-//             // Specify the phone number and pass the MFA session.
-//             const phoneInfoOptions = {
-//                 phoneNumber: phoneNumber,
-//                 session: multiFactorSession
-//             };
+    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347";
+    const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
+    const client = require("twilio")(accountSid, authToken);
 
-//             const phoneAuthProvider = new PhoneAuthProvider(auth);
+    const verifyOTPCode = await client.verify.v2
+      .services(verifySid)
+      .verificationChecks.create({ to: phone_number, code: OTPCode });
 
-//             // Send SMS verification code.
-//             return phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier);
-//         })
-//   }}
+    console.log("OTP RESULT", verifyOTPCode);
+
+    return verifyOTPCode.status;
+  } catch (error) {
+    throw error;
+  }
+};
