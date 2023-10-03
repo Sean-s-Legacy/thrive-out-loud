@@ -9,6 +9,16 @@ import * as service from "./service"
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
 import * as https from 'https';
+import { getAuth } from "firebase-admin/auth";
+import {brevoApiKey} from "../user/brevo-config"
+
+// brevo
+const brevo = require('@getbrevo/brevo');
+
+// Initialize the Brevo API client
+let defaultClient = brevo.ApiClient.instance;
+let apiKey = defaultClient.authentications['api-key'];
+apiKey.apiKey = brevoApiKey
 
 
 // use the functions variable here
@@ -100,11 +110,8 @@ export const listUsers = async(_req: Request, res: Response) => {
   //     res.status(500).json({ success: false, error,message });
   //   }
   console.log(snapshot)
-  }
-    //         
-  
-      catch {(error: any)=> {
-          // console.log(error)
+  }catch {(error: any)=> {
+          console.log(error)
           return handleError(res, error);        
       }
     }
@@ -142,3 +149,55 @@ export const userEndpoints = async (req: Request, res: Response) => {
   catch(error){
     console.log()
   }}
+
+
+  export const sendVerificationEmail = async (req: Request, res: Response) =>{
+    try {
+      // Extract data from the request body
+    const userEmail = req.body?.userEmail;
+    const redirectUrl = "http://localhost:3000/email-verification-success"
+
+    console.log("Received request to send verification email to:", userEmail);
+
+    const actionCodeSettings = {
+      url: redirectUrl,
+    };
+
+    const actionLink = await getAuth().generateEmailVerificationLink(
+      userEmail,
+      actionCodeSettings
+    );
+
+
+    // // Initialize the Brevo API client with your API key
+    let apiInstance = new brevo.TransactionalEmailsApi();
+    let sendSmtpEmail = new brevo.SendSmtpEmail();
+
+    sendSmtpEmail = {
+      to: [{
+        "email": userEmail
+      }],
+      templateId: 3,
+      params: {
+        actionLink: actionLink ?? ""
+      },
+      headers: {
+        'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2'
+      }
+    };
+
+
+
+    // Send the transactional email
+    const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
+    console.log('API called successfully. Email sent. Response:', response);
+
+    res.status(200).json({ message: "Received request to send verification email to:" + userEmail });
+       
+  
+    } catch (error) {
+        console.error('Error sending transactional email:', error);
+        throw error;
+    }
+  }

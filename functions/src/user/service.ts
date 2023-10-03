@@ -7,19 +7,20 @@ export const createMenteeAccount = async (payload: any) => {
 
   try {
     if (!!payload) {
-      const { user_email, user_pswd, user_name_first, user_name_last } =
-        payload;
+      // const { user_email, user_pswd, user_name_first, user_name_last } =
+      //   payload;
 
-      const firebaseUserData: FirebaseUserPayload = {
-        displayName: user_name_first + " " + user_name_last,
-        email: user_email,
-        password: user_pswd,
-        emailVerified: false,
-        disabled: false,
-      };
-      const userResponse: admin.auth.UserRecord = await admin
-        .auth()
-        .createUser(firebaseUserData);
+      // const firebaseUserData: FirebaseUserPayload = {
+      //   displayName: user_name_first + " " + user_name_last,
+      //   email: user_email,
+      //   password: user_pswd,
+      //   emailVerified: false,
+      //   disabled: false,
+      // };
+      
+      // const userResponse: admin.auth.UserRecord = await admin
+      //   .auth()
+      //   .createUser(firebaseUserData);
 
       // console.log(userResponse)
 
@@ -28,7 +29,8 @@ export const createMenteeAccount = async (payload: any) => {
       console.log("+++++++++++++++++++ after create +++++++++++++++++++");
       console.log(result);
 
-      return userResponse;
+      // return userResponse;
+      return result
     } else {
       return "no pay load";
     }

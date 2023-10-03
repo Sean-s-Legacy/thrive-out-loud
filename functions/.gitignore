@@ -8,3 +8,6 @@ typings/
 # Node.js dependency directory
 node_modules/
 serviceAccoutKey.json
+
+# Brevo Api key
+src/user/brevo-config.ts

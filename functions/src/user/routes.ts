@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { createMentee, userEndpoints } from "./controller";
-import { listUsers } from './controller';
+import { listUsers, sendVerificationEmail } from './controller';
 
 
 
@@ -17,6 +17,12 @@ router.use((req: Request, res: Response, next: Function) => {
  * NEW USER FOR Mentee
  * ==============================
 */
+
+router.get('/',  (req, res) => {
+  res.send("user route!");
+});
+
+router.post("/emailVerification",sendVerificationEmail);
 
 // create new mentee
 router.post('/createMentee', [createMentee]);
