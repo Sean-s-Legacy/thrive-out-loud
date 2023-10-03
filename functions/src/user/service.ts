@@ -106,22 +106,6 @@ export const createuserEndpointsAccount = async (payload: any) => {
 };
 
 
-const mapUser = (user: admin.auth.UserRecord) => {
-
-  // To-do:  check claims
-  // const customClaims = (user.customClaims || { role_type: "" }) as { role_type?: string };
-  // const role = customClaims.role_type ? customClaims.role_type : "";
-
-
-  return {
-      uid: user.uid,
-      email: user.email || "",
-      displayName: user.displayName || "",
-      // role,
-      lastSignInTime: user.metadata.lastSignInTime,
-      creationTime: user.metadata.creationTime,
-  };
-};
 
 export const sendVerificationCode = async (payload: any, uid:any) => {
   console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
@@ -129,14 +113,54 @@ export const sendVerificationCode = async (payload: any, uid:any) => {
   try {
 
     const { phone_number } = payload
-    // const auth: any = getAuth()
- 
-    
-    // const user = auth.currentUser
-    const res = await admin.auth().getUser(uid)
-    const userRecord =  mapUser(res)
-    console.log("RESPONSE!!!!!!!!!!!", res)
-    console.log("USERRecord!!!!!!!!!!!", userRecord)
+
+    // const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    // const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347"
+    const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
+    const verifySid = "VAb9ffa8f3ebfe8a768187a7c991849de1";
+    const client = require("twilio")(accountSid, authToken);
+
+    // client.verify.v2.services
+    //             .create({friendlyName: 'My First Verify Service'})
+    //             .then((service:any) => client.verify.v2
+    //             .services(service.sid)
+    //             .verifications.create({ to: "+9177677049", channel: "sms" })
+    //             .then((verification:any) => console.log(verification.status))
+    //             .then(() => {
+    //               console.log("here")
+    //               const readline = require("readline").createInterface({
+    //                 input: process.stdin,
+    //                 output: process.stdout,
+    //               });
+    //               readline.question("Please enter the OTP:", (otpCode: any) => {
+    //                 client.verify.v2
+    //                   .services(service.sid)
+    //                   .verificationChecks.create({ to: "+19177677049", code: otpCode })
+    //                   .then((verification_check: any) => console.log(verification_check.status))
+    //                   .then(() => readline.close());
+    //               });
+    //             }));
+
+    client.verify.v2
+      .services(verifySid)
+      .verifications.create({ to: "+19177677049", channel: "sms" })
+      .then((verification:any) => console.log(verification.status))
+      .then(() => {
+        const readline = require("readline").createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+        
+        readline.question("Please enter the OTP:", (otpCode: any) => {
+          console.log("OPT!!!!!", otpCode)
+          client.verify.v2
+            .services(verifySid)
+            .verificationChecks.create({ to: "+19177677049", code: otpCode })
+            .then((verification_check: any) => console.log(verification_check.status))
+            .then(() => readline.close());
+        });
+      });
 
 
 
