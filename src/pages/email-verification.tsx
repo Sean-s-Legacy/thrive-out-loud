@@ -5,18 +5,18 @@ import Image from "next/image";
 
 import { useAuth } from "../context/AuthContext";
 
-import apiEndPoint from "../Services/Api"
+import apiEndPoint from "../Services/Api";
 
 export default function EmailVerification() {
   const { currentUser } = useAuth();
   const data = {
-    "userEmail": currentUser?.email ?? ""
-  }
+    userEmail: currentUser?.email ?? "",
+  };
 
   useEffect(() => {
-    if(currentUser && currentUser.email){
+    if (currentUser && currentUser.email) {
       // sendVerificationEmail(currentUser.email);
-      apiEndPoint.users.sendEmailVerification(data)
+      apiEndPoint.users.sendEmailVerification(data);
     }
   }, []);
 
@@ -44,8 +44,8 @@ export default function EmailVerification() {
         <Image
           alt="Plane"
           src={"/images/email-verification/plane.png"}
-          width={0}
-          height={0}
+          width={505}
+          height={410}
           sizes="100vw"
           style={{
             width: "80%",
@@ -69,9 +69,7 @@ export default function EmailVerification() {
       >
         <div>
           <h1>Verify your email</h1>
-          <p>
-            {emailString}
-          </p>
+          <p>{emailString}</p>
           <p>Click the link in the email to finish signing up. </p>
           <p>Please check your spam if you don't see it.</p>
           <div

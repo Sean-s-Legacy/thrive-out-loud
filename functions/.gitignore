@@ -10,4 +10,4 @@ node_modules/
 serviceAccoutKey.json
 
 # Brevo Api key
-src/user/brevo-config.ts
+brevo-config.ts
