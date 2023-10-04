@@ -128,11 +128,11 @@ export const sendVerificationCode = async (payload: any) => {
 
     console.log("SID", verifySid);
 
-    const veri = await client.verify.v2
+    const { status: verificationStatus } = client.verify.v2
       .services(verifySid)
       .verifications.create({ to: phone_number, channel: "sms" });
 
-    console.log("VERFI", veri);
+    console.log("Status!!!!!!!!!!!!", verificationStatus);
 
     return { verifySid, phone_number };
   } catch (error) {
