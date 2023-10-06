@@ -4,6 +4,7 @@ const helmet = require("helmet");
 import * as bodyParser from "body-parser";
 // const admin = require("firebase-admin");
 import { routesConfig } from "./routes";
+import userRouter from "./user/routes"
 // const serviceAccount = require("../serviceAccountKey.json");
 
 // @ts-ignore
@@ -30,8 +31,8 @@ const app: express.Application = express();
 
 
 //route from all users API endpoints
-
-app.use(routesConfig);
+app.use("/users", userRouter)
+// app.use(routesConfig);
 
 app.listen(3000, () => console.log('Server started'));
 

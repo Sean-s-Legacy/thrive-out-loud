@@ -6,5 +6,10 @@ lib/**/*.js.map
 typings/
 
 # Node.js dependency directory
-node_modules/
+/node_modules
 serviceAccoutKey.json
+twilio.env
+
+*.log
+ui-debug.log
+firebase-debug.log
