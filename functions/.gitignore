@@ -8,8 +8,6 @@ typings/
 # Node.js dependency directory
 /node_modules
 serviceAccoutKey.json
-twilio.env
+.env
 
 *.log
-ui-debug.log
-firebase-debug.log
