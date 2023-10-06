@@ -172,7 +172,7 @@ export const verifyOTPCode = async (req: Request, res: Response) => {
 
     const payload: any = req.body;
 
-    const result = await service.checkOTPCode(payload);
+    const result = await service.verifyOTPCode(payload);
 
     const success_response: AppSuccess = {
       status: constants.SUCCESS_MSG,

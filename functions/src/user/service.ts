@@ -138,7 +138,7 @@ export const sendVerificationCode = async (payload: any) => {
   }
 };
 
-export const checkOTPCode = async (payload: any) => {
+export const verifyOTPCode = async (payload: any) => {
   console.log("+++++++++++++++++++ check OTP Code +++++++++++++++++++");
 
   try {
