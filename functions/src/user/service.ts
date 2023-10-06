@@ -1,6 +1,7 @@
 import { FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService";
+import "dotenv/config";
 
 // @ts-ignore
 export const createMenteeAccount = async (payload: any) => {
@@ -110,12 +111,9 @@ export const sendVerificationCode = async (payload: any) => {
 
   try {
     const { phone_number } = payload;
-    console.log("ACCOUNT", process.env.TWILIO_ACCOUNT_SID);
-
-    // const accountSid = process.env.TWILIO_ACCOUNT_SID;
-    // const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347";
-    const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
+    console.log("Acout!!!!!!", process.env.TWILIO_ACCOUNT_SID);
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
     const client = require("twilio")(accountSid, authToken);
 
     if (!phone_number) {
@@ -128,7 +126,7 @@ export const sendVerificationCode = async (payload: any) => {
 
     console.log("SID", verifySid);
 
-    const { status: verificationStatus } = client.verify.v2
+    const { status: verificationStatus } = await client.verify.v2
       .services(verifySid)
       .verifications.create({ to: phone_number, channel: "sms" });
 
