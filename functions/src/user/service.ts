@@ -1,7 +1,17 @@
 import { FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
+import { getAuth } from "firebase-admin/auth";
 import * as dbService from "./dbService";
 // @ts-ignore
+import { brevoApiKey } from "../../brevo-config";
+
+// Brevo setup
+const brevo = require("@getbrevo/brevo");
+// Initialize the Brevo API client
+let defaultClient = brevo.ApiClient.instance;
+let apiKey = defaultClient.authentications["api-key"];
+apiKey.apiKey = brevoApiKey;
+
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
 
@@ -17,7 +27,7 @@ export const createMenteeAccount = async (payload: any) => {
       //   emailVerified: false,
       //   disabled: false,
       // };
-      
+
       // const userResponse: admin.auth.UserRecord = await admin
       //   .auth()
       //   .createUser(firebaseUserData);
@@ -30,7 +40,56 @@ export const createMenteeAccount = async (payload: any) => {
       console.log(result);
 
       // return userResponse;
-      return result
+      return result;
+    } else {
+      return "no pay load";
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const sendBrevoEmailVerification = async (payload: any) => {
+  try {
+    if (!!payload) {
+      const { userEmail, callbackUrl } = payload;
+
+      console.log("Received request to send verification email to:", userEmail);
+
+      const actionCodeSettings = {
+        url: callbackUrl,
+      };
+
+      const actionLink = await getAuth().generateEmailVerificationLink(
+        userEmail,
+        actionCodeSettings
+      );
+
+      // // Initialize the Brevo API client with your API key
+      let apiInstance = new brevo.TransactionalEmailsApi();
+      let sendSmtpEmail = new brevo.SendSmtpEmail();
+
+      sendSmtpEmail = {
+        to: [
+          {
+            email: userEmail,
+          },
+        ],
+        templateId: 3,
+        params: {
+          actionLink: actionLink ?? "",
+        },
+        headers: {
+          "X-Mailin-custom":
+            "custom_header_1:custom_value_1|custom_header_2:custom_value_2",
+        },
+      };
+
+      // Send the transactional email
+      const result = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
+      // return userResponse;
+      return result;
     } else {
       return "no pay load";
     }

@@ -9,7 +9,6 @@ import * as service from "./service";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
 import * as https from "https";
-import { getAuth } from "firebase-admin/auth";
 import { brevoApiKey } from "../../brevo-config";
 
 // brevo
@@ -145,48 +144,16 @@ export const userEndpoints = async (req: Request, res: Response) => {
 export const sendVerificationEmail = async (req: Request, res: Response) => {
   try {
     // Extract data from the request body
-    const userEmail = req.body?.userEmail;
-    const redirectUrl = "http://localhost:3000/email-verification-success";
+    const payload: any = req.body;
 
-    console.log("Received request to send verification email to:", userEmail);
-
-    const actionCodeSettings = {
-      url: redirectUrl,
+    const result = await service.sendBrevoEmailVerification(payload);
+    const success_response: AppSuccess = {
+      status: constants.SUCCESS_MSG,
+      code: constants.CREATE_SUCCESS_CODE,
+      data: result,
     };
 
-    const actionLink = await getAuth().generateEmailVerificationLink(
-      userEmail,
-      actionCodeSettings
-    );
-
-    // // Initialize the Brevo API client with your API key
-    let apiInstance = new brevo.TransactionalEmailsApi();
-    let sendSmtpEmail = new brevo.SendSmtpEmail();
-
-    sendSmtpEmail = {
-      to: [
-        {
-          email: userEmail,
-        },
-      ],
-      templateId: 3,
-      params: {
-        actionLink: actionLink ?? "",
-      },
-      headers: {
-        "X-Mailin-custom":
-          "custom_header_1:custom_value_1|custom_header_2:custom_value_2",
-      },
-    };
-
-    // Send the transactional email
-    const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
-
-    console.log("API called successfully. Email sent. Response:", response);
-
-    res.status(200).json({
-      message: "Received request to send verification email to:" + userEmail,
-    });
+    return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
     console.error("Error sending transactional email:", error);
     throw error;

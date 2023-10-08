@@ -11,6 +11,7 @@ export default function EmailVerification() {
   const { currentUser } = useAuth();
   const data = {
     userEmail: currentUser?.email ?? "",
+    callbackUrl: "http://localhost:3000/email-verification-success",
   };
 
   useEffect(() => {
