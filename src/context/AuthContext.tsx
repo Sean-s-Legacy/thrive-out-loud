@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
         const user = userCredential.user;
         console.log("user in sign up")
         console.log(user)
-        
+
         // create user in database
         const data = {
           "user_name_first": "",
@@ -70,16 +70,16 @@ export function AuthProvider({ children }) {
           "user_pswd": password
         }
         console.log(data)
-        try{
+        try {
           apiEndPoint.users.saveUserInFirestore(data)
-        }catch(error){
+        } catch (error) {
           console.log("error ocurrs" + error)
         }
-        
+
         if (!user.emailVerified) {
           router.push({
-            // Email is not verified, proceed to the email-verification
-            pathname: "/email-verification",
+            // Email is not verified, proceed to the emailVerification
+            pathname: "/emailVerification",
           });
         } else {
           // Email is already verified, proceed to the dashboard

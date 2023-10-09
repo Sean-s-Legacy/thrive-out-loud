@@ -44,7 +44,7 @@ export default function EmailVerification() {
       >
         <Image
           alt="Plane"
-          src={"/images/email-verification/plane.png"}
+          src={"/images/emailVerification/plane.png"}
           width={505}
           height={410}
           sizes="100vw"

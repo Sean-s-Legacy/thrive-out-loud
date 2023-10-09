@@ -12,7 +12,7 @@ export default function EmailVerificationSuccess() {
       <div className={styles.leftContainer}>
         <Image
           alt="Email Verified"
-          src={"/images/email-verification/email-verified.png"}
+          src={"/images/emailVerification/emailVerified.png"}
           width={0}
           height={0}
           sizes="100vw"
