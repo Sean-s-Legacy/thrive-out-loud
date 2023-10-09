@@ -19,7 +19,7 @@ export default function EmailVerification() {
       // sendVerificationEmail(currentUser.email);
       apiEndPoint.users.sendEmailVerification(data);
     }
-  }, []);
+  });
 
   const emailString = useMemo(() => {
     if (currentUser && currentUser.email) {
@@ -72,11 +72,11 @@ export default function EmailVerification() {
           <h1>Verify your email</h1>
           <p>{emailString}</p>
           <p>Click the link in the email to finish signing up. </p>
-          <p>Please check your spam if you don't see it.</p>
+          <p>Please check your spam if you don&apos;t see it.</p>
           <div
             style={{ marginTop: 48, display: "flex", gap: 5, flexWrap: "wrap" }}
           >
-            <p>Can't find it?</p>
+            <p>Can&apost find it?</p>
             <p
               style={{
                 fontWeight: "bold",
