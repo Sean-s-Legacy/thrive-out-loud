@@ -1,6 +1,8 @@
 import { FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
 import * as dbService from "./dbService";
+import "dotenv/config";
+
 // @ts-ignore
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
@@ -14,7 +16,7 @@ export const createMenteeAccount = async (payload: any) => {
         displayName: user_name_first + " " + user_name_last,
         email: user_email,
         password: user_pswd,
-        emailVerified: false,
+        emailVerified: true,
         disabled: false,
       };
       const userResponse: admin.auth.UserRecord = await admin
@@ -99,6 +101,65 @@ export const createuserEndpointsAccount = async (payload: any) => {
     } else {
       return "no pay load";
     }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const sendVerificationCode = async (payload: any) => {
+  console.log("+++++++++++++++++++ send verification code +++++++++++++++++++");
+
+  try {
+    const { phone_number } = payload;
+    console.log("Acout!!!!!!", process.env.TWILIO_ACCOUNT_SID);
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const client = require("twilio")(accountSid, authToken);
+
+    if (!phone_number) {
+      return "no pay load";
+    }
+
+    const { sid: verifySid } = await client.verify.v2.services.create({
+      friendlyName: "My First Verify Service",
+    });
+
+    console.log("SID", verifySid);
+
+    const { status: verificationStatus } = await client.verify.v2
+      .services(verifySid)
+      .verifications.create({ to: phone_number, channel: "sms" });
+
+    console.log("Status!!!!!!!!!!!!", verificationStatus);
+
+    return { verifySid, phone_number };
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const verifyOTPCode = async (payload: any) => {
+  console.log("+++++++++++++++++++ check OTP Code +++++++++++++++++++");
+
+  try {
+    const { OTPCode, phone_number, verifySid } = payload;
+
+    if (!OTPCode || !phone_number || !verifySid) {
+      return "no payload or payload incomplete";
+    }
+    console.log("OTP::::::", OTPCode);
+
+    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347";
+    const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
+    const client = require("twilio")(accountSid, authToken);
+
+    const verifyOTPCode = await client.verify.v2
+      .services(verifySid)
+      .verificationChecks.create({ to: phone_number, code: OTPCode });
+
+    console.log("OTP RESULT", verifyOTPCode);
+
+    return verifyOTPCode.status;
   } catch (error) {
     throw error;
   }
