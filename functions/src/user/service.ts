@@ -3,14 +3,13 @@ import * as admin from "firebase-admin";
 import { getAuth } from "firebase-admin/auth";
 import * as dbService from "./dbService";
 // @ts-ignore
-import { brevoApiKey } from "../../brevo-config";
-
-// Brevo setup
+// brevo
 const brevo = require("@getbrevo/brevo");
+
 // Initialize the Brevo API client
 let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = brevoApiKey;
+apiKey.apiKey = process.env.BREVO_API_KEY;
 
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");

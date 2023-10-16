@@ -9,6 +9,7 @@ admin.initializeApp();
 const db: FirebaseFirestore.Firestore = admin.firestore();
 init(db);
 
+
 // const runtimeOpts: any = {
 //   timeoutSeconds: 540,
 //   memory: "4GB",
@@ -16,3 +17,4 @@ init(db);
 
 // HTTP Requests (Trigger)
 export const app = functions.https.onRequest(application)
+

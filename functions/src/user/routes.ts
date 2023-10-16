@@ -22,7 +22,7 @@ router.get('/',  (req, res) => {
   res.send("user route!");
 });
 
-router.post("/emailVerification",sendVerificationEmail);
+router.post("/emailVerification",[sendVerificationEmail]);
 
 // create new mentee
 router.post('/createMentee', [createMentee]);

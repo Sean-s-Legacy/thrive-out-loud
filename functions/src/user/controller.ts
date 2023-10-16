@@ -9,6 +9,7 @@ import * as service from "./service";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
 import * as https from "https";
+import { BREVO_API_KEY } from "../config";
 // import { brevoApiKey } from "../../brevo-config";
 
 // brevo
@@ -143,6 +144,8 @@ export const userEndpoints = async (req: Request, res: Response) => {
 
 export const sendVerificationEmail = async (req: Request, res: Response) => {
   try {
+
+    console.log('BREVO_API_KEY :>> ', BREVO_API_KEY);
     // Extract data from the request body
     const payload: any = req.body;
 
@@ -155,7 +158,6 @@ export const sendVerificationEmail = async (req: Request, res: Response) => {
 
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
-    console.error("Error sending transactional email:", error);
-    throw error;
+    return handleError(res,error)
   }
 };
