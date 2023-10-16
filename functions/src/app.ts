@@ -1,6 +1,7 @@
 import * as express from "express";
 const helmet = require("helmet");
 import * as bodyParser from "body-parser";
+import * as cors from "cors";
 // const admin = require("firebase-admin");
 import { routesConfig } from "./routes";
 // const serviceAccount = require("../serviceAccountKey.json");
@@ -16,6 +17,12 @@ const app: express.Application = express();
 // });
 
 app.use(helmet());
+
+const corsOptions = {
+  origin: ["http://localhost:3000"], // Replace with deployed frontend's URL
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
@@ -35,7 +42,7 @@ app.get("/", (req, res) => {
   res.send("Hello, bye Express!");
 });
 
-app.listen(3006, () => console.log("Server started"));
+app.listen(3001, () => console.log("Server started"));
 
 // exports.api = functions.https.onRequest(app)
 

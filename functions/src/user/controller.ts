@@ -11,14 +11,6 @@ import { COLLECTION } from "../utils/firestore";
 import * as https from "https";
 // import { brevoApiKey } from "../../brevo-config";
 
-// brevo
-const brevo = require("@getbrevo/brevo");
-
-// Initialize the Brevo API client
-let defaultClient = brevo.ApiClient.instance;
-let apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = process.env.BREVO_API_KEY;
-
 // use the functions variable here
 
 // import * as dbService from "./dbService"
