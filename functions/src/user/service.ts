@@ -5,12 +5,12 @@ import * as dbService from "./dbService";
 // @ts-ignore
 import { brevoApiKey } from "../../brevo-config";
 
-// brevo
+// Brevo setup
 const brevo = require("@getbrevo/brevo");
 // Initialize the Brevo API client
 let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = process.env.BREVO_API_KEY;
+apiKey.apiKey = brevoApiKey;
 
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
