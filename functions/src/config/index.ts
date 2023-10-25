@@ -19,3 +19,4 @@ export const PROJECT_ID = functions.config().kms.project_id;
 export const APP_ID = functions.config().kms.app_id;
 export const CLIENT_EMAIL = functions.config().kms.client_email;
 export const CLIENT_X509_CERT_URL = functions.config().kms.client_x509_cert_url;
+

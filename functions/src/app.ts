@@ -5,7 +5,6 @@ import * as bodyParser from "body-parser";
 import { routesConfig } from "./routes";
 // const serviceAccount = require("../serviceAccountKey.json");
 
-// @ts-ignore
 const app: express.Application = express();
 
 // app.use(express.json())
@@ -19,7 +18,6 @@ app.use(helmet());
 
 app.use(bodyParser.json());
 
-routesConfig(app);
 
 app.use(
   helmet.referrerPolicy({
@@ -31,11 +29,11 @@ app.use(
 
 //route from all users API endpoints
 
-app.get("/", (req, res) => {
-  res.send("Hello, bye Express!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, bye Express!");
+// });
 
-app.listen(3006, () => console.log("Server started"));
+// app.listen(3006, () => console.log("Server started"));
 
 // exports.api = functions.https.onRequest(app)
 
@@ -75,5 +73,7 @@ app.listen(3006, () => console.log("Server started"));
 //     console.log(`server running ondd ${PORT}`)
 
 //  })
+
+routesConfig(app)
 
 export default app;

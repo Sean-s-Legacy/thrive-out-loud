@@ -7,7 +7,9 @@ import * as dbService from "./dbService";
 import { BREVO_API_KEY } from "../config";
 
 // Brevo setup
+
 const brevo = require("@getbrevo/brevo");
+
 // Initialize the Brevo API client
 let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];

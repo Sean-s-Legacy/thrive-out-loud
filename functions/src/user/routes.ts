@@ -15,6 +15,12 @@ router.use((req: Request, res: Response, next: Function) => {
  * ==============================
 */
 
+
+// router.get('/',  (req, res) => {
+//   res.send("user route!");
+// });
+
+
 router.post("/emailVerification",[sendVerificationEmail]);
 
 // create new mentee

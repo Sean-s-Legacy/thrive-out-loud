@@ -21,6 +21,7 @@ const storageBucket: any = admin.storage();
 
 init(db, storageBucket);
 
+
 // const runtimeOpts: any = {
 //   timeoutSeconds: 540,
 //   memory: "4GB",
@@ -28,3 +29,4 @@ init(db, storageBucket);
 
 // HTTP Requests (Trigger)
 export const app = functions.https.onRequest(application);
+
