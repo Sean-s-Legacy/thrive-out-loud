@@ -1,16 +1,17 @@
-import { FirebaseUserPayload } from "./structs";
-import * as admin from "firebase-admin";
+// import { FirebaseUserPayload } from "./structs";
+// import * as admin from "firebase-admin";
 import { getAuth } from "firebase-admin/auth";
 import * as dbService from "./dbService";
 // @ts-ignore
-import { brevoApiKey } from "../../brevo-config";
+// import { brevoApiKey } from "../../brevo-config";
+import { BREVO_API_KEY } from "../config";
 
 // Brevo setup
 const brevo = require("@getbrevo/brevo");
 // Initialize the Brevo API client
 let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = brevoApiKey;
+apiKey.apiKey = BREVO_API_KEY;
 
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");
@@ -130,37 +131,37 @@ export const sendBrevoEmailVerification = async (payload: any) => {
 //   res.json(userResponse);
 // })
 // }
-export const createuserEndpointsAccount = async (payload: any) => {
-  console.log("+++++++++++++++++++ create userEndpoints +++++++++++++++++++");
+// export const createuserEndpointsAccount = async (payload: any) => {
+//   console.log("+++++++++++++++++++ create userEndpoints +++++++++++++++++++");
 
-  try {
-    if (!!payload) {
-      const { user_email, user_pswd, user_name_first, user_name_last } =
-        payload;
+//   try {
+//     if (!!payload) {
+//       const { user_email, user_pswd, user_name_first, user_name_last } =
+//         payload;
 
-      const firebaseUserData: FirebaseUserPayload = {
-        displayName: user_name_first + " " + user_name_last,
-        email: user_email,
-        password: user_pswd,
-        emailVerified: false,
-        disabled: false,
-      };
-      const userResponse: admin.auth.UserRecord = await admin
-        .auth()
-        .createUser(firebaseUserData);
+//       const firebaseUserData: FirebaseUserPayload = {
+//         displayName: user_name_first + " " + user_name_last,
+//         email: user_email,
+//         password: user_pswd,
+//         emailVerified: false,
+//         disabled: false,
+//       };
+//       const userResponse: admin.auth.UserRecord = await admin
+//         .auth()
+//         .createUser(firebaseUserData);
 
-      // console.log(userResponse)
+//       // console.log(userResponse)
 
-      // Insert data to firestore collection
-      const result = await dbService.createuserEndointsAccount(payload);
-      console.log("+++++++++++++++++++ after create +++++++++++++++++++");
-      console.log(result);
+//       // Insert data to firestore collection
+//       const result = await dbService.createuserEndointsAccount(payload);
+//       console.log("+++++++++++++++++++ after create +++++++++++++++++++");
+//       console.log(result);
 
-      return userResponse;
-    } else {
-      return "no pay load";
-    }
-  } catch (error) {
-    throw error;
-  }
-};
+//       return userResponse;
+//     } else {
+//       return "no pay load";
+//     }
+//   } catch (error) {
+//     throw error;
+//   }
+// };

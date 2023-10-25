@@ -8,16 +8,16 @@ import * as service from "./service";
 //import message from "antd/lib/message";
 //import { error } from "firebase-functions/logger";
 import { COLLECTION } from "../utils/firestore";
-import * as https from "https";
+// import * as https from "https";
 // import { brevoApiKey } from "../../brevo-config";
 
-// brevo
-const brevo = require("@getbrevo/brevo");
+// // brevo
+// const brevo = require("@getbrevo/brevo");
 
-// Initialize the Brevo API client
-let defaultClient = brevo.ApiClient.instance;
-let apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = process.env.BREVO_API_KEY;
+// // Initialize the Brevo API client
+// let defaultClient = brevo.ApiClient.instance;
+// let apiKey = defaultClient.authentications["api-key"];
+// apiKey.apiKey = brevoApiKey;
 
 // use the functions variable here
 
@@ -88,11 +88,12 @@ export const createMentee = async (req: Request, res: Response) => {
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
     console.log();
+    return handleError(res,error)
   }
 };
 
 //list all user controller endpoints
-export const listUsers = async (_req: Request, res: Response) => {
+export const listUsers = async (req: Request, res: Response) => {
   try {
     const snapshot = await admin.firestore().collection(COLLECTION.USERS).get();
     //const users = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -112,34 +113,35 @@ export const listUsers = async (_req: Request, res: Response) => {
   }
 };
 
-https.get("https://seans-legacy.firebaseio.com", (response) => {
-  console.log(response);
-});
+// https.get("https://seans-legacy.firebaseio.com", (response) => {
+//   console.log(response);
+// });
 
-export const userEndpoints = async (req: Request, res: Response) => {
-  console.log("+++++++++++++++++++ create userEndpoints +++++++++++++++++++");
+// export const userEndpoints = async (req: Request, res: Response) => {
+//   console.log("+++++++++++++++++++ create userEndpoints +++++++++++++++++++");
 
-  try {
-    // @ts-ignore
-    const payload: userEndpointsSignUpPayLoad = req.body;
-    const result = await service.createuserEndpointsAccount(payload);
+//   try {
+//     // @ts-ignore
+//     const payload: userEndpointsSignUpPayLoad = req.body;
+//     const result = await service.createuserEndpointsAccount(payload);
 
-    console.log(Response);
+//     console.log(Response);
 
-    // Insert data to firestore collection
-    // await dbService.createMenteeAccount(payload, firebaseUserData)
+//     // Insert data to firestore collection
+//     // await dbService.createMenteeAccount(payload, firebaseUserData)
 
-    const success_response: AppSuccess = {
-      status: constants.SUCCESS_MSG,
-      code: constants.CREATE_SUCCESS_CODE,
-      data: result,
-    };
+//     const success_response: AppSuccess = {
+//       status: constants.SUCCESS_MSG,
+//       code: constants.CREATE_SUCCESS_CODE,
+//       data: result,
+//     };
 
-    return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
-  } catch (error) {
-    console.log();
-  }
-};
+//     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
+//   } catch (error) {
+//     console.log();
+//     return handleError(res, error);
+//   }
+// };
 
 export const sendVerificationEmail = async (req: Request, res: Response) => {
   try {
@@ -156,6 +158,6 @@ export const sendVerificationEmail = async (req: Request, res: Response) => {
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
     console.error("Error sending transactional email:", error);
-    throw error;
+    return handleError(res, error);
   }
 };
