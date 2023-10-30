@@ -6,7 +6,8 @@ import * as bodyParser from "body-parser";
 import { routesConfig } from "./routes";
 // const serviceAccount = require("../serviceAccountKey.json");
 
-const app: express.Application = express();
+// const app: express.Application = express();
+const app = express();
 
 // app.use(express.json())
 // app.use(express.urlencoded({extended: true}));
