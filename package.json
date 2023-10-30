@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:3006",
   "name": "seans-legacy",
   "version": "0.1.0",
   "private": true,

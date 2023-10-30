@@ -1,4 +1,5 @@
 import * as express from "express";
+import * as cors from "cors";
 const helmet = require("helmet");
 import * as bodyParser from "body-parser";
 // const admin = require("firebase-admin");
@@ -14,6 +15,8 @@ const app: express.Application = express();
 //   credential: admin.credential.cert(serviceAccount)
 // });
 
+app.use(cors());
+
 app.use(helmet());
 
 app.use(bodyParser.json());
@@ -25,15 +28,13 @@ app.use(
   })
 );
 
-// app.use(bodyParser.json());
-
 //route from all users API endpoints
 
 // app.get("/", (req, res) => {
 //   res.send("Hello, bye Express!");
 // });
 
-// app.listen(3006, () => console.log("Server started"));
+// app.listen(3000, () => console.log("Server started"));
 
 // exports.api = functions.https.onRequest(app)
 

@@ -162,11 +162,6 @@ export const sendVerificationEmail = async (req: Request, res: Response) => {
 
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
-<<<<<<< HEAD
-    console.error("Error sending transactional email:", error);
     return handleError(res, error);
-=======
-    return handleError(res,error)
->>>>>>> 3c59d8bcafd275a538843bc7979f5156a480b3ed
   }
 };

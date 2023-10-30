@@ -1,15 +1,15 @@
 // API BASE AND ENDPOINTS
 
 //  let baseUrl = process.env.NEXT_APP_BASEURL;
-let baseUrl = "http://localhost:3006"
+let baseUrl = "https://us-central1-seans-legacy.cloudfunctions.net/app";
 
  const users  = {
     sendEmailVerification: async (data) => {
         try {
-          await fetch(`${baseUrl}/users/emailVerification`, {
+          await fetch(`${baseUrl}/user/emailVerification`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json", // Specify the content type
+              "Content-Type": "application/json", 
             },
             body: JSON.stringify(data),
           }).then((response)=>{
@@ -25,7 +25,7 @@ let baseUrl = "http://localhost:3006"
       },
     saveUserInFirestore:async(data) =>{
       try {
-        await fetch(`${baseUrl}/users/createMentee`, {
+        await fetch(`${baseUrl}/user/createMentee`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json", 
