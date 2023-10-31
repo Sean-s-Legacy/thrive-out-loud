@@ -149,8 +149,8 @@ export const verifyOTPCode = async (payload: any) => {
     }
     console.log("OTP::::::", OTPCode);
 
-    const accountSid = "AC3af53e9b4e3f56a2c453998c7ac0c347";
-    const authToken = "f4a58216cd5cfeccedd485fc835daa0f";
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
     const client = require("twilio")(accountSid, authToken);
 
     const verifyOTPCode = await client.verify.v2
@@ -158,7 +158,11 @@ export const verifyOTPCode = async (payload: any) => {
       .verificationChecks.create({ to: phone_number, code: OTPCode });
 
     console.log("OTP RESULT", verifyOTPCode);
-
+    if (verifyOTPCode.status === "approved") {
+      dbService.updatePhoneNumberVerificationStatus(true);
+    } else {
+      dbService.updatePhoneNumberVerificationStatus(false);
+    }
     return verifyOTPCode.status;
   } catch (error) {
     throw error;
