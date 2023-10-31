@@ -31,6 +31,7 @@ export function createuserEndointsAccount(payload: any) {
   throw new Error("Function not implemented.");
 }
 
+//TO DO: need to actually update phone_number_verified field in user data after the function is created
 export const updatePhoneNumberVerificationStatus = async (
   phone_number_verified: boolean
 ) => {
