@@ -222,7 +222,11 @@ export const verifyOTPCode = async (payload: any) => {
       .verificationChecks.create({ to: phone_number, code: OTPCode });
 
     console.log("OTP RESULT", verifyOTPCode);
-
+    if (verifyOTPCode.status === "approved") {
+      dbService.updatePhoneNumberVerificationStatus(true);
+    } else {
+      dbService.updatePhoneNumberVerificationStatus(false);
+    }
     return verifyOTPCode.status;
   } catch (error) {
     throw error;
