@@ -1,40 +1,40 @@
-import * as express from "express";
+import express from "express";
+import cors from "cors";
 const helmet = require("helmet");
-// import * as cors from "cors";
 import * as bodyParser from "body-parser";
 // const admin = require("firebase-admin");
 import { routesConfig } from "./routes";
-import userRouter from "./user/routes"
 // const serviceAccount = require("../serviceAccountKey.json");
 
-// @ts-ignore
 const app: express.Application = express();
-
 
 // app.use(express.json())
 // app.use(express.urlencoded({extended: true}));
-
 
 // admin.initializeApp({
 //   credential: admin.credential.cert(serviceAccount)
 // });
 
-  app.use(helmet());
+app.use(cors());
 
-  app.use(
-    helmet.referrerPolicy({
-      policy: ["strict-origin-when-cross-origin"],
-    })
-  );
-  
-  app.use(bodyParser.json());
+app.use(helmet());
 
+app.use(bodyParser.json());
+
+
+app.use(
+  helmet.referrerPolicy({
+    policy: ["strict-origin-when-cross-origin"],
+  })
+);
 
 //route from all users API endpoints
-app.use("/users", userRouter)
-// app.use(routesConfig);
 
-app.listen(3000, () => console.log('Server started'));
+// app.get("/", (req, res) => {
+//   res.send("Hello, bye Express!");
+// });
+
+// app.listen(3000, () => console.log("Server started"));
 
 // exports.api = functions.https.onRequest(app)
 
@@ -56,7 +56,7 @@ app.listen(3000, () => console.log('Server started'));
 //       disabled: false,
 
 //   });
-//   res.json(userResponse); 
+//   res.json(userResponse);
 // })
 
 // // listen for request
@@ -66,7 +66,7 @@ app.listen(3000, () => console.log('Server started'));
 
 //     try {
 //      console.log(`server running on ${PORT}`)
-        
+
 //     } catch (error) {
 //         console.log(error, 'error')
 //     }
@@ -74,9 +74,7 @@ app.listen(3000, () => console.log('Server started'));
 //     console.log(`server running ondd ${PORT}`)
 
 //  })
- 
 
+routesConfig(app)
 
- routesConfig(app);
-
- export default app;
+export default app;
