@@ -10,8 +10,8 @@ typings/
 serviceAccoutKey.json
 .env
 node_modules/
-.next
-.history
-.vscode
-.runtimeconfig.json
+/next
+/history
+/vscode
+/runtimeconfig.json
 *.log
