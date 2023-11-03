@@ -15,6 +15,8 @@ import {
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
+import apiEndPoint from "../Services/Api"
+
 const AuthContext = React.createContext<any>();
 
 export function useAuth() {
@@ -57,9 +59,33 @@ export function AuthProvider({ children }) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setCurrentUser(user);
-        router.push("/dashboard");
-        // ...
+        console.log("user in sign up")
+        console.log(user)
+
+        // create user in database
+        const data = {
+          "user_name_first": "",
+          "user_name_last": "",
+          "user_email": email,
+          "user_pswd": password
+        }
+        console.log(data)
+        try {
+          apiEndPoint.users.saveUserInFirestore(data)
+        } catch (error) {
+          console.log("error ocurrs" + error)
+        }
+
+        if (!user.emailVerified) {
+          router.push({
+            // Email is not verified, proceed to the emailVerification
+            pathname: "/emailVerification",
+          });
+        } else {
+          // Email is already verified, proceed to the dashboard
+          setCurrentUser(user);
+          router.push("/dashboard");
+        }
       })
       .catch((error) => {
         const errorCode = error.code;

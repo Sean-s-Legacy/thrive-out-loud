@@ -1,8 +1,14 @@
 /* Firestore database */
 
 export let db: FirebaseFirestore.Firestore;
-export const init = (database: FirebaseFirestore.Firestore) => {
+export let _cloudStorage: any;
+
+export const init = (
+  database: FirebaseFirestore.Firestore,
+  storageBucket: any
+) => {
   db = database;
+  _cloudStorage = storageBucket;
 };
 
 /* USERS */
