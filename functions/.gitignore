@@ -9,5 +9,6 @@ typings/
 /node_modules
 serviceAccoutKey.json
 .env
-
+node_modules/
+.runtimeconfig.json
 *.log
