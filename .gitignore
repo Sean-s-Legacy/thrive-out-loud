@@ -59,6 +59,6 @@ functions/lib
 .vscode/
 
 
-.next
-.history
-.vscode
+.next/
+.history/
+.vscode/
