@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "InputWrapper.module.css";
+import styles from "./InputWrapper.module.css";
 
 import { EyeSlash, Eye } from "phosphor-react";
 
@@ -14,12 +14,18 @@ function InputWrapper({
   size,
   textarea = false,
   value,
+  required = false,
 }) {
   const { Text } = Typography;
   const { TextArea } = Input;
+
   return (
     <div>
-      <Text>{label}</Text>
+      <div className={required ? styles.required : ""}>
+        <label>
+          <Text>{label}</Text>
+        </label>
+      </div>
       {optional ? <Text> (optional)</Text> : null}
       {password ? (
         <Input.Password

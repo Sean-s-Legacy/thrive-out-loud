@@ -1,50 +1,74 @@
 import InputWrapper from "@/components/InputWrapper";
-import { Button, Form } from "antd";
+import { Button, Form, Select } from "antd";
 import React, { useState } from "react";
 
 export default function MinimumInfo() {
-  const [name, setName] = useState("");
-  const [pronouns, setPronouns] = useState("");
-  const [timezone, setTimezone] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    pronouns: "",
+    timezone: "",
+  });
   const handleSubmit = () => {
-    console.log("submit");
+    console.log(formData);
   };
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-      <div>
-        <div>Create a profile to book mentors</div>
-        <div>
+      <div
+        style={{
+          height: "454px",
+          width: "505px",
+          margin: "auto",
+        }}
+      >
+        <p style={{ fontWeight: "500", fontSize: "30px", margin: "10px 0" }}>
+          Create a profile to book mentors
+        </p>
+        <p style={{ fontSize: "20px", fontWeight: "200", opacity: "0.55" }}>
           This information can only be seen by the Sean’s Legacy team and your
           future mentors
-        </div>
+        </p>
         <Form>
           <div>
-            <Form.Item>
+            <Form.Item style={{ margin: "32px 0 6px" }}>
               <InputWrapper
                 label="Chosen name"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                value={formData.name}
                 placeholder="Enter your name"
                 size="medium"
+                required
               />
             </Form.Item>
-            <Form.Item>
+            <Form.Item style={{ margin: "6px 0" }}>
               <InputWrapper
                 label="Pronouns"
-                onChange={(e) => setPronouns(e.target.value)}
+                onChange={(e) =>
+                  setFormData({ ...formData, pronouns: e.target.value })
+                }
                 placeholder="List your pronouns"
                 size="medium"
-                value={pronouns}
+                value={formData.pronouns}
+                required
               />
             </Form.Item>
-            <Form.Item>
-              <InputWrapper
-                label="Timezone"
-                onChange={(e) => setTimezone(e.target.value)}
+            <Form.Item style={{ margin: "6px 0 32px" }}>
+              <label>
+                Timezone <span style={{ color: "#e32" }}>*</span>
+              </label>
+              <Select
                 placeholder="Select your timezone"
-                size="medium"
-                value={timezone}
-              />
+                onChange={(e) => setFormData({ ...formData, timezone: e })}
+              >
+                <Select.Option value="EST">EST(UTC-5)</Select.Option>
+                <Select.Option value="CST">CST(UTC-6)</Select.Option>
+                <Select.Option value="MST">MST(UTC-7)</Select.Option>
+                <Select.Option value="PST">PST(UTC-8)</Select.Option>
+                <Select.Option value="AKST">AKST(UTC-9)</Select.Option>
+                <Select.Option value="HST">HST(UTC-10)</Select.Option>
+              </Select>
             </Form.Item>
           </div>
 
@@ -52,7 +76,9 @@ export default function MinimumInfo() {
             type="primary"
             onClick={handleSubmit}
             block
-            disabled={!pronouns || !name || !timezone}
+            disabled={
+              !formData.name || !formData.pronouns || !formData.timezone
+            }
           >
             Continue
           </Button>
