@@ -25,13 +25,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 4. Run `npm install` to install project depencencies.
 
-### Contributing
+### How to run the frontend
 
-1. Run `npm run dev` to run the development server.
-2. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Go to your firebase console and navigate to project setting.
+2. Copy the content in firebaseConfig. (It should include apiKey, authDomain, etc...)
+3. Paste the content in src/Firebase/config.ts (Remember to revert the changes when you commit in order to not have the data in Github)
+4. Run `npm run dev` to run the development server.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
