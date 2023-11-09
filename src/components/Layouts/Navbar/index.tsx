@@ -79,8 +79,8 @@ export default function Navbar({ user }) {
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
               <Link
-                href="#"
-                className={router.pathname == "/dashboard" ? "active" : ""}
+                href="/dashboard"
+                className={router.pathname == "/" ? "active" : ""}
               >
                 Dashboard
               </Link>
