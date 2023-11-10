@@ -1,0 +1,94 @@
+.button {
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: #8145b5;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.button:active {
+  background-color: #9e63cf;
+}
+
+.buttonContainer {
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  padding: 50px;
+}
+
+.description {
+  position: absolute;
+  left: 50vw;
+  top: 10px;
+  width: 35vw;
+  font-size: 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 505px;
+  max-height: 410px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+.imageContainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 12px;
+  border-left-color: #8d57d9;
+  border-left-width: 1px;
+  border-left-style: solid;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.leftContainer {
+  background-size: cover;
+  background-color: #f2eef3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.number {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-width: 1px;
+  border-color: "#8D57D9";
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.rightContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+}

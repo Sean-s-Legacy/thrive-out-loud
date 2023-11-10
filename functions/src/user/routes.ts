@@ -1,5 +1,12 @@
 import { Router, Request, Response } from "express";
-import { createMentee,listUsers,sendVerificationEmail, generateTwoFactor, verifyOTPCode } from "./controller";
+import {
+  createMentee,
+  listUsers,
+  sendVerificationEmail,
+  generateTwoFactor,
+  verifyOTPCode,
+  createAccount,
+} from "./controller";
 import { isAuthenticated } from "../middlewares/authenticated";
 // import { listUsers } from './controller';
 
@@ -17,16 +24,17 @@ router.use((req: Request, res: Response, next: Function) => {
  * ==============================
  */
 
-
 // router.get('/',  (req, res) => {
 //   res.send("user route!");
 // });
 
-
-router.post("/emailVerification",[sendVerificationEmail]);
+router.post("/emailVerification", [sendVerificationEmail]);
 
 // create new mentee
 router.post("/createMentee", [createMentee]);
+
+// create new user account
+router.post("/createAccount", [createAccount]);
 
 //to list users
 // router.get('/users', listUsers);
@@ -36,7 +44,7 @@ router.post("/verifyOTPCode", [isAuthenticated, verifyOTPCode]);
 
 //create user Endpoints
 // router.get('users', userEndpoints)
-router.get('/users', listUsers);
+router.get("/users", listUsers);
 
 //create user Endpoints
 // router.get('users', userEndpoints)

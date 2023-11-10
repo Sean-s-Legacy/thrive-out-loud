@@ -17,6 +17,7 @@ export interface FirebaseUserPayload {
   password: string;
   email: string;
   emailVerified: boolean;
+  phoneVerified: boolean;
   //photoURL: string,
   disabled: boolean;
 }

@@ -42,6 +42,7 @@ export default function SignUpModal() {
     }
     try {
       await signUp(email, password);
+      setIsModalOpen(false);
     } catch (err) {
       setError("Incorrect email or password");
     }

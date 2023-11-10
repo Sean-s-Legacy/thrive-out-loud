@@ -3,15 +3,15 @@
   height: 50px;
   color: white;
   background-color: #8145b5;
-  border-radius: 12px; /* Make sure to include 'px' for values with units */
-  cursor: pointer; /* Add the pointer cursor on hover */
+  border-radius: 12px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .buttonContainer:active {
-  background-color: #9e63cf; /* Change the color on hover */
+  background-color: #9e63cf;
 }
 .leftContainer {
   flex: 1;
