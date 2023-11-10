@@ -54,46 +54,37 @@ export function AuthProvider({ children }) {
         // ...
       });
   }
-  function signUp(email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log("user in sign up")
-        console.log(user)
+  async function signUp(email, password) {
 
-        // create user in database
-        const data = {
-          "user_name_first": "",
-          "user_name_last": "",
-          "user_email": email,
-          "user_pswd": password
-        }
-        console.log(data)
-        try {
-          apiEndPoint.users.saveUserInFirestore(data)
-        } catch (error) {
-          console.log("error ocurrs" + error)
-        }
+    // create user in database
+    const data = {
+      user_email: email,
+      user_pswd: password
+    }
+    try {
+      await apiEndPoint.users.createAccount(data)
 
-        if (!user.emailVerified) {
-          router.push({
-            // Email is not verified, proceed to the emailVerification
-            pathname: "/emailVerification",
-          });
-        } else {
-          // Email is already verified, proceed to the dashboard
+      // After create the user, user also signe in
+      await signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
           setCurrentUser(user);
-          router.push("/dashboard");
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+
+    } catch (error) {
+      console.error("Error during API request:", error);
+    } finally {
+      router.push({
+        pathname: "/emailVerification",
       });
+
+    }
   }
-  function signIn(email, password) {
+  async function signIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in

@@ -14,12 +14,6 @@ export default function EmailVerification() {
     callbackUrl: "http://localhost:3000/emailVerificationSuccess",
   };
 
-  useEffect(() => {
-    if (currentUser && currentUser.email) {
-      // sendVerificationEmail(currentUser.email);
-      apiEndPoint.users.sendEmailVerification(data);
-    }
-  });
 
   const emailString = useMemo(() => {
     if (currentUser && currentUser.email) {

@@ -34,7 +34,7 @@ export default function EmailVerificationSuccess() {
             Thank you for helping us make this a safe space for all. Let’s get
             you set up to book your first session!
           </p>
-          <Link href="/dashboard" className={styles.buttonContainer}>
+          <Link href="/howToBook" className={styles.buttonContainer}>
             <div className={styles.buttonText}>Get Started</div>
           </Link>
         </div>

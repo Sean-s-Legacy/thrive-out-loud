@@ -1,5 +1,5 @@
-// import { FirebaseUserPayload } from "./structs";
-// import * as admin from "firebase-admin";
+import { FirebaseUserPayload } from "./structs";
+import * as admin from "firebase-admin";
 import { getAuth } from "firebase-admin/auth";
 import * as dbService from "./dbService";
 import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "../config";
@@ -16,6 +16,53 @@ const brevo = require("@getbrevo/brevo");
 let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];
 apiKey.apiKey = BREVO_API_KEY;
+
+export const createAccount = async (payload: any) => {
+  console.log("+++++++++++++++++++ create Account +++++++++++++++++++");
+
+  try {
+    if (!!payload) {
+      const { user_email, user_pswd, user_name_first, user_name_last } =
+        payload;
+
+      const firebaseUserData: FirebaseUserPayload = {
+        displayName: user_name_first + " " + user_name_last,
+        email: user_email,
+        password: user_pswd,
+        emailVerified: false,
+        phoneVerified: false,
+        disabled: false,
+      };
+
+      // Create user in Firebase Authentication
+      const userResponse: admin.auth.UserRecord = await admin
+        .auth()
+        .createUser(firebaseUserData);
+
+      console.log(userResponse);
+
+      // Insert data to firestore collection
+      await dbService.createAccount(payload);
+      console.log("+++++++++++++++++++ after create +++++++++++++++++++");
+
+      // Call the email verification
+
+      const verificationPayload = {
+        userEmail: user_email,
+        callbackUrl: "http://localhost:3000/emailVerificationSuccess",
+      };
+
+      await sendBrevoEmailVerification(verificationPayload);
+
+      // return userResponse;
+      return { message: "User created successfully" };
+    } else {
+      return "no pay load";
+    }
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const createMenteeAccount = async (payload: any) => {
   console.log("+++++++++++++++++++ create Mentee +++++++++++++++++++");

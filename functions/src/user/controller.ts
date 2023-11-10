@@ -1,4 +1,4 @@
-import { MenteeSignUpPayLoad } from "./structs";
+import { MenteeSignUpPayLoad, FirebaseUserPayload } from "./structs";
 import * as admin from "firebase-admin";
 import { Request, Response } from "express";
 import { AppError, AppSuccess } from "../utils/response";
@@ -94,11 +94,29 @@ export const createMentee = async (req: Request, res: Response) => {
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
     console.log();
-    return handleError(res,error)
+    return handleError(res, error);
   }
 };
 
+export const createAccount = async (req: Request, res: Response) => {
+  console.log("+++++++++++++++++++ create Account +++++++++++++++++++");
 
+  try {
+    const payload: FirebaseUserPayload = req.body;
+    const result = await service.createAccount(payload);
+
+    const success_response: AppSuccess = {
+      status: constants.SUCCESS_MSG,
+      code: constants.CREATE_SUCCESS_CODE,
+      data: result,
+    };
+
+    return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
+  } catch (error) {
+    console.log();
+    return handleError(res, error);
+  }
+};
 
 //list all user controller endpoints
 export const listUsers = async (_req: Request, res: Response) => {
@@ -126,10 +144,10 @@ export const listUsers = async (_req: Request, res: Response) => {
 // export const userEndpoints = async (req: Request, res: Response) => {
 //   console.log("+++++++++++++++++++ create userEndpoints +++++++++++++++++++");
 
-    //     try {error: (_unknown: any) =>
-    //     console.error(error);
-    //     res.status(500).json({ success: false, error,message });
-    //   }
+//     try {error: (_unknown: any) =>
+//     console.error(error);
+//     res.status(500).json({ success: false, error,message });
+//   }
 //     console.log(snapshot);
 //   } catch {
 //     (error: any) => {
@@ -180,7 +198,7 @@ export const sendVerificationEmail = async (req: Request, res: Response) => {
     // Insert data to firestore collection
     // await dbService.createMenteeAccount(payload, firebaseUserData)
 
-    console.log('BREVO_API_KEY :>> ', BREVO_API_KEY);
+    console.log("BREVO_API_KEY :>> ", BREVO_API_KEY);
     // Extract data from the request body
     const payload: any = req.body;
 
@@ -247,7 +265,6 @@ export const verifyOTPCode = async (req: Request, res: Response) => {
 
     return res.status(constants.CREATE_SUCCESS_CODE).json(success_response);
   } catch (error) {
- 
     return handleError(res, error);
   }
 };
