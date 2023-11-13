@@ -56,4 +56,6 @@ functions/lib
 # IDE files
 .vscode/
 
+.history
+
 
