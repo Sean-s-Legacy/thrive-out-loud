@@ -6,5 +6,12 @@ lib/**/*.js.map
 typings/
 
 # Node.js dependency directory
-node_modules/
+/node_modules
 serviceAccoutKey.json
+.env
+node_modules/
+.next/
+.history/
+.vscode/
+.runtimeconfig.json
+*.log

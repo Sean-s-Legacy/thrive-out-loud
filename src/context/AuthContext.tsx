@@ -15,6 +15,8 @@ import {
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
+import apiEndPoint from "../Services/Api"
+
 const AuthContext = React.createContext<any>();
 
 export function useAuth() {
@@ -52,22 +54,37 @@ export function AuthProvider({ children }) {
         // ...
       });
   }
-  function signUp(email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        setCurrentUser(user);
-        router.push("/dashboard");
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+  async function signUp(email, password) {
+
+    // create user in database
+    const data = {
+      user_email: email,
+      user_pswd: password
+    }
+    try {
+      await apiEndPoint.users.createAccount(data)
+
+      // After create the user, user also signe in
+      await signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          setCurrentUser(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+
+    } catch (error) {
+      console.error("Error during API request:", error);
+    } finally {
+      router.push({
+        pathname: "/emailVerification",
       });
+
+    }
   }
-  function signIn(email, password) {
+  async function signIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in

@@ -13,6 +13,7 @@ import { CaretDown, User } from "phosphor-react";
 import SignUpModal from "../../auth/SignUp";
 import LoginModal from "../../auth/Login";
 // import LoginBtn from "../LoginBtn";
+import { MenuOutlined } from "@ant-design/icons";
 
 export default function Navbar({ user }) {
   const router = useRouter();
@@ -23,11 +24,11 @@ export default function Navbar({ user }) {
 
   const items: MenuProps["items"] = [
     {
-      label: <a href="https://www.antgroup.com">1st menu item</a>,
+      label: <Link href="#">1st menu item</Link>,
       key: "0",
     },
     {
-      label: <a href="https://www.aliyun.com">2nd menu item</a>,
+      label: <Link href="#">2nd menu item</Link>,
       key: "1",
     },
     {
@@ -39,16 +40,34 @@ export default function Navbar({ user }) {
     },
   ];
 
+  const navDropDown: MenuProps["items"] = [
+    {
+      label: <Link href="/about">About us</Link>,
+      key: "0",
+    },
+    {
+      label: <Link href="#">Resources</Link>,
+      key: "1",
+    },
+    {
+      label: <Link href="#">Become a mentor</Link>,
+      key: "2",
+    },
+  ];
+
   return (
     <nav className={styles.nav_container}>
-      <Link href="/" className={styles.logo}>
-        <Image
-          alt="Seans Legacy logo"
-          width={175}
-          height={46}
-          src="/images/SL-logo.png"
-        />
-      </Link>
+      <div className={!user && styles.logoContainer}>
+        <Link href="/">
+          <Image
+            alt="Seans Legacy logo"
+            width={175}
+            height={46}
+            src="/images/SL-logo.png"
+            className={styles.logo}
+          />
+        </Link>
+      </div>
       {!!user ? (
         <div className={styles.auth_container}>
           <Search
@@ -60,8 +79,8 @@ export default function Navbar({ user }) {
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
               <Link
-                href="#"
-                className={router.pathname == "/dashboard" ? "active" : ""}
+                href="/dashboard"
+                className={router.pathname == "/" ? "active" : ""}
               >
                 Dashboard
               </Link>
@@ -123,6 +142,16 @@ export default function Navbar({ user }) {
             <SignUpModal />
             <LoginModal />
           </div>
+          <Dropdown
+            placement="bottomRight"
+            className={styles.nav_dropdown}
+            menu={{ items: navDropDown }}
+            trigger={["click"]}
+          >
+            <a onClick={(e) => e.preventDefault()}>
+              <MenuOutlined style={{ fontSize: "30px", color: "black" }} />
+            </a>
+          </Dropdown>
         </div>
       )}
     </nav>

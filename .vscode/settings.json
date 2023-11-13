@@ -1,3 +1,9 @@
 {
+<<<<<<< HEAD
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
+=======
   "liveServer.settings.port": 5501
 }
+>>>>>>> origin/develop
