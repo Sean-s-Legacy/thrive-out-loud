@@ -82,11 +82,12 @@ export default function RecommendedMentorSlider() {
   // let imageSlider = document.querySelector<HTMLElement>(".image_slider");
   // let cardWidth = imageSlider.children[0].clientWidth;
 
-  const updateIndex = (newIndex: any) => {
+  const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
       newIndex = 0;
-    } else if (newIndex >= mentors.length) {
-      newIndex = mentors.length - 1;
+    }
+    else if (newIndex + 3 >= mentors.length) {
+      newIndex = mentors.length - 3
     }
     setCurrentIndex(newIndex);
   };
@@ -101,13 +102,13 @@ export default function RecommendedMentorSlider() {
           <div className={styles.image_arrow_container}>
             <div
               className={styles.image_slider_left_arrow}
-              onClick={() => updateIndex(currentIndex - 1)}
+              onClick={() => updateIndex(currentIndex - 3)}
             >
               <LeftOutlined />
             </div>
             <div
               className={styles.image_slider_right_arrow}
-              onClick={() => updateIndex(currentIndex + 1)}
+              onClick={() => updateIndex(currentIndex + 3)}
             >
               <RightOutlined />
             </div>
@@ -118,10 +119,9 @@ export default function RecommendedMentorSlider() {
             <div
               className={styles.image_slider}
               ref={imgRef}
-              style={{ transform: `translateX(-${currentIndex * 494}px)` }}
             >
               {[...mentors]
-                .splice(currentIndex, currentIndex + 3)
+                .slice(currentIndex, currentIndex + 3)
                 .map((slide: ISlidesProps, index) => (
                   <RecommendedMentorCard
                     key={index}
@@ -133,14 +133,6 @@ export default function RecommendedMentorSlider() {
                     supportOffered={slide.supportOffered}
                   />
                 ))}
-            </div>
-          </div>
-          <div>
-            <div className="img-dot">
-              <div className="dot-circle"></div>
-              <div className="dot-circle"></div>
-              <div className="dot-circle"></div>
-              <div className="dot-circle"></div>
             </div>
           </div>
         </div>
