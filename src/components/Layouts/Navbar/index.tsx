@@ -57,7 +57,7 @@ export default function Navbar({ user }) {
 
   return (
     <nav className={styles.nav_container}>
-      <div className={!user && styles.logoContainer}>
+      <div className={styles.logoContainer}>
         <Link href="/">
           <Image
             alt="Seans Legacy logo"
