@@ -1,0 +1,10 @@
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 17px 32px;
+}
+.logo {
+  margin: auto;
+}
