@@ -3,3 +3,8 @@ input.ant-input::-webkit-input-placeholder,
 input.ant-input::-moz-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
+.required label:after {
+  color: #e32;
+  content: " *";
+  display: inline;
+}
