@@ -1,8 +1,11 @@
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import InputWrapper from "@/components/InputWrapper";
 import { Button, Form, Select } from "antd";
-import React, { useState } from "react";
+
 
 export default function MinimumInfo() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     pronouns: "",
@@ -10,6 +13,7 @@ export default function MinimumInfo() {
   });
   const handleSubmit = () => {
     console.log(formData);
+    router.push("/focusAreas");
   };
 
   return (

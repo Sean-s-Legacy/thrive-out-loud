@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { Button } from "antd";
 
 import styles from "@/styles/focus-areas.module.css";
 
 export default function FocusAreas() {
+    const router = useRouter();
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleCheckboxChange = (value) => {
@@ -14,6 +16,10 @@ export default function FocusAreas() {
                 return [...prevSelected, value];
             }
         });
+    };
+
+    const handleSubmit = () => {
+        router.push("/dashboard");
     };
 
     return (
@@ -103,7 +109,7 @@ export default function FocusAreas() {
 
                 <Button
                     type="primary"
-                    onClick={() => { }}
+                    onClick={handleSubmit}
                     block
                     disabled={selectedOptions.length === 0}
                 >

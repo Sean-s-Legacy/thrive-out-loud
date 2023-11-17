@@ -86,7 +86,7 @@ export default function HowToBook() {
       <div className={styles.rightContainer}>
         <div style={{ flex: 1 }}></div>
         <div className={styles.buttonContainer}>
-          <Link href="/dashboard" className={styles.button}>
+          <Link href="/minimumInfo" className={styles.button}>
             <div className={styles.buttonText}>Continue</div>
           </Link>
         </div>
