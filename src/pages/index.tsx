@@ -9,6 +9,7 @@ import styles from "@/styles/index.module.css";
 import GettingStarted from "@/components/pages-index/GettingStarted";
 import OurMentors from "@/components/pages-index/OurMentors";
 import Testimonials from "@/components/pages-index/Testimonials";
+import Head from "next/head";
 
 const { Title, Text } = Typography;
 
@@ -19,6 +20,9 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>Thrive Out Loud | Receive guidance, discover your path, and meet mentors who truly understand the LGBTQIA+ community!</title>
+      </Head>
       <section className={styles.heroSection}>
         <div className={styles.heroSectionContent}>
           <div className={styles.heroSectionHeading}>
