@@ -8,7 +8,7 @@ export const createAccount = async (payload: MenteeSignUpPayLoad) => {
     const { user_email, user_pswd, user_name_first, user_name_last } = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db
       .collection(COLLECTION.USERS)
-      .doc();
+      .doc("test");
 
     const user = {
       [USER_FIELDS.USER_NAME]: {
