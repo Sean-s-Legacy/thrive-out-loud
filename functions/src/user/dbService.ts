@@ -3,12 +3,12 @@ import { COLLECTION, db, USER_FIELDS } from "../utils/firestore";
 import { MenteeSignUpPayLoad } from "./structs";
 // const { v4: uuidv4 } = require("uuid");
 
-export const createAccount = async (payload: MenteeSignUpPayLoad) => {
+export const createAccount = async (payload: MenteeSignUpPayLoad, uid:string) => {
   try {
     const { user_email, user_pswd, user_name_first, user_name_last } = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db
       .collection(COLLECTION.USERS)
-      .doc();
+      .doc(uid);
 
     const user = {
       [USER_FIELDS.USER_NAME]: {
