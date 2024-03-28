@@ -2,10 +2,20 @@
   background-image: url("/images/about/leaf-background.png");
   background-color: var(--primary1);
   padding: 103px;
+  height: 398px;
 }
 
 .textContainer {
-  max-width: 876px;
+  width: 1046px;
+  margin: 0 auto;
+}
+
+.textTitle {
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 24px;
 }
+
+/* .textParagraph {
+
+} */

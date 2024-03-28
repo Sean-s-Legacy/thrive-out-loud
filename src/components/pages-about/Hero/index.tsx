@@ -2,16 +2,25 @@ import React from "react";
 import { Typography } from "antd";
 import styles from "./Hero.module.css";
 
-function index(props) {
-  const { Title } = Typography;
+function index() {
+  const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
       <div className={styles.textContainer}>
-        <Title className="semibold">
-          Sean’s Legacy is a public health non-profit redefining{" "}
-          <span className="textPrimary7">primary prevention of suicide</span>{" "}
-          through education and mentorship.{" "}
-        </Title>
+        <div className={styles.textTitle}>
+          <Title className="bold textPrimary8">
+            Dedicated to helping LGBTQIA+ youth thrive{" "}
+          </Title>
+        </div>
+        <div className="textParagraph">
+          <Paragraph className="textLarge mediumWeight">
+            Thrive Out Loud is a mentorship program created by Sean’s Legacy
+            that connects early-career LGBTQIA+ young adults with experienced,
+            like-minded mentors. We created Thrive Out Loud to increase LGBTQIA+
+            representation in workplaces, foster academic and career
+            development, and provide a safe space for advice and affirmation.{" "}
+          </Paragraph>
+        </div>
       </div>
     </section>
   );

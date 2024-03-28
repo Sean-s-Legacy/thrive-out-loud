@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  /* align-items: flex-start; */
+  margin: 24px 0;
+}
+
+.card-item {
+  box-shadow: 2px 10px 15px rgba(0, 0, 0, 0.8);
+  padding: 11.933px 15.911px;
+}

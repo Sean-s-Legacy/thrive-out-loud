@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "@/components/pages-about/Hero";
+import Connect from "@/components/pages-about/Connect";
 import OurStory from "@/components/pages-about/OurStory";
 import Goals from "@/components/pages-about/Goals";
 import Safety from "@/components/pages-about/Safety";
@@ -10,6 +11,7 @@ function about(props) {
   return (
     <>
       <Hero />
+      <Connect />
       <OurStory />
       <Goals />
       <Safety />
