@@ -42,7 +42,7 @@ export const createAccount = async (payload: any) => {
       console.log(userResponse);
 
       // Insert data to firestore collection
-      await dbService.createAccount(payload);
+      await dbService.createAccount(payload, userResponse.uid);
       console.log("+++++++++++++++++++ after create +++++++++++++++++++");
 
       // Call the email verification
