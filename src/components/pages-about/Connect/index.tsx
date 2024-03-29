@@ -28,21 +28,25 @@ function index() {
     <section className={styles.section}>
       {cards.map((card, index) => {
         return (
-          <div className="card-item" key={index}>
-            <Card
-              style={{ width: 346 }}
-              cover={
-                <Image
-                  alt={card.title}
-                  width={346}
-                  height={338}
-                  src={card.imgSrc}
-                />
-              }
-            >
-              <Meta title={card.title} description={card.description} />
-            </Card>
-          </div>
+          <Card
+            key={index}
+            className={styles.cardProp}
+            style={{
+              width: 346,
+              height: 479,
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            }}
+            cover={
+              <Image
+                alt={card.title}
+                width={346}
+                height={338}
+                src={card.imgSrc}
+              />
+            }
+          >
+            <Meta title={card.title} description={card.description} />
+          </Card>
         );
       })}
     </section>
