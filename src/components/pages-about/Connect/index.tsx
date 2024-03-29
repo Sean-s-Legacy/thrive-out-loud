@@ -9,7 +9,7 @@ function index() {
     {
       imgSrc: "/images/about/100lgbtqia.png",
       title: "100% LGBTQIA+",
-      description: "Affirming mentorship by and for the LGBTQIA+ community/her",
+      description: "Affirming mentorship by and for the LGBTQIA+ community",
     },
     {
       imgSrc: "/images/about/personalized.png",
@@ -30,7 +30,6 @@ function index() {
         return (
           <Card
             key={index}
-            className={styles.cardProp}
             style={{
               width: 346,
               height: 479,
@@ -45,7 +44,28 @@ function index() {
               />
             }
           >
-            <Meta title={card.title} description={card.description} />
+            <Meta
+              title={
+                <span
+                  style={{
+                    fontSize: "19.88px",
+                    color: "rgba(0, 0, 0, 0.85)",
+                    fontWeight: "600",
+                  }}
+                >
+                  {card.title}
+                </span>
+              }
+              description={
+                <div
+                  style={{
+                    paddingRight: "60px",
+                  }}
+                >
+                  {card.description}
+                </div>
+              }
+            />
           </Card>
         );
       })}

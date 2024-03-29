@@ -19,8 +19,12 @@ function index() {
         <div className={styles.textContainer}>
           <Title level={2} className="textLarge bold">
             The Sean&apos;s Legacy story
-          </Title>{" "}
-          <Paragraph className="textMedium mediumWeight">
+          </Title>
+
+          <Paragraph
+            style={{ marginTop: "20px" }}
+            className="textMedium mediumWeight"
+          >
             Founded in 2019, Sean&apos;s Legacy is focused on increasing
             LGBTQIA+ representation and identity education as a primary
             prevention method to reduce suicide among the LGBTQIA+ population.
