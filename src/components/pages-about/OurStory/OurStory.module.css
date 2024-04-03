@@ -7,10 +7,13 @@
   width: 1072px;
   margin: 0 auto;
   display: flex;
-  /* justify-content: flex-start; */
   gap: 48px;
 }
 
 .textContainer {
   text-align: start;
 }
+
+/* .characterGeekBlue7 {
+  color: #1d39c4;
+} */

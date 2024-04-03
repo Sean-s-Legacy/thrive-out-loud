@@ -123,8 +123,18 @@ div.ant-typography-h3 {
   color: var(--primary1);
 }
 
+/* New in phase 4 */
+.ant-typography.characterGeekBlue7,
+.characterGeekBlue7 {
+  color: var(--character-geek-blue7);
+}
+.ant-typography.neutral8,
+.textNeutral8 {
+  color: var(--neutral8);
+}
+
 /* Links */
-a {
+/* a {
   color: var(--primary7);
 }
 a:hover {
@@ -132,7 +142,7 @@ a:hover {
 }
 a:active {
   color: var (--primary7);
-}
+} */
 
 /* Responsive Heading and Text font-sizes */
 /* Mobile */

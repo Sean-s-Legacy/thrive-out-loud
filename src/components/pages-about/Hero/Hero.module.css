@@ -1,8 +1,9 @@
 .section {
   background-image: url("/images/about/leaf-background.png");
+  background-position: center;
   background-color: var(--primary1);
   padding: 103px;
-  height: 398px;
+  height: 397px;
 }
 
 .textContainer {
@@ -15,7 +16,3 @@
   text-align: center;
   margin-bottom: 24px;
 }
-
-/* .textParagraph {
-
-} */

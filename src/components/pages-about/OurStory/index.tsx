@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./OurStory.module.css";
 
 function index() {
-  const { Title, Paragraph } = Typography;
+  const { Title, Paragraph, Link } = Typography;
   return (
     <section className={styles.section}>
       <div className={styles.storyContainer}>
@@ -35,9 +35,13 @@ function index() {
             Sean&apos;s Legacy, we champion LGBTQIA+ identity education because
             these resources weren&apos;t available to Sean when he needed them.
           </Paragraph>
-          <Paragraph className="textMedium mediumWeight">
+          <Link
+            underline
+            href=""
+            className="textMedium characterGeekBlue7 bold"
+          >
             Lean more about Sean&apos;s Legacy
-          </Paragraph>
+          </Link>
         </div>
       </div>
     </section>
