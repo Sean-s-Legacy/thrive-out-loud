@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 124px 0;
+}
+
+/* .cardProp {
+  color: black;
+  size: 20px;
+  font-weight: 600;
+} */

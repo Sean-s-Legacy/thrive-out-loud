@@ -1,17 +1,18 @@
 .contactSection {
-  background-color: var(--primary1);
+  background-color: var(--primary11);
   padding: 80px 24px;
   display: flex;
   gap: 64px;
   align-items: center;
   justify-content: center;
+  margin-top: 48px;
 }
 .contentWrapper {
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 508px;
+  max-width: 476px;
 }
 .headingContainer {
   display: flex;
@@ -30,6 +31,11 @@
   gap: 24px;
   align-items: center;
 }
+
 .formItem {
   align-self: stretch !important;
+}
+.alignLeft {
+  width: 100%;
+  padding-bottom: 24px;
 }

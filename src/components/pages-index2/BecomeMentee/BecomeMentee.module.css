@@ -1,0 +1,22 @@
+.section {
+  background-color: var(--neutral2);
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  /* width: 1168px; */
+}
+
+.textContainer {
+  padding: 90px 25px 113px 45px;
+  width: 795px;
+}
+
+.textTitle {
+  /* margin: 0 auto;
+   text-align: center; */
+  margin-bottom: 24px;
+  width: 726px;
+}
+.textParagraph {
+  width: 500px;
+}
