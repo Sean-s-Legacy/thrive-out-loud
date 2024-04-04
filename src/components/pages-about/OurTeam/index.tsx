@@ -42,7 +42,7 @@ function index(props) {
       imgSrc: "/images/about/tyrone.png",
       name: "Tyrone Best",
       pronouns: "he/him",
-      role: "Drug Addiction & Substance Abuse Liason",
+      role: "Drug Addiction & Substance Abuse Liaison",
     },
     {
       imgSrc: "/images/about/ethan.png",

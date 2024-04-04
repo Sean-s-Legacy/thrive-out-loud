@@ -9,11 +9,15 @@ function index({ imgSrc = null, name, pronouns, role }) {
     <div className={styles.container}>
       <Avatar size={216} src={imgSrc} />
       <div className={styles.nameContainer}>
-        <Text className="textLarge mediumWeight textAlignCenter">{name}</Text>
+        <Title level={4} className="textAlignCenter">
+          {name}
+        </Title>
         <Text className="footnote textNeutral8 textAlignCenter">
           ({pronouns})
         </Text>
-        <Text className="textAlignCenter">{role}</Text>
+        <div className={styles.roleContainer}>
+          <Text className="regularWeight">{role}</Text>
+        </div>
       </div>
     </div>
   );
