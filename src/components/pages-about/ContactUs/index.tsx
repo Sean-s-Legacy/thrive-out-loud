@@ -96,6 +96,7 @@ export default function ContactUs() {
 
               <Form.Item>
                 <Button
+                  disabled
                   type="default"
                   htmlType="submit"
                   size="large"
