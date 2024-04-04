@@ -5,6 +5,10 @@ export interface MenteeSignUpPayLoad {
   [USER_FIELDS.FIRST_NAME]: string;
   [USER_FIELDS.LAST_NAME]: string;
   [USER_FIELDS.PASSWORD]: string;
+  [USER_FIELDS.CHOSEN_NAME]: string;
+  [USER_FIELDS.PRONOUNS]: string;
+  [USER_FIELDS.LOCATION]: string;
+  [USER_FIELDS.DATE_OF_BIRTH]: string;
 }
 
 export interface MenteeSignInPayLoad {
@@ -20,4 +24,13 @@ export interface FirebaseUserPayload {
   phoneVerified: boolean;
   //photoURL: string,
   disabled: boolean;
+}
+
+export interface FirestoreUserData {
+  [USER_FIELDS.CHOSEN_NAME]: string;
+  [USER_FIELDS.USER_EMAIL]: string;
+  [USER_FIELDS.PRONOUNS]: string;
+  [USER_FIELDS.LOCATION]: string;
+  [USER_FIELDS.DATE_OF_BIRTH]: string;
+  [USER_FIELDS.ID]: string;
 }

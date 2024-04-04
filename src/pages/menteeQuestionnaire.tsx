@@ -3,30 +3,28 @@ import { useMultistepForm } from 'functions/src/utils/useMultistepform';
 import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
 import Location from '@/components/Onboarding/Location';
 import { useAuth } from "../context/AuthContext";
-import NotLoggedIn from '@/components/Errors/NotLoggedIn';
-
-// Define the form data - add to this as we add more fields to onboarding
-type FormData = {
-  chosenName: string;
-  pronouns: string;
-  dateOfBirth: Date | null;
-  location: string;
-}
+import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
+import SignUpModal from '@/components/auth/SignUp';
+import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
-const INITIALDATA:FormData = {
-  chosenName: '',
-  pronouns: '',
-  dateOfBirth: null,
-  location: ''
+const INITIALDATA: MenteeSignUpPayLoad = {
+  user_name_first: '',
+  user_name_last: '',
+  user_chosen_name: '',
+  user_pronouns: '',
+  user_date_of_birth: '',
+  user_location: '',
+  user_email: '',
+  user_pswd: ''
 }
 
 export default function MenteeQuestionnaire() {
 
   const { currentUser } = useAuth();
-  if (!currentUser) {
+  if (currentUser) {
     return (
-      <NotLoggedIn />
+      <AlreadyLoggedIn />
     )
   } else {
     return (
@@ -41,7 +39,7 @@ function MenteeForm() {
 
   const [data, setData] = useState(INITIALDATA);
 
-  function updateFields(fields: Partial<FormData>) {
+  function updateFields(fields: Partial<MenteeSignUpPayLoad>) {
     setData(prev => {
       return { ...prev, ...fields }
     });
@@ -49,14 +47,18 @@ function MenteeForm() {
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
     <NameAndPronouns key="nameAndPronouns" {...data} updateFields = {updateFields}/>,
-    <Location key="location" {...data} updateFields = {updateFields} />
+    <Location key="location" {...data} updateFields = {updateFields} />,
+    <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);
+
+  const { signUp } = useAuth();
 
   function onSubmit(e:FormEvent) {
     e.preventDefault();
     if (!isLastStep) return next();
     // Submit the form data to Firebase
     console.log(data)
+    signUp(data);
   }
 
   return (
