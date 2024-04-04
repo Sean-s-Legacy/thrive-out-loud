@@ -46,7 +46,7 @@ function index() {
         alt="Four people are lying down, wearing rainbow-colored clothes, smiling, and leaning their heads together"
         src={"/images/index/hero2.png"}
         className={styles.heroImg}
-        width={841}
+        width={911}
         height={598}
       />
     </section>
