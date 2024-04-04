@@ -95,7 +95,12 @@ export default function ContactUs() {
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" size="large">
+                <Button
+                  type="default"
+                  htmlType="submit"
+                  size="large"
+                  className="textPrimary10"
+                >
                   Send message
                 </Button>
               </Form.Item>
