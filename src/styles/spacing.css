@@ -1,0 +1,25 @@
+/* Space Tokens */
+
+:root {
+    /* Small Values */
+    --spacing-02: 4px;
+    --spacing-01: 2px;
+    --spacing-03: 8px;
+
+    /* Medium Values */
+    --spacing-04: 12px;
+    --spacing-05: 16px;
+    --spacing-06: 24px;
+
+    /* Large Values */
+    --spacing-07: 32px;
+    --spacing-08: 40px;
+    --spacing-09: 48px;
+    --spacing-10: 64px;
+    --spacing-11: 80px;
+
+    /* Between Sections */
+    --spacing-12: 96px;
+    --spacing-13: 160px;
+
+}
