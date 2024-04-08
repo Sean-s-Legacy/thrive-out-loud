@@ -3,7 +3,7 @@
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 17px 32px;
+  padding: 17px var(--spacing-07); /* 32px */
 }
 .logo {
   margin-right: auto;
@@ -17,7 +17,7 @@
 }
 .search_input {
   max-width: 560px;
-  margin: 0 24px 0 60px;
+  margin: 0 var(--spacing-06) 0 60px; /* 24px */
 }
 .search_input:focus {
   background-color: #e9e6f0;
@@ -29,7 +29,7 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: var(--spacing-07); /* 32px */
 }
 
 .links a {
@@ -63,11 +63,11 @@
 /* styles for unauthenticated user navbar */
 .unauth_container {
   display: flex;
-  gap: 40px;
+  gap: var(--spacing-08); /* 40px */
 }
 .btn_container {
   display: flex;
-  gap: 16px;
+  gap: var(--spacing-05); /* 16px */
 }
 .logo {
   margin-right: auto;
@@ -79,7 +79,7 @@
 
 .nav_container {
   display: flex;
-  padding: 17px 32px;
+  padding: 17px var(--spacing-07); /* 32px */
   position: relative;
   max-width: 1650px;
   margin: 0 auto;
@@ -93,7 +93,7 @@
 
 .btn_container {
   display: flex;
-  gap: 16px;
+  gap: var(--spacing-05); /* 16px */
 }
 
 /*  Media query for large screens */
@@ -147,7 +147,7 @@
 }
 .search_input {
   max-width: 560px;
-  margin: 0 24px 0 60px;
+  margin: 0 var(--spacing-06) 0 60px;
 }
 .search_input:focus {
   background-color: #e9e6f0;
@@ -178,7 +178,7 @@
 .unauth_container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: var(--spacing-08); /* 40px */
   height: 50px;
   justify-content: end;
   white-space: nowrap;
