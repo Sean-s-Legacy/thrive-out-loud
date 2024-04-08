@@ -1,0 +1,102 @@
+.section {
+    display: flex;
+    /* width: 1440px; */
+    padding-bottom: var(--spacing-spacing-10, 64px);
+    flex-direction: column;
+    align-items: center;
+}
+
+.layout {
+    display: flex;
+    width: 1278px;
+    padding: var(--spacing-spacing-10, 64px) 0px;
+    justify-content: center;
+    align-items: flex-start;
+    /* background: var(--gray-white, #fff); */
+}
+
+.title {
+    color: var(--gray-black, #000);
+
+    /* Headers/H2 */
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 45px */
+}
+
+.container {
+    display: flex;
+    width: 1168px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-spacing-07, 32px);
+}
+
+.card {
+    display: flex;
+    padding: 48px var(--spacing-spacing-09, 48px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-spacing-06, 24px);
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: var(--Spacing-spacing-08, 40px);
+    border: 1px solid var(--gray-gray-2, #fafafa);
+    background: #fff;
+    box-shadow: 0px 4px 20px 0px rgba(149, 149, 149, 0.25);
+}
+
+.cardContent {
+    align-self: center;
+    text-align: center;
+}
+
+.titleCard {
+    color: var(--sunset-orange-sunset-orange-6, #fa8c16);
+    text-align: center;
+
+    /* Headers/H3 */
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+.typography {
+    color: var(--gray-gray-8, #595959);
+    text-align: center;
+
+    /* Text Body/medium */
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+.cardContent2 {
+    color: var(--polar-green-polar-green-8, #237804);
+    text-align: center;
+
+    /* Headers/H3 */
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+.cardContent3 {
+    color: var(--daybreak-blue-daybreak-blue-8, #0050b3);
+    text-align: center;
+
+    /* Headers/H3 */
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
