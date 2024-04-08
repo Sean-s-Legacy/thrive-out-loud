@@ -16,7 +16,7 @@ function Index() {
                 </div>
                 <div className={styles.container}>
                     <div className={styles.card}>
-                        <Card name="1">
+                        <Card>
                             <div className={styles.cardContent}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,6 @@ function Index() {
                             </div>
                             <div className={styles.titleCard}>
                                 <Text
-                                    name="1"
                                     style={{
                                         color: "#FA8C16",
                                     }}
@@ -43,10 +42,7 @@ function Index() {
                                 </Text>
                             </div>
                             <div className={styles.typography}>
-                                <Text
-                                    name="1"
-                                    className="textMedium textAlignCenter"
-                                >
+                                <Text className="textMedium textAlignCenter">
                                     Connect with a trusted mentor who can
                                     support your professional goals and
                                     interests.
@@ -55,7 +51,7 @@ function Index() {
                         </Card>
                     </div>
                     <div className={styles.card}>
-                        <Card name="2">
+                        <Card>
                             <div className={styles.cardContent}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +68,6 @@ function Index() {
                             </div>
                             <div className={styles.titleCard}>
                                 <Text
-                                    name="2"
                                     style={{
                                         color: "#237804",
                                     }}
@@ -82,17 +77,14 @@ function Index() {
                                 </Text>
                             </div>
                             <div className={styles.typography}>
-                                <Text
-                                    name="2"
-                                    className="textMedium textAlignCenter"
-                                >
+                                <Text className="textMedium textAlignCenter">
                                     Never any fee for mentees. Never any ads.
                                 </Text>
                             </div>
                         </Card>
                     </div>
                     <div className={styles.card}>
-                        <Card name="3">
+                        <Card>
                             <div className={styles.cardContent}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +105,6 @@ function Index() {
                             </div>
                             <div className={styles.titleCard}>
                                 <Text
-                                    name="3"
                                     className="bold textAlignCenter"
                                     style={{
                                         color: "#0050B3",
@@ -123,10 +114,7 @@ function Index() {
                                 </Text>
                             </div>
                             <div className={styles.typography}>
-                                <Text
-                                    name="3"
-                                    className="textMedium textAlignCenter"
-                                >
+                                <Text className="textMedium textAlignCenter">
                                     All mentors are verified through background
                                     checks. You choose what information to
                                     share.
