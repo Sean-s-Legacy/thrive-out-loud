@@ -3,7 +3,7 @@
 
 @import "~antd/lib/style/themes/default.less";
 @import "~antd/dist/antd.less"; // Import Ant Design styles
-
+@import "./spacing.less";
 @import "./colors.less";
 
 // -------- Colors -----------
@@ -42,18 +42,18 @@
 
 // -- Padding/Margins
 // vertical paddings
-@padding-lg: 24px; // containers
-@padding-md: 16px; // small containers and buttons
-@padding-sm: 12px; // Form controls and items
-@padding-xs: 8px; // small items
-@padding-xss: 4px; // more small
+@padding-lg: @spacing-06; // containers
+@padding-md: @spacing-05; // small containers and buttons
+@padding-sm: @spacing-04; // Form controls and items
+@padding-xs: @spacing-03; // small items
+@padding-xss: @spacing-02; // more small
 
 // vertical margins
-@margin-lg: 24px; // containers
-@margin-md: 16px; // small containers and buttons
-@margin-sm: 12px; // Form controls and items
-@margin-xs: 8px; // small items
-@margin-xss: 4px; // more small
+@margin-lg: @spacing-06; // containers
+@margin-md: @spacing-05; // small containers and buttons
+@margin-sm: @spacing-04; // Form controls and items
+@margin-xs: @spacing-03; // small items
+@margin-xss: @spacing-02; // more small
 
 //Button Component
 // removes animation when clicking buttons

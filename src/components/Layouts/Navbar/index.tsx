@@ -126,7 +126,7 @@ export default function Navbar({ user }) {
               About us
             </Link>
             <Link
-              href="#"
+              href="#" 
               className={router.pathname == "/resources" ? "active" : ""}
             >
               Resources
