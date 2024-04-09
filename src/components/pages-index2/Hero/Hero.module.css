@@ -1,0 +1,35 @@
+.section {
+  background-image: url("/images/index/leaf-background-landing.png");
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary1);
+  /* width: 100%; */
+  height: 598px;
+}
+
+.textContainer {
+  padding: 90px 25px 113px 45px;
+  width: 795px;
+}
+
+.textTitle {
+  /* margin: 0 auto;
+  text-align: center; */
+  margin-bottom: 24px;
+  width: 726px;
+}
+.textParagraph {
+  width: 500px;
+}
+.menteeMentorButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.heroImg {
+  width: 841px;
+  height: 648px;
+  object-fit: fill;
+}

@@ -119,8 +119,8 @@ export default function Navbar({ user }) {
               Become Mentor
             </Link>
             <Link
-              href="#"
-              className={router.pathname == "/become-a-mentee" ? "active" : ""}
+              href="#" 
+              className={router.pathname == "/resources" ? "active" : ""}
             >
               Become Mentee
             </Link>

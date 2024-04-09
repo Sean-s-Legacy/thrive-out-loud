@@ -7,7 +7,7 @@ import { Button, Checkbox, Form, Input, Row, Typography } from "antd";
 import styles from "./ContactUs.module.css";
 import InputWrapper from "@/components/InputWrapper";
 
-export default function ContactUs(props) {
+export default function ContactUs() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,16 +18,17 @@ export default function ContactUs(props) {
   return (
     <section className={styles.contactSection}>
       <Image
-        height={768}
+        height={701}
         width={576}
-        src={"/images/about/contact-us.jpg"}
+        src={"/images/about/contact-us.png"}
         alt="Woman standing in front of a laptop, drinking an iced coffee through a straw."
       />
       <div className={styles.contentWrapper}>
         <div className={styles.headingContainer}>
           <Title className="semibold textPrimary10">Contact us</Title>
           <Text className="textLarge">
-            Have a question? The team is here for you.
+            Have questions? Want to provide feedback? The Thrive Out Loud team
+            is here for you.
           </Text>
         </div>
         <Form
@@ -51,7 +52,6 @@ export default function ContactUs(props) {
                 <InputWrapper
                   label="Last name"
                   onChange={(e) => setLastName(e.target.value)}
-                  optional
                   placeholder="Lee"
                   size="large"
                   value={lastName}
@@ -62,7 +62,7 @@ export default function ContactUs(props) {
               <InputWrapper
                 label="Email"
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="We’ll use this to get back to you."
+                placeholder="We’ll use this to respond to your request."
                 size="large"
                 value={email}
               />
@@ -78,21 +78,34 @@ export default function ContactUs(props) {
                 value={message}
               />
             </Form.Item>
-            <Form.Item
-              //   className={styles.formItem}
-              name="agree"
-              valuePropName="checked"
-            >
-              <Checkbox>
-                I agree to the <Link href="#">privacy policy</Link>.
-              </Checkbox>
-            </Form.Item>
+            <div className={styles.alignLeft}>
+              <Form.Item
+                //   className={styles.formItem}
+                name="agree"
+                valuePropName="checked"
+                className={styles.alignLeft}
+              >
+                <Checkbox>
+                  I agree to the{" "}
+                  <Link className="textPrimary8 bold underline" href="#">
+                    privacy policy
+                  </Link>
+                  .
+                </Checkbox>
+              </Form.Item>
 
-            <Form.Item>
-              <Button type="primary" htmlType="submit" size="large">
-                Send message
-              </Button>
-            </Form.Item>
+              <Form.Item>
+                <Button
+                  disabled
+                  type="default"
+                  htmlType="submit"
+                  size="large"
+                  className="textPrimary10"
+                >
+                  Send message
+                </Button>
+              </Form.Item>
+            </div>
           </div>
         </Form>
       </div>

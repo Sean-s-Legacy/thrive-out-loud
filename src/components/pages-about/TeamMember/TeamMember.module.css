@@ -2,10 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   gap: 16px;
 }
 .nameContainer {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 300px;
+}
+.roleContainer {
+  width: 224px;
+  text-align: center;
+  margin: 0 auto;
 }

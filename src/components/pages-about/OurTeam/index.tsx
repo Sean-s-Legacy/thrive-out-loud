@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { Row, Col, Typography } from "antd";
 
 import styles from "./OurTeam.module.css";
@@ -43,7 +42,7 @@ function index(props) {
       imgSrc: "/images/about/tyrone.png",
       name: "Tyrone Best",
       pronouns: "he/him",
-      role: "Drug Addiction & Substance Abuse Liason",
+      role: "Drug Addiction & Substance Abuse Liaison",
     },
     {
       imgSrc: "/images/about/ethan.png",
@@ -67,15 +66,15 @@ function index(props) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
-        <Title level={2} className="bold textPrimary7 textAlignCenter">
-          Meet the team
+        <Title level={2} className="bold textAlignCenter">
+          Meet the Thrive Out Loud team
         </Title>
         <Row gutter={[24, 48]}>
           {team.map((member, index) => {
             return (
               <Col span={8} key={index}>
                 <TeamMember
-                  imgSrc ={member.imgSrc}
+                  imgSrc={member.imgSrc}
                   name={member.name}
                   pronouns={member.pronouns}
                   role={member.role}

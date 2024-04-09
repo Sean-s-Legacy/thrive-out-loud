@@ -1,12 +1,14 @@
 .section {
-  padding: 80px 24px 96px;
-  background-color: var(--primary0);
+  margin-top: 48px;
+  padding: 64px 0;
+  background-color: var(--white);
 }
 
 .sectionContainer {
-  max-width: 1168px;
+  max-width: 925px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 80px;
+  gap: 48px;
 }
