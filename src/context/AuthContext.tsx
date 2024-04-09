@@ -14,7 +14,7 @@ import {
   UserCredential,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-
+import { MenteeSignUpPayLoad } from "functions/src/user/structs";
 import apiEndPoint from "../Services/Api"
 
 const AuthContext = React.createContext<any>();
@@ -54,13 +54,11 @@ export function AuthProvider({ children }) {
         // ...
       });
   }
-  async function signUp(email, password) {
+  async function signUp(data: Partial <MenteeSignUpPayLoad>) {
 
     // create user in database
-    const data = {
-      user_email: email,
-      user_pswd: password
-    }
+    const email = data.user_email;
+    const password = data.user_pswd;
     try {
       await apiEndPoint.users.createAccount(data)
 

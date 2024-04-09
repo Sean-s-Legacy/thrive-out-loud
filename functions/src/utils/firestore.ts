@@ -26,6 +26,12 @@ export const enum USER_FIELDS {
   PHONE_NUMBER = "user_phone",
   PHONE_NUMBER_VERIFIED = "phone_number_verified",
   EMAIL_VERIFIED = "email_verified",
+  USER_ROLE = "user_role",
+  CHOSEN_NAME = "user_chosen_name",
+  PRONOUNS = "user_pronouns",
+  LOCATION = "user_location",
+  DATE_OF_BIRTH = "user_date_of_birth",
+  ID = "id",
 }
 
 /* DB Collections Name */
