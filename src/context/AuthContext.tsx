@@ -75,10 +75,10 @@ export function AuthProvider({ children }) {
 
     } catch (error) {
       console.error("Error during API request:", error);
-    // } finally {
-    //   router.push({
-    //     pathname: "/emailVerification",
-    //   });
+    } finally {
+      router.push({
+        pathname: "/emailVerification",
+      });
 
     }
   }
