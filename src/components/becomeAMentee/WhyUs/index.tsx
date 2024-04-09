@@ -36,7 +36,7 @@ function Index() {
                                     style={{
                                         color: "#FA8C16",
                                     }}
-                                    className="bold textAlignCenter"
+                                    className="textAlignCenter"
                                 >
                                     1:1 Guidance
                                 </Text>
@@ -71,7 +71,7 @@ function Index() {
                                     style={{
                                         color: "#237804",
                                     }}
-                                    className="bold textAlignCenter"
+                                    className="textAlignCenter"
                                 >
                                     100% Free
                                 </Text>
@@ -105,7 +105,7 @@ function Index() {
                             </div>
                             <div className={styles.titleCard}>
                                 <Text
-                                    className="bold textAlignCenter"
+                                    className="textAlignCenter"
                                     style={{
                                         color: "#0050B3",
                                     }}

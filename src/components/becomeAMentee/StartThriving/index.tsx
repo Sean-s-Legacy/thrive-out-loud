@@ -11,8 +11,7 @@ function Index() {
             <section className={styles.section}>
                 <div className={styles.container}>
                     <div className={styles.title}>
-                        <Title level={1}
-                            className="textPrimary8 bold">
+                        <Title level={1} className="textPrimary8 bold">
                             Start Thriving
                         </Title>
                     </div>
@@ -24,7 +23,11 @@ function Index() {
                     <div className={styles.typography}>
                         <Text>
                             Thrive Out Loud is part of a network of community
-                            initiatives led by Sean’s Legacy.
+                            initiatives led by{" "}
+                            <span style={{ color: "#454BCF" }}>
+                                Sean's Legacy
+                            </span>
+                            .
                         </Text>
                     </div>
                 </div>

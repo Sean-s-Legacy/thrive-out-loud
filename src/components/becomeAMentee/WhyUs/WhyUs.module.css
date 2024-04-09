@@ -38,9 +38,9 @@
     display: flex;
     padding: 48px var(--spacing-spacing-09, 48px);
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    gap: var(--spacing-spacing-06, 24px);
+    /* gap: var(--spacing-spacing-06, 24px); */
     flex: 1 0 0;
     align-self: stretch;
     border-radius: var(--Spacing-spacing-08, 40px);
@@ -52,6 +52,8 @@
 .cardContent {
     align-self: center;
     text-align: center;
+    height: 100%;
+    gap: 16px;
 }
 
 .titleCard {
@@ -63,7 +65,7 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 36px */
+    line-height: 150%; /* 36px */  
 }
 
 .typography {
