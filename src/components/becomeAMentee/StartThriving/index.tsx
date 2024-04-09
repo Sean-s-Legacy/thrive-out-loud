@@ -1,4 +1,4 @@
-import { Button, Link, Typography } from "antd";
+import { Button, Typography } from "antd";
 
 import Image from "next/image";
 import React from "react";
