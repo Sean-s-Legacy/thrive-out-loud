@@ -129,7 +129,7 @@ div.ant-typography-h4 {
   color: var(--primary1);
 }
 
-/* New in phase 4 */
+/* Text Colors - added in phase 4 */
 .ant-typography.characterGeekBlue7,
 .characterGeekBlue7 {
   color: var(--character-geek-blue7);
@@ -137,6 +137,10 @@ div.ant-typography-h4 {
 .ant-typography.textNeutral8,
 .textNeutral8 {
   color: var(--neutral8);
+}
+.ant-typography.characterPrimaryBlack,
+.characterPrimaryBlack {
+  color: var(--character-primary-black);
 }
 
 /* Links */
@@ -478,10 +482,10 @@ button.ant-modal-close {
 }
 
 /* Media Queries for responsive design */
-/* variables in variables.less take priority over globals.css 
+/* variables in variables.less take priority over globals.css
 If resizing will be required, variables in variables.less will have to be set to :none
 
-ex. if h1 will need to resize from 38px to 30px on mobile, @heading-1-size in variables.less 
+ex. if h1 will need to resize from 38px to 30px on mobile, @heading-1-size in variables.less
 will need to be cleared using :none and h1.ant-typography be set in globals.
 Alternatively, there may be a library that deals with resizing */
 /* span.ant-typography {

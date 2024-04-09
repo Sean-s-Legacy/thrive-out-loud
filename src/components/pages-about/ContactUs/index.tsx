@@ -25,8 +25,10 @@ export default function ContactUs() {
       />
       <div className={styles.contentWrapper}>
         <div className={styles.headingContainer}>
-          <Title className="semibold textPrimary10">Contact us</Title>
-          <Text className="textLarge">
+          <Title className="semibold characterPrimaryBlack textPrimary10">
+            Contact us
+          </Title>
+          <Text className="characterPrimaryBlack textLarge">
             Have questions? Want to provide feedback? The Thrive Out Loud team
             is here for you.
           </Text>
