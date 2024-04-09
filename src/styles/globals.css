@@ -465,7 +465,7 @@ button.ant-modal-close {
 /* variables in variables.less take priority over globals.css
 If resizing will be required, variables in variables.less will have to be set to :none
 
-ex. if h1 will need to resize from 38px to 30px on mobile, @heading-1-size in variables.less
+ex. if h1 will need to resize from 38px to 30px on mobile, @heading-1-size in variables.less 
 will need to be cleared using :none and h1.ant-typography be set in globals.
 Alternatively, there may be a library that deals with resizing */
 /* span.ant-typography {
