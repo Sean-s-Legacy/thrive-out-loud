@@ -25,7 +25,7 @@ function Index() {
                             Thrive Out Loud is part of a network of community
                             initiatives led by{" "}
                             <span style={{ color: "#454BCF" }}>
-                                Sean's Legacy
+                                Sean&apos;sLegacy
                             </span>
                             .
                         </Text>
