@@ -1,0 +1,91 @@
+.section {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    /* width: 1454.155px;
+    height: 535.489px; */
+    /* transform: rotate(0.227deg); */
+    /* padding: 132px 0px 0px 124px; */
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 4px;
+    flex-shrink: 0; */
+    /* background: url("./images/about/leaf-background.png") lightgray 0px -87.812px /
+        100% 215.837% no-repeat; */
+}
+
+.imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.textContainer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    /* height: 435px; */
+    /* padding: var(--spacing-spacing-10, 64px) var(--spacing-spacing-09, 48px); */
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: var(--spacing-spacing-09, 48px); */
+}
+
+.typography {
+    color: var(--gray-black, #000);
+    text-align: center;
+    /* Subtitle/medium */
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    padding: 24px;
+}
+
+.card {
+    display: flex;
+    height: 435px;
+    padding: 64px;
+    /* padding: var(--spacing-spacing-10, 64px) var(--spacing-spacing-09, 48px); */
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 48px; */
+    /* gap: var(--spacing-spacing-09, 48px); */
+}
+
+.title {
+    /* color: #69388f; */
+    /* color: var(--purple-purple-8, #69388f); */
+    /* color: var(--primary8); */
+    text-align: center;
+    /* Headers/H1 */
+    font-family: Montserrat;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 57px */
+    padding: 24px;
+}
+
+.paragraph {
+    color: var(--gray-black, #000);
+    text-align: center;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    /* padding: 32px; */
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
