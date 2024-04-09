@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
+import {Button} from 'antd';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
 const INITIALDATA: MenteeSignUpPayLoad = {

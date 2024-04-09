@@ -17,7 +17,7 @@ export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, u
     <label>Chosen name</label>
     <input type="text" autoFocus required placeholder='Nala Goins' value={user_chosen_name} onChange={e => updateFields({user_chosen_name: e.target.value})} />
     {/* ADD A TOOLTIP WITH INFO */}
-    <label>user_Pronouns</label>
+    <label>Pronouns</label>
     <input type="text" required placeholder='she/her/hers' value={user_pronouns} onChange={e => updateFields({user_pronouns: e.target.value})}/>
     {/* ADD A TOOLTIP WITH INFO */}
     <label>Date of Birth</label>

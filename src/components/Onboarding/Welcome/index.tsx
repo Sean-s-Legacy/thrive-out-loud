@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Button } from "antd";
+import Link from "next/link";
 
 export default function Welcome(){
   return (
@@ -16,13 +18,16 @@ export default function Welcome(){
       <span> Let’s kickstart your mentorship journey by getting to know you </span>
       so we can match you with the right mentors.
     </div>
-    {/* ADD BUTTON FUNCTIONALITY */}
-    <button>
-      Home
-    </button>
-    <button>
-      Let’s Go
-    </button>
+    <Link href="/">
+      <Button>
+        Home
+      </Button>
+    </Link>
+    <Link href="/menteeQuestionnaire">
+      <Button type="primary">
+        Let’s Go
+      </Button>
+    </Link>
   </div>
   )
 }

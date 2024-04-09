@@ -49,22 +49,22 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
 
   return (
     <>
-      <Button type="primary">
+      {/* <Button type="primary">
         Sign up
-      </Button>
+      </Button> */}
 
-
-        <Row>
-          <Col span={12} className={styles.textContentWrapper}>
+{/*
+        <Row> */}
+          {/* <Col span={12} className={styles.textContentWrapper}> */}
             <div className={styles.textContent}>
-              <div className={styles.titleContainer}>
+              {/* <div className={styles.titleContainer}>
                 <Title level={2} className="semibold">
                   Welcome!
                 </Title>
                 <Text className="mediumWeight textLarge" type="secondary">
                   Connect with trusted mentors
                 </Text>
-              </div>
+              </div> */}
               <div className={styles.modalContent}>
                 <Button
                   onClick={signInWithGoogle}
@@ -116,13 +116,13 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
                 </div>
               </div>
 
-              <div className="textAlignCenter">
+              {/* <div className="textAlignCenter">
                 <Text className="semibold">
                   Already have an account? <Link href="#">Log in</Link>
                 </Text>
-              </div>
+              </div> */}
             </div>
-          </Col>
+          {/* </Col>
           <Col span={12}>
             <Image
               alt="modal"
@@ -130,8 +130,8 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
               height={743.63}
               src="/images/auth-modal.jpg"
             />
-          </Col>
-        </Row>
+          </Col> */}
+        {/* </Row> */}
     </>
   );
 }
