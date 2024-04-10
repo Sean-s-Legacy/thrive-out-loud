@@ -44,6 +44,7 @@ export default function ContactUs() {
               <Form.Item className={styles.formItem}>
                 <InputWrapper
                   label="First name"
+                  className="characterPrimaryBlack mediumWeight"
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="John"
                   size="large"
@@ -53,6 +54,7 @@ export default function ContactUs() {
               <Form.Item className={styles.formItem}>
                 <InputWrapper
                   label="Last name"
+                  className="characterPrimaryBlack mediumWeight"
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Lee"
                   size="large"
@@ -63,6 +65,7 @@ export default function ContactUs() {
             <Form.Item className={styles.formItem}>
               <InputWrapper
                 label="Email"
+                className="characterPrimaryBlack mediumWeight"
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="We’ll use this to respond to your request."
                 size="large"
@@ -72,6 +75,7 @@ export default function ContactUs() {
             <Form.Item className={styles.formItem}>
               <InputWrapper
                 label="Message"
+                className="characterPrimaryBlack mediumWeight"
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Let us know your question, comments, or feedback."
                 size="large"

@@ -14,6 +14,7 @@ function InputWrapper({
   textarea = false,
   value,
   required = false,
+  className,
 }) {
   const { Text } = Typography;
   //   const { TextArea } = Input;
@@ -21,7 +22,7 @@ function InputWrapper({
     <div>
       <div className={required ? styles.required : ""}>
         <label>
-          <Text>{label}</Text>
+          <Text className={className}>{label}</Text>
         </label>
       </div>
       {optional ? <Text> (optional)</Text> : null}
