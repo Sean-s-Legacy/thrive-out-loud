@@ -32,6 +32,7 @@ export const enum USER_FIELDS {
   LOCATION = "user_location",
   DATE_OF_BIRTH = "user_date_of_birth",
   INDUSTRY = "user_industry",
+  FOCUS_AREA = "user_focus_area",
   ID = "id",
 }
 

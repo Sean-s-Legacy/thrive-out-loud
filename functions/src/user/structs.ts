@@ -10,6 +10,8 @@ export interface MenteeSignUpPayLoad {
   [USER_FIELDS.LOCATION]: string;
   [USER_FIELDS.DATE_OF_BIRTH]: string;
   [USER_FIELDS.INDUSTRY]: string[];
+  [USER_FIELDS.FOCUS_AREA]: string[];
+  [USER_FIELDS.USER_ROLE]: string;
 }
 
 export interface MenteeSignInPayLoad {
@@ -34,5 +36,7 @@ export interface FirestoreUserData {
   [USER_FIELDS.LOCATION]: string;
   [USER_FIELDS.DATE_OF_BIRTH]: string;
   [USER_FIELDS.INDUSTRY]: string[];
+  [USER_FIELDS.FOCUS_AREA]: string[];
   [USER_FIELDS.ID]: string;
+  [USER_FIELDS.USER_ROLE]: string;
 }

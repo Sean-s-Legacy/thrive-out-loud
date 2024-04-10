@@ -7,7 +7,7 @@ import { FirestoreUserData, MenteeSignUpPayLoad} from "./structs";
 // Adds user to Firestore
 export const createAccount = async (payload: Partial <FirestoreUserData>) => {
   try {
-    const { user_chosen_name, user_date_of_birth, user_pronouns, user_email, user_location, user_industry, id} = payload;
+    const { user_chosen_name, user_date_of_birth, user_pronouns, user_email, user_location, user_industry, user_focus_area, user_role, id} = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db
       .collection(COLLECTION.USERS)
       .doc(id || "");
@@ -18,7 +18,9 @@ export const createAccount = async (payload: Partial <FirestoreUserData>) => {
       [USER_FIELDS.PRONOUNS]: user_pronouns || "",
       [USER_FIELDS.LOCATION]: user_location || "",
       [USER_FIELDS.INDUSTRY]: user_industry || [],
+      [USER_FIELDS.FOCUS_AREA]: user_focus_area || [],
       [USER_FIELDS.DATE_OF_BIRTH]: user_date_of_birth || "",
+      [USER_FIELDS.USER_ROLE]: user_role || "",
     };
 
     await newUserDocRef.set(user);
