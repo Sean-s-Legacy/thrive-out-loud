@@ -1,25 +1,23 @@
 // import * as admin from "firebase-admin";
 import { COLLECTION, db, USER_FIELDS } from "../utils/firestore";
-import { MenteeSignUpPayLoad } from "./structs";
+import { FirestoreUserData, MenteeSignUpPayLoad} from "./structs";
 // const { v4: uuidv4 } = require("uuid");
 
-export const createAccount = async (payload: MenteeSignUpPayLoad, uid:string) => {
+
+// Adds user to Firestore
+export const createAccount = async (payload: Partial <FirestoreUserData>) => {
   try {
-    const { user_email, user_pswd, user_name_first, user_name_last } = payload;
+    const { user_chosen_name, user_date_of_birth, user_pronouns, user_email, user_location, id} = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db
       .collection(COLLECTION.USERS)
-      .doc(uid);
+      .doc(id || "");
 
     const user = {
-      [USER_FIELDS.USER_NAME]: {
-        [USER_FIELDS.FIRST_NAME]: user_name_first || "",
-        [USER_FIELDS.LAST_NAME]: user_name_last || "",
-      },
-
-      [USER_FIELDS.PASSWORD]: user_pswd || "",
+      [USER_FIELDS.CHOSEN_NAME]: user_chosen_name || "",
       [USER_FIELDS.USER_EMAIL]: user_email || "",
-      [USER_FIELDS.PHONE_NUMBER_VERIFIED]: false,
-      [USER_FIELDS.EMAIL_VERIFIED]: false,
+      [USER_FIELDS.PRONOUNS]: user_pronouns || "",
+      [USER_FIELDS.LOCATION]: user_location || "",
+      [USER_FIELDS.DATE_OF_BIRTH]: user_date_of_birth || "",
     };
 
     await newUserDocRef.set(user);
@@ -28,7 +26,7 @@ export const createAccount = async (payload: MenteeSignUpPayLoad, uid:string) =>
   }
 };
 
-export const createMenteeAccount = async (payload: MenteeSignUpPayLoad) => {
+export const createMenteeAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
   try {
     const { user_email, user_pswd, user_name_first, user_name_last } = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db

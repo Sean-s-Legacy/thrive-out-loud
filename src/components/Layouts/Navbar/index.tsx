@@ -10,7 +10,6 @@ import { Avatar, Button, Input, Dropdown } from "antd";
 import type { MenuProps } from "antd";
 import { CaretDown, User } from "phosphor-react";
 
-import SignUpModal from "../../auth/SignUp";
 import LoginModal from "../../auth/Login";
 // import LoginBtn from "../LoginBtn";
 import { MenuOutlined } from "@ant-design/icons";
@@ -59,13 +58,7 @@ export default function Navbar({ user }) {
     <nav className={styles.nav_container}>
       <div className={styles.logoContainer}>
         <Link href="/">
-          <Image
-            alt="Seans Legacy logo"
-            width={175}
-            height={46}
-            src="/images/SL-logo.png"
-            className={styles.logo}
-          />
+          <p id="logo">THRIVE OUT LOUD</p>
         </Link>
       </div>
       {!!user ? (
@@ -119,27 +112,26 @@ export default function Navbar({ user }) {
       ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
+          <Link
+              href="#"
+              className={router.pathname == "/become-a-mentor" ? "active" : ""}
+            >
+              Become Mentor
+            </Link>
+            <Link
+              href="#" 
+              className={router.pathname == "/resources" ? "active" : ""}
+            >
+              Become Mentee
+            </Link>
             <Link
               href="/about"
               className={router.pathname == "/about" ? styles.active : ""}
             >
               About us
             </Link>
-            <Link
-              href="#" 
-              className={router.pathname == "/resources" ? "active" : ""}
-            >
-              Resources
-            </Link>
-            <Link
-              href="#"
-              className={router.pathname == "/become-a-mentor" ? "active" : ""}
-            >
-              Become a mentor
-            </Link>
           </div>
           <div className={styles.btn_container}>
-            <SignUpModal />
             <LoginModal />
           </div>
           <Dropdown

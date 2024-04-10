@@ -1,4 +1,4 @@
-import { MenteeSignUpPayLoad, FirebaseUserPayload } from "./structs";
+import { MenteeSignUpPayLoad } from "./structs";
 import * as admin from "firebase-admin";
 import { Request, Response } from "express";
 import { AppError, AppSuccess } from "../utils/response";
@@ -77,7 +77,7 @@ export const createMentee = async (req: Request, res: Response) => {
 
   try {
     // @ts-ignore
-    const payload: MenteeSignUpPayLoad = req.body;
+    const payload: Partial <MenteeSignUpPayLoad> = req.body;
     const result = await service.createMenteeAccount(payload);
 
     // console.log(userResponse)
@@ -99,10 +99,10 @@ export const createMentee = async (req: Request, res: Response) => {
 };
 
 export const createAccount = async (req: Request, res: Response) => {
-  console.log("+++++++++++++++++++ create Account +++++++++++++++++++");
-
+  console.log("+++++++++++++++++++ create Account in controller +++++++++++++++++++");
+  console.log(req.body)
   try {
-    const payload: FirebaseUserPayload = req.body;
+    const payload: Partial <MenteeSignUpPayLoad> = req.body;
     const result = await service.createAccount(payload);
 
     const success_response: AppSuccess = {

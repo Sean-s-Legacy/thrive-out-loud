@@ -1,8 +1,9 @@
-import { FirebaseUserPayload } from "./structs";
+import { FirebaseUserPayload, FirestoreUserData} from "./structs";
 import * as admin from "firebase-admin";
 import { getAuth } from "firebase-admin/auth";
 import * as dbService from "./dbService";
 import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "../config";
+import { MenteeSignUpPayLoad } from "./structs";
 
 // @ts-ignore
 // import { brevoApiKey } from "../../brevo-config";
@@ -17,22 +18,35 @@ let defaultClient = brevo.ApiClient.instance;
 let apiKey = defaultClient.authentications["api-key"];
 apiKey.apiKey = BREVO_API_KEY;
 
-export const createAccount = async (payload: any) => {
-  console.log("+++++++++++++++++++ create Account +++++++++++++++++++");
+export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
+  console.log("+++++++++++++++++++ create Account in service.ts +++++++++++++++++++");
 
   try {
     if (!!payload) {
-      const { user_email, user_pswd, user_name_first, user_name_last } =
+      console.log(payload)
+      const { user_email, user_pswd, user_name_first, user_name_last, user_chosen_name, user_date_of_birth, user_location, user_pronouns } =
         payload;
-
+        console.log("User Email:", user_email);
+        console.log("User Password:", user_pswd);
+        console.log("User First Name:", user_name_first);
+        console.log("User Last Name:", user_name_last);
+        console.log("User Chosen Name:", user_chosen_name);
+        console.log("User Date of Birth:", user_date_of_birth);
+        console.log("User Location:", user_location);
+        console.log("User Pronouns:", user_pronouns);
+      const displayName = user_name_first + " " + user_name_last || '';
+      const email = user_email || '';
+      const password = user_pswd || '';
       const firebaseUserData: FirebaseUserPayload = {
-        displayName: user_name_first + " " + user_name_last,
-        email: user_email,
-        password: user_pswd,
+        displayName: displayName,
+        email: email,
+        password: password,
         emailVerified: false,
         phoneVerified: false,
         disabled: false,
       };
+
+      console.log("FirebaseUserData:", firebaseUserData)
 
       // Create user in Firebase Authentication
       const userResponse: admin.auth.UserRecord = await admin
@@ -41,8 +55,19 @@ export const createAccount = async (payload: any) => {
 
       console.log(userResponse);
 
+      const firestoreUserData: FirestoreUserData = {
+        user_chosen_name: user_chosen_name ?? '',
+        user_pronouns: user_pronouns ?? '',
+        user_date_of_birth: user_date_of_birth ?? '',
+        user_location: user_location ?? '',
+        user_email: user_email ?? '',
+        id: userResponse.uid ?? '',
+      };
+
+      console.log("FirestoreUserData:", firestoreUserData)
+
       // Insert data to firestore collection
-      await dbService.createAccount(payload, userResponse.uid);
+      await dbService.createAccount(firestoreUserData);
       console.log("+++++++++++++++++++ after create +++++++++++++++++++");
 
       // Call the email verification
