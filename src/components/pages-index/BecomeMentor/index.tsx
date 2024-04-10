@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Button } from "antd";
 import styles from "./BecomeMentor.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function index() {
   const { Title, Paragraph } = Typography;
@@ -18,10 +19,11 @@ function index() {
             of professionals.
           </Paragraph>
         </div>
-
-        <Button type="primary" htmlType="submit" size="large">
-          Become a mentor
-        </Button>
+        <Link href="/becomeamentor" passHref>
+          <Button type="primary" htmlType="submit" size="large">
+            Become a mentor
+          </Button>
+        </Link>
       </div>
       <Image
         alt="A professional woman stands smiling"

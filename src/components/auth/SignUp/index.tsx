@@ -19,13 +19,15 @@ type SignUpProps = SignUpData & {
   updateFields: (fields: Partial<SignUpData>) => void;
 };
 
-export default function SignUp({user_email, user_pswd, updateFields}: SignUpProps) {
+export default function SignUp({
+  user_email,
+  user_pswd,
+  updateFields,
+}: SignUpProps) {
   const { signInWithGoogle, signUp } = useAuth();
-
 
   const [checked, setChecked] = useState(null);
   const [error, setError] = useState(null);
-
 
   // Function to signup with email/password authentication
   // async function handleSubmit() {
@@ -53,11 +55,11 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
         Sign up
       </Button> */}
 
-{/*
+      {/*
         <Row> */}
-          {/* <Col span={12} className={styles.textContentWrapper}> */}
-            <div className={styles.textContent}>
-              {/* <div className={styles.titleContainer}>
+      {/* <Col span={12} className={styles.textContentWrapper}> */}
+      <div className={styles.textContent}>
+        {/* <div className={styles.titleContainer}>
                 <Title level={2} className="semibold">
                   Welcome!
                 </Title>
@@ -65,64 +67,66 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
                   Connect with trusted mentors
                 </Text>
               </div> */}
-              <div className={styles.modalContent}>
-                <Button
-                  onClick={signInWithGoogle}
-                  className="googlebtn"
-                  icon={<FcGoogle size={24} />}
-                >
-                  Continue with Google
-                </Button>
-                <Divider className={styles.divider}>or</Divider>
-                  <div className={styles.inputsContainer}>
-                    <Form.Item>
-                      <InputWrapper
-                        label="Email"
-                        onChange= {(e) => updateFields({user_email: e.target.value})}
-                        placeholder="Enter your email address"
-                        size="large"
-                        value={user_email}
-                      />
-                    </Form.Item>
-                    <Form.Item>
-                      <InputWrapper
-                        label="Password"
-                        onChange= {(e) => updateFields({user_pswd: e.target.value})}
-                        password
-                        placeholder="Create a password"
-                        size="large"
-                        value={user_pswd}
-                      />
-                    </Form.Item>
-                  </div>
-                  <div>
-                    <Checkbox onChange={(e) => setChecked(e.target.checked)}>
-                      <span className="mediumWeight footnote">
-                        I am 18 years or older
-                      </span>
-                    </Checkbox>
-                  </div>
-                <div className={styles.terms}>
-                  <Text className="footnote" type="secondary">
-                    By signing up, you agree to our{" "}
-                    <Link href="#" className="semibold">
-                      terms of use{" "}
-                    </Link>
-                    and{" "}
-                    <Link href="#" className="semibold">
-                      privacy policy
-                    </Link>
-                  </Text>
-                </div>
-              </div>
+        <div className={styles.modalContent}>
+          <Button
+            onClick={signInWithGoogle}
+            className="googlebtn"
+            icon={<FcGoogle size={24} />}
+          >
+            Continue with Google
+          </Button>
+          <Divider className={styles.divider}>or</Divider>
+          <div className={styles.inputsContainer}>
+            <Form.Item>
+              <InputWrapper
+                label="Email"
+                className
+                onChange={(e) => updateFields({ user_email: e.target.value })}
+                placeholder="Enter your email address"
+                size="large"
+                value={user_email}
+              />
+            </Form.Item>
+            <Form.Item>
+              <InputWrapper
+                label="Password"
+                className
+                onChange={(e) => updateFields({ user_pswd: e.target.value })}
+                password
+                placeholder="Create a password"
+                size="large"
+                value={user_pswd}
+              />
+            </Form.Item>
+          </div>
+          <div>
+            <Checkbox onChange={(e) => setChecked(e.target.checked)}>
+              <span className="mediumWeight footnote">
+                I am 18 years or older
+              </span>
+            </Checkbox>
+          </div>
+          <div className={styles.terms}>
+            <Text className="footnote" type="secondary">
+              By signing up, you agree to our{" "}
+              <Link href="#" className="semibold">
+                terms of use{" "}
+              </Link>
+              and{" "}
+              <Link href="#" className="semibold">
+                privacy policy
+              </Link>
+            </Text>
+          </div>
+        </div>
 
-              {/* <div className="textAlignCenter">
+        {/* <div className="textAlignCenter">
                 <Text className="semibold">
                   Already have an account? <Link href="#">Log in</Link>
                 </Text>
               </div> */}
-            </div>
-          {/* </Col>
+      </div>
+      {/* </Col>
           <Col span={12}>
             <Image
               alt="modal"
@@ -131,7 +135,7 @@ export default function SignUp({user_email, user_pswd, updateFields}: SignUpProp
               src="/images/auth-modal.jpg"
             />
           </Col> */}
-        {/* </Row> */}
+      {/* </Row> */}
     </>
   );
 }

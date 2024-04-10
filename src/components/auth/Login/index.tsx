@@ -89,6 +89,7 @@ export default function SignUpModal() {
                     <Form.Item>
                       <InputWrapper
                         label="Email"
+                        className
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email address"
                         size="large"
@@ -98,6 +99,7 @@ export default function SignUpModal() {
                     <Form.Item>
                       <InputWrapper
                         label="Password"
+                        className
                         onChange={(e) => setPassword(e.target.value)}
                         password
                         placeholder="Create a password"
