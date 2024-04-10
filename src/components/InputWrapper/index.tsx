@@ -16,7 +16,7 @@ function InputWrapper({
   required = false,
 }) {
   const { Text } = Typography;
-  const { TextArea } = Input;
+  //   const { TextArea } = Input;
   return (
     <div>
       <div className={required ? styles.required : ""}>
@@ -36,8 +36,7 @@ function InputWrapper({
           value={value}
         />
       ) : textarea ? (
-        <TextArea
-          autoSize
+        <Input.TextArea
           onChange={onChange}
           placeholder={placeholder}
           rows={rows}
