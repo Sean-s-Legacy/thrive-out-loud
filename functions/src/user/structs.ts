@@ -9,6 +9,7 @@ export interface MenteeSignUpPayLoad {
   [USER_FIELDS.PRONOUNS]: string;
   [USER_FIELDS.LOCATION]: string;
   [USER_FIELDS.DATE_OF_BIRTH]: string;
+  [USER_FIELDS.INDUSTRY]: string[];
 }
 
 export interface MenteeSignInPayLoad {
@@ -32,5 +33,6 @@ export interface FirestoreUserData {
   [USER_FIELDS.PRONOUNS]: string;
   [USER_FIELDS.LOCATION]: string;
   [USER_FIELDS.DATE_OF_BIRTH]: string;
+  [USER_FIELDS.INDUSTRY]: string[];
   [USER_FIELDS.ID]: string;
 }

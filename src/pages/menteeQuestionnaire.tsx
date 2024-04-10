@@ -1,12 +1,17 @@
 import React, { FormEvent, useState} from 'react';
 import { useMultistepForm } from 'functions/src/utils/useMultistepform';
+
 import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
 import Location from '@/components/Onboarding/Location';
+import Industry from '@/components/Onboarding/Industry';
+
+import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
+
 import { useAuth } from "../context/AuthContext";
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
-import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
 import {Button} from 'antd';
+import { setCommentRange } from 'typescript';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
 const INITIALDATA: MenteeSignUpPayLoad = {
@@ -16,6 +21,7 @@ const INITIALDATA: MenteeSignUpPayLoad = {
   user_pronouns: '',
   user_date_of_birth: '',
   user_location: '',
+  user_industry: [],
   user_email: '',
   user_pswd: ''
 }
@@ -39,6 +45,9 @@ export default function MenteeQuestionnaire() {
 function MenteeForm() {
 
   const [data, setData] = useState(INITIALDATA);
+  // Set an error in onSubmit to be displayed if a user tries to submit a step without selecting any checkboxes.
+  // Pass checkboxError as prop to steps with checkboxes.
+  const [checkboxError, setCheckboxError] = useState<string>('');
 
   function updateFields(fields: Partial<MenteeSignUpPayLoad>) {
     setData(prev => {
@@ -49,6 +58,7 @@ function MenteeForm() {
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
     <NameAndPronouns key="nameAndPronouns" {...data} updateFields = {updateFields}/>,
     <Location key="location" {...data} updateFields = {updateFields} />,
+    <Industry key="industry" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);
 
@@ -56,6 +66,13 @@ function MenteeForm() {
 
   function onSubmit(e:FormEvent) {
     e.preventDefault();
+    // If in the industry step, check if user has selected at least one checkbox
+    if (!isLastStep && steps[currentStepIndex].key === "industry" && data.user_industry.length === 0) {
+      setCheckboxError('Please select at least one checkbox');
+      return;
+    }
+    // Clear the error if the user has selected at least one checkbox
+    setCheckboxError('')
     if (!isLastStep) return next();
     // Submit the form data to Firebase
     console.log(data)

@@ -24,7 +24,7 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
   try {
     if (!!payload) {
       console.log(payload)
-      const { user_email, user_pswd, user_name_first, user_name_last, user_chosen_name, user_date_of_birth, user_location, user_pronouns } =
+      const { user_email, user_pswd, user_name_first, user_name_last, user_chosen_name, user_date_of_birth, user_location, user_pronouns, user_industry } =
         payload;
         console.log("User Email:", user_email);
         console.log("User Password:", user_pswd);
@@ -34,6 +34,7 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         console.log("User Date of Birth:", user_date_of_birth);
         console.log("User Location:", user_location);
         console.log("User Pronouns:", user_pronouns);
+        console.log("User Industry:", user_industry);
       const displayName = user_name_first + " " + user_name_last || '';
       const email = user_email || '';
       const password = user_pswd || '';
@@ -60,6 +61,7 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         user_pronouns: user_pronouns ?? '',
         user_date_of_birth: user_date_of_birth ?? '',
         user_location: user_location ?? '',
+        user_industry: user_industry ?? [],
         user_email: user_email ?? '',
         id: userResponse.uid ?? '',
       };

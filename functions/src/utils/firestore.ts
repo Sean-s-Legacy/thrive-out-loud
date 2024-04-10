@@ -31,6 +31,7 @@ export const enum USER_FIELDS {
   PRONOUNS = "user_pronouns",
   LOCATION = "user_location",
   DATE_OF_BIRTH = "user_date_of_birth",
+  INDUSTRY = "user_industry",
   ID = "id",
 }
 
