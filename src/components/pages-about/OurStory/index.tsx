@@ -17,13 +17,13 @@ function index() {
           />
         </div>
         <div className={styles.textContainer}>
-          <Title level={2} className="textLarge bold">
+          <Title level={2} className="characterPrimaryBlack textLarge bold">
             The Sean&apos;s Legacy story
           </Title>
 
           <Paragraph
             style={{ marginTop: "20px" }}
-            className="textMedium mediumWeight"
+            className="characterPrimaryBlack textMedium mediumWeight"
           >
             Founded in 2019, Sean&apos;s Legacy is focused on increasing
             LGBTQIA+ representation and identity education as a primary

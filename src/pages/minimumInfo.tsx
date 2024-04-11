@@ -33,6 +33,7 @@ export default function MinimumInfo() {
             <Form.Item style={{ margin: "32px 0 6px" }}>
               <InputWrapper
                 label="Chosen name"
+                className
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
@@ -45,6 +46,7 @@ export default function MinimumInfo() {
             <Form.Item style={{ margin: "6px 0" }}>
               <InputWrapper
                 label="Pronouns"
+                className
                 onChange={(e) =>
                   setFormData({ ...formData, pronouns: e.target.value })
                 }

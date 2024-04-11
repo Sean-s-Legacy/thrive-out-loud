@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Button } from "antd";
 import styles from "./Hero.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function index() {
   const { Title, Paragraph } = Typography;
@@ -24,29 +25,33 @@ function index() {
           </Paragraph>
         </div>
         <div className={styles.menteeMentorButtons}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            size="large"
-            className="textPrimary10"
-          >
-            Become a mentee
-          </Button>
-          <Button
-            type="default"
-            htmlType="submit"
-            size="large"
-            className="textPrimary10"
-          >
-            Become a mentor
-          </Button>
+          <Link href="/becomeamentee" passHref>
+            <Button
+              type="primary"
+              htmlType="submit"
+              size="large"
+              className="textPrimary10"
+            >
+              Become a mentee
+            </Button>
+          </Link>
+          <Link href="/becomeamentor" passHref>
+            <Button
+              type="default"
+              htmlType="submit"
+              size="large"
+              className="textPrimary10"
+            >
+              Become a mentor
+            </Button>
+          </Link>
         </div>
       </div>
       <Image
         alt="Four people are lying down, wearing rainbow-colored clothes, smiling, and leaning their heads together"
         src={"/images/index/hero2.png"}
         className={styles.heroImg}
-        width={841}
+        width={911}
         height={598}
       />
     </section>

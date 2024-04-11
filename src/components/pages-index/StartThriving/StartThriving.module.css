@@ -1,0 +1,15 @@
+.section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.textContainer {
+  padding: 25px 25px 80px;
+  width: 1020px;
+}
+
+.buttonWrapper {
+  margin: 32px 0;
+}
