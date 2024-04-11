@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -58,17 +58,11 @@ export default function Navbar({ user }) {
     <nav className={styles.nav_container}>
       <div className={styles.logoContainer}>
         <Link href="/">
-          <p id="logo">THRIVE OUT LOUD</p>
+          <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
         </Link>
       </div>
-      {!!user ? (
+      {!user /*&& user.user_role === "mentee"*/? (
         <div className={styles.auth_container}>
-          <Search
-            className={styles.search_input}
-            placeholder="Search"
-            onSearch={onSearch}
-            size="large"
-          />
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
               <Link
@@ -109,20 +103,20 @@ export default function Navbar({ user }) {
             </Dropdown>
           </div>
         </div>
-      ) : (
+        ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
           <Link
-              href="#"
-              className={router.pathname == "/become-a-mentor" ? "active" : ""}
+              href="/becomeamentor"
+              className={router.pathname == "/becomeamentor" ? "active" : ""}
             >
-              Become Mentor
+              Become a Mentor
             </Link>
             <Link
-              href="#" 
-              className={router.pathname == "/resources" ? "active" : ""}
+              href="/becomeamentee" 
+              className={router.pathname == "/becomeamentee" ? "active" : ""}
             >
-              Become Mentee
+              Become a Mentee
             </Link>
             <Link
               href="/about"
@@ -133,6 +127,9 @@ export default function Navbar({ user }) {
           </div>
           <div className={styles.btn_container}>
             <LoginModal />
+            <Button type="primary" >
+              Sign up
+            </Button>
           </div>
           <Dropdown
             placement="bottomRight"

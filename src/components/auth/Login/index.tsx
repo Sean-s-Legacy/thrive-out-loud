@@ -53,7 +53,6 @@ export default function SignUpModal() {
   return (
     <>
       <Button onClick={showModal}>Login</Button>
-
       <Modal
         closeIcon={<X size={24} color="#ffffff" />}
         width={1140}
