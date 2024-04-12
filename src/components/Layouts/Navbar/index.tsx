@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -58,17 +58,11 @@ export default function Navbar({ user }) {
     <nav className={styles.nav_container}>
       <div className={styles.logoContainer}>
         <Link href="/">
-          <p id="logo">THRIVE OUT LOUD</p>
+          <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
         </Link>
       </div>
       {!!user ? (
         <div className={styles.auth_container}>
-          <Search
-            className={styles.search_input}
-            placeholder="Search"
-            onSearch={onSearch}
-            size="large"
-          />
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
               <Link
@@ -78,51 +72,77 @@ export default function Navbar({ user }) {
                 Dashboard
               </Link>
               <Link
-                href="#"
-                className={router.pathname == "/explore" ? "active" : ""}
+                href="bookings"
+                className={router.pathname == "/bookings" ? "active" : ""}
               >
-                Find a mentor
+                Bookings
+              </Link>
+              {user.user_role === "mentee" ? <Link
+                href="browsementors"
+                className={router.pathname == "/browsementors" ? "active" : ""}
+              >
+                Browse Mentors
+              </Link> : null}
+              <Link
+                href="menteeresources"
+                className={router.pathname == "/menteeresources" ? "active" : ""}
+              >
+                Resources
               </Link>
             </div>
-            <Dropdown
-              menu={{ items }}
-              trigger={["click"]}
-              dropdownRender={(menu) => (
-                <div>
-                  {React.cloneElement(menu as React.ReactElement, {})}
-                  <Button type="primary" onClick={logout}>
-                    Sign out
-                  </Button>
-                </div>
-              )}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <div className={styles.user_profile}>
-                  <Avatar
-                    className={styles.avatar}
-                    size="large"
-                    icon={<User className={styles.user_icon} size={20} />}
-                  />
-                  <CaretDown size={20} className={styles.dropdown_icon} />
-                </div>
-              </a>
-            </Dropdown>
+            <div className= {styles.profile_bttns_wrapper}>
+                <a>
+                  <img src="images/ChatCircle.svg"/>
+                </a>
+                <a>
+                  <img src="images/Bell.svg"/>
+                </a>
+                <a>
+                  <img src="images/User.svg"/>
+                </a>
+            </div>
+            {/* <div> */}
+              {/* <Dropdown
+                
+                menu={{ items }}
+                trigger={["click"]}
+                dropdownRender={(menu) => (
+                  <div>
+                    {React.cloneElement(menu as React.ReactElement, {})}
+                    <Button type="primary" onClick={logout}>
+                      Sign out
+                    </Button>
+                  </div>
+                )}
+              >
+                <a onClick={(e) => e.preventDefault()}>
+                  <div className={styles.user_profile}>
+                    <Avatar
+                      className={styles.avatar}
+                      size="large"
+                      icon={<User className={styles.user_icon} size={20} />}
+                    />
+                    <CaretDown size={20} className={styles.dropdown_icon} />
+                  </div>
+                </a>
+              </Dropdown> */}
+            {/* </div> */}
           </div>
         </div>
-      ) : (
+        ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
-          <Link
-              href="#"
-              className={router.pathname == "/become-a-mentor" ? "active" : ""}
+            <Link
+              href="/becomeamentor"
+              className={router.pathname == "/becomeamentor" ? "active" : ""}
             >
-              Become Mentor
+              Become a Mentor
             </Link>
             <Link
-              href="#" 
-              className={router.pathname == "/resources" ? "active" : ""}
+              href="/becomeamentee" 
+              className={router.pathname == "/becomeamentee" ? "active" : ""}
             >
-              Become Mentee
+              Become a Mentee
             </Link>
             <Link
               href="/about"
@@ -133,6 +153,9 @@ export default function Navbar({ user }) {
           </div>
           <div className={styles.btn_container}>
             <LoginModal />
+            <Button type="primary" >
+              Sign up
+            </Button>
           </div>
           <Dropdown
             placement="bottomRight"

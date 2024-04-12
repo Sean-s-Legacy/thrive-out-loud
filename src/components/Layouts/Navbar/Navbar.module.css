@@ -2,11 +2,23 @@
   display: flex;
   justify-content: space-between;
   max-width: 1440px;
-  margin: 0 auto;
-  padding: 17px var(--spacing-07); /* 32px */
+  height: 80px;
+  align-items: center;
 }
-.logo {
-  margin-right: auto;
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  height: 28px;
+}
+
+
+#logo {
+  color: var(--purple-purple-8, #69388F);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
 }
 /* styles for authenticated user navbar */
 .auth_container {
@@ -27,8 +39,6 @@
   gap: 60px;
 }
 .links {
-  display: flex;
-  align-items: center;
   gap: var(--spacing-07); /* 32px */
 }
 
@@ -38,9 +48,9 @@
   /* padding: 25px 0; */
 }
 
-.links a:hover,
-.links a:focus,
-.links a.active {
+.links Link:hover,
+.links Link:focus,
+.links Link.active {
   color: var(--primary6);
   border-bottom: 2px solid var(--primary6);
 }
@@ -63,18 +73,28 @@
 /* styles for unauthenticated user navbar */
 .unauth_container {
   display: flex;
-  gap: var(--spacing-08); /* 40px */
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+  flex: 1 0 0;
+  height: 100%;
 }
 .btn_container {
   display: flex;
   gap: var(--spacing-05); /* 16px */
 }
 .logo {
-  margin-right: auto;
+  padding-left: 25px;
+  justify-self: center;
+  color: var(--purple-purple-8, #69388F);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
 }
 
 .links {
-  display: none;
+  margin-right: 0vw;
 }
 
 .nav_container {
@@ -88,14 +108,15 @@
 .nav_dropdown {
   display: flex;
   height: 100%;
+  margin-right:20px;
   align-items: center;
 }
 
 .btn_container {
   display: flex;
-  gap: var(--spacing-05); /* 16px */
+  justify-content: space-between;
+  width: 200px;
 }
-
 /*  Media query for large screens */
 @media screen and (min-width: 1024px) {
   .links {
@@ -107,6 +128,12 @@
     color: var(--neutral8);
     border-bottom: 2px solid transparent;
     /* padding: 25px 0; */
+    color: var(--gray-gray-8, #595959);
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
   }
 
   .links a:hover,
@@ -123,6 +150,12 @@
 
 /*  media query for medium screens */
 @media screen and (max-width: 1024px) {
+  .btn_container {
+    display: none;
+  }
+  .links {
+    display: none;
+  }
 }
 
 /* media query for small screens */
@@ -142,44 +175,56 @@
 .auth_container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.search_input {
-  max-width: 560px;
-  margin: 0 var(--spacing-06) 0 60px;
-}
-.search_input:focus {
-  background-color: #e9e6f0;
+  justify-content: flex-end;
+  width: 70%;
+
 }
 .auth_links_wrapper {
   display: flex;
-  gap: 60px;
+  align-items: center;
+  gap: 40px;  
   white-space: nowrap;
 }
 
-.avatar {
-  background-color: var(--primary1);
-  /* background: var(--primary1); */
-}
-.user_profile {
+.profile_bttns_wrapper{
   display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.user_icon {
-  color: var(--primary6);
-}
-.dropdown_icon {
-  color: var(--neutral8);
+  gap: 16px
 }
 
-/* styles for unauthenticated user navbar */
-.unauth_container {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-08); /* 40px */
-  height: 50px;
-  justify-content: end;
-  white-space: nowrap;
+/*  media query for medium screens */
+@media screen and (max-width: 1000px) {
+  .avatar {
+    background-color: var(--primary1);
+    /* background: var(--primary1); */
+  }
+  .user_profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .user_icon {
+    color: var(--primary6);
+  }
+  .dropdown_icon {
+    color: var(--neutral8);
+  }
+}
+
+/* media query for small screens */
+@media screen and (max-width: 768px) {
+  .avatar {
+    background-color: var(--primary1);
+    /* background: var(--primary1); */
+  }
+  .user_profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .user_icon {
+    color: var(--primary6);
+  }
+  .dropdown_icon {
+    color: var(--neutral8);
+  }
 }
