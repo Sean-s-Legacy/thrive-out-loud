@@ -3,7 +3,6 @@ import { Button, Card, Typography } from "antd";
 import Image from "next/image";
 import React from "react";
 import styles from "./GettingStarted.module.css";
-import Link from "next/link";
 
 function Index() {
     const { Title, Text } = Typography;
@@ -26,33 +25,30 @@ function Index() {
                                     level={1}
                                     className="textPrimary8 bold"
                                 >
-                                    Guidance for your professional journey
+                                    Mentoring with Thrive Out Loud
                                 </Title>
                             </div>
 
                             <div className={styles.typography}>
                                 <Text>
-                                    Whether you’re navigating academics or
-                                    beginning your career, our online community
-                                    of LGBTQIA+ mentors is here. Build
-                                    meaningful connections in a safe, affirming
-                                    space and get the guidance you need to find
-                                    your professional path.
+                                If you are a member of the LGBTQIA+ community 
+                                with 5+ years of professional experience, we need
+                                 your help! Join us to support young adults aged 18-25 
+                                 in their academic and career journeys.
                                 </Text>
                             </div>
                             <div className={styles.paragraph}>
                                 <Text >
-                                    We currently serve members of the LGBTQIA+
-                                    community aged 18-25 who live in the United
-                                    States.
+                                We are currently looking for mentors who are members of 
+                                the LGBTQIA+ community and who live in the United States. 
+                                Please note that allies are not being accepted as mentor 
+                                candidates at this time.
                                 </Text>
                             </div>
                             <div className={styles.button}>
-                              <Link href="/menteeQuestionnaireWelcome">
                                 <Button type="primary" className="textPrimary8">
                                     Sign Up
                                 </Button>
-                              </Link>
                             </div>
                         </Card>
                     </div>

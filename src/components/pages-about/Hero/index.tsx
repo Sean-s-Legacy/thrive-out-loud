@@ -12,8 +12,8 @@ function index() {
             Dedicated to helping LGBTQIA+ youth thrive{" "}
           </Title>
         </div>
-        <div className="textParagraph">
-          <Paragraph className="textLarge mediumWeight">
+        <div>
+          <Paragraph className="characterPrimaryBlack textLarge mediumWeight">
             Thrive Out Loud is a mentorship program created by Sean&apos;s
             Legacy that connects early-career LGBTQIA+ young adults with
             experienced, like-minded mentors. We created Thrive Out Loud to

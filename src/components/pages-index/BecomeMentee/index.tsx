@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Button } from "antd";
 import styles from "./BecomeMentee.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function index() {
   const { Title, Paragraph } = Typography;
@@ -21,10 +22,11 @@ function index() {
             video sessions with mentors you choose and trust.
           </Paragraph>
         </div>
-
-        <Button type="primary" htmlType="submit" size="large">
-          Become a mentee
-        </Button>
+        <Link href="/becomeamentee" passHref>
+          <Button type="primary" htmlType="submit" size="large">
+            Become a mentee
+          </Button>
+        </Link>
       </div>
       <Image
         alt="Two people sitting together holding hands"

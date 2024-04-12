@@ -3,7 +3,6 @@ import { Button, Typography } from "antd";
 import Image from "next/image";
 import React from "react";
 import styles from "./StartThriving.module.css";
-import Link from "next/link";
 
 function Index() {
     const { Title, Text } = Typography;
@@ -17,11 +16,9 @@ function Index() {
                         </Title>
                     </div>
                     <div className={styles.button}>
-                      <Link href="/menteeQuestionnaireWelcome">
                         <Button type="primary" className="textPrimary8">
                             Sign Up
                         </Button>
-                      </Link>
                     </div>
                     <div className={styles.typography}>
                         <Text>
