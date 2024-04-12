@@ -45,11 +45,11 @@ export default function Navbar({ user }) {
       key: "0",
     },
     {
-      label: <Link href="#">Resources</Link>,
+      label: <Link href="/becomementee">Become a mentee</Link>,
       key: "1",
     },
     {
-      label: <Link href="#">Become a mentor</Link>,
+      label: <Link href="/becomementor">Become a mentor</Link>,
       key: "2",
     },
   ];
@@ -61,7 +61,7 @@ export default function Navbar({ user }) {
           <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
         </Link>
       </div>
-      {!!user ? (
+      {!user ? (
         <div className={styles.auth_container}>
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
@@ -77,7 +77,7 @@ export default function Navbar({ user }) {
               >
                 Bookings
               </Link>
-              {user.user_role === "mentee" ? <Link
+              { user.user_role === "mentee" ? <Link
                 href="browsementors"
                 className={router.pathname == "/browsementors" ? "active" : ""}
               >
@@ -91,14 +91,29 @@ export default function Navbar({ user }) {
               </Link>
             </div>
             <div className= {styles.profile_bttns_wrapper}>
-                <a>
-                  <img src="images/ChatCircle.svg"/>
+                <a href="#">
+                  <Image 
+                  src="images/ChatCircle.svg" 
+                  alt="Messages Button"
+                  width={40}
+                  height={40}
+                  />
                 </a>
-                <a>
-                  <img src="images/Bell.svg"/>
+                <a href="#">
+                  <Image 
+                  src="images/Bell.svg" 
+                  alt="Notifications Button"
+                  width={40}
+                  height={40}
+                  />
                 </a>
-                <a>
-                  <img src="images/User.svg"/>
+                <a href="#">
+                  <Image 
+                  src="images/User.svg" 
+                  alt="Profile Button"
+                  width={40}
+                  height={40}
+                  />
                 </a>
             </div>
             {/* <div> */}
