@@ -61,7 +61,7 @@ export default function Navbar({ user }) {
           <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
         </Link>
       </div>
-      {!user ? (
+      {!!user ? (
         <div className={styles.auth_container}>
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
