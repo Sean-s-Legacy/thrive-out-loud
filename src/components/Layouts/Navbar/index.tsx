@@ -61,7 +61,7 @@ export default function Navbar({ user }) {
           <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
         </Link>
       </div>
-      {!user /*&& user.user_role === "mentee"*/? (
+      {!!user ? (
         <div className={styles.auth_container}>
           <div className={styles.auth_links_wrapper}>
             <div className={styles.links}>
@@ -72,41 +72,67 @@ export default function Navbar({ user }) {
                 Dashboard
               </Link>
               <Link
-                href="#"
-                className={router.pathname == "/explore" ? "active" : ""}
+                href="bookings"
+                className={router.pathname == "/bookings" ? "active" : ""}
               >
-                Find a mentor
+                Bookings
+              </Link>
+              {user.user_role === "mentee" ? <Link
+                href="browsementors"
+                className={router.pathname == "/browsementors" ? "active" : ""}
+              >
+                Browse Mentors
+              </Link> : null}
+              <Link
+                href="menteeresources"
+                className={router.pathname == "/menteeresources" ? "active" : ""}
+              >
+                Resources
               </Link>
             </div>
-            <Dropdown
-              menu={{ items }}
-              trigger={["click"]}
-              dropdownRender={(menu) => (
-                <div>
-                  {React.cloneElement(menu as React.ReactElement, {})}
-                  <Button type="primary" onClick={logout}>
-                    Sign out
-                  </Button>
-                </div>
-              )}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <div className={styles.user_profile}>
-                  <Avatar
-                    className={styles.avatar}
-                    size="large"
-                    icon={<User className={styles.user_icon} size={20} />}
-                  />
-                  <CaretDown size={20} className={styles.dropdown_icon} />
-                </div>
-              </a>
-            </Dropdown>
+            <div className= {styles.profile_bttns_wrapper}>
+                <a>
+                  <img src="images/ChatCircle.svg"/>
+                </a>
+                <a>
+                  <img src="images/Bell.svg"/>
+                </a>
+                <a>
+                  <img src="images/User.svg"/>
+                </a>
+            </div>
+            {/* <div> */}
+              {/* <Dropdown
+                
+                menu={{ items }}
+                trigger={["click"]}
+                dropdownRender={(menu) => (
+                  <div>
+                    {React.cloneElement(menu as React.ReactElement, {})}
+                    <Button type="primary" onClick={logout}>
+                      Sign out
+                    </Button>
+                  </div>
+                )}
+              >
+                <a onClick={(e) => e.preventDefault()}>
+                  <div className={styles.user_profile}>
+                    <Avatar
+                      className={styles.avatar}
+                      size="large"
+                      icon={<User className={styles.user_icon} size={20} />}
+                    />
+                    <CaretDown size={20} className={styles.dropdown_icon} />
+                  </div>
+                </a>
+              </Dropdown> */}
+            {/* </div> */}
           </div>
         </div>
         ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
-          <Link
+            <Link
               href="/becomeamentor"
               className={router.pathname == "/becomeamentor" ? "active" : ""}
             >

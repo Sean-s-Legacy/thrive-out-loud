@@ -2,17 +2,14 @@
   display: flex;
   justify-content: space-between;
   max-width: 1440px;
-  height: 90px;
-  margin: 30px;
+  height: 80px;
   align-items: center;
-
 }
 .logoContainer {
   display: flex;
   justify-content: center;
   width: fit-content;
   height: 28px;
-  
 }
 
 
@@ -78,14 +75,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: var(--spacing-spacing-10, 64px);
+  gap: 40px;
   flex: 1 0 0;
-  margin: 7px;
   height: 100%;
 }
 .btn_container {
   display: flex;
-  margin-left: 30px;
   gap: var(--spacing-05); /* 16px */
 }
 .logo {
@@ -99,7 +94,7 @@
 }
 
 .links {
-  margin-right:8px;
+  margin-right: 0vw;
 }
 
 .nav_container {
@@ -121,7 +116,6 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin-right: 15px;
 }
 /*  Media query for large screens */
 @media screen and (min-width: 1024px) {
@@ -183,37 +177,54 @@
   align-items: center;
   justify-content: flex-end;
   width: 70%;
+
 }
 .auth_links_wrapper {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 40px;  
   white-space: nowrap;
 }
 
-.avatar {
-  background-color: var(--primary1);
-  /* background: var(--primary1); */
-}
-.user_profile {
+.profile_bttns_wrapper{
   display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-.user_icon {
-  color: var(--primary6);
-}
-.dropdown_icon {
-  color: var(--neutral8);
+  gap: 16px
 }
 
-/* styles for unauthenticated user navbar */
-.unauth_container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: var(--spacing-08); /* 40px */
-  height: 50px;
-  justify-content: end;
-  white-space: nowrap;
+/*  media query for medium screens */
+@media screen and (max-width: 1000px) {
+  .avatar {
+    background-color: var(--primary1);
+    /* background: var(--primary1); */
+  }
+  .user_profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .user_icon {
+    color: var(--primary6);
+  }
+  .dropdown_icon {
+    color: var(--neutral8);
+  }
+}
+
+/* media query for small screens */
+@media screen and (max-width: 768px) {
+  .avatar {
+    background-color: var(--primary1);
+    /* background: var(--primary1); */
+  }
+  .user_profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .user_icon {
+    color: var(--primary6);
+  }
+  .dropdown_icon {
+    color: var(--neutral8);
+  }
 }
