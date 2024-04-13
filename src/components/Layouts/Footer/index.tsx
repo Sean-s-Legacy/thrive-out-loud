@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import {
   Cursor,
@@ -12,113 +13,122 @@ import {
   FacebookLogo,
 } from "phosphor-react";
 
-import { Button, Divider, Typography, Col, Row } from "antd";
-const { Title, Text } = Typography;
+import { Button, Divider, Typography} from "antd";
+
+
 
 export default function Footer({ user }) {
+  const { Title, Text } = Typography;
+  const router = useRouter();
   return (
     <div className={styles.footerWrapper}>
-      <div className={styles.footerContainer}>
-        <Image
-          alt="Sean's Legacy secondary logo - a white icon of a tree with a heart in the center "
-          width={87.29}
-          height={67}
-          src="/images/white-tree.png"
-        />
-        <Title
-          level={3}
-          className={`textInverse textAlignCenter ${styles.heading}`}
-        >
-          Wherever you are are in your journey, a mentor can help you take the
-          next step.
-        </Title>
-        {!user ? (
-          <div className={styles.btnContainer}>
-            <Button>Sign up</Button>
-            <Button type="primary">Login</Button>
-          </div>
-        ) : null}
-        <Divider className="footerDivider" />
-        <Row align="middle" className={styles.contentRow}>
-          <Col span={8}>
-            <div className={styles.contactWrapper}>
-              <div className={styles.contactHeading}>
-                <div className={styles.iconWrapper}>
-                  <Envelope size={24} weight="light" className={styles.icon} />
-                </div>
-                <Text className="textLarge semibold textPrimary3">Email</Text>
-              </div>
-              <Text className="textInverse">
-                Our friendly team is here to help.
-              </Text>
-              <Text className="semibold textInverse">
-                support@seanslegacy.com
-              </Text>
-            </div>
-          </Col>
-          <Col span={8}>
-            <div className={styles.contactWrapper}>
-              <div className={styles.contactHeading}>
-                <div className={styles.iconWrapper}>
-                  <Cursor size={24} weight="light" className={styles.icon} />
-                </div>
-                <Text className="textLarge semibold textPrimary3">Website</Text>
-              </div>
-              <Text className="textInverse">
-                Come check out our other programs!{" "}
-              </Text>
-              <Text className="semibold textInverse">seanslegacy.org</Text>
-            </div>
-          </Col>
-          <Col span={8}>
-            <div className={styles.contactWrapper}>
-              <div className={styles.socialsLinksWrapper}>
-                <div className={styles.socialsLinks}>
-                  <InstagramLogo
-                    size={32}
-                    className={styles.socialIcon}
-                    weight="light"
-                  />
-                  <LinkedinLogo
-                    size={32}
-                    className={styles.socialIcon}
-                    weight="light"
-                  />
-                  <FacebookLogo
-                    size={32}
-                    className={styles.socialIcon}
-                    weight="light"
-                  />
-                  <TwitterLogo
-                    size={32}
-                    className={styles.socialIcon}
-                    weight="light"
-                  />
-                </div>
-                <Text className="textLarge semibold textPrimary3">
-                  Social Media
-                </Text>
-              </div>
-              <Text className="textInverse">
-                Stay up to date on what we’re doing.
-              </Text>
-            </div>
-          </Col>
-        </Row>
-
-        <Divider className="footerDivider" />
-        <div className={`semibold textPrimary2 ${styles.linkWrapper}`}>
-          <Link href="#" className={styles.link}>
-            About us
+    <div className= {styles.topWrapper}>
+      <Link href="/" className={styles.logoWrapper}>
+          <p className={styles.logo}>
+            THRIVE OUT LOUD
+          </p> 
+      </Link>
+      {!!user ? (
+      <div className={styles.linksWrapper}>
+        <div>
+          <Link href="/dashboard"
+            className={router.pathname === "/dashboard" ? "active" : ""}
+          >
+          Dashboard
           </Link>
-          <Link href="#" className={styles.link}>
+        </div>
+        <div>
+          <Link href="/profile"
+            className={router.pathname === "/profile" ? "active" : ""}
+          >
+            Profile
+          </Link>
+        </div>
+        <div>
+          <Link href= "/about"
+            className={router.pathname === "/about" ? "active" : ""}
+          >
+            Settings
+          </Link>
+        </div>
+        <div>
+          <Link href= "/resources">
             Resources
           </Link>
-          <Link href="#" className={styles.link}>
-            Become a mentor
+        </div>
+        <div>
+          <Link href= "/help"
+            className={router.pathname === "/help" ? "active" : ""}
+          >
+            Help
+          </Link>
+        </div>
+        <div>
+          <Link href="/"
+          >
+           Sign Out
           </Link>
         </div>
       </div>
+    ) : (
+        <div className={styles.linksWrapper}>
+          <div>
+            <Link href="/becomeamentor"
+              className={router.pathname === "/becomeamentor" ? "active" : ""}
+            >
+            Become a Mentor
+            </Link>
+          </div>
+          <div>
+            <Link href="/becomeamentee"
+              className={router.pathname == "/becomeamentee" ? "active" : ""}
+            >
+            Become a Mentee
+            </Link>
+          </div>
+          <div>
+          <Link href= "about"
+            className={router.pathname == "/about" ? "active" : ""}
+          >
+            About us
+            </Link>
+          </div>
+          <div>
+            <Link href= "/resources"
+              className={router.pathname == "/resources" ? "active" : ""}
+            >
+              Resources
+            </Link>
+          </div>
+          <div>
+            <Link href= "/refer"
+              className={router.pathname == "/refer" ? "active" : ""}
+            >
+            Refer a Friend
+            </Link>
+          </div>
+        </div>
+        )}
     </div>
+    <div className={styles.bttmWrapper}>
+      <Divider className={styles.divider}/>
+      <div className={styles.secondaryLinksWrapper}>
+        <div className={styles.secondaryLinks}>
+          <Link href= "#">
+            Contact Us
+          </Link>
+          <Link href= "#">
+            Privacy Policy 
+          </Link>
+          <Link href= "#">
+            Terms of Use
+          </Link>
+        </div>
+        <p>
+        Copyright © 2024 Thrive Out Loud
+        </p>
+      </div>
+    </div>
+  </div>
   );
 }
