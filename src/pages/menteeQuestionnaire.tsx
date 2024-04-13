@@ -5,6 +5,7 @@ import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
 import Location from '@/components/Onboarding/Location';
 import Industry from '@/components/Onboarding/Industry';
 import FocusArea from '@/components/Onboarding/FocusArea';
+import GenderIdentity from '@/components/Onboarding/GenderIdentity';
 
 import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
 
@@ -13,6 +14,7 @@ import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import {Button} from 'antd';
 import { setCommentRange } from 'typescript';
+import SexualOrientation from '@/components/Onboarding/SexualOrientation';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
 const INITIALDATA: MenteeSignUpPayLoad = {
@@ -24,6 +26,10 @@ const INITIALDATA: MenteeSignUpPayLoad = {
   user_location: '',
   user_industry: [],
   user_focus_area: [],
+  user_gender_identity: [],
+  user_ethnicity: [],
+  user_language: [],
+  user_sexual_orientation: [],
   user_email: '',
   user_pswd: '',
   user_role: 'mentee'
@@ -64,6 +70,8 @@ function MenteeForm() {
     <Location key="location" {...data} updateFields = {updateFields} />,
     <Industry key="industry" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <FocusArea key="focus area" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
+    <GenderIdentity key="gender identity" {...data} updateFields = {updateFields} />,
+    <SexualOrientation key="sexual orientation" {...data} updateFields = {updateFields} />,
     <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);
 
