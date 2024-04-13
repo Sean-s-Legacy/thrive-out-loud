@@ -3,6 +3,7 @@ import styles from "./Footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAuth } from "@/context/AuthContext";
 
 import {
   Cursor,
@@ -20,6 +21,8 @@ import { Button, Divider, Typography} from "antd";
 export default function Footer({ user }) {
   const { Title, Text } = Typography;
   const router = useRouter();
+  const { logout } = useAuth();
+
   return (
     <div className={styles.footerWrapper}>
     <div className= {styles.topWrapper}>
@@ -28,7 +31,7 @@ export default function Footer({ user }) {
             THRIVE OUT LOUD
           </p> 
       </Link>
-      {!!user ? (
+      {!user ? (
       <div className={styles.linksWrapper}>
         <div>
           <Link href="/dashboard"
@@ -64,10 +67,11 @@ export default function Footer({ user }) {
           </Link>
         </div>
         <div>
-          <Link href="/"
+          <p 
+          onClick={logout}
           >
            Sign Out
-          </Link>
+          </p>
         </div>
       </div>
     ) : (

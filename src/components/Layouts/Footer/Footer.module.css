@@ -48,7 +48,8 @@
   gap: var(--spacing-spacing-07, 32px);
 }
 
-.linksWrapper a {
+.linksWrapper a,
+.linksWrapper p{
   color: var(--gray-white, #FFF);
   text-align: center;
   /* Text Body/semibold */
@@ -59,9 +60,14 @@
   line-height: 24px; /* 150% */
 }
 
-.pagesWrapper a:hover,
-.pagesWrapper a:focus,
-.pagesWrapper a.active {
+
+
+.linksWrapper a:hover,
+.linksWrapper a:focus,
+.linksWrapper a.active,
+.linksWrapper p:hover,
+.linksWrapper p:focus,
+.linksWrapper p.active {
   color: var(--primary6);
   border-bottom: 2px solid var(--primary6);
 }
