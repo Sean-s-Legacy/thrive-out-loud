@@ -30,8 +30,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
     <>
     <div>
       <h3>Which race or ethnic background(s) best describes you?</h3>
-      <CustomTooltip title="Your race relates to biological characteristics as well as sociopolitical aspects of identity, while ethnicity encompasses cultural factors like ancestry and traditions. Sometimes these overlap, contributing to your unique life experience.">
-      </CustomTooltip>
+      <CustomTooltip title="Your race relates to biological characteristics as well as sociopolitical aspects of identity, while ethnicity encompasses cultural factors like ancestry and traditions. Sometimes these overlap, contributing to your unique life experience."/>
     </div>
     <p>Knowing your background helps us connect you with mentors with similar life experience.</p>
     <Select
