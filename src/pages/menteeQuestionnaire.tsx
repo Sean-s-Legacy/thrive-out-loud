@@ -6,6 +6,7 @@ import Location from '@/components/Onboarding/Location';
 import Industry from '@/components/Onboarding/Industry';
 import FocusArea from '@/components/Onboarding/FocusArea';
 import GenderIdentity from '@/components/Onboarding/GenderIdentity';
+import EthnicityAndLanguages from '@/components/Onboarding/EthnicityAndLanguage';
 
 import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
 
@@ -28,6 +29,7 @@ const INITIALDATA: MenteeSignUpPayLoad = {
   user_focus_area: [],
   user_gender_identity: [],
   user_ethnicity: [],
+  user_match_on_ethnicity: false,
   user_language: [],
   user_sexual_orientation: [],
   user_email: '',
@@ -71,6 +73,7 @@ function MenteeForm() {
     <Industry key="industry" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <FocusArea key="focus area" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <GenderIdentity key="gender identity" {...data} updateFields = {updateFields} />,
+    <EthnicityAndLanguages key="ethnicity and language" {...data} updateFields = {updateFields} />,
     <SexualOrientation key="sexual orientation" {...data} updateFields = {updateFields} />,
     <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);

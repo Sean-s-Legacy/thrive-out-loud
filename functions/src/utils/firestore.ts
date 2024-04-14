@@ -36,6 +36,7 @@ export const enum USER_FIELDS {
   GENDER_IDENTITY = "user_gender_identity",
   SEXUAL_ORIENTATION = "user_sexual_orientation",
   ETHNICITY = "user_ethnicity",
+  MATCH_ON_ETHNICITY = "user_match_on_ethnicity",
   LANGUAGE = "user_language",
   ID = "id",
 }

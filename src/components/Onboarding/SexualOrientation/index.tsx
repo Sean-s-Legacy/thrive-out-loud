@@ -28,6 +28,7 @@ export default function SexualOrientation({user_sexual_orientation, updateFields
       options={options}
       onChange={value => updateFields({user_sexual_orientation: value})}
       style={{ width: '100%' }}
+      value={user_sexual_orientation}
     />
     </>
   )
