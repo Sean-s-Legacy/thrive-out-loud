@@ -5,6 +5,8 @@ import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
 import Location from '@/components/Onboarding/Location';
 import Industry from '@/components/Onboarding/Industry';
 import FocusArea from '@/components/Onboarding/FocusArea';
+import GenderIdentity from '@/components/Onboarding/GenderIdentity';
+import EthnicityAndLanguages from '@/components/Onboarding/EthnicityAndLanguage';
 
 import { MenteeSignUpPayLoad } from 'functions/src/user/structs';
 
@@ -13,6 +15,7 @@ import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import {Button} from 'antd';
 import { setCommentRange } from 'typescript';
+import SexualOrientation from '@/components/Onboarding/SexualOrientation';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
 const INITIALDATA: MenteeSignUpPayLoad = {
@@ -24,6 +27,11 @@ const INITIALDATA: MenteeSignUpPayLoad = {
   user_location: '',
   user_industry: [],
   user_focus_area: [],
+  user_gender_identity: [],
+  user_ethnicity: [],
+  user_match_on_ethnicity: false,
+  user_language: [],
+  user_sexual_orientation: [],
   user_email: '',
   user_pswd: '',
   user_role: 'mentee'
@@ -60,8 +68,11 @@ function MenteeForm() {
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
     // NB: key is used for checkbox error messages
-    <NameAndPronouns key="nameAndPronouns" {...data} updateFields = {updateFields}/>,
+    <NameAndPronouns key="chosen name" {...data} updateFields = {updateFields}/>,
     <Location key="location" {...data} updateFields = {updateFields} />,
+    <GenderIdentity key="gender identity" {...data} updateFields = {updateFields} />,
+    <SexualOrientation key="sexual orientation" {...data} updateFields = {updateFields} />,
+    <EthnicityAndLanguages key="ethnicity & language" {...data} updateFields = {updateFields} />,
     <Industry key="industry" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <FocusArea key="focus area" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>

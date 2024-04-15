@@ -24,7 +24,23 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
   try {
     if (!!payload) {
       console.log(payload)
-      const { user_email, user_pswd, user_name_first, user_name_last, user_chosen_name, user_date_of_birth, user_location, user_pronouns, user_industry, user_focus_area, user_role } =
+      const {
+        user_email,
+        user_pswd,
+        user_name_first,
+        user_name_last,
+        user_chosen_name,
+        user_date_of_birth,
+        user_location,
+        user_pronouns,
+        user_gender_identity,
+        user_ethnicity,
+        user_match_on_ethnicity,
+        user_language,
+        user_industry,
+        user_focus_area,
+        user_sexual_orientation,
+        user_role } =
         payload;
         console.log("User Email:", user_email);
         console.log("User Password:", user_pswd);
@@ -36,6 +52,8 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         console.log("User Pronouns:", user_pronouns);
         console.log("User Industry:", user_industry);
         console.log("User Focus Area:", user_focus_area);
+        console.log("User Gender Identity:", user_gender_identity);
+        console.log("User Sexual Orientation:", user_sexual_orientation);
         console.log("User Role:", user_role);
       const displayName = user_name_first + " " + user_name_last || '';
       const email = user_email || '';
@@ -63,6 +81,11 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         user_pronouns: user_pronouns ?? '',
         user_date_of_birth: user_date_of_birth ?? '',
         user_location: user_location ?? '',
+        user_gender_identity: user_gender_identity ?? [],
+        user_sexual_orientation: user_sexual_orientation ?? [],
+        user_ethnicity: user_ethnicity ?? [],
+        user_match_on_ethnicity: user_match_on_ethnicity ?? false,
+        user_language: user_language ?? [],
         user_industry: user_industry ?? [],
         user_focus_area: user_focus_area ?? [],
         user_email: user_email ?? '',
