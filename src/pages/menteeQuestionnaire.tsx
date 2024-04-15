@@ -68,13 +68,13 @@ function MenteeForm() {
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
     // NB: key is used for checkbox error messages
-    <NameAndPronouns key="nameAndPronouns" {...data} updateFields = {updateFields}/>,
+    <NameAndPronouns key="chosen name" {...data} updateFields = {updateFields}/>,
     <Location key="location" {...data} updateFields = {updateFields} />,
+    <GenderIdentity key="gender identity" {...data} updateFields = {updateFields} />,
+    <SexualOrientation key="sexual orientation" {...data} updateFields = {updateFields} />,
+    <EthnicityAndLanguages key="ethnicity & language" {...data} updateFields = {updateFields} />,
     <Industry key="industry" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
     <FocusArea key="focus area" {...data} updateFields = {updateFields} checkboxError={checkboxError}/>,
-    <GenderIdentity key="gender identity" {...data} updateFields = {updateFields} />,
-    <EthnicityAndLanguages key="ethnicity and language" {...data} updateFields = {updateFields} />,
-    <SexualOrientation key="sexual orientation" {...data} updateFields = {updateFields} />,
     <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);
 

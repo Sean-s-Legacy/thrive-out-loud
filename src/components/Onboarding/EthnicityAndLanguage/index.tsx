@@ -49,6 +49,8 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       />
       <p>I would prefer to find a mentor with a similar race or ethnic background as me.</p>
       </div>
+    { user_ethnicity.length > 0 &&
+      <div>
     <h3>What language(s) do you speak?</h3>
     <p>Please note that English is the default language for our site, but we encourage mentors to connect with mentees in other languages.</p>
     <Select
@@ -60,6 +62,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       style={{ width: '100%' }}
       value={user_language}
     />
+    </div>}
     </>
   )
 }
