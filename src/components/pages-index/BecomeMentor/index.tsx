@@ -13,7 +13,7 @@ function index() {
           <Title className="bold">Inspire vibrant careers</Title>
         </div>
         <div className={styles.textParagraph}>
-          <Paragraph className="textLarge mediumWeight">
+          <Paragraph className="textLarge mediumWeight textNeutral8">
             Join our community of experienced LGBTQIA+ mentors. Form meaningful
             connections that uplift your community, and shape a new generation
             of professionals.

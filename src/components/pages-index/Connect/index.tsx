@@ -34,8 +34,8 @@ function index() {
           <Card
             key={index}
             style={{
-              width: 341,
-              height: 304,
+              width: 365,
+              height: 340,
               boxShadow: "0 4px 20px 0 rgba(149, 149, 149, 0.25)",
               borderRadius: "40px",
             }}
@@ -43,8 +43,8 @@ function index() {
             <div className={styles.cardContent}>
               <Image
                 alt={card.title}
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 //   height={card.aspectRatio < 1 ? 24 : 40}
                 style={{ objectFit: "contain" }}
                 src={card.imgSrc}
@@ -54,7 +54,7 @@ function index() {
                   title={
                     <span
                       style={{
-                        fontSize: "20px",
+                        fontSize: "24px",
                         color: "rgba(0, 0, 0)",
                         fontWeight: "600",
                         display: "inline-block",
@@ -69,7 +69,9 @@ function index() {
                   description={
                     <div
                       style={{
-                        color: "var(--gray-gray-8, #595959)",
+                        fontSize: "16px",
+                        color: "var(--neutral8)",
+                        fontWeight: "500",
                       }}
                     >
                       {card.description}

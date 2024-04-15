@@ -1,18 +1,18 @@
 .section {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-10);
+  gap: var(--spacing-07);
   margin: var(--spacing-12) 0;
 }
 
 .cardContent {
   text-align: center;
-  /* padding: var(--spacing-09); */
   margin: var(--spacing-09) auto;
+  max-height: 208px;
 }
 
 .textContainer {
-  inline-size: 245px;
+  width: 278px;
   /* height: auto; */
   /* text-align: center; */
   margin: auto;
