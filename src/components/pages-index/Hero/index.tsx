@@ -16,7 +16,7 @@ function index() {
           </Title>
         </div>
         <div className={styles.textParagraph}>
-          <Paragraph className="textLarge mediumWeight">
+          <Paragraph className="textLarge mediumWeight semibold ">
             We connect LGBTQIA+ young adults at the start of their professional
             journeys with experienced, like-minded mentors.
           </Paragraph>

@@ -4,12 +4,17 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--primary1);
-  /* width: 100%; */
   height: 598px;
 }
 
+.heroImg {
+  width: 850px;
+  height: 598px;
+  object-fit: fill;
+}
+
 .textContainer {
-  padding: 88px 25px 70px 136px;
+  padding: 88px 0 0 136px;
   width: 795px;
 }
 
@@ -18,7 +23,6 @@
   text-align: center; */
   margin-bottom: 24px;
   width: 538px;
-  line-height: 150%;
 }
 .textParagraph {
   width: 538px;
@@ -26,11 +30,6 @@
 .menteeMentorButtons {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
-}
-
-.heroImg {
-  width: 841px;
-  height: 598px;
-  object-fit: fill;
+  margin-top: 40px;
+  width: 538px;
 }
