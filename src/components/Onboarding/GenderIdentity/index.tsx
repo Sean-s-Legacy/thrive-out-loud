@@ -28,6 +28,7 @@ export default function GenderIdentity({user_gender_identity, updateFields}: Gen
       options={options}
       onChange={value => updateFields({user_gender_identity: value})}
       style={{ width: '100%' }}
+      value={user_gender_identity}
     />
     </>
   )
