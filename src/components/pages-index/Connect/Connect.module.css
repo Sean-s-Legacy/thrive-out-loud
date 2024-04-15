@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-10);
+  margin: var(--spacing-12) 0;
+}
+
+.cardContent {
+  text-align: center;
+  /* padding: var(--spacing-09); */
+  margin: var(--spacing-09) auto;
+}
+
+.textContainer {
+  inline-size: 245px;
+  /* height: auto; */
+  /* text-align: center; */
+  margin: auto;
+}

@@ -29,7 +29,7 @@ function index() {
         </Link>
       </div>
       <Image
-        alt="Two people sitting together holding hands"
+        alt="Two people looking at the screen smiling in a building hallway"
         src={"/images/index/become-mentee.png"}
         className={styles.heroImg}
         width={480}

@@ -1,0 +1,86 @@
+/* Color palette */
+
+:root {
+  /* Neutral Palette */
+  --white: #fff;
+  --neutral2: #fafafa;
+  --neutral3: #f5f5f5;
+  --neutral4: #f0f0f0;
+  --neutral5: #d9d9d9;
+  --neutral6: #bfbfbf;
+  --neutral7: #8c8c8c;
+  --neutral8: #595959;
+  --neutral9: #434343;
+  --neutral10: #262626;
+  --neutral11: #1f1f1f;
+  --neutral12: #141414;
+  --black: #000;
+
+  /* Primary Palette */
+  --primary10: #3c1b57;
+  --primary9: #4d2570;
+  --primary8: #69388f;
+  --primary7: #8145b5;
+  --primary6: #9e63cf;
+  --primary5: #b985de;
+  --primary4: #d2a7eb;
+  --primary3: #dfbff2;
+  --primary2: #ebd5f7;
+  --primary1: #f6edfc;
+  --primary0: #fcfafc;
+  --primary11: #f2eef3;
+
+  /* Extra Colors */
+  --volcano1: #fff2e8;
+
+  /* Text Colors */
+  --character-primary: rgba(0, 0, 0, 0.85);
+  --character-primary-inverse: #fff;
+  --character-secondary: rgba(0, 0, 0, 0.55);
+  --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
+
+  /* Text Colors in phase 4 */
+  --text-primary-black: rgba(0, 0, 0);
+  --text-geek-blue7: #1d39c4;
+
+  /* Added in phase 4 */
+  /* gray & black - use neutral above if not present here*/
+  --gray-75: #737373;
+  --charcoal: #222222;
+  --black: #000000;
+
+  /* purple - use primary above if not present here */
+  --purple-0: #fcfcfc;
+  --purple-rasp-yogurt: #f2eef3;
+
+  /* magenta, volcano, orange & yellow*/
+  --magenta-1: #fff0f6;
+  --magenta-2: #ffdeed;
+  --magenta-3: #ffadd2;
+  --megenta-7: #c41d7f;
+  --magenta-10: #520339;
+  --dust-red-1: #fff1f0;
+  --dust-red-7: #cf1322;
+  --calendula-gold-4: #ffd666;
+  --volcano-1: #fff2e8;
+  --volcano-2: #ffd6c0;
+  --volcano-3: #ffbb96;
+  --volcano-4: #ff9c6e;
+  --volcano-7: #cd370d;
+  --volcano-10: #610b00;
+  --sunset-orange-3: #ffd591;
+  --sunset-orange-6: #fa8c16;
+  --primary-orange: #d25733;
+
+  /* blue and green */
+  --daybreak-blue-1: #e6f7ff;
+  --daybreak-blue-4: #69c0ff;
+  --daybreak-blue-8: #0050b3;
+  --geek-blue-7: #1d39c4;
+  --polar-green-1: #f6ffed;
+  --polar-green2: #d9f7be;
+  --polar-green-4: #96de64;
+  --polar-green-8: #237804;
+
+  /* End of added in phase 4 */
+}

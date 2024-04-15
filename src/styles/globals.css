@@ -38,23 +38,23 @@ h6 {
 h1.ant-typography,
 div.ant-typography-h1 {
   font-size: 38px;
-  line-height: 121.5% !important;
+  line-height: 130% !important;
 }
 h2.ant-typography,
 div.ant-typography-h2 {
   font-size: 30px;
-  line-height: 133% !important;
+  line-height: 130% !important;
 }
 h3.ant-typography,
 div.ant-typography-h3 {
   font-size: 24px;
-  line-height: 133% !important;
+  line-height: 130% !important;
 }
 /* added in phase 4 */
 h4.ant-typography,
 div.ant-typography-h4 {
   font-size: 20px;
-  line-height: 150% !important;
+  line-height: 130% !important;
 }
 
 /* Font-weights */
