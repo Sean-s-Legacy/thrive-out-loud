@@ -22,7 +22,7 @@ function index() {
           <Title level={3} className="semibold textNeutral8">
             Thrive Out Loud is part of a network of community initiatives led by{" "}
             <Link href="#">
-              <span className="semibold underline characterGeekBlue7">
+              <span className="semibold underline geekBlue7">
                 Sean&apos;s Legacy
               </span>
             </Link>

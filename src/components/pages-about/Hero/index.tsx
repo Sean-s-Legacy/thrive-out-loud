@@ -13,7 +13,7 @@ function index() {
           </Title>
         </div>
         <div>
-          <Paragraph className="characterPrimaryBlack textLarge mediumWeight">
+          <Paragraph className="textPrimaryBlack textLarge mediumWeight">
             Thrive Out Loud is a mentorship program created by Sean&apos;s
             Legacy that connects early-career LGBTQIA+ young adults with
             experienced, like-minded mentors. We created Thrive Out Loud to

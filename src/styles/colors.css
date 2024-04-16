@@ -28,10 +28,6 @@
   --primary2: #ebd5f7;
   --primary1: #f6edfc;
   --primary0: #fcfafc;
-  --primary11: #f2eef3;
-
-  /* Extra Colors */
-  --volcano1: #fff2e8;
 
   /* Text Colors */
   --character-primary: rgba(0, 0, 0, 0.85);
@@ -39,9 +35,45 @@
   --character-secondary: rgba(0, 0, 0, 0.55);
   --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
 
-  /* Text Colors added in phase 4 */
-  --character-primary-black: rgba(0, 0, 0);
-  --character-geek-blue7: #1d39c4;
+  /* Added colors in phase 4 */
+  /* Text Colors in phase 4 */
+  --primary-black: #000000;
 
-  --border-radius-base: 12px;
+  /* gray - use neutral above if not present here*/
+  --gray-75: #737373;
+  --charcoal: #222222;
+
+  /* purple - use primary above if not present here */
+  --purple-rasp-yogurt: #f2eef3;
+
+  /* magenta, volcano, orange & yellow*/
+  --magenta-1: #fff0f6;
+  --magenta-2: #ffdeed;
+  --magenta-3: #ffadd2;
+  --megenta-7: #c41d7f;
+  --magenta-10: #520339;
+  --dust-red-1: #fff1f0;
+  --dust-red-7: #cf1322;
+  --calendula-gold-4: #ffd666;
+  --volcano-1: #fff2e8;
+  --volcano-2: #ffd6c0;
+  --volcano-3: #ffbb96;
+  --volcano-4: #ff9c6e;
+  --volcano-7: #cf370d;
+  --volcano-10: #610b00;
+  --sunset-orange-3: #ffd591;
+  --sunset-orange-6: #fa8c16;
+  --primary-orange: #d25733;
+
+  /* blue and green */
+  --daybreak-blue-1: #e6f7ff;
+  --daybreak-blue-4: #69c0ff;
+  --daybreak-blue-8: #0050b3;
+  --geek-blue-7: #1d39c4;
+  --polar-green-1: #f6ffed;
+  --polar-green2: #d9f7be;
+  --polar-green-4: #96de64;
+  --polar-green-8: #237804;
+
+  /* End of added colors in phase 4 */
 }

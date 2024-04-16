@@ -130,17 +130,17 @@ div.ant-typography-h4 {
 }
 
 /* Text Colors - added in phase 4 */
-.ant-typography.characterGeekBlue7,
-.characterGeekBlue7 {
-  color: var(--character-geek-blue7);
+.ant-typography.geekBlue7,
+.geekBlue7 {
+  color: var(--geek-blue-7);
 }
 .ant-typography.textNeutral8,
 .textNeutral8 {
   color: var(--neutral8);
 }
-.ant-typography.characterPrimaryBlack,
-.characterPrimaryBlack {
-  color: var(--character-primary-black);
+.ant-typography.textPrimaryBlack,
+.textPrimaryBlack {
+  color: var(--primary-black);
 }
 
 /* Links */
