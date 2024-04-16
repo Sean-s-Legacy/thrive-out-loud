@@ -2,21 +2,18 @@
   background-color: var(--neutral2);
   display: flex;
   justify-content: center;
-  padding: 24px 0;
-  /* width: 1168px; */
+  gap: 127px;
+  padding: var(--spacing-08) 0;
+  margin: var(--spacing-09) 0;
 }
 
 .textContainer {
-  padding: 90px 25px 113px 45px;
-  width: 795px;
+  display: grid;
+  justify-content: center;
+  align-self: center;
 }
 
-.textTitle {
-  /* margin: 0 auto;
-   text-align: center; */
-  margin-bottom: 24px;
-  width: 726px;
-}
 .textParagraph {
-  width: 500px;
+  width: 555px;
+  margin: 40px 0 20px;
 }

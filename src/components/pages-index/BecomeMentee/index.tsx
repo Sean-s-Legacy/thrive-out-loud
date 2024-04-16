@@ -16,7 +16,7 @@ function index() {
           </Title>
         </div>
         <div className={styles.textParagraph}>
-          <Paragraph className="textLarge mediumWeight">
+          <Paragraph className="textLarge mediumWeight textNeutral8">
             Gain confidence, find resources, and achieve your career goals—all
             in a safe, affirming space. Get valuable advice and guidance in 1:1
             video sessions with mentors you choose and trust.
@@ -29,7 +29,7 @@ function index() {
         </Link>
       </div>
       <Image
-        alt="Two people sitting together holding hands"
+        alt="Two people looking at the screen smiling in a building hallway"
         src={"/images/index/become-mentee.png"}
         className={styles.heroImg}
         width={480}

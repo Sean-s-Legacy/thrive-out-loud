@@ -66,7 +66,7 @@ function index(props) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
-        <Title level={2} className="characterPrimaryBlack bold textAlignCenter">
+        <Title level={2} className="textPrimaryBlack bold textAlignCenter">
           Meet the Thrive Out Loud team
         </Title>
         <Row gutter={[24, 48]}>
