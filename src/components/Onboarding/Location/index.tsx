@@ -1,4 +1,6 @@
 import React from 'react'
+import Title from 'antd/lib/typography/Title';
+import InputWrapper from '@/components/InputWrapper';
 
 type LocationData = {
   user_location: string;
@@ -10,10 +12,19 @@ type LocationProps = LocationData &{
 export default function Location({user_location, updateFields}: LocationProps){
   return(
     <div>
-      <h3>Where are you currently <span>located</span>?</h3>
+      <Title level={3} className="semibold">
+        Where are you currently <span style={{color:'var(--primary7)'}}>located</span>?
+      </Title>
       <p>Thrive Out Loud currently only supports mentorship within the United States. We hope to expand our program in the future!</p>
-      <label>Location</label>
-      <input type="text" autoFocus required placeholder='City, State' value={user_location} onChange={e => updateFields({user_location: e.target.value})} />
+      <InputWrapper
+        label="City, State"
+        placeholder="City, State"
+        value={user_location}
+        onChange={e => updateFields({user_location: e.target.value})}
+        required
+        className={""}
+        size="large"
+      />
     </div>
   )
 }

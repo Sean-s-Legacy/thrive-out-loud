@@ -1,0 +1,18 @@
+.questionnaireContainer{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--neutral2);
+}
+
+.onboardingProgress{
+  display: flex;
+  flex-direction: column;
+  padding: 64px var(--spacing-09) 0px var(--spacing-09);
+  align-items: flex-start;
+  gap: var(--spacing-06);
+  background: var(--purple-raspberry-yogurt);
+}
+
+.onboardingForm{
+  margin: var(--spacing-12);
+}

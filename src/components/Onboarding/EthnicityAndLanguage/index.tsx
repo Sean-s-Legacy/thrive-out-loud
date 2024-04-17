@@ -3,6 +3,7 @@ import ETHNICITIES from '@/utils/Ethnicities'
 import LANGUAGES from '@/utils/Languages'
 import { Select } from 'antd'
 import { SelectProps } from 'antd'
+import Title from 'antd/lib/typography/Title'
 import CustomTooltip from '@/components/Tooltip'
 
 type EthnicityAndLanguageData = {
@@ -29,7 +30,9 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
   return (
     <>
     <div>
-      <h3>Which race or ethnic background(s) best describes you?</h3>
+      <Title level={3} className="semibold">
+        Which <span style={{ color:"var(--primary7)" }}>race or ethnic background(s)</span> best describes you?
+      </Title>
       <CustomTooltip title="Your race relates to biological characteristics as well as sociopolitical aspects of identity, while ethnicity encompasses cultural factors like ancestry and traditions. Sometimes these overlap, contributing to your unique life experience."/>
     </div>
     <p>Knowing your background helps us connect you with mentors with similar life experience.</p>

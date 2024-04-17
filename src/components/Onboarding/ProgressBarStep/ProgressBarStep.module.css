@@ -1,0 +1,33 @@
+
+.stepContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 241px;
+}
+
+.stepNumber{
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--neutral8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-05);
+}
+
+.stepTitle{
+ color: var(--neutral8);
+}
+
+.currentStepNumber{
+  background-color: var(--primary7) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--primary7) !important;
+}
+
+.currentStepTitle{
+  font-weight: 600 !important;
+  color: var(--black) !important;
+}

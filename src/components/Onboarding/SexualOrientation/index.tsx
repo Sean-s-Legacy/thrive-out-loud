@@ -2,6 +2,7 @@ import React from 'react';
 import SEXUAL_ORIENTATIONS from '@/utils/SexualOrientations';
 import { Select } from 'antd';
 import { SelectProps } from 'antd';
+import Title from 'antd/lib/typography/Title';
 
 const options: SelectProps['options'] = SEXUAL_ORIENTATIONS.map(orientation => ({
   label: orientation,
@@ -19,8 +20,11 @@ type SexualOrientationProps = SexualOrientationData & {
 export default function SexualOrientation({user_sexual_orientation, updateFields}: SexualOrientationProps) {
   return (
     <>
-    <h3>What is your <span>sexual orientation</span>?</h3>
+    <Title level={3} className="semibold">
+      What is your <span style={{ color:"var(--primary7)" }}>sexual orientation</span>?
+    </Title>
     <p>Your sexual orientation will be displayed on your profile to help mentees with similar orientations find you. We won’t share your personal information with anyone else.</p>
+    <p>Select all that apply</p>
     <Select
       mode="multiple"
       allowClear
@@ -30,6 +34,7 @@ export default function SexualOrientation({user_sexual_orientation, updateFields
       style={{ width: '100%' }}
       value={user_sexual_orientation}
     />
+    
     </>
   )
 }

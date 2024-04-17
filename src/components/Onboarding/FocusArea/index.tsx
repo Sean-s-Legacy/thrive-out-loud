@@ -1,5 +1,6 @@
 import React from 'react'
 import FOCUS_AREAS from '@/utils/FocusAreas'
+import Title from 'antd/lib/typography/Title'
 
 type FocusAreaData = {
   user_focus_area: string[];
@@ -14,7 +15,7 @@ export default function FocusArea({user_focus_area, updateFields, checkboxError}
     const focus_areaName = event.target.name;
     const isChecked = event.target.checked;
 
-    if (isChecked && user_focus_area.length < 3) {
+    if (isChecked) {
       updateFields({user_focus_area: [...user_focus_area, focus_areaName] });
     } else {
       updateFields({user_focus_area: user_focus_area.filter((focus_area) => focus_area !== focus_areaName) });
@@ -23,7 +24,9 @@ export default function FocusArea({user_focus_area, updateFields, checkboxError}
 
   return(
     <>
-      <h3>Are you looking for support in a specific <span>area of focus</span>?</h3>
+      <Title level={3} className="semibold">
+        Are you loooking for support in a specific <span style={{ color:"var(--primary7)" }}>area of focus</span>?
+      </Title>
       <p>We’ll match you with a mentor who can support you with this.</p>
       <label>Select all that apply</label>
       <div>

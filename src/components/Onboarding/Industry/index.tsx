@@ -1,6 +1,7 @@
 import { DiceFive } from 'phosphor-react'
 import React from 'react'
 import INDUSTRIES from '@/utils/Industries'
+import Title from 'antd/lib/typography/Title'
 
 type IndustryData = {
   user_industry: string[];
@@ -25,7 +26,9 @@ const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
   return(
     <>
-      <h3>Which <span>industries</span> are you interested in?</h3>
+      <Title level={3} className="semibold">
+        Which <span style={{ color:"var(--primary7)" }}>industries</span> are you interested in?
+      </Title>
       <p>We’ll match you with mentors who are experts the industry and eager to support your professional development.</p>
       <label>Select all that apply (3 max)</label>
       <div>
