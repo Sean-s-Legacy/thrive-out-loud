@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "antd";
 import styles from "./Hero.module.css";
 
-function index() {
+function Hero() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -27,4 +27,4 @@ function index() {
   );
 }
 
-export default index;
+export default Hero;

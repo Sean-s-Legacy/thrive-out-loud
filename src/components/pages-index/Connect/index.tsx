@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./Connect.module.css";
 
 const { Meta } = Card;
-function index() {
+function Connect() {
   const cards = [
     {
       imgSrc: "/images/index/rainbow-icon.png",
@@ -86,4 +86,4 @@ function index() {
     </section>
   );
 }
-export default index;
+export default Connect;

@@ -4,15 +4,16 @@ import styles from "./Hero.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function index() {
+function Hero() {
   const { Title, Paragraph } = Typography;
+
   return (
     <section className={styles.section}>
       <div className={styles.textContainer}>
         <div className={styles.textTitle}>
           {/* Need to set correct line-height on this */}
           <Title className="bold textPrimary8">
-            Bold career paths <br /> powered by LGBTQIA+ mentorship
+            Bold career paths powered by LGBTQIA+ mentorship
           </Title>
         </div>
         <div className={styles.textParagraph}>
@@ -59,4 +60,4 @@ function index() {
   );
 }
 
-export default index;
+export default Hero;

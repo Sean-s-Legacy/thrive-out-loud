@@ -4,7 +4,7 @@ import styles from "./BecomeMentor.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function index() {
+function BecomeMentor() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -28,7 +28,7 @@ function index() {
       <Image
         alt="A professional woman stands smiling"
         src={"/images/index/become-mentor.png"}
-        className={styles.heroImg}
+        className={styles.sectionImg}
         width={480}
         height={480}
       />
@@ -36,4 +36,4 @@ function index() {
   );
 }
 
-export default index;
+export default BecomeMentor;

@@ -17,3 +17,9 @@
   /* text-align: center; */
   margin: auto;
 }
+
+@media only screen and (max-width: 375px) {
+  .section {
+    flex-direction: column;
+  }
+}

@@ -4,7 +4,7 @@ import styles from "./BecomeMentee.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function index() {
+function BecomeMentee() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -22,16 +22,18 @@ function index() {
             video sessions with mentors you choose and trust.
           </Paragraph>
         </div>
-        <Link href="/becomeamentee" passHref>
-          <Button type="primary" htmlType="submit" size="large">
-            Become a mentee
-          </Button>
-        </Link>
+        <div className={styles.becomeButton}>
+          <Link href="/becomeamentee" passHref>
+            <Button type="primary" htmlType="submit" size="large">
+              Become a mentee
+            </Button>
+          </Link>
+        </div>
       </div>
       <Image
         alt="Two people looking at the screen smiling in a building hallway"
         src={"/images/index/become-mentee.png"}
-        className={styles.heroImg}
+        className={styles.sectionImg}
         width={480}
         height={480}
       />
@@ -39,4 +41,4 @@ function index() {
   );
 }
 
-export default index;
+export default BecomeMentee;

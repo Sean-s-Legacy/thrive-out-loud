@@ -3,7 +3,7 @@ import { Typography, Button } from "antd";
 import styles from "./StartThriving.module.css";
 import Link from "next/link";
 
-function index() {
+function StartThriving() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -34,4 +34,4 @@ function index() {
   );
 }
 
-export default index;
+export default StartThriving;

@@ -17,3 +17,18 @@
   width: 555px;
   margin: 40px 0 20px;
 }
+
+@media only screen and (max-width: 375px) {
+  .section {
+    display: block;
+    text-align: center;
+  }
+  .sectionImg {
+    width: 340px;
+    height: 340px;
+  }
+  .textParagraph {
+    width: 375px;
+    margin: 40px 0 20px;
+  }
+}

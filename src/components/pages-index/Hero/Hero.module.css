@@ -1,6 +1,5 @@
 .section {
-  background-image: url("/images/index/leaf-background-landing.png");
-  /* background-position: center; */
+  background-image: url("/images/index/leaf-background-hero.png");
   display: flex;
   justify-content: space-between;
   background-color: var(--primary1);
@@ -19,8 +18,6 @@
 }
 
 .textTitle {
-  /* margin: 0 auto;
-  text-align: center; */
   margin-bottom: 24px;
   width: 538px;
 }
@@ -32,4 +29,52 @@
   gap: 10px;
   margin-top: 40px;
   width: 538px;
+}
+
+.mobileButtonText {
+  display: none;
+}
+
+@media only screen and (max-width: 375px) {
+  .section {
+    /* background-image: url("/images/index/leaf-background-landing.png"); */
+    background-image: none;
+    flex-direction: column-reverse;
+    background-color: var(--primary1);
+    max-width: 100vw;
+
+    overflow: hidden;
+  }
+
+  .heroImg {
+    /* background-image: url("/images/index/leaf-background-landing.png"); */
+    width: 346px;
+    height: 241px;
+    margin: auto;
+    /* object-fit: fill; */
+    flex-shrink: 0;
+  }
+
+  .textContainer {
+    padding: 0;
+    width: 375px;
+    text-align: center;
+  }
+  .textTitle {
+    margin: var(--spacing-05) auto;
+    /* text-align: center; */
+    padding: 0 20px;
+    width: 375px;
+  }
+  .textParagraph {
+    width: 375px;
+  }
+  .menteeMentorButtons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-06);
+    margin-top: var(--spacing-06);
+    width: 375px;
+    padding-bottom: 30px;
+  }
 }

@@ -3,7 +3,7 @@ import { Typography } from "antd";
 import Image from "next/image";
 import styles from "./OurStory.module.css";
 
-function index() {
+function OurStory() {
   const { Title, Paragraph, Link } = Typography;
   return (
     <section className={styles.section}>
@@ -44,4 +44,4 @@ function index() {
   );
 }
 
-export default index;
+export default OurStory;

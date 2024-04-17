@@ -17,3 +17,28 @@
   width: 555px;
   margin: 40px 0 20px;
 }
+.sectionImg {
+  width: 480px;
+  height: 480px;
+}
+
+@media only screen and (max-width: 375px) {
+  .section {
+    display: block;
+    text-align: center;
+  }
+
+  .textParagraph {
+    width: 375px;
+  }
+  .textContainer {
+    width: 375px;
+  }
+  /* .becomeButton {
+    margin: auto;
+  } */
+  .sectionImg {
+    width: 340px;
+    height: 340px;
+  }
+}

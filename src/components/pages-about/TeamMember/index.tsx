@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar, Typography } from "antd";
 import styles from "./TeamMember.module.css";
 
-function index({ imgSrc = null, name, pronouns, role }) {
+function TeamMember({ imgSrc = null, name, pronouns, role }) {
   const { Title, Text } = Typography;
 
   return (
@@ -23,4 +23,4 @@ function index({ imgSrc = null, name, pronouns, role }) {
   );
 }
 
-export default index;
+export default TeamMember;
