@@ -4,6 +4,13 @@
   gap: var(--spacing-07);
   margin: var(--spacing-12) 0;
 }
+/* .cardContainer {
+  width: 365;
+  height: 340;
+  box-shadow: 0 4px 20px 0 rgba(149, 149, 149, 0.25);
+  border-radius: 40px;
+  border: none;
+} */
 
 .cardContent {
   text-align: center;
@@ -13,13 +20,13 @@
 
 .textContainer {
   width: 278px;
-  /* height: auto; */
-  /* text-align: center; */
   margin: auto;
 }
 
 @media only screen and (max-width: 375px) {
   .section {
     flex-direction: column;
+    padding: 20px 16px 20px;
+    margin-block: var(--spacing-07);
   }
 }

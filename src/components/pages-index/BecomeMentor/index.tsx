@@ -19,11 +19,13 @@ function BecomeMentor() {
             of professionals.
           </Paragraph>
         </div>
-        <Link href="/becomeamentor" passHref>
-          <Button type="primary" htmlType="submit" size="large">
-            Become a mentor
-          </Button>
-        </Link>
+        <div className={styles.becomeButton}>
+          <Link href="/becomeamentor" passHref>
+            <Button type="primary" htmlType="submit" size="large">
+              Become a mentor
+            </Button>
+          </Link>
+        </div>
       </div>
       <Image
         alt="A professional woman stands smiling"

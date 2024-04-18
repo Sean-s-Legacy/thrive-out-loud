@@ -49,13 +49,15 @@ function Hero() {
           </Link>
         </div>
       </div>
-      <Image
-        alt="Four people are lying down, wearing rainbow-colored clothes, smiling, and leaning their heads together"
-        src={"/images/index/hero2.png"}
-        className={styles.heroImg}
-        width={911}
-        height={598}
-      />
+      <div className={styles.imageContainer}>
+        <Image
+          alt="Four people are lying down, wearing rainbow-colored clothes, smiling, and leaning their heads together"
+          src={"/images/index/hero2.png"}
+          className={styles.heroImg}
+          width={911}
+          height={598}
+        />
+      </div>
     </section>
   );
 }

@@ -11,10 +11,10 @@
   display: grid;
   justify-content: center;
   align-self: center;
+  max-width: 561px;
 }
 
 .textParagraph {
-  width: 555px;
   margin: 40px 0 20px;
 }
 .sectionImg {
@@ -24,19 +24,20 @@
 
 @media only screen and (max-width: 375px) {
   .section {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 375px;
+    padding: 20px 16px 20px;
+    gap: 20px;
   }
 
   .textParagraph {
-    width: 375px;
+    margin: 10px 0 10px;
   }
-  .textContainer {
-    width: 375px;
+  .becomeButton {
+    text-align: center;
+    margin-bottom: 10px;
   }
-  /* .becomeButton {
-    margin: auto;
-  } */
   .sectionImg {
     width: 340px;
     height: 340px;

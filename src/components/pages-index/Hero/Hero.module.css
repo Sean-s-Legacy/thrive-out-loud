@@ -3,32 +3,28 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--primary1);
-  height: 598px;
+  max-height: 598px;
 }
 
 .heroImg {
-  width: 850px;
-  height: 598px;
+  max-width: 850px;
   object-fit: fill;
 }
 
 .textContainer {
   padding: 88px 0 0 136px;
-  width: 795px;
+  max-width: 795px;
 }
 
 .textTitle {
   margin-bottom: 24px;
-  width: 538px;
 }
-.textParagraph {
-  width: 538px;
-}
+
 .menteeMentorButtons {
   display: flex;
   gap: 10px;
   margin-top: 40px;
-  width: 538px;
+  max-width: 538px;
 }
 
 .mobileButtonText {
@@ -37,44 +33,44 @@
 
 @media only screen and (max-width: 375px) {
   .section {
-    /* background-image: url("/images/index/leaf-background-landing.png"); */
     background-image: none;
-    flex-direction: column-reverse;
+    flex-direction: column;
     background-color: var(--primary1);
-    max-width: 100vw;
-
+    justify-content: center;
     overflow: hidden;
+    max-height: unset;
+  }
+
+  .imageContainer {
+    background-image: url("/images/index/leaf-background-hero.png");
+    background-size: cover;
+    order: 1;
+    padding-inline: 14px;
   }
 
   .heroImg {
-    /* background-image: url("/images/index/leaf-background-landing.png"); */
-    width: 346px;
-    height: 241px;
+    /* max-width: calc(100% - 28px); */
+    width: 100%;
+    height: auto;
     margin: auto;
-    /* object-fit: fill; */
-    flex-shrink: 0;
   }
 
   .textContainer {
+    order: 2;
     padding: 0;
-    width: 375px;
+    /* width: 375px; */
     text-align: center;
   }
   .textTitle {
     margin: var(--spacing-05) auto;
-    /* text-align: center; */
-    padding: 0 20px;
-    width: 375px;
-  }
-  .textParagraph {
-    width: 375px;
+    /* padding: 0 20px; */
+    padding-inline: 20px;
   }
   .menteeMentorButtons {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-06);
     margin-top: var(--spacing-06);
-    width: 375px;
     padding-bottom: 30px;
   }
 }
