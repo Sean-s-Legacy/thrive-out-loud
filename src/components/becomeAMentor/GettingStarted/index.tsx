@@ -1,4 +1,5 @@
 import { Button, Card, Typography } from "antd";
+import Link from "next/link";
 
 import Image from "next/image";
 import React from "react";
@@ -31,24 +32,26 @@ function Index() {
 
                             <div className={styles.typography}>
                                 <Text>
-                                If you are a member of the LGBTQIA+ community 
+                                If you are a member of the LGBTQIA+ community
                                 with 5+ years of professional experience, we need
-                                 your help! Join us to support young adults aged 18-25 
+                                 your help! Join us to support young adults aged 18-25
                                  in their academic and career journeys.
                                 </Text>
                             </div>
                             <div className={styles.paragraph}>
                                 <Text >
-                                We are currently looking for mentors who are members of 
-                                the LGBTQIA+ community and who live in the United States. 
-                                Please note that allies are not being accepted as mentor 
+                                We are currently looking for mentors who are members of
+                                the LGBTQIA+ community and who live in the United States.
+                                Please note that allies are not being accepted as mentor
                                 candidates at this time.
                                 </Text>
                             </div>
                             <div className={styles.button}>
-                                <Button type="primary" className="textPrimary8">
-                                    Sign Up
-                                </Button>
+                                <Link href="mentorQuestionnaireWelcome">
+                                  <Button type="primary" className="textPrimary8">
+                                      Sign Up
+                                  </Button>
+                                </Link>
                             </div>
                         </Card>
                     </div>
