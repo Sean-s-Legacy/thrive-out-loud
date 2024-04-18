@@ -2,21 +2,44 @@
   background-color: var(--neutral2);
   display: flex;
   justify-content: center;
-  padding: 24px 0;
-  /* width: 1168px; */
+  gap: 127px;
+  padding: var(--spacing-08) 0;
+  margin: var(--spacing-09) 0;
 }
 
 .textContainer {
-  padding: 90px 25px 113px 45px;
-  width: 795px;
+  display: grid;
+  justify-content: center;
+  align-self: center;
+  max-width: 561px;
 }
 
-.textTitle {
-  /* margin: 0 auto;
-   text-align: center; */
-  margin-bottom: 24px;
-  width: 726px;
-}
 .textParagraph {
-  width: 500px;
+  margin: 40px 0 20px;
+}
+.sectionImg {
+  width: 480px;
+  height: 480px;
+}
+
+@media only screen and (max-width: 375px) {
+  .section {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 375px;
+    padding: 20px 16px 20px;
+    gap: 20px;
+  }
+
+  .textParagraph {
+    margin: 10px 0 10px;
+  }
+  .becomeButton {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .sectionImg {
+    width: 340px;
+    height: 340px;
+  }
 }

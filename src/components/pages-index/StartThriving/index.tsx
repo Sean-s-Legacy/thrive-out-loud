@@ -3,7 +3,7 @@ import { Typography, Button } from "antd";
 import styles from "./StartThriving.module.css";
 import Link from "next/link";
 
-function index() {
+function StartThriving() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -19,19 +19,19 @@ function index() {
           </Link>
         </div>
         <div className={styles.textParagraph}>
-          <Paragraph className="textLarge semibold mediumWeight">
+          <Title level={3} className="semibold textNeutral8">
             Thrive Out Loud is part of a network of community initiatives led by{" "}
             <Link href="#">
-              <span className="semibold underline characterGeekBlue7">
+              <span className="semibold underline geekBlue7">
                 Sean&apos;s Legacy
               </span>
             </Link>
             .
-          </Paragraph>
+          </Title>
         </div>
       </div>
     </section>
   );
 }
 
-export default index;
+export default StartThriving;

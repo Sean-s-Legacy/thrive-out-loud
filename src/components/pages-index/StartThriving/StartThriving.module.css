@@ -2,14 +2,21 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 24px 0;
+  padding: 120px 0 64px;
+  /* padding: 24px 0; */
 }
 
 .textContainer {
-  padding: 25px 25px 80px;
+  /* padding: 25px 25px 80px; */
   width: 1020px;
 }
 
 .buttonWrapper {
-  margin: 32px 0;
+  margin: 32px 0 64px;
+}
+
+@media only screen and (max-width: 375px) {
+  .section {
+    padding: 64px 0 64px;
+  }
 }
