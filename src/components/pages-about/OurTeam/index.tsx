@@ -72,7 +72,7 @@ function OurTeam() {
         <Row gutter={[24, 48]} className={styles.teamMemberWrapper}>
           {team.map((member, index) => {
             return (
-              <Col span={8} key={index}>
+              <Col span={8} key={index} className={styles.teamMemberCard}>
                 <TeamMember
                   imgSrc={member.imgSrc}
                   name={member.name}

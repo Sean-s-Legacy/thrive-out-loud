@@ -36,4 +36,8 @@
     padding: 0px 0px;
     background-color: var(--white);
   }
+
+  .teamMemberCard{
+    column-span: 12;
+  }
 }
