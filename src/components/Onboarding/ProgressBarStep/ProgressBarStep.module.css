@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   margin: 0px var(--spacing-05) 0px 0px;
+  color: var(--neutral8)
 }
 
 .stepTitle{
@@ -30,4 +31,16 @@
 .currentStepTitle{
   font-weight: 600 !important;
   color: var(--black) !important;
+}
+
+@media screen and (max-width: 430px) {
+
+  .stepNumber{
+    width: 24px;
+    height: 24px;
+    margin: 0px
+  }
+  .stepTitle{
+    display: none;
+  }
 }

@@ -17,6 +17,7 @@ import { useAuth } from "@/context/AuthContext";
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import {Button} from 'antd';
+import Title from 'antd/lib/typography/Title';
 
 import styles from './MenteeQuestionnaire.module.css';
 import MENTEE_ONBOARDING_CONTENT from '@/utils/OnboardingContent';
@@ -198,7 +199,6 @@ function onSubmit(e:FormEvent) {
   return (
     <div className={styles.questionnaireContainer}>
       <div className = {styles.onboardingProgress}>
-        <h3>Match Questionnaire</h3>
         {steps.map((stepName, index) => (
           <ProgressBarStep key={index} stepName={stepName} index={index} currentStepIndex={currentStepIndex}/>
         ))}

@@ -30,3 +30,24 @@
   flex-direction: column;
   justify-content: space-between
 }
+
+@media screen and (max-width: 430px) {
+
+  .questionnaireContainer{
+    flex-direction: column;
+  }
+
+  .onboardingProgress{
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+    padding: 14px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-02)
+  }
+
+  .onboardingForm{
+    margin: var(--spacing-06);
+  }
+}
