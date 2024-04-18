@@ -6,7 +6,7 @@ import Location from '@/components/Onboarding/Mentee/Location';
 import Industry from '@/components/Onboarding/Mentee/Industry';
 import FocusArea from '@/components/Onboarding/Mentee/FocusArea';
 import GenderIdentity from '@/components/Onboarding/Mentee/GenderIdentity';
-import SexualOrientation from '@/components/Onboarding/SexualOrientation';
+import SexualOrientation from '@/components/Onboarding/Mentee/SexualOrientation';
 import EthnicityAndLanguages from '@/components/Onboarding/Mentee/EthnicityAndLanguage';
 
 import ProgressBarStep from '@/components/Onboarding/ProgressBarStep';

@@ -16,7 +16,7 @@ export default function Location({user_location, errorMessage, updateFields}: Lo
       <Title level={3} className="semibold">
         Where are you currently <span style={{color:'var(--primary7)'}}>located</span>?
       </Title>
-      <p className='subtitle-regular'>Providing your location enables us to pair you with mentors who are in a similar timezone or from nearby communities.</p>
+      <p className='subtitle-regular'>Tell us a bit about yourself so we can help mentees find you on Thrive Out Loud.</p>
       <InputWrapper
         label="City, State"
         placeholder="City, State"

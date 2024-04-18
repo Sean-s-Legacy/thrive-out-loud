@@ -20,7 +20,7 @@ export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, u
     <Title level={3} className="semibold">
       What <span style={{ color:"var(--primary7)" }}>name</span> do you go by?
     </Title>
-    <p className='subtitle-regular'> Tell us a bit about yourself so we can help mentees find you on Thrive Out Loud.</p>
+    <p className='subtitle-regular'> Tell us a bit about yourself so we can help mentors find you on Thrive Out Loud.</p>
     <InputWrapper
       label="Chosen name"
       placeholder="Nala Goins"

@@ -27,7 +27,7 @@ const Industry: React.FC<IndustryProps> = ({ user_industry, updateFields, errorM
       <Title level={3} className="semibold">
         Which <span style={{ color: 'var(--primary7)' }}>industries</span> are you interested in?
       </Title>
-      <Paragraph>We’ll match you with mentors who are experts in the industry and eager to support your professional development.</Paragraph>
+      <Paragraph>Sharing your areas of expertise will allow us to match you with mentees seeking guidance in those specific industries.</Paragraph>
       <Paragraph>Select all that apply (3 max)</Paragraph>
       <div className='checkbox-container-vertical'>
         {INDUSTRIES.map((industry) => (

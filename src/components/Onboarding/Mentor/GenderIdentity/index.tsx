@@ -13,7 +13,6 @@ const options: SelectProps['options'] = GENDER_IDENTITIES.map(gender => ({
 
 type GenderIdentityData = {
   user_gender_identity: string[];
-  user_match_on_gender_identity: boolean;
 }
 
 type GenderIdentityProps = GenderIdentityData & {
@@ -21,7 +20,7 @@ type GenderIdentityProps = GenderIdentityData & {
   errorMessage: {};
 }
 
-export default function GenderIdentity({user_gender_identity, user_match_on_gender_identity, errorMessage, updateFields}: GenderIdentityProps) {
+export default function GenderIdentity({user_gender_identity, errorMessage, updateFields}: GenderIdentityProps) {
   return (
     <>
     <div className='onboarding-title-container'>
@@ -32,7 +31,7 @@ export default function GenderIdentity({user_gender_identity, user_match_on_gend
       title="Gender identity refers to your deeply-felt sense of self, which may or may not align with the sex assigned to you at birth. Gender identity is a spectrum and represents how someone perceives themselves as feminine, masculine, both, or neither."
       />
     </div>
-    <p className='subtitle-regular'>Knowing how you identify helps us connect you with mentors with similar identities. We won’t share your personal information with anyone else.</p>
+    <p className='subtitle-regular'>Your gender identity will be displayed on your profile to help mentees with similar identities find you. We won’t share your personal information with anyone else.</p>
     <p>Select all that apply</p>
     <Select
       mode="multiple"
@@ -44,11 +43,6 @@ export default function GenderIdentity({user_gender_identity, user_match_on_gend
       value={user_gender_identity}
     />
     {errorMessage && errorMessage['user_gender_identity'] && <p className="error-message">{errorMessage['user_gender_identity']}</p>}
-    <OnboardingCheckbox
-      checked = {user_match_on_gender_identity}
-      onChange={e=> updateFields({user_match_on_gender_identity: e.target.checked})}
-      content = "I would prefer to find a mentor with a similar gender identity to me."
-      />
     </>
   )
 }
