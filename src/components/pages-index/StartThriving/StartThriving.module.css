@@ -14,3 +14,9 @@
 .buttonWrapper {
   margin: 32px 0 64px;
 }
+
+@media only screen and (max-width: 375px) {
+  .section {
+    padding: 64px 0 64px;
+  }
+}

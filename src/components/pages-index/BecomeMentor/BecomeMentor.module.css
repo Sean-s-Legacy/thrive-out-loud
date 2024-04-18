@@ -11,9 +11,36 @@
   display: grid;
   justify-content: center;
   align-self: center;
+  max-width: 555px;
 }
 
 .textParagraph {
-  width: 555px;
   margin: 40px 0 20px;
+}
+
+.sectionImg {
+  width: 480px;
+  height: 480px;
+}
+
+@media only screen and (max-width: 375px) {
+  .section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    max-width: 375px;
+    padding: 20px 16px 20px;
+    gap: 20px;
+  }
+  .textParagraph {
+    margin: 10px 0 10px;
+  }
+  .becomeButton {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .sectionImg {
+    width: 340px;
+    height: 340px;
+  }
 }

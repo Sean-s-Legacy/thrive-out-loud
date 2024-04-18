@@ -5,7 +5,7 @@ import { Row, Col, Typography } from "antd";
 import styles from "./OurTeam.module.css";
 import TeamMember from "@/components/pages-about/TeamMember";
 
-function index(props) {
+function OurTeam() {
   const { Title } = Typography;
   const team = [
     {
@@ -88,4 +88,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default OurTeam;
