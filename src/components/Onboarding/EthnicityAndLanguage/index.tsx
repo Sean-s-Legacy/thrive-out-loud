@@ -3,7 +3,10 @@ import ETHNICITIES from '@/utils/Ethnicities'
 import LANGUAGES from '@/utils/Languages'
 import { Select } from 'antd'
 import { SelectProps } from 'antd'
+import Title from 'antd/lib/typography/Title'
 import CustomTooltip from '@/components/Tooltip'
+import OnboardingCheckbox from '../OnboardingCheckbox'
+
 
 type EthnicityAndLanguageData = {
   user_ethnicity: string[];
@@ -13,6 +16,7 @@ type EthnicityAndLanguageData = {
 
 type EthnicityAndLanguageProps = EthnicityAndLanguageData & {
   updateFields: (fields: Partial<EthnicityAndLanguageData>) => void;
+  errorMessage: {};
 }
 
 const ethnicityOptions: SelectProps['options'] = ETHNICITIES.map(ethnicity => ({
@@ -25,11 +29,13 @@ const languageOptions: SelectProps['options'] = LANGUAGES.map(language => ({
   value: language.toLowerCase()
 }))
 
-export default function EthnicityAndLanguages({user_ethnicity, user_language, user_match_on_ethnicity, updateFields}: EthnicityAndLanguageProps){
+export default function EthnicityAndLanguages({user_ethnicity, user_language, user_match_on_ethnicity, errorMessage, updateFields}: EthnicityAndLanguageProps){
   return (
     <>
-    <div>
-      <h3>Which race or ethnic background(s) best describes you?</h3>
+    <div className='onboarding-title-container'>
+      <Title level={3} className="semibold">
+        Which <span style={{ color:"var(--primary7)" }}>race or ethnic background(s)</span> best describes you?
+      </Title>
       <CustomTooltip title="Your race relates to biological characteristics as well as sociopolitical aspects of identity, while ethnicity encompasses cultural factors like ancestry and traditions. Sometimes these overlap, contributing to your unique life experience."/>
     </div>
     <p>Knowing your background helps us connect you with mentors with similar life experience.</p>
@@ -42,13 +48,12 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       style={{ width: '100%' }}
       value={user_ethnicity}
     />
-    <div>
-      <input type="checkbox"
-        checked = {user_match_on_ethnicity}
-        onChange={e => updateFields({user_match_on_ethnicity: e.target.checked})}
+    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message">{errorMessage['user_ethnicity']}</p>}
+    <OnboardingCheckbox
+      checked = {user_match_on_ethnicity}
+      onChange = {e => updateFields({user_match_on_ethnicity: e.target.checked})}
+      content = "I would prefer to find a mentor with a similar race or ethnic background as me."
       />
-      <p>I would prefer to find a mentor with a similar race or ethnic background as me.</p>
-      </div>
     { user_ethnicity.length > 0 &&
       <div>
     <h3>What language(s) do you speak?</h3>
@@ -63,6 +68,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       value={user_language}
     />
     </div>}
+    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
     </>
   )
 }

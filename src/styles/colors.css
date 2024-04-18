@@ -28,12 +28,18 @@
   --primary2: #ebd5f7;
   --primary1: #f6edfc;
   --primary0: #fcfafc;
+  --primary11: #f2eef3;
+
+  /* Extra Colors */
+  --volcano1: #fff2e8;
+  --purple-rasp-yogurt: #f2eef3;
 
   /* Text Colors */
   --character-primary: rgba(0, 0, 0, 0.85);
   --character-primary-inverse: #fff;
   --character-secondary: rgba(0, 0, 0, 0.55);
   --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
+  --dust-red7: #cf1322;
 
   /* Added colors in phase 4 */
   /* Text Colors in phase 4 */

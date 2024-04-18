@@ -57,6 +57,26 @@ div.ant-typography-h4 {
   line-height: 130% !important;
 }
 
+/* Subtitle */
+.subtitle-regular{
+  color: var(--character-secondary-55, rgba(0, 0, 0, 0.55));
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+}
+
+/* Error messages */
+.error-message{
+  color: var(--dust-red-dust-red-7, #CF1322);
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
 /* Font-weights */
 .regularWeight {
   font-weight: 400;
@@ -93,6 +113,7 @@ div.ant-typography-h4 {
 }
 
 /* Text Colors */
+
 .ant-typography.textInverse,
 .textInverse {
   color: var(--white);
@@ -290,6 +311,22 @@ input.ant-input-number-input {
   line-height: 22px !important;
 }
 
+/* Checkbox */
+
+.ant-checkbox-inner {
+  border: 1px solid #595959; /* Stroke color */
+  background-color: #FFFFFF; /* Fill color */
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  border: 1px solid #8145B5; /* Stroke color */
+  background-color: #FCFAFC; /* Fill color */
+}
+
+.ant-checkbox-wrapper {
+  margin: 0px; /* Remove bottom margin */
+}
+
 /* Input - TimePicker Large */
 .ant-picker.ant-picker-large {
   height: 40px;
@@ -302,7 +339,7 @@ input.ant-input-number-input {
   line-height: 0;
 }
 
-/* Add-On - sets default color of icons; for custom colors you can define color 
+/* Add-On - sets default color of icons; for custom colors you can define color
 prop inside the phosphor-react component */
 .ant-input-group-addon > svg,
 .ant-input-number-group-addon > svg {
@@ -479,6 +516,17 @@ button.ant-modal-close {
   background-color: var(--primary1);
   border: 1px solid var(--primary3);
   color: var(--primary6);
+}
+
+/* --------- Onboarding */
+.onboarding-title-container {
+  display: flex;
+  align-items: start;
+}
+.checkbox-container-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(space-2);
 }
 
 /* Media Queries for responsive design */
