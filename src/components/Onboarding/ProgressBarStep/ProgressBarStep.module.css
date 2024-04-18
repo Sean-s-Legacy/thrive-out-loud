@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: var(--spacing-05);
+  margin: 0px var(--spacing-05) 0px 0px;
 }
 
 .stepTitle{

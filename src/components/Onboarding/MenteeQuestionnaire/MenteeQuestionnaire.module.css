@@ -10,9 +10,23 @@
   padding: 64px var(--spacing-09) 0px var(--spacing-09);
   align-items: flex-start;
   gap: var(--spacing-06);
-  background: var(--purple-raspberry-yogurt);
+  background: var(--purple-rasp-yogurt);
 }
 
 .onboardingForm{
   margin: var(--spacing-12);
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: var(--spacing-12);
+}
+
+.formContainer{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between
 }

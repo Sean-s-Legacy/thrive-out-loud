@@ -1,49 +1,50 @@
-import React from 'react'
-import FOCUS_AREAS from '@/utils/FocusAreas'
-import Title from 'antd/lib/typography/Title'
+import React from 'react';
+import { Checkbox, Typography } from 'antd';
+import FOCUS_AREAS from '@/utils/FocusAreas';
+
+const { Title, Paragraph } = Typography;
 
 type FocusAreaData = {
   user_focus_area: string[];
-}
-type FocusAreaProps = FocusAreaData &{
+};
+
+type FocusAreaProps = FocusAreaData & {
   updateFields: (fields: Partial<FocusAreaData>) => void;
   errorMessage: {};
-}
+};
 
-export default function FocusArea({user_focus_area, updateFields, errorMessage}: FocusAreaProps){
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const focus_areaName = event.target.name;
-    const isChecked = event.target.checked;
-
-    if (isChecked) {
-      updateFields({user_focus_area: [...user_focus_area, focus_areaName] });
+const FocusArea: React.FC<FocusAreaProps> = ({ user_focus_area, updateFields, errorMessage }) => {
+  const handleCheckboxChange = (focusAreaName: string) => {
+    if (user_focus_area.includes(focusAreaName)) {
+      updateFields({ user_focus_area: user_focus_area.filter((focusArea) => focusArea !== focusAreaName) });
     } else {
-      updateFields({user_focus_area: user_focus_area.filter((focus_area) => focus_area !== focus_areaName) });
+      updateFields({ user_focus_area: [...user_focus_area, focusAreaName] });
     }
   };
 
-  return(
+  return (
     <>
       <Title level={3} className="semibold">
-        Are you loooking for support in a specific <span style={{ color:"var(--primary7)" }}>area of focus</span>?
+        Are you looking for support in a specific <span style={{ color: 'var(--primary7)' }}>area of focus</span>?
       </Title>
-      <p>We’ll match you with a mentor who can support you with this.</p>
-      <label>Select all that apply</label>
-      <div>
-        {FOCUS_AREAS.map((focus_area) => (
-          <div key={focus_area}>
-            <input
-              type="checkbox"
-              id={focus_area}
-              name={focus_area}
-              checked={user_focus_area.includes(focus_area)}
-              onChange={handleCheckboxChange}
-            />
-            <label htmlFor={focus_area}>{focus_area}</label>
-        </div>
+      <Paragraph>We’ll match you with a mentor who can support you with this.</Paragraph>
+      <Paragraph>Select all that apply</Paragraph>
+      <div className='checkbox-container-vertical'>
+        {FOCUS_AREAS.map((focusArea) => (
+          <Checkbox
+            key={focusArea}
+            onChange={() => handleCheckboxChange(focusArea)}
+            checked={user_focus_area.includes(focusArea)}
+          >
+            {focusArea}
+          </Checkbox>
         ))}
-        {errorMessage && errorMessage['user_focus_area'] && <p className="error-message">{errorMessage['user_focus_area']}</p>}
+        {errorMessage && errorMessage['user_focus_area'] && (
+          <p className="error-message">{errorMessage['user_focus_area']}</p>
+        )}
       </div>
     </>
-  )
-}
+  );
+};
+
+export default FocusArea;

@@ -5,6 +5,8 @@ import { Select } from 'antd'
 import { SelectProps } from 'antd'
 import Title from 'antd/lib/typography/Title'
 import CustomTooltip from '@/components/Tooltip'
+import OnboardingCheckbox from '../OnboardingCheckbox'
+
 
 type EthnicityAndLanguageData = {
   user_ethnicity: string[];
@@ -30,7 +32,7 @@ const languageOptions: SelectProps['options'] = LANGUAGES.map(language => ({
 export default function EthnicityAndLanguages({user_ethnicity, user_language, user_match_on_ethnicity, errorMessage, updateFields}: EthnicityAndLanguageProps){
   return (
     <>
-    <div>
+    <div className='onboarding-title-container'>
       <Title level={3} className="semibold">
         Which <span style={{ color:"var(--primary7)" }}>race or ethnic background(s)</span> best describes you?
       </Title>
@@ -47,13 +49,11 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       value={user_ethnicity}
     />
     {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message">{errorMessage['user_ethnicity']}</p>}
-    <div>
-      <input type="checkbox"
-        checked = {user_match_on_ethnicity}
-        onChange={e => updateFields({user_match_on_ethnicity: e.target.checked})}
+    <OnboardingCheckbox
+      checked = {user_match_on_ethnicity}
+      onChange = {e => updateFields({user_match_on_ethnicity: e.target.checked})}
+      content = "I would prefer to find a mentor with a similar race or ethnic background as me."
       />
-      <p>I would prefer to find a mentor with a similar race or ethnic background as me.</p>
-      </div>
     { user_ethnicity.length > 0 &&
       <div>
     <h3>What language(s) do you speak?</h3>
@@ -68,7 +68,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       value={user_language}
     />
     </div>}
-    {errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
+    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
     </>
   )
 }

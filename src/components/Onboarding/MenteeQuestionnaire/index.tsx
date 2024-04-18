@@ -74,6 +74,11 @@ function MenteeForm() {
     });
   }
 
+  function previousStep(){
+    prev();
+    setErrors({});
+  }
+
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
 
     <NameAndPronouns
@@ -182,6 +187,7 @@ function onSubmit(e:FormEvent) {
   }
 
   // Proceed with form submission only if there are no errors
+  console.log(data)
   if (!isLastStep) return next();
   setErrors({});
   // Submit the form data to Firebase
@@ -198,17 +204,19 @@ function onSubmit(e:FormEvent) {
         ))}
       </div>
       <div className={styles.onboardingForm}>
-        <form onSubmit={onSubmit}>
-          {step}
-          <div>
-            {!isFirstStep && (
-              <button type="button" onClick={prev}>
-                Back
-              </button>
-            )}
-            <button type="submit">
+        <form onSubmit={onSubmit} className={styles.formContainer}>
+          <div className={styles.stepContainer}>
+            {step}
+          </div>
+          <div className={styles.buttonContainer}>
+          <Button type="primary" htmlType="submit">
               {isLastStep ? 'Submit' : 'Next'}
-            </button>
+            </Button>
+            {!isFirstStep && (
+              <Button type="default" onClick={previousStep}>
+                Back
+              </Button>
+            )}
           </div>
         </form>
       </div>

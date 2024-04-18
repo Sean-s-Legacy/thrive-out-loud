@@ -32,12 +32,14 @@
 
   /* Extra Colors */
   --volcano1: #fff2e8;
+  --purple-rasp-yogurt: #f2eef3;
 
   /* Text Colors */
   --character-primary: rgba(0, 0, 0, 0.85);
   --character-primary-inverse: #fff;
   --character-secondary: rgba(0, 0, 0, 0.55);
   --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
+  --dust-red7: #cf1322;
 
   /* Text Colors added in phase 4 */
   --character-primary-black: rgba(0, 0, 0);
