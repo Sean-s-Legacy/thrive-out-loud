@@ -23,7 +23,7 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 430px) {
   .section {
     flex-direction: column;
     padding: 20px 16px 20px;
