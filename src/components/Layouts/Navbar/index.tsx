@@ -45,11 +45,11 @@ export default function Navbar({ user }) {
       key: "0",
     },
     {
-      label: <Link href="/becomementee">Become a mentee</Link>,
+      label: <Link href="/becomeamentee">Become a mentee</Link>,
       key: "1",
     },
     {
-      label: <Link href="/becomementor">Become a mentor</Link>,
+      label: <Link href="/becomeamentor">Become a mentor</Link>,
       key: "2",
     },
   ];
@@ -92,24 +92,24 @@ export default function Navbar({ user }) {
             </div>
             <div className= {styles.profile_bttns_wrapper}>
                 <a href="#">
-                  <Image 
-                  src="images/ChatCircle.svg" 
+                  <Image
+                  src="images/ChatCircle.svg"
                   alt="Messages Button"
                   width={40}
                   height={40}
                   />
                 </a>
                 <a href="#">
-                  <Image 
-                  src="images/Bell.svg" 
+                  <Image
+                  src="images/Bell.svg"
                   alt="Notifications Button"
                   width={40}
                   height={40}
                   />
                 </a>
                 <a href="#">
-                  <Image 
-                  src="images/User.svg" 
+                  <Image
+                  src="images/User.svg"
                   alt="Profile Button"
                   width={40}
                   height={40}
@@ -118,7 +118,7 @@ export default function Navbar({ user }) {
             </div>
             {/* <div> */}
               {/* <Dropdown
-                
+
                 menu={{ items }}
                 trigger={["click"]}
                 dropdownRender={(menu) => (
@@ -154,7 +154,7 @@ export default function Navbar({ user }) {
               Become a Mentor
             </Link>
             <Link
-              href="/becomeamentee" 
+              href="/becomeamentee"
               className={router.pathname == "/becomeamentee" ? "active" : ""}
             >
               Become a Mentee
