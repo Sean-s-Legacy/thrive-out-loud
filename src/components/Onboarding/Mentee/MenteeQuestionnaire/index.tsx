@@ -1,13 +1,13 @@
 import React, { FormEvent, useState, useEffect} from 'react';
 import { useMultistepForm } from 'functions/src/utils/useMultistepform';
 
-import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
-import Location from '@/components/Onboarding/Location';
-import Industry from '@/components/Onboarding/Industry';
-import FocusArea from '@/components/Onboarding/FocusArea';
-import GenderIdentity from '@/components/Onboarding/GenderIdentity';
-import SexualOrientation from '@/components/Onboarding/SexualOrientation';
-import EthnicityAndLanguages from '@/components/Onboarding/EthnicityAndLanguage';
+import NameAndPronouns from '@/components/Onboarding/Mentee/NameAndPronouns';
+import Location from '@/components/Onboarding/Mentee/Location';
+import Industry from '@/components/Onboarding/Mentee/Industry';
+import FocusArea from '@/components/Onboarding/Mentee/FocusArea';
+import GenderIdentity from '@/components/Onboarding/Mentee/GenderIdentity';
+import SexualOrientation from '@/components/Onboarding/Mentee/SexualOrientation';
+import EthnicityAndLanguages from '@/components/Onboarding/Mentee/EthnicityAndLanguage';
 
 import ProgressBarStep from '@/components/Onboarding/ProgressBarStep';
 
@@ -17,7 +17,6 @@ import { useAuth } from "@/context/AuthContext";
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import {Button} from 'antd';
-import Title from 'antd/lib/typography/Title';
 
 import styles from './MenteeQuestionnaire.module.css';
 import MENTEE_ONBOARDING_CONTENT from '@/utils/OnboardingContent';

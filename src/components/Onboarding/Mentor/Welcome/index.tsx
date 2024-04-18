@@ -23,7 +23,7 @@ export default function Welcome(){
         Home
       </Button>
     </Link>
-    <Link href="/menteeQuestionnaire">
+    <Link href="/mentorQuestionnaire">
       <Button type="primary">
         Let’s Go
       </Button>

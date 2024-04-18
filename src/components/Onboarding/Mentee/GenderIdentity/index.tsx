@@ -4,7 +4,7 @@ import { Select } from 'antd'
 import { SelectProps } from 'antd'
 import Title from 'antd/lib/typography/Title'
 import CustomTooltip from '@/components/Tooltip'
-import OnboardingCheckbox from '../OnboardingCheckbox'
+import OnboardingCheckbox from '../../OnboardingCheckbox'
 
 const options: SelectProps['options'] = GENDER_IDENTITIES.map(gender => ({
   label: gender,
