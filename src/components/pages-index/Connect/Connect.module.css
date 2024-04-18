@@ -23,10 +23,14 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 425px) {
   .section {
     flex-direction: column;
     padding: 20px 16px 20px;
     margin-block: var(--spacing-07);
+    flex-direction: column;
+    align-items:center ;
+    width: 450px;
   }
+  
 }

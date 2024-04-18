@@ -39,3 +39,12 @@
   width: 100%;
   padding-bottom: 24px;
 }
+
+@media screen and (max-width: 425px){
+  .contactSection{
+    width: 450px;
+  }
+  .contactSection img{
+    display: none;
+  }
+}

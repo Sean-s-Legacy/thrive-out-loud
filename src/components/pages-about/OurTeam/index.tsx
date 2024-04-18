@@ -69,7 +69,7 @@ function OurTeam() {
         <Title level={2} className="textPrimaryBlack bold textAlignCenter">
           Meet the Thrive Out Loud team
         </Title>
-        <Row gutter={[24, 48]}>
+        <Row gutter={[24, 48]} className={styles.teamMemberWrapper}>
           {team.map((member, index) => {
             return (
               <Col span={8} key={index}>

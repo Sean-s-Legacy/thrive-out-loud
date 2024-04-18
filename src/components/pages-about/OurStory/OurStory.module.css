@@ -1,9 +1,11 @@
 .section {
+  display: flex;
   background-color: var(--primary1);
   padding: 70px 20px 88px;
 }
 
 .storyContainer {
+  display: flex;
   width: 1072px;
   margin: 0 auto;
   display: flex;
@@ -12,4 +14,15 @@
 
 .textContainer {
   text-align: start;
+}
+
+@media screen and (max-width: 425px){
+  .section{
+    width:450px
+  }
+  .storyContainer{
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
 }
