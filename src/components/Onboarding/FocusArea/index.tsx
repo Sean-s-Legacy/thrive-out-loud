@@ -7,10 +7,10 @@ type FocusAreaData = {
 }
 type FocusAreaProps = FocusAreaData &{
   updateFields: (fields: Partial<FocusAreaData>) => void;
-  checkboxError: string;
+  errorMessage: {};
 }
 
-export default function FocusArea({user_focus_area, updateFields, checkboxError}: FocusAreaProps){
+export default function FocusArea({user_focus_area, updateFields, errorMessage}: FocusAreaProps){
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const focus_areaName = event.target.name;
     const isChecked = event.target.checked;
@@ -42,7 +42,7 @@ export default function FocusArea({user_focus_area, updateFields, checkboxError}
             <label htmlFor={focus_area}>{focus_area}</label>
         </div>
         ))}
-        {checkboxError && <div style={{ color: 'red' }}>{checkboxError}</div>}
+        {errorMessage && errorMessage['user_focus_area'] && <p className="error-message">{errorMessage['user_focus_area']}</p>}
       </div>
     </>
   )

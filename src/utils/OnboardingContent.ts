@@ -141,7 +141,7 @@ const MENTEE_ONBOARDING_CONTENT = {
       }
     ]
   },
-  focus_area:{
+  focusArea:{
     title: "Are you looking for support in a specific area of focus?",
     description: "We’ll match you with a mentor who can support you with this.",
     inputs: [

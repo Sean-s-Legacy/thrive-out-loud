@@ -15,9 +15,10 @@ type SexualOrientationData = {
 
 type SexualOrientationProps = SexualOrientationData & {
   updateFields: (fields: Partial<SexualOrientationData>) => void;
+  errorMessage: {};
 }
 
-export default function SexualOrientation({user_sexual_orientation, updateFields}: SexualOrientationProps) {
+export default function SexualOrientation({user_sexual_orientation, errorMessage, updateFields}: SexualOrientationProps) {
   return (
     <>
     <Title level={3} className="semibold">
@@ -34,7 +35,7 @@ export default function SexualOrientation({user_sexual_orientation, updateFields
       style={{ width: '100%' }}
       value={user_sexual_orientation}
     />
-    
+    {errorMessage && errorMessage['user_sexual_orientation'] && <p className="error-message">{errorMessage['user_sexual_orientation']}</p>}
     </>
   )
 }

@@ -1,8 +1,13 @@
-import React, { FormEvent, useState} from 'react';
+import React, { FormEvent, useState, useEffect} from 'react';
 import { useMultistepForm } from 'functions/src/utils/useMultistepform';
 
-import MENTEE_ONBOARDING_CONTENT from '@/utils/OnboardingContent';
-import OnboardingStep from '@/components/Onboarding/OnboardingStep';
+import NameAndPronouns from '@/components/Onboarding/NameAndPronouns';
+import Location from '@/components/Onboarding/Location';
+import Industry from '@/components/Onboarding/Industry';
+import FocusArea from '@/components/Onboarding/FocusArea';
+import GenderIdentity from '@/components/Onboarding/GenderIdentity';
+import SexualOrientation from '@/components/Onboarding/SexualOrientation';
+import EthnicityAndLanguages from '@/components/Onboarding/EthnicityAndLanguage';
 
 import ProgressBarStep from '@/components/Onboarding/ProgressBarStep';
 
@@ -12,15 +17,15 @@ import { useAuth } from "@/context/AuthContext";
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import SignUpModal from '@/components/auth/SignUp';
 import {Button} from 'antd';
-import { setCommentRange } from 'typescript';
 
 import styles from './MenteeQuestionnaire.module.css';
+import MENTEE_ONBOARDING_CONTENT from '@/utils/OnboardingContent';
 
 // Define the initial data for the form - add to this as we add more fields to onboarding
 const INITIALDATA: MenteeSignUpPayLoad = {
+  user_chosen_name: '',
   user_name_first: '',
   user_name_last: '',
-  user_chosen_name: '',
   user_pronouns: '',
   user_date_of_birth: '',
   user_location: '',
@@ -36,6 +41,10 @@ const INITIALDATA: MenteeSignUpPayLoad = {
   user_email: '',
   user_pswd: '',
   user_role: 'mentee'
+}
+
+interface ErrorMessage {
+  [key: string]: string[] | undefined;
 }
 
 export default function MenteeQuestionnaire() {
@@ -57,9 +66,7 @@ export default function MenteeQuestionnaire() {
 function MenteeForm() {
 
   const [data, setData] = useState(INITIALDATA);
-  // Set an error in onSubmit to be displayed if a user tries to submit a step without selecting any checkboxes.
-  // Pass checkboxError as prop to steps with checkboxes.
-  const [checkboxError, setCheckboxError] = useState<string>('');
+  const [errors, setErrors] = useState<Partial<MenteeSignUpPayLoad>>({});
 
   function updateFields(fields: Partial<MenteeSignUpPayLoad>) {
     setData(prev => {
@@ -69,98 +76,117 @@ function MenteeForm() {
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
 
-    <OnboardingStep
-    key="Name & Pronouns"
-    {...MENTEE_ONBOARDING_CONTENT.chosenName}
-    title={MENTEE_ONBOARDING_CONTENT.chosenName.title}
-    description={MENTEE_ONBOARDING_CONTENT.chosenName.description}
-    inputs={MENTEE_ONBOARDING_CONTENT.chosenName.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Location"
-    {...MENTEE_ONBOARDING_CONTENT.location}
-    title={MENTEE_ONBOARDING_CONTENT.location.title}
-    description={MENTEE_ONBOARDING_CONTENT.location.description}
-    inputs={MENTEE_ONBOARDING_CONTENT.location.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Gender Identity"
-    {...MENTEE_ONBOARDING_CONTENT.genderIdentity}
-    title={MENTEE_ONBOARDING_CONTENT.genderIdentity.title}
-    description={MENTEE_ONBOARDING_CONTENT.genderIdentity.description}
-    inputs = {MENTEE_ONBOARDING_CONTENT.genderIdentity.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Sexual Orientation"
-    {...MENTEE_ONBOARDING_CONTENT.sexualOrientation}
-    title={MENTEE_ONBOARDING_CONTENT.sexualOrientation.title}
-    description={MENTEE_ONBOARDING_CONTENT.sexualOrientation.description}
-    inputs = {MENTEE_ONBOARDING_CONTENT.sexualOrientation.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Ethnicity & Language"
-    {...MENTEE_ONBOARDING_CONTENT.ethnicityAndLanguage}
-    title={MENTEE_ONBOARDING_CONTENT.ethnicityAndLanguage.title}
-    description={MENTEE_ONBOARDING_CONTENT.ethnicityAndLanguage.description}
-    inputs = {MENTEE_ONBOARDING_CONTENT.ethnicityAndLanguage.inputs}
-    subQuestion={MENTEE_ONBOARDING_CONTENT.ethnicityAndLanguage.subQuestion}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Industry"
-    {...MENTEE_ONBOARDING_CONTENT.industry}
-    title={MENTEE_ONBOARDING_CONTENT.industry.title}
-    description={MENTEE_ONBOARDING_CONTENT.industry.description}
-    inputs = {MENTEE_ONBOARDING_CONTENT.industry.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <OnboardingStep
-    key="Focus area"
-    {...MENTEE_ONBOARDING_CONTENT.focus_area}
-    title={MENTEE_ONBOARDING_CONTENT.focus_area.title}
-    description={MENTEE_ONBOARDING_CONTENT.focus_area.description}
-    inputs = {MENTEE_ONBOARDING_CONTENT.focus_area.inputs}
-    data={data}
-    updateFields={updateFields} />,
-
-    <SignUpModal key={"Email & Password"} {...data}  updateFields = {updateFields}/>
+    <NameAndPronouns
+    key="chosen name"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <Location
+    key="location"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <GenderIdentity
+    key="gender identity"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <SexualOrientation
+    key="sexual orientation"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <EthnicityAndLanguages
+    key="ethnicity & language"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <Industry
+    key="industry"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <FocusArea
+    key="focus area"
+    {...data}
+    updateFields = {updateFields}
+    errorMessage = {errors}
+    />,
+    <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
   ]);
 
   const { signUp } = useAuth();
 
-  // Check if user has selected at least one checkbox, and set an error if they haven't
-  const checkCheckboxSelection = (stepKey: string, dataArray: string[]) => {
-    if (!isLastStep && steps[currentStepIndex].key === stepKey && dataArray.length === 0) {
-      setCheckboxError(`Please select at least one ${stepKey}.`);
-      return true;
-    }
-    return false;
-  };
 
-  function onSubmit(e:FormEvent) {
-    e.preventDefault();
-    // If in the industry or focusArea step, check if user has selected at least one checkbox
-    // if (checkCheckboxSelection("Industry", data.user_industry) || checkCheckboxSelection("Focus area", data.user_focus_area)) {
-    //   return;
-    // }
-    // console.log(data)
-    // // Clear the error if the user has selected at least one checkbox
-    // setCheckboxError('')
-    console.log(data)
-    if (!isLastStep) return next();
-    // Submit the form data to Firebase
-    console.log(data)
-    signUp(data);
+function onSubmit(e:FormEvent) {
+  e.preventDefault();
+  // Check for errors in the form and make sure every field is filled out
+  const errors: ErrorMessage = {};
+  if (currentStepIndex === 0) {
+    if (!data.user_chosen_name) errors.user_chosen_name = ['Please enter your first name.'];
+    if (!data.user_pronouns) errors.user_pronouns = ['Please enter your pronouns.'];
+    if (!data.user_date_of_birth) errors.user_date_of_birth = ['Please enter your date of birth.'];
+    if (errors.user_chosen_name || errors.user_pronouns || errors.user_date_of_birth) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 1) {
+    if (!data.user_location) errors.user_location = ['Please enter your location.'];
+    if (errors.user_location) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 2) {
+    if (data.user_gender_identity.length===0) errors.user_gender_identity = ['Please select at least one gender identity.'];
+    if (errors.user_gender_identity) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 3) {
+    if (data.user_sexual_orientation.length===0) errors.user_sexual_orientation = ['Please select at least one sexual orientation.'];
+    if (errors.user_sexual_orientation) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 4) {
+    if (data.user_ethnicity.length===0) errors.user_ethnicity = ['Please select at least one ethnicity.'];
+    if (data.user_language.length===0) errors.user_language = ['Please select at least one language.'];
+    if (errors.user_ethnicity || errors.user_language) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 5) {
+    if (data.user_industry.length===0) errors.user_industry = ['Please select at least one industry.'];
+    if (errors.user_industry) {
+      setErrors(errors);
+      return;
+    }
+  }
+  if (currentStepIndex === 6) {
+    if (data.user_focus_area.length===0) errors.user_focus_area = ['Please select at least one focus area.'];
+    if (errors.user_focus_area) {
+      setErrors(errors);
+      return;
+    }
+  }
+
+  // Proceed with form submission only if there are no errors
+  if (!isLastStep) return next();
+  setErrors({});
+  // Submit the form data to Firebase
+  console.log(data);
+  signUp(data);
   }
 
   return (

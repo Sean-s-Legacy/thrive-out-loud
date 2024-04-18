@@ -11,9 +11,10 @@ type UserData ={
 }
 type UserFormProps = UserData & {
   updateFields: (fields: Partial<UserData>) => void;
+  errorMessage: {};
 }
 
-export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, user_date_of_birth, updateFields}: UserFormProps){
+export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, user_date_of_birth, errorMessage, updateFields}: UserFormProps){
   return(
   <div>
     <Title level={3} className="semibold">
@@ -29,6 +30,7 @@ export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, u
       className={""}
       size = "large"
     />
+    {errorMessage['user_chosen_name'] && <p className="error-message">{errorMessage['user_chosen_name']}</p>}
     {/* ADD A TOOLTIP WITH INFO */}
     <InputWrapper
       label="Pronouns"
@@ -39,10 +41,12 @@ export default function NameAnduser_Pronouns({user_chosen_name, user_pronouns, u
       className={""}
       size = "large"
     />
+    {errorMessage['user_pronouns'] && <p className="error-message">{errorMessage['user_pronouns']}</p>}
      {/* ADD A TOOLTIP WITH INFO */}
     <label>Date of Birth</label>
     {/* RIGHT NOW THIS INCLUDES TIME - UPDATE TO REMOVE TIME AS CAUSES COMPLICATIONS WITH TIME ZONE */}
     <input type="date" required value={user_date_of_birth ? user_date_of_birth: ''} onChange={e => updateFields({user_date_of_birth: e.target.value})}/>
+    {errorMessage['user_date_of_birth'] && <p className="error-message">{errorMessage['user_date_of_birth']}</p>}
   </div>
   )
 }

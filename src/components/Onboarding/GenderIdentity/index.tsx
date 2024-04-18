@@ -15,9 +15,10 @@ type GenderIdentityData = {
 
 type GenderIdentityProps = GenderIdentityData & {
   updateFields: (fields: Partial<GenderIdentityData>) => void;
+  errorMessage: {};
 }
 
-export default function GenderIdentity({user_gender_identity, updateFields}: GenderIdentityProps) {
+export default function GenderIdentity({user_gender_identity, errorMessage, updateFields}: GenderIdentityProps) {
   return (
     <>
     <Title level={3} className="semibold">
@@ -34,6 +35,7 @@ export default function GenderIdentity({user_gender_identity, updateFields}: Gen
       style={{ width: '100%' }}
       value={user_gender_identity}
     />
+    {errorMessage && errorMessage['user_gender_identity'] && <p className="error-message">{errorMessage['user_gender_identity']}</p>}
     </>
   )
 }

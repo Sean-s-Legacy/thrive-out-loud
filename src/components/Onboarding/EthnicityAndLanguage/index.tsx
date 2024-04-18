@@ -14,6 +14,7 @@ type EthnicityAndLanguageData = {
 
 type EthnicityAndLanguageProps = EthnicityAndLanguageData & {
   updateFields: (fields: Partial<EthnicityAndLanguageData>) => void;
+  errorMessage: {};
 }
 
 const ethnicityOptions: SelectProps['options'] = ETHNICITIES.map(ethnicity => ({
@@ -26,7 +27,7 @@ const languageOptions: SelectProps['options'] = LANGUAGES.map(language => ({
   value: language.toLowerCase()
 }))
 
-export default function EthnicityAndLanguages({user_ethnicity, user_language, user_match_on_ethnicity, updateFields}: EthnicityAndLanguageProps){
+export default function EthnicityAndLanguages({user_ethnicity, user_language, user_match_on_ethnicity, errorMessage, updateFields}: EthnicityAndLanguageProps){
   return (
     <>
     <div>
@@ -45,6 +46,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       style={{ width: '100%' }}
       value={user_ethnicity}
     />
+    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message">{errorMessage['user_ethnicity']}</p>}
     <div>
       <input type="checkbox"
         checked = {user_match_on_ethnicity}
@@ -66,6 +68,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       value={user_language}
     />
     </div>}
+    {errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
     </>
   )
 }

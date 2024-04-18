@@ -38,6 +38,7 @@
   --character-primary-inverse: #fff;
   --character-secondary: rgba(0, 0, 0, 0.55);
   --character-disabled-placeholder: rgba(0, 0, 0, 0.25);
+  --dust-red7: #cf1322;
 
   /* Text Colors added in phase 4 */
   --character-primary-black: rgba(0, 0, 0);

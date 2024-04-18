@@ -7,9 +7,10 @@ type LocationData = {
 }
 type LocationProps = LocationData &{
   updateFields: (fields: Partial<LocationData>) => void;
+  errorMessage: {};
 }
 
-export default function Location({user_location, updateFields}: LocationProps){
+export default function Location({user_location, errorMessage, updateFields}: LocationProps){
   return(
     <div>
       <Title level={3} className="semibold">
@@ -25,6 +26,7 @@ export default function Location({user_location, updateFields}: LocationProps){
         className={""}
         size="large"
       />
+      {errorMessage && errorMessage['user_location'] && <p className="error-message">{errorMessage['user_location']}</p>}
     </div>
   )
 }

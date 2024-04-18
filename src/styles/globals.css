@@ -93,6 +93,10 @@ div.ant-typography-h4 {
 }
 
 /* Text Colors */
+
+.error-message{
+  color: var(--dust-red7);
+}
 .ant-typography.textInverse,
 .textInverse {
   color: var(--white);
@@ -302,7 +306,7 @@ input.ant-input-number-input {
   line-height: 0;
 }
 
-/* Add-On - sets default color of icons; for custom colors you can define color 
+/* Add-On - sets default color of icons; for custom colors you can define color
 prop inside the phosphor-react component */
 .ant-input-group-addon > svg,
 .ant-input-number-group-addon > svg {

@@ -35,7 +35,6 @@ type InputProps = InputData & {
 
 export default function OnboardingStep({title, description, inputs, tooltip, subQuestion, data, updateFields}:OnboardingStepProps){
   return (
-
     // RENDER PARENT QUESTION AND ITS INPUTS, THEN RENDER SUBQUESTION IF IT EXISTS AND USER HAS ANSWERED PARENT QUESTION
 
     <div>
@@ -48,7 +47,6 @@ export default function OnboardingStep({title, description, inputs, tooltip, sub
       <p>{description}</p>
       {inputs.map((input, index) => {
         return <Input key={index} {...input} data={data} updateFields={updateFields} />
-
       })}
 
       {subQuestion && data[inputs[0].value].length > 0 &&
@@ -59,6 +57,7 @@ export default function OnboardingStep({title, description, inputs, tooltip, sub
           {subQuestion.inputs.map((input, index) => {
             return <Input key={index} {...input} data={data} updateFields={updateFields} />
           })}
+
         </div>
       )
     }

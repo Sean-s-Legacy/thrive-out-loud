@@ -8,10 +8,10 @@ type IndustryData = {
 }
 type IndustryProps = IndustryData &{
   updateFields: (fields: Partial<IndustryData>) => void;
-  checkboxError: string;
+  errorMessage: {};
 }
 
-export default function Industry({user_industry, updateFields, checkboxError}: IndustryProps){
+export default function Industry({user_industry, updateFields, errorMessage}: IndustryProps){
 
 const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const industryName = event.target.name;
@@ -45,7 +45,7 @@ const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             <label htmlFor={industry}>{industry}</label>
         </div>
         ))}
-        {checkboxError && <div style={{ color: 'red' }}>{checkboxError}</div>}
+        {errorMessage && errorMessage['user_industry'] && <p className="error-message">{errorMessage['user_industry']}</p>}
       </div>
     </>
   )
