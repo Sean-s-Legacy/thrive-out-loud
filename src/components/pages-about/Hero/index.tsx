@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "antd";
 import styles from "./Hero.module.css";
 
-function index() {
+function Hero() {
   const { Title, Paragraph } = Typography;
   return (
     <section className={styles.section}>
@@ -13,7 +13,7 @@ function index() {
           </Title>
         </div>
         <div>
-          <Paragraph className="characterPrimaryBlack textLarge mediumWeight">
+          <Paragraph className="textPrimaryBlack textLarge mediumWeight">
             Thrive Out Loud is a mentorship program created by Sean&apos;s
             Legacy that connects early-career LGBTQIA+ young adults with
             experienced, like-minded mentors. We created Thrive Out Loud to
@@ -27,4 +27,4 @@ function index() {
   );
 }
 
-export default index;
+export default Hero;

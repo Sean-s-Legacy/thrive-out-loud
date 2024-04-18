@@ -25,10 +25,10 @@ export default function ContactUs() {
       />
       <div className={styles.contentWrapper}>
         <div className={styles.headingContainer}>
-          <Title className="semibold characterPrimaryBlack textPrimary10">
+          <Title className="semibold textPrimaryBlack textPrimary10">
             Contact us
           </Title>
-          <Text className="characterPrimaryBlack textLarge">
+          <Text className="textPrimaryBlack textLarge">
             Have questions? Want to provide feedback? The Thrive Out Loud team
             is here for you.
           </Text>
@@ -44,7 +44,7 @@ export default function ContactUs() {
               <Form.Item className={styles.formItem}>
                 <InputWrapper
                   label="First name"
-                  className="characterPrimaryBlack mediumWeight"
+                  className="textPrimaryBlack mediumWeight"
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="John"
                   size="large"
@@ -54,7 +54,7 @@ export default function ContactUs() {
               <Form.Item className={styles.formItem}>
                 <InputWrapper
                   label="Last name"
-                  className="characterPrimaryBlack mediumWeight"
+                  className="textPrimaryBlack mediumWeight"
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Lee"
                   size="large"
@@ -65,7 +65,7 @@ export default function ContactUs() {
             <Form.Item className={styles.formItem}>
               <InputWrapper
                 label="Email"
-                className="characterPrimaryBlack mediumWeight"
+                className="textPrimaryBlack mediumWeight"
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="We’ll use this to respond to your request."
                 size="large"
@@ -75,7 +75,7 @@ export default function ContactUs() {
             <Form.Item className={styles.formItem}>
               <InputWrapper
                 label="Message"
-                className="characterPrimaryBlack mediumWeight"
+                className="textPrimaryBlack mediumWeight"
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Let us know your question, comments, or feedback."
                 size="large"

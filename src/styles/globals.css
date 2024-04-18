@@ -38,23 +38,23 @@ h6 {
 h1.ant-typography,
 div.ant-typography-h1 {
   font-size: 38px;
-  line-height: 121.5% !important;
+  line-height: 130% !important;
 }
 h2.ant-typography,
 div.ant-typography-h2 {
   font-size: 30px;
-  line-height: 133% !important;
+  line-height: 130% !important;
 }
 h3.ant-typography,
 div.ant-typography-h3 {
   font-size: 24px;
-  line-height: 133% !important;
+  line-height: 130% !important;
 }
 /* added in phase 4 */
 h4.ant-typography,
 div.ant-typography-h4 {
   font-size: 20px;
-  line-height: 150% !important;
+  line-height: 130% !important;
 }
 
 /* Subtitle */
@@ -151,17 +151,17 @@ div.ant-typography-h4 {
 }
 
 /* Text Colors - added in phase 4 */
-.ant-typography.characterGeekBlue7,
-.characterGeekBlue7 {
-  color: var(--character-geek-blue7);
+.ant-typography.geekBlue7,
+.geekBlue7 {
+  color: var(--geek-blue-7);
 }
 .ant-typography.textNeutral8,
 .textNeutral8 {
   color: var(--neutral8);
 }
-.ant-typography.characterPrimaryBlack,
-.characterPrimaryBlack {
-  color: var(--character-primary-black);
+.ant-typography.textPrimaryBlack,
+.textPrimaryBlack {
+  color: var(--primary-black);
 }
 
 /* Links */

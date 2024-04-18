@@ -3,7 +3,7 @@ import { Typography } from "antd";
 import Image from "next/image";
 import styles from "./OurStory.module.css";
 
-function index() {
+function OurStory() {
   const { Title, Paragraph, Link } = Typography;
   return (
     <section className={styles.section}>
@@ -17,13 +17,13 @@ function index() {
           />
         </div>
         <div className={styles.textContainer}>
-          <Title level={2} className="characterPrimaryBlack textLarge bold">
+          <Title level={2} className="textPrimaryBlack textLarge bold">
             The Sean&apos;s Legacy story
           </Title>
 
           <Paragraph
             style={{ marginTop: "20px" }}
-            className="characterPrimaryBlack textMedium mediumWeight"
+            className="textPrimaryBlack textMedium mediumWeight"
           >
             Founded in 2019, Sean&apos;s Legacy is focused on increasing
             LGBTQIA+ representation and identity education as a primary
@@ -35,11 +35,7 @@ function index() {
             Sean&apos;s Legacy, we champion LGBTQIA+ identity education because
             these resources weren&apos;t available to Sean when he needed them.
           </Paragraph>
-          <Link
-            underline
-            href=""
-            className="textMedium characterGeekBlue7 bold"
-          >
+          <Link underline href="" className="textMedium geekBlue7 bold">
             Lean more about Sean&apos;s Legacy
           </Link>
         </div>
@@ -48,4 +44,4 @@ function index() {
   );
 }
 
-export default index;
+export default OurStory;
