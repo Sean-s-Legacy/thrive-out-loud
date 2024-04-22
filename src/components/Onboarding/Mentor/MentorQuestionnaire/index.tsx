@@ -18,6 +18,8 @@ import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
 import {Button} from 'antd';
 import SignUpModal from '@/components/auth/SignUp';
 
+import { validateChosenName, validateLocation, validateGenderIdentity, validateSexualOrientation, validateEthnicityAndLanguage, validateIndustry, validateFocusArea } from '@/utils/validationRules';
+
 const INITIALDATA: MentorSignUpPayload = {
   user_chosen_name: '',
   user_name_first: '',
@@ -72,44 +74,44 @@ function MentorForm() {
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
 
-    <NameAndPronouns
-  key="chosen name"
+  <NameAndPronouns
+  key="Chosen Name"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <Location
-  key="location"
+  key="Location"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <GenderIdentity
-  key="gender identity"
+  key="Gender Identity"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <SexualOrientation
-  key="sexual orientation"
+  key="Sexual Orientation"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <EthnicityAndLanguages
-  key="ethnicity & language"
+  key="Ethnicity & Language"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <Industry
-  key="industry"
+  key="Industry"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
   />,
   <FocusArea
-  key="focus area"
+  key="Focus Area"
   {...data}
   updateFields = {updateFields}
   errorMessage = {errors}
@@ -120,71 +122,42 @@ function MentorForm() {
 
   const { signUp } = useAuth();
 
-  function onSubmit(e:FormEvent) {
+  function onSubmit(e: FormEvent) {
     e.preventDefault();
-    // Check for errors in the form and make sure every field is filled out
-    const errors: ErrorMessage = {};
-    if (currentStepIndex === 0) {
-      if (!data.user_chosen_name) errors.user_chosen_name = ['Please enter your first name.'];
-      if (!data.user_pronouns) errors.user_pronouns = ['Please enter your pronouns.'];
-      if (!data.user_date_of_birth) errors.user_date_of_birth = ['Please enter your date of birth.'];
-      if (errors.user_chosen_name || errors.user_pronouns || errors.user_date_of_birth) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 1) {
-      if (!data.user_location) errors.user_location = ['Please enter your location.'];
-      if (errors.user_location) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 2) {
-      if (data.user_gender_identity.length===0) errors.user_gender_identity = ['Please select at least one gender identity.'];
-      if (errors.user_gender_identity) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 3) {
-      if (data.user_sexual_orientation.length===0) errors.user_sexual_orientation = ['Please select at least one sexual orientation.'];
-      if (errors.user_sexual_orientation) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 4) {
-      if (data.user_ethnicity.length===0) errors.user_ethnicity = ['Please select at least one ethnicity.'];
-      if (data.user_language.length===0) errors.user_language = ['Please select at least one language.'];
-      if (errors.user_ethnicity || errors.user_language) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 5) {
-      if (data.user_industry.length===0) errors.user_industry = ['Please select at least one industry.'];
-      if (errors.user_industry) {
-        setErrors(errors);
-        return;
-      }
-    }
-    if (currentStepIndex === 6) {
-      if (data.user_focus_area.length===0) errors.user_focus_area = ['Please select at least one focus area.'];
-      if (errors.user_focus_area) {
-        setErrors(errors);
-        return;
-      }
-    }
 
-    // Proceed with form submission only if there are no errors
-    console.log(data)
-    if (!isLastStep) return next();
-    setErrors({});
-    // Submit the form data to Firebase
-    console.log(data);
-    signUp(data);
+    // Initialize errors object that will store error messages for each field and then be used to set new errors state
+    const newErrors: ErrorMessage = {};
+
+    // Define validation rules for each step (imported from utils/validationRules.ts)
+    const validationRules: { [key: string]: Function } = {
+      'Chosen Name': validateChosenName,
+      'Location': validateLocation,
+      'Gender identity': validateGenderIdentity,
+      'Sexual Orientation': validateSexualOrientation,
+      'Ethnicity & Language': validateEthnicityAndLanguage,
+      'Industry': validateIndustry,
+      'Focus Area': validateFocusArea,
+    };
+
+    // Get the current step key
+    const currentStepKey = (steps)[currentStepIndex].key;
+    // Validate fields for the current step, and adds errors to newErrors object:
+    if (validationRules[currentStepKey]) {
+      validationRules[currentStepKey](data, newErrors);
+    // if there are errors, set the errors state and return
+      if (Object.keys(newErrors).length>0) {
+        setErrors(newErrors);
+        return;
+      }
     }
+    // If there are no errors, move to the next step or submit the form data
+    if (!isLastStep){
+      setErrors({});
+      return next();
+    }
+    // Submit the form data to Firebase
+    signUp(data);
+  }
 
   return (
     <div className={styles.questionnaireContainer}>

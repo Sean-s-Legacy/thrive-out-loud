@@ -12,7 +12,6 @@
   align-items: flex-start;
   gap: var(--spacing-06);
   background: var(--purple-rasp-yogurt);
-  width: 100%;
 }
 
 .onboardingForm{
@@ -46,7 +45,8 @@
     padding: 14px 32px;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-02)
+    gap: var(--spacing-02);
+    width: 100%;
   }
 
   .onboardingForm{
