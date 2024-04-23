@@ -17,6 +17,11 @@
   margin: var(--spacing-09) auto;
   max-height: 208px;
 }
+.imageProp {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
 
 .textContainer {
   width: 278px;
@@ -28,5 +33,15 @@
     flex-direction: column;
     padding: 20px 16px 20px;
     margin-block: var(--spacing-07);
+  }
+
+  .cardContainer {
+    width: 100%;
+    max-width: 341;
+    height: 304;
+  }
+  .imageProp {
+    width: 40px;
+    height: 40px;
   }
 }
