@@ -57,7 +57,7 @@
 
   .textContainer {
     order: 2;
-    padding: 0;
+    padding: 0 16px;
     /* width: 375px; */
     text-align: center;
   }

@@ -18,6 +18,7 @@
   margin: 40px 0 20px;
 }
 .sectionImg {
+  align-self: center;
   width: 480px;
   height: 480px;
 }
@@ -26,7 +27,7 @@
   .section {
     display: flex;
     flex-direction: column-reverse;
-    max-width: 375px;
+    /* max-width: 375px; */
     padding: 20px 16px 20px;
     gap: 20px;
   }
