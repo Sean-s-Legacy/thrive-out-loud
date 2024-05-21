@@ -1,0 +1,24 @@
+.welcomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  padding-top: var(--spacing-12);
+  padding-inline: 5rem;
+}
+
+.titleWrapper {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.checkboxWrapper {
+  margin-block: var(--spacing-12);
+}
+
+.twoButtons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-10);
+}
