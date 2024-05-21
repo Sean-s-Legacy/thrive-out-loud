@@ -5,6 +5,11 @@ import styles from "./Welcome.module.css";
 import Image from "next/image";
 
 export default function Welcome() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckbox = (e) => {
+    setIsChecked(e.target.checked);
+  };
   const { Title, Paragraph } = Typography;
   return (
     <div className={styles.welcomeContainer}>
@@ -35,7 +40,7 @@ export default function Welcome() {
           </span>
           so we can match you with the right mentors.
         </Paragraph>
-        <Checkbox className={styles.checkboxWrapper}>
+        <Checkbox className={styles.checkboxWrapper} onChange={handleCheckbox}>
           I am at least 18 years or older
         </Checkbox>
 
@@ -44,7 +49,9 @@ export default function Welcome() {
             <Button>Home</Button>
           </Link>
           <Link href="/menteeQuestionnaire">
-            <Button type="primary">Let&apos;s Go</Button>
+            <Button disabled={!isChecked} type="primary">
+              Let&apos;s Go
+            </Button>
           </Link>
         </div>
       </div>

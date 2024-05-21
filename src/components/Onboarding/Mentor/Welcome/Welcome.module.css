@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 700px;
+  max-width: 1166px;
   padding-top: var(--spacing-12);
   padding-inline: 5rem;
+  margin-inline: auto;
 }
 
 .titleWrapper {
