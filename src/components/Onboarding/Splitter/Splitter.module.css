@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
   max-width: 1166px;
+  height: 700px;
   padding-top: var(--spacing-12);
   padding-inline: 5rem;
   margin-inline: auto;
@@ -23,4 +23,8 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: var(--spacing-10);
+}
+
+.selectionButton {
+  margin-inline: 1rem;
 }
