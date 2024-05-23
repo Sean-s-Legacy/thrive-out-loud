@@ -19,7 +19,7 @@ function StartThriving() {
           </Link>
         </div>
         <div className={styles.textParagraph}>
-          <Paragraph className="textLarge textNeutral8">
+          <Title level={3} className="semibold textNeutral8">
             Thrive Out Loud is part of a network of community initiatives led by{" "}
             <Link href="#">
               <span className="semibold underline geekBlue7">
@@ -27,7 +27,7 @@ function StartThriving() {
               </span>
             </Link>
             .
-          </Paragraph>
+          </Title>
         </div>
       </div>
     </section>
