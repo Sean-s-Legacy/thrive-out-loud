@@ -48,7 +48,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       style={{ width: '100%' }}
       value={user_ethnicity}
     />
-    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message">{errorMessage['user_ethnicity']}</p>}
+    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message"> <img src="/images/Warning.svg"/> {errorMessage['user_ethnicity']}</p>}
     <OnboardingCheckbox
       checked = {user_match_on_ethnicity}
       onChange = {e => updateFields({user_match_on_ethnicity: e.target.checked})}
@@ -68,7 +68,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, us
       value={user_language}
     />
     </div>}
-    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
+    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message"> <img src="/images/Warning.svg"/> {errorMessage['user_language']}</p>}
     </>
   )
 }

@@ -147,7 +147,9 @@ const ONBOARDING_ERROR_MESSAGES = {
   ethnicity: "Please select at least one race or ethnic background.",
   language: "Please select at least one language.",
   industry: "Please select at least one industry.",
-  focusArea: "Please provide at least one focus area."
+  focusArea: "Please provide at least one focus area.",
+  email: "Please enter a valid email address.",
+  password: "Please use at least 8 characters.",
 }
 
 export default MENTEE_ONBOARDING_CONTENT;
