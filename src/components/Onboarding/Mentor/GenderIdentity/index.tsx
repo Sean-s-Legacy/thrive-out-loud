@@ -42,7 +42,7 @@ export default function GenderIdentity({user_gender_identity, errorMessage, upda
       style={{ width: '100%' }}
       value={user_gender_identity}
     />
-    {errorMessage && errorMessage['user_gender_identity'] && <p className="error-message">{errorMessage['user_gender_identity']}</p>}
+    {errorMessage && errorMessage['user_gender_identity'] && <p className="error-message"> <img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_gender_identity']}</p>}
     </>
   )
 }
