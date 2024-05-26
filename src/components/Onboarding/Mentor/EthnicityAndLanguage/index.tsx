@@ -47,7 +47,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, er
       style={{ width: '100%' }}
       value={user_ethnicity}
     />
-    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message">{errorMessage['user_ethnicity']}</p>}
+    {errorMessage && errorMessage['user_ethnicity'] && <p className="error-message"> <img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_ethnicity']}</p>}
     { user_ethnicity.length > 0 &&
       <div>
     <h3>What language(s) do you speak?</h3>
@@ -62,7 +62,7 @@ export default function EthnicityAndLanguages({user_ethnicity, user_language, er
       value={user_language}
     />
     </div>}
-    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message">{errorMessage['user_language']}</p>}
+    {user_ethnicity.length > 0 && errorMessage && errorMessage['user_language'] && <p className="error-message"> <img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_language']}</p>}
     </>
   )
 }

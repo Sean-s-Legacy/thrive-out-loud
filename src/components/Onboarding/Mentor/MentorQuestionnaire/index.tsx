@@ -1,4 +1,4 @@
-import React, { FormEvent, useState, useEffect} from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useMultistepForm } from 'functions/src/utils/useMultistepform';
 
 import NameAndPronouns from '@/components/Onboarding/Mentor/NameAndPronouns';
@@ -13,14 +13,24 @@ import ProgressBarStep from '@/components/Onboarding/ProgressBarStep';
 
 import { MentorSignUpPayload } from 'functions/src/user/structs';
 import styles from './MentorQuestionnaire.module.css';
-import {useAuth} from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 import AlreadyLoggedIn from '@/components/Errors/AlreadyLoggedIn';
-import {Button} from 'antd';
-import SignUpModal from '@/components/auth/SignUp';
+import { Button } from 'antd';
+import SignUp from '@/components/auth/SignUp';
 
-import { validateChosenName, validateLocation, validateGenderIdentity, validateSexualOrientation, validateEthnicityAndLanguage, validateIndustry, validateFocusArea } from '@/utils/validationRules';
+import {
+  validateChosenName,
+  validateLocation,
+  validateGenderIdentity,
+  validateSexualOrientation,
+  validateEthnicityAndLanguage,
+  validateIndustry,
+  validateFocusArea,
+  validateEmail,
+  validatePassword
+} from '@/utils/validationRules';
 
-const INITIALDATA: MentorSignUpPayload = {
+const INITIAL_DATA: MentorSignUpPayload = {
   user_chosen_name: '',
   user_name_first: '',
   user_name_last: '',
@@ -36,88 +46,48 @@ const INITIALDATA: MentorSignUpPayload = {
   user_email: '',
   user_pswd: '',
   user_role: 'mentor'
-}
+};
 
 interface ErrorMessage {
   [key: string]: string[] | undefined;
 }
 
 export default function MentorQuestionnaire() {
-
   const { currentUser } = useAuth();
   if (currentUser) {
-    return (
-      <AlreadyLoggedIn />
-    )
+    return <AlreadyLoggedIn />;
   } else {
     return (
       <div>
         <MentorForm />
       </div>
-    )
+    );
   }
 }
+
 function MentorForm() {
-  const [data, setData] = useState(INITIALDATA);
+  const [data, setData] = useState(INITIAL_DATA);
+  const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState<Partial<MentorSignUpPayload>>({});
 
   function updateFields(fields: Partial<MentorSignUpPayload>) {
-    setData(prev => {
-      return { ...prev, ...fields }
-    });
+    setData(prev => ({ ...prev, ...fields }));
   }
 
-  function previousStep(){
+  function previousStep() {
     prev();
     setErrors({});
   }
 
   const { steps, currentStepIndex, step, next, prev, isFirstStep, isLastStep } = useMultistepForm([
-
-  <NameAndPronouns
-  key="Chosen Name"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <Location
-  key="Location"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <GenderIdentity
-  key="Gender Identity"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <SexualOrientation
-  key="Sexual Orientation"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <EthnicityAndLanguages
-  key="Ethnicity & Language"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <Industry
-  key="Industry"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <FocusArea
-  key="Focus Area"
-  {...data}
-  updateFields = {updateFields}
-  errorMessage = {errors}
-  />,
-  <SignUpModal key={"login"} {...data}  updateFields = {updateFields}/>
-
+    <NameAndPronouns key="Chosen Name" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <Location key="Location" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <GenderIdentity key="Gender Identity" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <SexualOrientation key="Sexual Orientation" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <EthnicityAndLanguages key="Ethnicity & Language" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <Industry key="Industry" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <FocusArea key="Focus Area" {...data} updateFields={updateFields} errorMessage={errors} />,
+    <SignUp key="SignUp" {...data} updateFields={updateFields} errorMessage={errors} checked={checked} setChecked={setChecked} />
   ]);
 
   const { signUp } = useAuth();
@@ -125,45 +95,45 @@ function MentorForm() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
 
-    // Initialize errors object that will store error messages for each field and then be used to set new errors state
     const newErrors: ErrorMessage = {};
-
-    // Define validation rules for each step (imported from utils/validationRules.ts)
     const validationRules: { [key: string]: Function } = {
       'Chosen Name': validateChosenName,
       'Location': validateLocation,
-      'Gender identity': validateGenderIdentity,
+      'Gender Identity': validateGenderIdentity,
       'Sexual Orientation': validateSexualOrientation,
       'Ethnicity & Language': validateEthnicityAndLanguage,
       'Industry': validateIndustry,
       'Focus Area': validateFocusArea,
+      'SignUp': (data: MentorSignUpPayload, errors: ErrorMessage) => {
+        validateEmail(data, errors);
+        validatePassword(data, errors);
+        if (!checked) errors.checked = ["Please verify you are 18 years or older."];
+      }
     };
 
-    // Get the current step key
-    const currentStepKey = (steps)[currentStepIndex].key;
-    // Validate fields for the current step, and adds errors to newErrors object:
+    const currentStepKey = steps[currentStepIndex].key;
+
     if (validationRules[currentStepKey]) {
       validationRules[currentStepKey](data, newErrors);
-    // if there are errors, set the errors state and return
-      if (Object.keys(newErrors).length>0) {
+      if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors);
         return;
       }
     }
-    // If there are no errors, move to the next step or submit the form data
-    if (!isLastStep){
+
+    if (!isLastStep) {
       setErrors({});
       return next();
     }
-    // Submit the form data to Firebase
+
     signUp(data);
   }
 
   return (
     <div className={styles.questionnaireContainer}>
-      <div className = {styles.onboardingProgress}>
+      <div className={styles.onboardingProgress}>
         {steps.map((stepName, index) => (
-          <ProgressBarStep key={index} stepName={stepName} index={index} currentStepIndex={currentStepIndex}/>
+          <ProgressBarStep key={index} stepName={stepName} index={index} currentStepIndex={currentStepIndex} />
         ))}
       </div>
       <div className={styles.onboardingForm}>
@@ -172,7 +142,7 @@ function MentorForm() {
             {step}
           </div>
           <div className={styles.buttonContainer}>
-          <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit">
               {isLastStep ? 'Submit' : 'Next'}
             </Button>
             {!isFirstStep && (

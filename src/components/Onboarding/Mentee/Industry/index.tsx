@@ -40,7 +40,7 @@ const Industry: React.FC<IndustryProps> = ({ user_industry, updateFields, errorM
             {industry}
           </Checkbox>
         ))}
-        {errorMessage && errorMessage['user_industry'] && <p className="error-message">{errorMessage['user_industry']}</p>}
+        {errorMessage && errorMessage['user_industry'] && <p className="error-message"> <img src="/images/Warning.svg"/> {errorMessage['user_industry']}</p>}
       </div>
     </>
   );
