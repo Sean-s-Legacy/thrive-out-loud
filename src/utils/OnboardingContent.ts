@@ -139,7 +139,7 @@ const MENTEE_ONBOARDING_CONTENT = {
 
 const ONBOARDING_ERROR_MESSAGES = {
   chosenName: "Please provide us a name to refer to you.",
-  pronouns: "Please provide us with your pronouns.",
+  pronouns: "Please share your pronouns.",
   dateOfBirth: "Please enter your date of birth.",
   location: "Please enter a city and state in the United States.",
   genderIdentity: "Please select at least one gender identity.",
