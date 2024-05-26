@@ -65,7 +65,7 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 36px */  
+    line-height: 150%; /* 36px */
 }
 
 .typography {
@@ -101,4 +101,34 @@
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 36px */
+}
+
+@media only screen and (max-width: 430px) {
+    .section {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .card {
+        width: 341px;
+        height: 524px;
+        padding: 48px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .container {
+        display: flex;
+        width: 375px;
+        padding: var(--Spacing-spacing-07, 32px) 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--Spacing-spacing-07, 32px);
+    }
 }
