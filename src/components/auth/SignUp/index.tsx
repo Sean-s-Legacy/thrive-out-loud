@@ -4,10 +4,23 @@ import { FcGoogle } from "react-icons/fc";
 import { useAuth } from "@/context/AuthContext";
 import styles from "./signup.module.css";
 import InputWrapper from "@/components/InputWrapper";
+import { user } from "firebase-functions/v1/auth";
+
 
 const { Text, Link } = Typography;
 
 type SignUpData = {
+  user_role: string;
+  user_chosen_name: string;
+  user_pronouns: string;
+  user_date_of_birth: string;
+  user_location: string;
+  user_industry: string[];
+  user_focus_area: string[];
+  user_gender_identity: string[];
+  user_sexual_orientation: string[];
+  user_ethnicity: string[];
+  user_language: string[];
   user_email: string;
   user_pswd: string;
   checked: boolean; // Add checked property
@@ -22,6 +35,17 @@ type SignUpProps = SignUpData & {
 export default function SignUp({
   user_email,
   user_pswd,
+  user_role,
+  user_chosen_name,
+  user_pronouns,
+  user_date_of_birth,
+  user_location,
+  user_sexual_orientation,
+  user_gender_identity,
+  user_ethnicity,
+  user_language,
+  user_industry,
+  user_focus_area,
   checked,
   updateFields,
   errorMessage,
@@ -32,9 +56,25 @@ export default function SignUp({
   useEffect(() => {
   }, [errorMessage]);
 
+  const handleGoogleSignIn = () => { signInWithGoogle(
+    {
+      user_role: user_role,
+      user_chosen_name: user_chosen_name,
+      user_pronouns: user_pronouns,
+      user_date_of_birth: user_date_of_birth,
+      user_location: user_location,
+      user_industry: user_industry,
+      user_focus_area: user_focus_area,
+      user_gender_identity: user_gender_identity,
+      user_sexual_orientation: user_sexual_orientation,
+      user_ethnicity: user_ethnicity,
+      user_language: user_language
+    })
+  }
+
   return (
     <div className={styles.signUpContainer}>
-      <Button onClick={signInWithGoogle} className="googlebtn" icon={<FcGoogle size={24} />}>
+      <Button onClick={handleGoogleSignIn} className="googlebtn" icon={<FcGoogle size={24} />}>
         Continue with Google
       </Button>
       <Divider className={styles.divider}>or</Divider>
