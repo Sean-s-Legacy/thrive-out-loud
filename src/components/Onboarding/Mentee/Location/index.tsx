@@ -26,7 +26,7 @@ export default function Location({user_location, errorMessage, updateFields}: Lo
         className={""}
         size="large"
       />
-      {errorMessage && errorMessage['user_location'] && <p className="error-message">{errorMessage['user_location']}</p>}
+      {errorMessage && errorMessage['user_location'] && <p className="error-message"> <img src="/images/Warning.svg"/> {errorMessage['user_location']}</p>}
     </div>
   )
 }

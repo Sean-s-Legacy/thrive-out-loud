@@ -40,7 +40,7 @@ const FocusArea: React.FC<FocusAreaProps> = ({ user_focus_area, updateFields, er
           </Checkbox>
         ))}
         {errorMessage && errorMessage['user_focus_area'] && (
-          <p className="error-message">{errorMessage['user_focus_area']}</p>
+          <p className="error-message"> <img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_focus_area']}</p>
         )}
       </div>
     </>

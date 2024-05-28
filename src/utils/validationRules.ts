@@ -1,5 +1,6 @@
 import { ONBOARDING_ERROR_MESSAGES } from "./OnboardingContent";
 import { USER_FIELDS } from "functions/src/utils/firestore";
+import Warning from "public/images/Warning.svg";
 export function validateChosenName(data: any, errors: any) {
   if (!data[USER_FIELDS.CHOSEN_NAME]) errors[USER_FIELDS.CHOSEN_NAME] = ONBOARDING_ERROR_MESSAGES.chosenName;
   if (!data[USER_FIELDS.PRONOUNS]) errors[USER_FIELDS.PRONOUNS] = ONBOARDING_ERROR_MESSAGES.pronouns;
@@ -30,3 +31,13 @@ export function validateIndustry(data: any, errors: any) {
 export function validateFocusArea(data: any, errors: any) {
   if (data[USER_FIELDS.FOCUS_AREA].length === 0) errors[USER_FIELDS.FOCUS_AREA] = ONBOARDING_ERROR_MESSAGES.focusArea;
 }
+
+export function validateEmail(data: any, errors: any) {
+  if (!data.user_email || !/\S+@\S+\.\S+/.test(data.user_email)) {errors[USER_FIELDS.USER_EMAIL] = ONBOARDING_ERROR_MESSAGES.email;}
+}
+
+export function validatePassword(data: any, errors: any) {
+  if (!data.user_pswd || data.user_pswd.length < 8) {errors[USER_FIELDS.PASSWORD] = ONBOARDING_ERROR_MESSAGES.password;}
+}
+
+

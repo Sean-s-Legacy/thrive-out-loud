@@ -42,7 +42,7 @@ export default function SexualOrientation({user_sexual_orientation, errorMessage
       style={{ width: '100%' }}
       value={user_sexual_orientation}
     />
-    {errorMessage && errorMessage['user_sexual_orientation'] && <p className="error-message">{errorMessage['user_sexual_orientation']}</p>}
+    {errorMessage && errorMessage['user_sexual_orientation'] && <p className="error-message"> <img src="/images/Warning.svg"/> {errorMessage['user_sexual_orientation']}</p>}
     </>
   )
 }
