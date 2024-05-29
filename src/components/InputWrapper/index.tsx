@@ -14,7 +14,8 @@ function InputWrapper({
   textarea = false,
   value,
   required = false,
-  className,
+  style = undefined,
+  className = undefined,
   onBlur = undefined, 
   onKeyPress = undefined 
 }) {
@@ -54,6 +55,7 @@ function InputWrapper({
           value={value}
           onBlur={onBlur}
           onKeyPress={onKeyPress}
+          style={style}
         />
       )}
     </div>
