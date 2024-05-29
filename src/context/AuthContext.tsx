@@ -2,19 +2,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { auth, GoogleProvider } from "../Firebase/utils";
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  User,
-  UserCredential,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { MenteeSignUpPayLoad } from "functions/src/user/structs";
+import { USER_FIELDS } from "functions/src/utils/firestore";
 import apiEndPoint from "../Services/Api"
 
 const AuthContext = React.createContext<any>();
@@ -29,31 +27,42 @@ export function AuthProvider({ children }) {
 
   const router = useRouter();
 
-  function signInWithGoogle() {
+  function signInWithGoogle(data: Partial<MenteeSignUpPayLoad>) {
     signInWithPopup(auth, GoogleProvider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
+      .then(async (result) => {
+        // Get the user object from the sign in result
         const user = result.user;
-        setCurrentUser(user);
-        // console.log(user);
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-        router.push("/dashboard");
+
+        // Initialize Firestore database and create a reference to the user document
+        const db = getFirestore();
+        const userRef = doc(db, "users", user.uid);
+
+        try {
+          await setDoc(userRef, {
+            email: user.email,
+            uid: user.uid,
+            // Use constants from USER_FIELDS to ensure consistency in field names
+            [USER_FIELDS.USER_ROLE]: data[USER_FIELDS.USER_ROLE],
+            [USER_FIELDS.CHOSEN_NAME]: data[USER_FIELDS.CHOSEN_NAME],
+            [USER_FIELDS.PRONOUNS]: data[USER_FIELDS.PRONOUNS],
+            [USER_FIELDS.LOCATION]: data[USER_FIELDS.LOCATION],
+            [USER_FIELDS.DATE_OF_BIRTH]: data[USER_FIELDS.DATE_OF_BIRTH],
+            [USER_FIELDS.ETHNICITY]: data[USER_FIELDS.ETHNICITY],
+            [USER_FIELDS.LANGUAGE]: data[USER_FIELDS.LANGUAGE],
+            [USER_FIELDS.INDUSTRY]: data[USER_FIELDS.INDUSTRY],
+            [USER_FIELDS.FOCUS_AREA]: data[USER_FIELDS.FOCUS_AREA],
+          });
+          console.log("User document created successfully");
+          router.push("/dashboard");
+        } catch (error) {
+          console.error("Error creating user document:", error);
+        }
       })
       .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        console.error("Error during sign in with Google:", error);
       });
   }
+
   async function signUp(data: Partial <MenteeSignUpPayLoad>) {
 
     // create user in database
@@ -62,7 +71,7 @@ export function AuthProvider({ children }) {
     try {
       await apiEndPoint.users.createAccount(data)
 
-      // After create the user, user also signe in
+      // After create the user, user also signed in
       await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;

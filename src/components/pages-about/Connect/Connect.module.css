@@ -1,8 +1,11 @@
 .section {
   display: flex;
   justify-content: center;
+  align-content: center;
   gap: var(--spacing-07);
   margin: var(--spacing-12) 0;
+  max-width: 1046px;
+  border: 2px solid red;
 }
 /* .cardContainer {
   width: 365;
@@ -23,10 +26,14 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 425px) {
   .section {
     flex-direction: column;
     padding: 20px 16px 20px;
     margin-block: var(--spacing-07);
+    flex-direction: column;
+    align-items:center ;
+    max-width: 450px;
   }
+  
 }

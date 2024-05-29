@@ -83,16 +83,20 @@ export default function GenderIdentity({ user_gender_identity, user_match_on_gen
         </p>
       )}
       {notListedInput && (
+        <div style={{ margin: '15px 0px'}}>
         <InputWrapper
           label="My gender identity is not listed"
           placeholder="Enter your gender identity"
           value={customText}
+          optional
+          style={{ margin: '15px 0px'}}
           size
           onChange={e => setCustomText(e.target.value)}
           className={""}
           onBlur={handleBlur}
           onKeyPress={handleKeyPress}
         />
+        </div>
       )}
       <OnboardingCheckbox
         checked={user_match_on_gender_identity}
