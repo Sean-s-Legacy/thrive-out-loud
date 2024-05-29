@@ -31,7 +31,7 @@ init(db, storageBucket);
 // HTTP Requests (Trigger)
 export const app = functions.https.onRequest(application);
 
-//main function When a user is deleted in authentication, the user data in firestore will be deleted
+//Main function when a user is deleted in authentication, the user data in firestore will be deleted
 export const deleteUserData = functions.auth
   .user()
   .onDelete(async (user: UserRecord) => {
@@ -50,7 +50,7 @@ export const deleteUserData = functions.auth
       await Promise.all(promises);
     }
 
-    //Function to delete a documen and its subcollections
+    //Function to delete a document and its subcollections
     async function deleteDocument(
       docRef: FirebaseFirestore.DocumentReference
     ): Promise<void> {
