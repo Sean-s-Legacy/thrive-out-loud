@@ -81,17 +81,20 @@ export default function SexualOrientation({ user_sexual_orientation, errorMessag
         </p>
       )}
       {notListedInput && (
-        <InputWrapper
-          style={{ margin: '15px 0px'}}
-          label="My orientation is not listed"
-          placeholder="Enter your orientation"
-          value={customText}
-          size
-          onChange={e => setCustomText(e.target.value)}
-          className=""
-          onBlur={handleBlur}
-          onKeyPress={handleKeyPress}
-        />
+        <div style={{ margin: '15px 0px'}}>
+          <InputWrapper
+            style={{ margin: '15px 0px'}}
+            label="My orientation is not listed"
+            placeholder="Enter your orientation"
+            value={customText}
+            optional
+            size
+            onChange={e => setCustomText(e.target.value)}
+            className=""
+            onBlur={handleBlur}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
       )}
     </>
   );

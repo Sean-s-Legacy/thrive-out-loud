@@ -14,7 +14,7 @@ function InputWrapper({
   textarea = false,
   value,
   required = false,
-  style = undefined,
+  style = {},
   className = undefined,
   onBlur = undefined, 
   onKeyPress = undefined 
