@@ -27,14 +27,15 @@ export default function GenderIdentity({ user_gender_identity, user_match_on_gen
   const [customText, setCustomText] = useState('');
 
   useEffect(() => {
-    setNotListedInput(user_gender_identity.includes('my identity is not listed'));
+    setNotListedInput(user_gender_identity.includes('my gender identity is not listed'));
   }, [user_gender_identity]);
 
 
   const handleSelectChange = (value: string[]) => {
-    if (!value.includes('my identity is not listed')) {
+    if (!value.includes('my gender identity is not listed')) {
       setCustomText('');
     }
+    console.log(user_gender_identity)
     updateFields({ user_gender_identity: value });
   };
 
