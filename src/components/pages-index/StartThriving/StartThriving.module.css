@@ -8,7 +8,7 @@
 
 .textContainer {
   /* padding: 25px 25px 80px; */
-  max-width: 1020px;
+  width: 1020px;
 }
 
 .buttonWrapper {
@@ -17,6 +17,6 @@
 
 @media only screen and (max-width: 430px) {
   .section {
-    padding: 64px 20px 64px;
+    padding: 64px 0 64px;
   }
 }
