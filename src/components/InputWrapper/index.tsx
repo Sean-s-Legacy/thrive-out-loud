@@ -15,6 +15,8 @@ function InputWrapper({
   value,
   required = false,
   className,
+  onBlur = undefined, 
+  onKeyPress = undefined 
 }) {
   const { Text } = Typography;
   //   const { TextArea } = Input;
@@ -50,6 +52,8 @@ function InputWrapper({
           placeholder={placeholder}
           size={size}
           value={value}
+          onBlur={onBlur}
+          onKeyPress={onKeyPress}
         />
       )}
     </div>

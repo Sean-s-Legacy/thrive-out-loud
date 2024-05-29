@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import GENDER_IDENTITIES from '@/utils/GenderIdentities';
 import { Select } from 'antd';
 import { SelectProps } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import CustomTooltip from '@/components/Tooltip';
 import OnboardingCheckbox from '../../OnboardingCheckbox';
+import InputWrapper from '@/components/InputWrapper';
 
 const options: SelectProps['options'] = GENDER_IDENTITIES.map(gender => ({
   label: gender,
@@ -22,11 +23,44 @@ type GenderIdentityProps = GenderIdentityData & {
 }
 
 export default function GenderIdentity({ user_gender_identity, user_match_on_gender_identity, errorMessage, updateFields }: GenderIdentityProps) {
+  const [notListedInput, setNotListedInput] = useState(false);
+  const [customText, setCustomText] = useState('');
+
+  useEffect(() => {
+    setNotListedInput(user_gender_identity.includes('my identity is not listed'));
+  }, [user_gender_identity]);
+
+
+  const handleSelectChange = (value: string[]) => {
+    if (!value.includes('my identity is not listed')) {
+      setCustomText('');
+    }
+    updateFields({ user_gender_identity: value });
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      if (customText && !user_gender_identity.includes(customText)) {
+        updateFields({ user_gender_identity: [...user_gender_identity, customText] });
+      }
+      setCustomText("")
+    }
+  };
+
+  const handleBlur = () => {
+    if(customText && !user_gender_identity.includes(customText)){
+      updateFields({ user_gender_identity: [...user_gender_identity, customText] })
+    }
+    setCustomText("")
+    console.log(user_gender_identity)
+  };
+
   return (
     <>
       <div className='onboarding-title-container'>
         <Title level={3} className="semibold">
-          What is your <span style={{ color:"var(--primary7)" }}>gender identity</span>?
+          What is your <span style={{ color: "var(--primary7)" }}>gender identity</span>?
         </Title>
         <CustomTooltip
           title="Gender identity refers to your deeply-felt sense of self, which may or may not align with the sex assigned to you at birth. Gender identity is a spectrum and represents how someone perceives themselves as feminine, masculine, both, or neither."
@@ -39,7 +73,7 @@ export default function GenderIdentity({ user_gender_identity, user_match_on_gen
         allowClear
         placeholder="Select"
         options={options}
-        onChange={value => updateFields({ user_gender_identity: value })}
+        onChange={handleSelectChange}
         style={{ width: '100%' }}
         value={user_gender_identity}
       />
@@ -48,11 +82,24 @@ export default function GenderIdentity({ user_gender_identity, user_match_on_gen
           <img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_gender_identity']}
         </p>
       )}
+      {notListedInput && (
+        <InputWrapper
+          label="My gender identity is not listed"
+          placeholder="Enter your gender identity"
+          value={customText}
+          size
+          onChange={e => setCustomText(e.target.value)}
+          className={""}
+          onBlur={handleBlur}
+          onKeyPress={handleKeyPress}
+        />
+      )}
       <OnboardingCheckbox
         checked={user_match_on_gender_identity}
         onChange={e => updateFields({ user_match_on_gender_identity: e.target.checked })}
         content="I would prefer to find a mentor with a similar gender identity to me."
       />
+
     </>
   );
 }
