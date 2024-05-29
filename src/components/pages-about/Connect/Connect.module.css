@@ -1,0 +1,39 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: var(--spacing-07);
+  margin: var(--spacing-12) 0;
+  max-width: 1046px;
+  border: 2px solid red;
+}
+/* .cardContainer {
+  width: 365;
+  height: 340;
+  box-shadow: 0 4px 20px 0 rgba(149, 149, 149, 0.25);
+  border-radius: 40px;
+  border: none;
+} */
+
+.cardContent {
+  text-align: center;
+  margin: var(--spacing-09) auto;
+  max-height: 208px;
+}
+
+.textContainer {
+  width: 278px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 425px) {
+  .section {
+    flex-direction: column;
+    padding: 20px 16px 20px;
+    margin-block: var(--spacing-07);
+    flex-direction: column;
+    align-items:center ;
+    max-width: 450px;
+  }
+  
+}

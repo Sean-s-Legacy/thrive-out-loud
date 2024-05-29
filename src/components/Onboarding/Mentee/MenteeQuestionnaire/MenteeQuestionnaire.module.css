@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-top: var(--spacing-12);
 }
 
 .formContainer{
