@@ -1,6 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { useMultistepForm } from 'functions/src/utils/useMultistepform';
-
+import { useMultistepForm } from '@/utils/useMultistepform';
 import NameAndPronouns from '@/components/Onboarding/Mentee/NameAndPronouns';
 import Location from '@/components/Onboarding/Mentee/Location';
 import Industry from '@/components/Onboarding/Mentee/Industry';
