@@ -38,3 +38,26 @@
     font-weight: 400;
     line-height: 24px; /* 150% */
 }
+@media only screen and (max-width: 430px) {
+    .section {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        gap: 32px;
+    }
+
+    .typography {
+        padding: 16px;
+    }
+}
+

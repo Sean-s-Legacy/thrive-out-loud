@@ -106,8 +106,13 @@
 @media only screen and (max-width: 430px) {
     .section {
         flex-direction: column;
-        padding: 20px 16px;
+        padding: 0;
         gap: 20px;
+    }
+
+    .layout {
+        padding: 10px;
+        /* background: var(--gray-white, #fff); */
     }
 
     .card {
@@ -119,14 +124,15 @@
     }
 
     .title {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 12px;
     }
 
     .container {
         display: flex;
         width: 375px;
-        padding: var(--Spacing-spacing-07, 32px) 0px;
+        padding:  0px;
         flex-direction: column;
         align-items: center;
         gap: var(--Spacing-spacing-07, 32px);

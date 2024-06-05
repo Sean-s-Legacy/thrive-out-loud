@@ -93,13 +93,12 @@
 @media only screen and (max-width: 430px) {
     .section {
         flex-direction: column-reverse;
-        padding: 20px 16px;
-        gap: 20px;
+        padding: 20px 20px;
     }
 
     .imageContainer {
-        width: 340px;
-        height: 1000px;
+        width: 375px;
+        /* height: 850px; */
         /* margin: 0 auto; */
         position: absolute;
         top: 0;
@@ -111,8 +110,8 @@
 
     .card {
         width: 341px;
-        height: 800px;
-        padding: 48px;
+        /* height: 800px; */
+        padding: 0;
         justify-content: space-between;
         align-items: center;
     }
@@ -126,7 +125,7 @@
     .paragraph {
         font-size: 16px;
         line-height: 24px;
-        padding: 16px;
+        padding: 0;
     }
 
     .button {
