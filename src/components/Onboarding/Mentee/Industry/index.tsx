@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Checkbox, Typography } from 'antd';
 import INDUSTRIES from '@/utils/Industries';
 import InputWrapper from '@/components/InputWrapper';
-
+import styles from "./Industry.module.css"
 const { Title, Paragraph } = Typography;
 
 type IndustryData = {
@@ -17,9 +17,22 @@ type IndustryProps = IndustryData & {
 const Industry: React.FC<IndustryProps> = ({ user_industry, updateFields, errorMessage }) => {
   const [notListedInput, setNotListedInput] = useState(false);
   const [customIndustry, setCustomIndustry] = useState('');
+  const [customData, setCustomData] = useState<string[]>([]);
+
+  const removeCustomEntry = (e, entry: string) => {
+    e.preventDefault();
+    const index = user_industry.indexOf(entry);
+    if (index > -1) {
+      const updatedUserIndustry = [...user_industry];
+      updatedUserIndustry.splice(index, 1);
+      updateFields({ user_industry: updatedUserIndustry });
+    }
+    const updatedCustomData = customData.filter(item => item !== entry);
+    setCustomData(updatedCustomData);
+  };
 
   useEffect(() => {
-    console.log(user_industry)
+    console.log(user_industry);
     setNotListedInput(user_industry.includes('My industry is not listed'));
   }, [user_industry]);
 
@@ -34,23 +47,33 @@ const Industry: React.FC<IndustryProps> = ({ user_industry, updateFields, errorM
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      if (customIndustry && !user_industry.includes(customIndustry)) {
+      if (customIndustry && !user_industry.includes(customIndustry) && user_industry.length < 3) {
         updateFields({ user_industry: [...user_industry, customIndustry] });
+        setCustomData([...customData, customIndustry]);
       }
-      if(customIndustry === ''){
-        updateFields({ user_industry: ['My industry is not listed'] })
-      }
+      setCustomIndustry('');
     }
   };
 
   const handleBlur = () => {
-    if (customIndustry && !user_industry.includes(customIndustry)) {
+    console.log(user_industry.length > 3)
+    if (customIndustry && !user_industry.includes(customIndustry) && user_industry.length < 3) {
       updateFields({ user_industry: [...user_industry, customIndustry] });
+      setCustomData([...customData, customIndustry]);
     }
-    if(customIndustry === ''){
-      updateFields({ user_industry: ['My industry is not listed'] })
-    }
+    setCustomIndustry('');
   };
+
+  const CustomList = () => (
+    <div className={styles.customValuesWrapper}>
+      {customData.map((entry, index) => (
+        <div onClick={(event) => removeCustomEntry(event, entry)} key={index} className={styles.customValueWrapper}>
+          <button >x</button>
+          <p>{entry}</p>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <>
@@ -70,21 +93,22 @@ const Industry: React.FC<IndustryProps> = ({ user_industry, updateFields, errorM
             {industry}
           </Checkbox>
         ))}
+        <CustomList />
         {errorMessage && errorMessage['user_industry'] && <p className="error-message"><img src="/images/Warning.svg" alt="Warning" /> {errorMessage['user_industry']}</p>}
-      </div>
+      </div>        
       {notListedInput && (
-        <div style={{ margin: '15px 0px'}}>
-        <InputWrapper
-          label="My industry is not listed"
-          placeholder="Enter your industry"
-          value={customIndustry}
-          style={{ margin: '15px 0px' }}
-          size="large"
-          onChange={e => setCustomIndustry(e.target.value)}
-          className=""
-          onBlur={handleBlur}
-          onKeyPress={handleKeyPress}
-        />
+        <div style={{ margin: '15px 0px' }}>
+          <InputWrapper
+            label
+            placeholder="Enter your industry"
+            value={customIndustry}
+            style={{ margin: '15px 0px' }}
+            size="large"
+            onChange={e => setCustomIndustry(e.target.value)}
+            className=""
+            onBlur={handleBlur}
+            onKeyPress={handleKeyPress}
+          />
         </div>
       )}
     </>
