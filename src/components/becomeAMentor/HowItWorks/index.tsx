@@ -1,7 +1,6 @@
-import { Typography } from "antd";
-
 import Image from "next/image";
 import React from "react";
+import { Typography } from "antd";
 import styles from "./HowItWorks.module.css";
 
 function Index() {
@@ -25,7 +24,7 @@ function Index() {
                         <div className={styles.textContainer}>
                             <div className={styles.textTitle}>
                                 <Image
-                                    src={"/images/becomeamentee/number_1.png"}
+                                    src={"/images/becomeamentor/number_1.png"}
                                     width={33}
                                     height={33}
                                     alt="Number 1"
@@ -53,7 +52,7 @@ function Index() {
                         <div className={styles.textContainer}>
                             <div className={styles.textTitle}>
                                 <Image
-                                    src={"/images/becomeamentee/number_2.png"}
+                                    src={"/images/becomeamentor/number_2.png"}
                                     width={33}
                                     height={33}
                                     alt="Number 2"
@@ -82,7 +81,7 @@ function Index() {
                         <div className={styles.textContainer}>
                             <div className={styles.textTitle}>
                                 <Image
-                                    src={"/images/becomeamentee/number_3.png"}
+                                    src={"/images/becomeamentor/number_3.png"}
                                     width={33}
                                     height={33}
                                     alt="Number 3"
@@ -112,7 +111,7 @@ function Index() {
                         <div className={styles.textContainer}>
                             <div className={styles.textTitle}>
                                 <Image
-                                    src={"/images/becomeamentee/number_4.png"}
+                                    src={"/images/becomeamentor/number_4.png"}
                                     width={33}
                                     height={33}
                                     alt="Number 4"
@@ -139,7 +138,7 @@ function Index() {
                         <div className={styles.textContainer}>
                             <div className={styles.textTitle}>
                                 <Image
-                                    src={"/images/becomeamentee/number_5.png"}
+                                    src={"/images/becomeamentor/number_5.png"}
                                     width={33}
                                     height={33}
                                     alt="Number 5"

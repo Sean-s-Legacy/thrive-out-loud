@@ -1,4 +1,4 @@
-
+/* Existing styles */
 .section {
     display: flex;
     align-items: center;
@@ -46,6 +46,7 @@
     line-height: 28px; /* 140% */
     padding: 32px;
 }
+
 
 @media only screen and (max-width: 430px) {
     .section {
