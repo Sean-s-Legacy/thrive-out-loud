@@ -1,10 +1,12 @@
 .section {
+  display: flex;
   background-color: var(--primary1);
-  padding: 70px 20px 88px;
+  padding: 70px 40px 88px;
 }
 
 .storyContainer {
-  width: 1072px;
+  max-width: 1072px;
+  width: fit-content;
   margin: 0 auto;
   display: flex;
   gap: 48px;
@@ -12,4 +14,21 @@
 
 .textContainer {
   text-align: start;
+}
+
+
+@media only screen and (max-width: 430px) {
+  
+  .section{
+    min-width: 375px;
+  }
+  
+  .storyContainer {
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  }
+
+
+
 }

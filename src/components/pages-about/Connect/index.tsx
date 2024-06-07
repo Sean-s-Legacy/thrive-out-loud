@@ -34,7 +34,8 @@ function Connect() {
           <div className={styles.cardContainer} key={index}>
             <Card
               style={{
-                width: 365,
+                maxWidth: 365,
+                minWidth: "fit-content",
                 height: 340,
                 boxShadow: "0 4px 20px 0 rgba(149, 149, 149, 0.25)",
                 borderRadius: "40px",

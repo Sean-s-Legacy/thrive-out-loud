@@ -69,20 +69,20 @@ function OurTeam() {
         <Title level={2} className="textPrimaryBlack bold textAlignCenter">
           Meet the Thrive Out Loud team
         </Title>
-        <Row gutter={[24, 48]}>
+        <div className={styles.TeamMembers}>
           {team.map((member, index) => {
             return (
-              <Col span={8} key={index}>
+              <div className={styles.member}>
                 <TeamMember
                   imgSrc={member.imgSrc}
                   name={member.name}
                   pronouns={member.pronouns}
                   role={member.role}
                 />
-              </Col>
+              </div>
             );
           })}
-        </Row>
+        </div>
       </div>
     </section>
   );

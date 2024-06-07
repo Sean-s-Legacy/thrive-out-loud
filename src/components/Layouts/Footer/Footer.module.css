@@ -124,7 +124,8 @@
   .footerWrapper {
     display: flex;
     height: fit-content;
-    width: 375px;
+    width: 100%;
+    min-width: 375px;
     padding: var(--spacing-spacing-09, 48px) var(--spacing-spacing-05, 16px);
     flex-direction: column;
     justify-content: center;

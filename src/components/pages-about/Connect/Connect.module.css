@@ -1,11 +1,10 @@
 .section {
   display: flex;
   justify-content: center;
-  align-content: center;
   gap: var(--spacing-07);
   margin: var(--spacing-12) 0;
-  max-width: 1046px;
-  border: 2px solid red;
+  width: 100%;
+  align-items: center;
 }
 /* .cardContainer {
   width: 365;
@@ -18,7 +17,7 @@
 .cardContent {
   text-align: center;
   margin: var(--spacing-09) auto;
-  max-height: 208px;
+  max-height: fit-content /*208px; */
 }
 
 .textContainer {
@@ -26,14 +25,11 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 430px) {
   .section {
+    min-width: 375px;
     flex-direction: column;
     padding: 20px 16px 20px;
     margin-block: var(--spacing-07);
-    flex-direction: column;
-    align-items:center ;
-    max-width: 450px;
   }
-  
 }

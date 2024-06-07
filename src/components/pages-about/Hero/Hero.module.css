@@ -1,18 +1,54 @@
 .section {
-  background-image: url("/images/about/leaf-background.png");
-  background-position: center;
+  background-image: url("/images/index/leaf-background-hero.png");
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
   background-color: var(--primary1);
-  padding: 103px;
-  height: 397px;
+  max-height: 1598px;
 }
 
+
 .textContainer {
-  width: 1046px;
-  margin: 0 auto;
+  max-width: 1052px;
+  padding: 88px 20px;
 }
 
 .textTitle {
-  margin: 0 auto;
-  text-align: center;
   margin-bottom: 24px;
+  max-width: 1046px;
+  text-align: center;
+}
+
+.textParagraph{
+  text-align: left;
+}
+
+
+@media only screen and (max-width: 430px) {
+  .section {
+    min-width: 375px;
+    flex-direction: column;
+    background-color: var(--primary1);
+    justify-content: center;
+    align-items: center;
+    padding: var(--Spacing-spacing-08, 40px);
+  }
+
+  .textContainer {
+    height: 524px;
+    background: var(--gray-white, #FFF);    order: 2;
+    display: flex;
+    width: 342px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: var(--Spacing-spacing-06, 24px);
+     padding: 25px;
+    min-width: fit-content
+  }
+
+
+  .textParagraph{
+    text-align: left;
+  }
 }

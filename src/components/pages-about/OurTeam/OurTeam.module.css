@@ -1,14 +1,48 @@
 .section {
+  display: flex;
   margin-top: 48px;
   padding: 64px 0;
   background-color: var(--white);
 }
 
 .sectionContainer {
-  max-width: 925px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
   gap: 48px;
+}
+
+.TeamMembers{
+ display: grid;
+ grid-template-columns: 33% 33% 33%;
+ grid-template-rows: 35% 370px 370px;
+ /* width: 100%;
+ max-width: 100%; */
+}
+
+@media screen and (max-width: 1024px) {
+  .TeamMembers{
+    width: 100%;
+    max-width: 100%;
+   }
+}
+
+@media screen and (max-width: 430px) {
+
+  .section {
+    min-width: 375px;
+    margin-top: 0px;
+    padding: 64px 0;
+    background-color: var(--white);
+  }
+
+  .TeamMembers{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+   }
 }
