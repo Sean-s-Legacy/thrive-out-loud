@@ -38,3 +38,60 @@
     font-weight: 400;
     line-height: 24px; /* 150% */
 }
+@media only screen and (max-width: 430px) {
+    .section {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        gap: 32px;
+    }
+
+    .typography {
+        padding: 16px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .section {
+        flex-direction: column;
+        height: auto;
+        padding: 500px 16px 20px 16px;
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        gap: 16px;
+    }
+
+    .typography {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

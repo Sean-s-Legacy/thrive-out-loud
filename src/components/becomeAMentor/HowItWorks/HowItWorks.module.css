@@ -1,3 +1,4 @@
+/* Existing styles */
 .section {
     display: flex;
     align-items: center;
@@ -6,8 +7,6 @@
 
 .title {
     color: var(--gray-black, #000);
-
-    /* Headers/H2 */
     font-family: Montserrat;
     font-size: 30px;
     font-style: normal;
@@ -29,9 +28,6 @@
     padding-bottom: var(--spacing-spacing-10, 64px);
     flex-direction: column;
     align-items: center;
-    /* gap: var(--spacing-spacing-06, 24px); */
-    flex-shrink: 0;
-    align-self: stretch;
     gap: 160px;
 }
 
@@ -43,8 +39,6 @@
 
 .typography {
     color: var(--gray-gray-8, #595959);
-
-    /* Subtitle/medium */
     font-family: "Work Sans";
     font-size: 20px;
     font-style: normal;
@@ -52,29 +46,43 @@
     line-height: 28px; /* 140% */
     padding: 32px;
 }
-/* .contentWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+
+@media only screen and (max-width: 430px) {
+    .section {
+        flex-direction: column;
+        height: 100%;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        gap: 32px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .textTitle {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .typography {
+        padding: 16px;
+    }
 }
-
-.contentItem {
-    display: flex;
-    align-items: center;
-    gap: 130px;
-    width: 100%;
-    max-width: 900px;
-    margin-bottom: 100px;
-} */
-
-/* .textContainer {
-    flex: 1;
-} */
-
-/* .itemContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 30px;
-} */

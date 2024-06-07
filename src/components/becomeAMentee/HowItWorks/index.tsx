@@ -60,11 +60,7 @@ function Index() {
                                     height={33}
                                     alt="Number 2"
                                 />
-                                <Title
-                                    level={4}
-                                >
-                                    Complete your profile
-                                </Title>
+                                <Title level={4}>Complete your profile</Title>
                             </div>
                             <div className={styles.typography}>
                                 <Text>
@@ -92,11 +88,7 @@ function Index() {
                                     height={33}
                                     alt="Number 3"
                                 />
-                                <Title
-                                    level={4}
-                                >
-                                    Find a mentor
-                                </Title>
+                                <Title level={4}>Find a mentor</Title>
                             </div>
                             <div className={styles.typography}>
                                 <Text className="textLarge textAlignStart">
@@ -126,9 +118,7 @@ function Index() {
                                     height={33}
                                     alt="Number 4"
                                 />
-                                <Title
-                                    level={4}
-                                >
+                                <Title level={4}>
                                     Schedule your first session
                                 </Title>
                             </div>
