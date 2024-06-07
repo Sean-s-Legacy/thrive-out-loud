@@ -1,56 +1,49 @@
 .section {
-  background-image: url("/images/about/leaf-background.png");
-  background-position: center;
+  background-image: url("/images/index/leaf-background-hero.png");
+  display: flex;
+  justify-content: center;
   background-color: var(--primary1);
-  padding: 103px;
-  height: 397px;
+  max-height: 598px;
 }
 
+
 .textContainer {
-  width: 1046px;
-  margin: 0 auto;
+  padding: 88px 0 0 136px;
+  max-width: 795px;
 }
 
 .textTitle {
-  margin: 0 auto;
-  text-align: center;
   margin-bottom: 24px;
 }
 
-@media screen and (max-width: 425px){
+
+@media only screen and (max-width: 430px) {
   .section {
-    display: flex;
-    width: 450px;
-    align-items: center;
+    min-width: 375px;
+    flex-direction: column;
+    background-color: var(--primary1);
     justify-content: center;
-    height: 600px;
+    align-items: center;
+    padding: var(--Spacing-spacing-08, 40px);
   }
-  
+
   .textContainer {
+    height: 524px;
+    background: var(--gray-white, #FFF);    order: 2;
     display: flex;
     width: 342px;
     flex-direction: column;
     justify-content: center;
-    align-content: center;    border-radius: var(--Spacing-spacing-05, 16px);
-    background: var(--gray-white, #FFF);
-    padding: var(--spacing-spacing-10, 64px) var(--spacing-spacing-09, 48px);;
-    margin-top: 40px;
-  }
-  
-  .textTitle {
-    width: 250px;
     text-align: center;
-    margin-bottom: 24px;
+    gap: var(--Spacing-spacing-06, 24px);
   }
 
-  .textTitle h1 {
-    color: var(--purple-purple-8, #69388F);
-    text-align: center;
-    /* (mobile) H1/bold */
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px; /* 133.333% */
+  .textContainer {
+    padding: 25px;
+    min-width: fit-content
+  }
+
+  .textParagraph{
+    text-align: left;
   }
 }

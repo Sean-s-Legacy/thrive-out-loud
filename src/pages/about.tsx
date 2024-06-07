@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "@/components/pages-about/Hero";
-import Connect from "@/components/pages-index/Connect";
+import Connect from "@/components/pages-about/Connect";
 import OurStory from "@/components/pages-about/OurStory";
 import OurTeam from "@/components/pages-about/OurTeam";
 import ContactUs from "@/components/pages-about/ContactUs";

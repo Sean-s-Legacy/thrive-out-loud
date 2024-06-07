@@ -148,6 +148,33 @@
   }
 }
 
+<<<<<<< Updated upstream
+=======
+@media screen and (max-width: 425px) {
+  .logo {
+    color: var(--primary8);
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%; /* 36px */
+  }
+
+  .nav_container{
+    min-width: 375px;
+    display: flex;
+    padding: 14px 15px;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .nav_dropdown{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+>>>>>>> Stashed changes
 /*  media query for medium screens */
 @media screen and (max-width: 1024px) {
   .btn_container {

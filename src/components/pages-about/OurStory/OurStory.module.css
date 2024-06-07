@@ -5,8 +5,12 @@
 }
 
 .storyContainer {
+<<<<<<< Updated upstream
   display: flex;
   width: 1072px;
+=======
+  width: fit-content;
+>>>>>>> Stashed changes
   margin: 0 auto;
   display: flex;
   gap: 48px;
@@ -16,6 +20,7 @@
   text-align: start;
 }
 
+<<<<<<< Updated upstream
 @media screen and (max-width: 425px){
   .section{
     width:450px
@@ -25,4 +30,21 @@
     align-items: center;
     justify-items: center;
   }
+=======
+
+@media only screen and (max-width: 430px) {
+  
+  .section{
+    min-width: 375px;
+  }
+  
+  .storyContainer {
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  }
+
+
+
+>>>>>>> Stashed changes
 }

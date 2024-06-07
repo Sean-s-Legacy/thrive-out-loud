@@ -18,8 +18,9 @@ export default function ContactUs() {
   return (
     <section className={styles.contactSection}>
       <Image
-        height={701}
+      className={styles.image}
         width={576}
+        height= {701}
         src={"/images/about/contact-us.png"}
         alt="Woman standing in front of a laptop, drinking an iced coffee through a straw."
       />
@@ -99,8 +100,9 @@ export default function ContactUs() {
                   .
                 </Checkbox>
               </Form.Item>
-
-              <Form.Item>
+              
+              <Form.Item >
+                <div className={styles.button}>
                 <Button
                   disabled
                   type="default"
@@ -110,7 +112,9 @@ export default function ContactUs() {
                 >
                   Send message
                 </Button>
+                </div>
               </Form.Item>
+              
             </div>
           </div>
         </Form>

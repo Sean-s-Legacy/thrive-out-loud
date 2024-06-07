@@ -25,6 +25,11 @@
   gap: 32px;
 }
 
+.image {
+  height: 701px;
+  width: 576px
+}
+
 .formInputs {
   display: flex;
   flex-direction: column;
@@ -35,16 +40,28 @@
 .formItem {
   align-self: stretch !important;
 }
+
 .alignLeft {
   width: 100%;
   padding-bottom: 24px;
 }
 
-@media screen and (max-width: 425px){
-  .contactSection{
-    width: 450px;
+@media screen and (max-width:430px) {
+  .contactSection {
+    min-width: 375px;
   }
-  .contactSection img{
+
+  .image {
     display: none;
   }
+  .nameInputs{
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+ .button {
+  text-align: center;
+ }
+
 }
