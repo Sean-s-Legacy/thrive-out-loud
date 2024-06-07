@@ -45,11 +45,11 @@ export default function Navbar({ user }) {
       key: "0",
     },
     {
-      label: <Link href="/becomementee">Become a mentee</Link>,
+      label: <Link href="/becomeamentee">Become a mentee</Link>,
       key: "1",
     },
     {
-      label: <Link href="/becomementor">Become a mentor</Link>,
+      label: <Link href="/becomeamentor">Become a mentor</Link>,
       key: "2",
     },
   ];
@@ -58,7 +58,9 @@ export default function Navbar({ user }) {
     <nav className={styles.nav_container}>
       <div className={styles.logoContainer}>
         <Link href="/">
-          <p id="logo" className={styles.logo}>THRIVE OUT LOUD</p>
+          <p id="logo" className={styles.logo}>
+            THRIVE OUT LOUD
+          </p>
         </Link>
       </div>
       {!!user ? (
@@ -77,48 +79,54 @@ export default function Navbar({ user }) {
               >
                 Bookings
               </Link>
-              { user.user_role === "mentee" ? <Link
-                href="browsementors"
-                className={router.pathname == "/browsementors" ? "active" : ""}
-              >
-                Browse Mentors
-              </Link> : null}
+              {user.user_role === "mentee" ? (
+                <Link
+                  href="browsementors"
+                  className={
+                    router.pathname == "/browsementors" ? "active" : ""
+                  }
+                >
+                  Browse Mentors
+                </Link>
+              ) : null}
               <Link
                 href="menteeresources"
-                className={router.pathname == "/menteeresources" ? "active" : ""}
+                className={
+                  router.pathname == "/menteeresources" ? "active" : ""
+                }
               >
                 Resources
               </Link>
             </div>
-            <div className= {styles.profile_bttns_wrapper}>
-                <a href="#">
-                  <Image 
-                  src="images/ChatCircle.svg" 
+            <div className={styles.profile_bttns_wrapper}>
+              <a href="#">
+                <Image
+                  src="images/ChatCircle.svg"
                   alt="Messages Button"
                   width={40}
                   height={40}
-                  />
-                </a>
-                <a href="#">
-                  <Image 
-                  src="images/Bell.svg" 
+                />
+              </a>
+              <a href="#">
+                <Image
+                  src="images/Bell.svg"
                   alt="Notifications Button"
                   width={40}
                   height={40}
-                  />
-                </a>
-                <a href="#">
-                  <Image 
-                  src="images/User.svg" 
+                />
+              </a>
+              <a href="#">
+                <Image
+                  src="images/User.svg"
                   alt="Profile Button"
                   width={40}
                   height={40}
-                  />
-                </a>
+                />
+              </a>
             </div>
             {/* <div> */}
-              {/* <Dropdown
-                
+            {/* <Dropdown
+
                 menu={{ items }}
                 trigger={["click"]}
                 dropdownRender={(menu) => (
@@ -144,7 +152,7 @@ export default function Navbar({ user }) {
             {/* </div> */}
           </div>
         </div>
-        ) : (
+      ) : (
         <div className={styles.unauth_container}>
           <div className={styles.links}>
             <Link
@@ -154,7 +162,7 @@ export default function Navbar({ user }) {
               Become a Mentor
             </Link>
             <Link
-              href="/becomeamentee" 
+              href="/becomeamentee"
               className={router.pathname == "/becomeamentee" ? "active" : ""}
             >
               Become a Mentee
@@ -168,9 +176,9 @@ export default function Navbar({ user }) {
           </div>
           <div className={styles.btn_container}>
             <LoginModal />
-            <Button type="primary" >
-              Sign up
-            </Button>
+            <Link href="/onboardingSplitter">
+              <Button type="primary">Sign up</Button>
+            </Link>
           </div>
           <Dropdown
             placement="bottomRight"

@@ -1,0 +1,26 @@
+.customValueWrapper { 
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--neutral4);
+    width: fit-content;
+    padding: 0px 10px;
+    height: 25px;
+    justify-items: center;
+    align-content: center;
+    gap: 10px;
+
+}
+
+.customValueWrapper button{
+    border: none;
+    height: fit-content;
+    background: none;
+    color: var(--neutral7);
+}
+
+.customValuesWrapper{
+    display: flex;
+    gap: 10px;
+    margin: 10px 0px;
+}

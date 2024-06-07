@@ -8,7 +8,8 @@ const FOCUS_AREAS = [
  "Job search",
  "Early career",
  "Changing careers",
- "Growing professional skills"
+ "Growing professional skills",
+ "Not listed"
 ];
 
 export default FOCUS_AREAS
