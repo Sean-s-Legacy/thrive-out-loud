@@ -123,9 +123,6 @@
 @media screen and (max-width: 900px ){
   .footerWrapper {
     height: fit-content;
-<<<<<<< Updated upstream
-    padding: 34px 16px;
-=======
     width: 100%;
     min-width: 375px;
     padding: var(--spacing-spacing-09, 48px) var(--spacing-spacing-05, 16px);
@@ -133,7 +130,6 @@
     justify-content: center;
     align-items: flex-start;
     gap: var(--spacing-spacing-07, 32px);
->>>>>>> Stashed changes
   }
 
   .unauthPagesWrapper {

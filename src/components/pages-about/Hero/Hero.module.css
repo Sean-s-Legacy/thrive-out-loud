@@ -2,18 +2,25 @@
   background-image: url("/images/index/leaf-background-hero.png");
   display: flex;
   justify-content: center;
+  align-content: flex-start;
   background-color: var(--primary1);
-  max-height: 598px;
+  max-height: 1598px;
 }
 
 
 .textContainer {
-  padding: 88px 0 0 136px;
-  max-width: 795px;
+  max-width: 1052px;
+  padding: 88px 20px;
 }
 
 .textTitle {
   margin-bottom: 24px;
+  max-width: 1046px;
+  text-align: center;
+}
+
+.textParagraph{
+  text-align: left;
 }
 
 
@@ -36,12 +43,10 @@
     justify-content: center;
     text-align: center;
     gap: var(--Spacing-spacing-06, 24px);
-  }
-
-  .textContainer {
-    padding: 25px;
+     padding: 25px;
     min-width: fit-content
   }
+
 
   .textParagraph{
     text-align: left;

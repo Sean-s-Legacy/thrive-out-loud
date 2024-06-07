@@ -148,8 +148,6 @@
   }
 }
 
-<<<<<<< Updated upstream
-=======
 @media screen and (max-width: 425px) {
   .logo {
     color: var(--primary8);
@@ -174,7 +172,6 @@
   }
 }
 
->>>>>>> Stashed changes
 /*  media query for medium screens */
 @media screen and (max-width: 1024px) {
   .btn_container {

@@ -69,17 +69,10 @@ function OurTeam() {
         <Title level={2} className="textPrimaryBlack bold textAlignCenter">
           Meet the Thrive Out Loud team
         </Title>
-<<<<<<< Updated upstream
-        <Row gutter={[24, 48]} className={styles.teamMemberWrapper}>
-          {team.map((member, index) => {
-            return (
-              <Col span={8} key={index} className={styles.teamMemberCard}>
-=======
         <div className={styles.TeamMembers}>
           {team.map((member, index) => {
             return (
               <div className={styles.member}>
->>>>>>> Stashed changes
                 <TeamMember
                   imgSrc={member.imgSrc}
                   name={member.name}
