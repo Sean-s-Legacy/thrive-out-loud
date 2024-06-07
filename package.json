@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@getbrevo/brevo": "^2.1.1",
     "@next/font": "13.1.6",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -19,9 +20,10 @@
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "firebase": "^9.17.2",
-    "firebase-admin": "^11.5.0",
-    "firebase-functions": "^4.2.1",
+    "firebase-admin": "^11.11.1",
+    "firebase-functions": "^4.9.0",
     "firebase-tools": "^11.24.0",
+    "helmet": "^7.1.0",
     "less-loader": "^11.1.0",
     "next": "13.1.6",
     "next-plugin-antd-less": "^1.8.0",

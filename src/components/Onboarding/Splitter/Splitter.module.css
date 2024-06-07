@@ -1,0 +1,30 @@
+.welcomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1166px;
+  height: 700px;
+  padding-top: var(--spacing-12);
+  padding-inline: 5rem;
+  margin-inline: auto;
+}
+
+.titleWrapper {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.checkboxWrapper {
+  margin-block: var(--spacing-12);
+}
+
+.twoButtons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-10);
+}
+
+.selectionButton {
+  margin-inline: 1rem;
+}

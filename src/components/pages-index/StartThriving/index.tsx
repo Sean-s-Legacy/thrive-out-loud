@@ -12,7 +12,7 @@ function StartThriving() {
           <Title className="bold textPrimary8">Start Thriving</Title>
         </div>
         <div className={styles.buttonWrapper}>
-          <Link href="#" passHref>
+          <Link href="/onboardingSplitter" passHref>
             <Button type="primary" htmlType="submit" size="large">
               Sign up
             </Button>

@@ -33,7 +33,7 @@ function Connect() {
         return (
           <div className={styles.cardContainer} key={index}>
             <Card
-              style={{
+              style={
                 maxWidth: 365,
                 minWidth: "fit-content",
                 height: 340,

@@ -34,12 +34,14 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         user_location,
         user_pronouns,
         user_gender_identity,
+        user_match_on_gender_identity,
         user_ethnicity,
         user_match_on_ethnicity,
         user_language,
         user_industry,
         user_focus_area,
         user_sexual_orientation,
+        user_match_on_sexual_orientation,
         user_role } =
         payload;
         console.log("User Email:", user_email);
@@ -53,7 +55,12 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         console.log("User Industry:", user_industry);
         console.log("User Focus Area:", user_focus_area);
         console.log("User Gender Identity:", user_gender_identity);
+        console.log("User match on Gender Identity:", user_match_on_gender_identity);
         console.log("User Sexual Orientation:", user_sexual_orientation);
+        console.log("User match on Sexual Orientation:", user_match_on_sexual_orientation);
+        console.log("User Ethnicity:", user_ethnicity);
+        console.log("User match on Ethnicity:", user_match_on_ethnicity)
+        console.log("User Language:", user_language);
         console.log("User Role:", user_role);
       const displayName = user_name_first + " " + user_name_last || '';
       const email = user_email || '';
@@ -82,7 +89,9 @@ export const createAccount = async (payload: Partial <MenteeSignUpPayLoad>) => {
         user_date_of_birth: user_date_of_birth ?? '',
         user_location: user_location ?? '',
         user_gender_identity: user_gender_identity ?? [],
+        user_match_on_gender_identity: user_match_on_gender_identity ?? false,
         user_sexual_orientation: user_sexual_orientation ?? [],
+        user_match_on_sexual_orientation: user_match_on_sexual_orientation ?? false,
         user_ethnicity: user_ethnicity ?? [],
         user_match_on_ethnicity: user_match_on_ethnicity ?? false,
         user_language: user_language ?? [],

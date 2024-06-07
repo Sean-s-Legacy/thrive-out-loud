@@ -7,7 +7,7 @@ import { FirestoreUserData, MenteeSignUpPayLoad} from "./structs";
 // Adds user to Firestore
 export const createAccount = async (payload: Partial <FirestoreUserData>) => {
   try {
-    const { user_chosen_name, user_date_of_birth, user_pronouns, user_email, user_location, user_gender_identity, user_sexual_orientation, user_ethnicity, user_match_on_ethnicity, user_language, user_industry, user_focus_area, user_role, id} = payload;
+    const { user_chosen_name, user_date_of_birth, user_pronouns, user_email, user_location, user_gender_identity, user_match_on_gender_identity, user_sexual_orientation, user_match_on_sexual_orientation, user_ethnicity, user_match_on_ethnicity, user_language, user_industry, user_focus_area, user_role, id} = payload;
     const newUserDocRef: FirebaseFirestore.DocumentReference = db
       .collection(COLLECTION.USERS)
       .doc(id || "");
@@ -18,7 +18,9 @@ export const createAccount = async (payload: Partial <FirestoreUserData>) => {
       [USER_FIELDS.PRONOUNS]: user_pronouns || "",
       [USER_FIELDS.LOCATION]: user_location || "",
       [USER_FIELDS.GENDER_IDENTITY]: user_gender_identity || [],
+      [USER_FIELDS.MATCH_ON_GENDER_IDENTITY]: user_match_on_gender_identity || false,
       [USER_FIELDS.SEXUAL_ORIENTATION]: user_sexual_orientation || [],
+      [USER_FIELDS.MATCH_ON_SEXUAL_ORIENTATION] : user_match_on_sexual_orientation || false,
       [USER_FIELDS.ETHNICITY]: user_ethnicity || [],
       [USER_FIELDS.MATCH_ON_ETHNICITY]: user_match_on_ethnicity || false,
       [USER_FIELDS.LANGUAGE]: user_language || [],
