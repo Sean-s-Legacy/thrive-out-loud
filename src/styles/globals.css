@@ -58,7 +58,7 @@ div.ant-typography-h4 {
 }
 
 /* Subtitle */
-.subtitle-regular{
+.subtitle-regular {
   color: var(--character-secondary-55, rgba(0, 0, 0, 0.55));
   font-family: "Work Sans";
   font-size: 20px;
@@ -66,7 +66,7 @@ div.ant-typography-h4 {
   font-weight: 400;
   line-height: 28px; /* 140% */
 }
-.subtitle-semibold{
+.subtitle-semibold {
   font-family: "Work Sans";
   font-size: 20px;
   font-style: normal;
@@ -75,8 +75,8 @@ div.ant-typography-h4 {
 }
 
 /* Error messages */
-.error-message{
-  color: var(--dust-red-dust-red-7, #CF1322);
+.error-message {
+  color: var(--dust-red-dust-red-7, #cf1322);
   font-family: "Work Sans";
   font-size: 14px;
   font-style: normal;
@@ -189,15 +189,15 @@ a:active {
   /* Headings */
   h1.ant-typography {
     font-size: 24px;
-    line-height: 133% !important;
+    line-height: 130% !important;
   }
   h2.ant-typography {
     font-size: 20px;
-    line-height: 160% !important;
+    line-height: 130% !important;
   }
   h3.ant-typography {
     font-size: 18px;
-    line-height: 178% !important;
+    line-height: 130% !important;
   }
   /* Text */
   .ant-typography.textLarge {
@@ -322,12 +322,12 @@ input.ant-input-number-input {
 
 .ant-checkbox-inner {
   border: 1px solid #595959; /* Stroke color */
-  background-color: #FFFFFF; /* Fill color */
+  background-color: #ffffff; /* Fill color */
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-  border: 1px solid #8145B5; /* Stroke color */
-  background-color: #FCFAFC; /* Fill color */
+  border: 1px solid #8145b5; /* Stroke color */
+  background-color: #fcfafc; /* Fill color */
 }
 
 .ant-checkbox-wrapper {
